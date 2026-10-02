@@ -1,0 +1,32 @@
+{
+  "name": "las-aventuras-de-nuestra-familia",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Serie animada infantil hecha con código (Remotion + React). Cada capítulo es un guion en TypeScript.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "studio": "remotion studio remotion/index.ts",
+    "voices": "python3 scripts/voices.py",
+    "music": "node scripts/music.mjs",
+    "render": "node scripts/render.mjs",
+    "still": "node scripts/still.mjs",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@remotion/player": "4.0.532",
+    "next": "16.3.8",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "remotion": "4.0.532"
+  },
+  "devDependencies": {
+    "@remotion/cli": "4.0.532",
+    "@types/node": "^22",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "typescript": "^5.9"
+  }
+}
