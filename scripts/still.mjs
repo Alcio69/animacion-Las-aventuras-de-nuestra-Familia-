@@ -16,10 +16,10 @@ const browserExecutable = (() => {
   }
 })();
 const serveUrl = await bundle({ entryPoint: path.resolve('remotion/index.ts') });
-const composition = await selectComposition({ serveUrl, id, browserExecutable });
+const composition = await selectComposition({ serveUrl, id, browserExecutable, chromiumOptions: { gl: process.env.GL || 'angle' } });
 console.log(`${id}: ${composition.durationInFrames} frames (${(composition.durationInFrames / composition.fps).toFixed(1)}s)`);
 for (const f of frames.split(',').map(Number)) {
   const output = path.join(outDir, `${id}-${f}.png`);
-  await renderStill({ serveUrl, composition, frame: Math.min(f, composition.durationInFrames - 1), output, browserExecutable });
+  await renderStill({ serveUrl, composition, frame: Math.min(f, composition.durationInFrames - 1), output, browserExecutable, chromiumOptions: { gl: process.env.GL || 'angle' } });
   console.log('  ', output);
 }

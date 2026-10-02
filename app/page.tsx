@@ -30,7 +30,7 @@ export default function Home() {
           {eps.map((ep) => (
             <Link key={ep.id} href={`/capitulo/${ep.id}`} className="card">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={`/episodes/${ep.id}.jpg`} alt={ep.title} />
+              <img src={`/episodes/${ep.id}-3d.jpg`} alt={ep.title} />
               <div className="body">
                 <div className="num">
                   Capítulo {ep.number} · {fmt(compileEpisode(ep).totalSec)}

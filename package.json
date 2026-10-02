@@ -16,17 +16,22 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@react-three/drei": "^10.7.9",
+    "@react-three/fiber": "^9.8.1",
     "@remotion/player": "4.0.532",
+    "@remotion/three": "^4.0.532",
     "next": "16.3.8",
     "react": "19.2.0",
     "react-dom": "19.2.0",
-    "remotion": "4.0.532"
+    "remotion": "4.0.532",
+    "three": "^0.186.1"
   },
   "devDependencies": {
     "@remotion/cli": "4.0.532",
     "@types/node": "^22",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@types/three": "^0.186.0",
     "typescript": "^5.9"
   }
 }

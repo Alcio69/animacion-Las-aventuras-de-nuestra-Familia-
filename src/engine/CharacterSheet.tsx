@@ -21,8 +21,12 @@ export const CharacterSheet: React.FC = () => {
           p.expr = 'happy';
           p.lookX = 0.3;
           p.bob = Math.sin(t * 2 + i) * 3;
-          if (id === 'hija') p.armR = { up: 140, bend: 30 + Math.sin(t * 10) * 20 };
+          p.yaw = [0.15, -0.55, 0.85, 0.45][i];
+          if (id === 'hija') p.armR = { up: 118, bend: 30 + Math.sin(t * 10) * 20 };
           if (id === 'papa') p.armL = { up: 30, bend: -100 };
+          if (id === 'hijo') {
+            p.legL = 22; p.legR = -22; p.kneeR = 40; p.armL = { up: -15, bend: 20 }; p.armR = { up: 30, bend: 25 };
+          }
           return (
             <g key={id}>
               <Character id={id} pose={p} x={260 + i * 470} y={600} />

@@ -32,6 +32,9 @@ export type Pose = {
   lookY: number;
   armL: Arm;
   armR: Arm;
+  /** Arm swing forward(+)/back(-) in degrees (walking). */
+  swingL: number;
+  swingR: number;
   /** Leg swing in degrees. */
   legL: number;
   legR: number;
@@ -47,6 +50,20 @@ export type Pose = {
   wag: number;
   /** Height above the floor (jumps). The shadow stays on the floor. */
   lift: number;
+  /** Body turn: -1 = profile facing left, 0 = facing camera, 1 = profile facing right. */
+  yaw: number;
+  /** Knee bend in degrees (0 = straight). */
+  kneeL: number;
+  kneeR: number;
+  /** Sideways weight shift of the upper body (px). */
+  hipX: number;
+  /** Extra eyebrow raise for emphasis (0..1). */
+  brow: number;
+  /** Body velocity (px/s) for secondary motion of ears, tail, hair. */
+  vx: number;
+  vy: number;
+  /** Breathing 0..1 (chest expansion). */
+  breath: number;
 };
 
 export const restPose = (t = 0): Pose => ({
@@ -57,6 +74,8 @@ export const restPose = (t = 0): Pose => ({
   lookY: 0,
   armL: { up: 8, bend: 10 },
   armR: { up: 8, bend: 10 },
+  swingL: 0,
+  swingR: 0,
   legL: 0,
   legR: 0,
   bodyTilt: 0,
@@ -66,4 +85,12 @@ export const restPose = (t = 0): Pose => ({
   t,
   wag: 0.3,
   lift: 0,
+  yaw: 0,
+  kneeL: 0,
+  kneeR: 0,
+  hipX: 0,
+  brow: 0,
+  vx: 0,
+  vy: 0,
+  breath: 0,
 });

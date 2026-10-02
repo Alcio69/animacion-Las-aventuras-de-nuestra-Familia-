@@ -8,12 +8,16 @@ import { FxView, PropView } from '../props/Props';
 import { solveCharacter } from './animate';
 import { FONT, ensureFonts } from './fonts';
 import { Logo } from './Logo';
+import { SceneAudio, Subtitle, TitleCard } from './Overlays';
+import { Intro3D, Outro3D, Scene3DView } from '../three/Scene3D';
 import type { Episode } from './script';
 import { FPS, INTRO_SEC, OUTRO_SEC, compileEpisode, type CompiledScene, type LineEv } from './timeline';
 
-export type EpisodeProps = { episode: Episode; audio?: boolean };
+export type EpisodeStyle = '2d' | '3d';
+export type EpisodeProps = { episode: Episode; audio?: boolean; style?: EpisodeStyle };
 
-export const EpisodeVideo: React.FC<EpisodeProps> = ({ episode, audio = true }) => {
+export const EpisodeVideo: React.FC<EpisodeProps> = ({ episode, audio = true, style = '2d' }) => {
+  const three = style === '3d';
   ensureFonts();
   const compiled = useMemo(() => compileEpisode(episode), [episode]);
   const lines = useMemo(
@@ -36,15 +40,15 @@ export const EpisodeVideo: React.FC<EpisodeProps> = ({ episode, audio = true }) 
         />
       )}
       <Sequence durationInFrames={Math.round(INTRO_SEC * FPS)} name="Intro">
-        <Intro episode={episode} audio={audio} />
+        {three ? <Intro3D episode={episode} audio={audio} /> : <Intro episode={episode} audio={audio} />}
       </Sequence>
       {compiled.scenes.map((cs) => (
         <Sequence key={cs.index} from={Math.round(cs.start * FPS)} durationInFrames={Math.round(cs.dur * FPS)} name={`Escena ${cs.index + 1}`}>
-          <SceneView cs={cs} audio={audio} />
+          {three ? <Scene3DView cs={cs} audio={audio} /> : <SceneView cs={cs} audio={audio} />}
         </Sequence>
       ))}
       <Sequence from={Math.round((compiled.totalSec - OUTRO_SEC) * FPS)} name="Outro">
-        <Outro audio={audio} />
+        {three ? <Outro3D audio={audio} /> : <Outro audio={audio} />}
       </Sequence>
     </AbsoluteFill>
   );
@@ -79,7 +83,23 @@ export const SceneView: React.FC<{ cs: CompiledScene; audio: boolean }> = ({ cs,
     <AbsoluteFill style={{ clipPath: `circle(${irisR}% at 50% 50%)` }}>
       <svg viewBox="0 0 1920 1080" width="100%" height="100%">
         <g transform={`translate(960 540) scale(${zoom}) translate(${-camX} ${-camY})`}>
-          <BackgroundView bg={sc.bg} variant={sc.variant} t={t + cs.start} />
+          <defs>
+            <filter id="dof" x="-2%" y="-2%" width="104%" height="104%">
+              <feGaussianBlur stdDeviation={2.4} />
+            </filter>
+            <radialGradient id="vignette" cx="50%" cy="45%" r="75%">
+              <stop offset="60%" stopColor="#2B1B4D" stopOpacity={0} />
+              <stop offset="100%" stopColor="#2B1B4D" stopOpacity={0.28} />
+            </radialGradient>
+            <linearGradient id="sunbeam" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stopColor="#FFF4D6" stopOpacity={0.35} />
+              <stop offset="50%" stopColor="#FFF4D6" stopOpacity={0} />
+            </linearGradient>
+          </defs>
+          {/* background slightly out of focus = cinematic depth, characters pop */}
+          <g filter="url(#dof)">
+            <BackgroundView bg={sc.bg} variant={sc.variant} t={t + cs.start} />
+          </g>
           {cs.events.map((e, i) => {
             if (e.kind !== 'prop' || t < e.t0 || t > e.t1) return null;
             const pop = Math.min(1, spring({ frame: Math.round((t - e.t0) * FPS), fps: FPS, config: { damping: 9 } }));
@@ -92,7 +112,7 @@ export const SceneView: React.FC<{ cs: CompiledScene; audio: boolean }> = ({ cs,
           })}
           {chars.map(({ id, s }) => (
             <g key={id} opacity={Math.min(1, s!.visible * 1.5)}>
-              <Character id={id} pose={s!.pose} x={s!.x} y={s!.y} facing={s!.facing} scale={s!.scale * (0.85 + 0.15 * s!.visible)} />
+              <Character id={id} pose={s!.pose} x={s!.x} y={s!.y} scale={s!.scale * (0.85 + 0.15 * s!.visible)} />
             </g>
           ))}
           {cs.events.map((e, i) => {
@@ -104,65 +124,13 @@ export const SceneView: React.FC<{ cs: CompiledScene; audio: boolean }> = ({ cs,
             );
           })}
         </g>
+        <rect width={1920} height={1080} fill="url(#sunbeam)" style={{ mixBlendMode: 'screen' }} />
+        <rect width={1920} height={1080} fill="url(#vignette)" />
         {title && title.kind === 'title' && <TitleCard text={title.text} k={(t - title.t0) / (title.t1 - title.t0)} />}
       </svg>
       {line && <Subtitle line={line} t={t} />}
-      {audio &&
-        cs.events.map((e, i) => {
-          if (e.kind === 'line' && e.hasVoice)
-            return (
-              <Sequence key={i} from={Math.round(e.t0 * FPS)} name={`voz ${e.who}`}>
-                <Html5Audio src={staticFile(`voices/${e.key}.mp3`)} />
-              </Sequence>
-            );
-          if (e.kind === 'sfx')
-            return (
-              <Sequence key={i} from={Math.round(e.t0 * FPS)} name={`sfx ${e.sfx}`}>
-                <Html5Audio src={staticFile(`audio/sfx-${e.sfx}.mp3`)} volume={0.55} />
-              </Sequence>
-            );
-          return null;
-        })}
+      {audio && <SceneAudio cs={cs} />}
     </AbsoluteFill>
-  );
-};
-
-const Subtitle: React.FC<{ line: LineEv; t: number }> = ({ line, t }) => {
-  const appear = Math.min(1, (t - line.t0) / 0.15, (line.t1 - t) / 0.15);
-  const isNarr = line.who === 'narrador';
-  const color = isNarr ? '#5F3DC4' : DESIGNS[line.who as CharId].accent;
-  const name = isNarr ? 'Narrador' : DESIGNS[line.who as CharId].name;
-  return (
-    <div style={{ position: 'absolute', left: 0, right: 0, bottom: 46, display: 'flex', justifyContent: 'center', opacity: appear, transform: `translateY(${(1 - appear) * 20}px)` }}>
-      <div
-        style={{
-          maxWidth: 1500,
-          display: 'flex',
-          alignItems: 'center',
-          gap: 18,
-          background: 'rgba(255,255,255,0.94)',
-          borderRadius: 30,
-          padding: '16px 32px 16px 18px',
-          boxShadow: '0 8px 0 rgba(0,0,0,0.12)',
-          border: `5px solid ${color}`,
-        }}
-      >
-        <span style={{ background: color, color: '#fff', borderRadius: 18, padding: '4px 16px', fontSize: 30, fontWeight: 700, whiteSpace: 'nowrap' }}>{name}</span>
-        <span style={{ color: '#2B2140', fontSize: 42, fontWeight: 600, lineHeight: 1.15, fontStyle: isNarr ? 'italic' : 'normal' }}>{line.text}</span>
-      </div>
-    </div>
-  );
-};
-
-const TitleCard: React.FC<{ text: string; k: number }> = ({ text, k }) => {
-  const s = Math.min(1, k * 6, (1 - k) * 6);
-  return (
-    <g transform={`translate(960 200) scale(${0.6 + 0.4 * s}) rotate(${-3})`} opacity={s} fontFamily={FONT} fontWeight={700} textAnchor="middle">
-      <rect x={-460} y={-80} width={920} height={130} rx={60} fill="#FFF" stroke="#7048E8" strokeWidth={8} />
-      <text y={20} fontSize={70} fill="#7048E8">
-        {text}
-      </text>
-    </g>
   );
 };
 

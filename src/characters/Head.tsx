@@ -11,8 +11,10 @@ export const Head: React.FC<{ d: Design; pose: Pose; uid: string }> = ({ d, pose
   const spec = FACES[pose.expr];
   const cat = d.species === 'cat';
   const furFill = `url(#${uid}-fur)`;
-  const fx = pose.lookX * R * 0.09; // features shift = fake 3D head turn
-  const fy = pose.lookY * R * 0.05;
+  // 3/4 turn: facial features slide toward the side we look at (yaw) + small gaze shift
+  const yaw = Math.max(-1, Math.min(1, pose.yaw));
+  const fx = yaw * R * 0.34 + (yaw < 0 ? -1 : 1) * pose.lookX * R * 0.05;
+  const fy = pose.lookY * R * 0.06;
   const s = R * (cat ? 0.19 : 0.17) * d.eyeScale;
   const eyeY = cat ? -R * 0.06 : -R * 0.1;
   const eyeX = R * (cat ? 0.38 : 0.36);
@@ -54,6 +56,8 @@ export const Head: React.FC<{ d: Design; pose: Pose; uid: string }> = ({ d, pose
           strokeWidth={3.5}
         />
       )}
+      {/* rim light + core shadow give the head volume */}
+      <ellipse cx={0} cy={-R * 0.05} rx={R * 1.0} ry={R * 0.88} fill={`url(#${uid}-rim)`} />
       {/* soft top highlight */}
       <ellipse cx={-R * 0.28 + fx * 0.5} cy={-R * 0.58} rx={R * 0.38} ry={R * 0.2} fill="#fff" opacity={d.id === 'mama' ? 0.08 : 0.16} />
 
@@ -97,12 +101,17 @@ export const Head: React.FC<{ d: Design; pose: Pose; uid: string }> = ({ d, pose
         )}
 
         {/* eyes + brows */}
-        {([-1, 1] as const).map((side) => (
-          <g key={side}>
-            <Eye d={d} uid={uid} side={side} cx={side * eyeX} cy={eyeY} s={s} pose={pose} spec={spec} />
-            <Brow d={d} side={side} cx={side * eyeX} cy={eyeY} s={s} spec={spec} color={browColor} />
-          </g>
-        ))}
+        {([-1, 1] as const).map((side) => {
+          // the eye on the far side gets narrower and closer to the center
+          const farK = side * yaw < 0 ? 1 - Math.abs(yaw) * 0.38 : 1 + Math.abs(yaw) * 0.04;
+          const ex = side * eyeX * (side * yaw < 0 ? 1 - Math.abs(yaw) * 0.3 : 1);
+          return (
+            <g key={side} transform={`translate(${ex} 0) scale(${farK} 1) translate(${-ex} 0)`}>
+              <Eye d={d} uid={uid} side={side} cx={ex} cy={eyeY} s={s} pose={pose} spec={spec} />
+              <Brow d={d} side={side} cx={ex} cy={eyeY} s={s} spec={{ ...spec, browRaise: spec.browRaise + pose.brow * 0.35 }} color={browColor} />
+            </g>
+          );
+        })}
 
         {/* nose + mouth */}
         {cat ? (
@@ -163,11 +172,13 @@ export const Head: React.FC<{ d: Design; pose: Pose; uid: string }> = ({ d, pose
 };
 
 const DogEars: React.FC<{ d: Design; R: number; pose: Pose; uid: string }> = ({ d, R, pose, uid }) => {
-  const flop = Math.sin(pose.t * 2.2) * 2 + pose.bob * 0.4 + pose.lift * 0.03;
+  // ears lag behind motion: they swing against horizontal speed and lift when falling
+  const flop = Math.sin(pose.t * 2.2) * 2 + pose.bob * 0.3 - Math.max(-14, Math.min(14, pose.vy * 0.03));
+  const drag = Math.max(-12, Math.min(12, pose.vx * 0.025));
   return (
     <g>
       {([-1, 1] as const).map((side) => (
-        <g key={side} transform={`rotate(${side * -flop} ${side * R * 0.62} ${-R * 0.62})`}>
+        <g key={side} transform={`translate(${-pose.yaw * R * 0.12} 0) rotate(${side * -flop - drag} ${side * R * 0.62} ${-R * 0.62})`}>
           <path
             d={`M ${side * R * 0.42} ${-R * 0.8}
                 C ${side * R * 1.0} ${-R * 0.92} ${side * R * 1.28} ${-R * 0.5} ${side * R * 1.2} ${R * 0.12}
@@ -191,7 +202,7 @@ const CatEars: React.FC<{ d: Design; R: number; pose: Pose; uid: string }> = ({ 
   return (
     <g>
       {([-1, 1] as const).map((side) => (
-        <g key={side} transform={`rotate(${side * (side === 1 ? tw : 0)} ${side * R * 0.55} ${-R * 0.6})`}>
+        <g key={side} transform={`translate(${-pose.yaw * R * 0.1} 0) rotate(${side * (side === 1 ? tw : 0) - Math.max(-10, Math.min(10, pose.vx * 0.02))} ${side * R * 0.55} ${-R * 0.6})`}>
           <path
             d={`M ${side * R * 0.92} ${-R * 0.25} Q ${side * R * 0.98} ${-R * 0.95} ${side * R * 0.86} ${-R * 1.22} Q ${side * R * 0.8} ${-R * 1.3} ${side * R * 0.7} ${-R * 1.2} Q ${side * R * 0.45} ${-R * 1.0} ${side * R * 0.15} ${-R * 0.82} Z`}
             fill={`url(#${uid}-fur)`}

@@ -25,14 +25,6 @@ export default async function EpisodePage({ params }: { params: Promise<{ id: st
         Capítulo {ep.number}: {ep.title}
       </h2>
       <EpisodePlayer id={ep.id} />
-      <div className="btns">
-        <a className="btn" href={`/episodes/${ep.id}.mp4`} download>
-          ⬇ Descargar video (MP4 1080p)
-        </a>
-        <a className="btn alt" href={`/episodes/${ep.id}.jpg`} download>
-          🖼 Descargar miniatura
-        </a>
-      </div>
       <h2>▶ Para subir a YouTube</h2>
       <CopyBox label="Título" text={ep.youtube.title} />
       <CopyBox label="Descripción" text={ep.youtube.description} />
