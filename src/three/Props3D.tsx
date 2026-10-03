@@ -38,7 +38,7 @@ const star = (() => {
 })();
 
 /** 3D props, base at the origin. Sizes match the 2D props (100 px = 1 unit). */
-export const Prop3D: React.FC<{ kind: PropKind; t: number }> = ({ kind, t }) => {
+export const Prop3D: React.FC<{ kind: PropKind; t: number; spin?: number }> = ({ kind, t, spin = 0 }) => {
   switch (kind) {
     case 'table':
       return (
@@ -100,7 +100,24 @@ export const Prop3D: React.FC<{ kind: PropKind; t: number }> = ({ kind, t }) => 
         </group>
       );
     case 'ball':
-      return <Sph p={[0, 0.45, 0]} s={0.45} c="#FF6B6B" />;
+      // beach ball: coloured bands make the roll visible
+      return (
+        <group position={[0, 0.5, 0]} rotation={[0, 0, (-spin * Math.PI) / 180]}>
+          <Sph p={[0, 0, 0]} s={0.5} c="#FF6B6B" />
+          <mesh rotation={[0, 0, 0]} castShadow>
+            <torusGeometry args={[0.47, 0.07, 12, 40]} />
+            <M c="#FFFFFF" />
+          </mesh>
+          <mesh rotation={[0, Math.PI / 2, 0]}>
+            <torusGeometry args={[0.47, 0.07, 12, 40]} />
+            <M c="#FFD43B" />
+          </mesh>
+          <mesh rotation={[0, Math.PI / 4, 0]}>
+            <torusGeometry args={[0.47, 0.07, 12, 40]} />
+            <M c="#4DABF7" />
+          </mesh>
+        </group>
+      );
     case 'balloon':
       return (
         <group rotation={[0, 0, Math.sin(t * 1.5) * 0.08]}>

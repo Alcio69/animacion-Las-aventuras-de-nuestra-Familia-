@@ -68,6 +68,8 @@ export type Step =
   | { wait: number }
   | { prop: PropKind; id?: string; x: number; y: number; scale?: number; with?: boolean; delay?: number }
   | { removeProp: string; with?: boolean; delay?: number }
+  /** Move a prop to (x, y) in `dur` seconds; `arc` = jump height in px (a thrown/bouncing ball), `bounces` extra hops. */
+  | { moveProp: string; x: number; y: number; dur?: number; arc?: number; bounces?: number; with?: boolean; delay?: number }
   | { fx: Fx; x: number; y: number; dur?: number; with?: boolean; delay?: number }
   | { sfx: Sfx; with?: boolean; delay?: number }
   | { title: string; dur?: number; with?: boolean; delay?: number };

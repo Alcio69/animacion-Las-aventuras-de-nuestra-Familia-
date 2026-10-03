@@ -19,7 +19,34 @@ export const voiceInfo = (speaker: Speaker, text: string): (VoiceInfo & { key: s
 export type ActEv = { kind: 'act'; who: CharId; action: Action; t0: number; t1: number; to?: number; look?: number; expr?: Expression };
 export type MoodEv = { kind: 'mood'; who: CharId; t0: number; mood: Expression };
 export type LineEv = { kind: 'line'; who: Speaker; text: string; t0: number; t1: number; voiceEnd: number; expr?: Expression; key: string; hasVoice: boolean };
-export type PropEv = { kind: 'prop'; prop: PropKind; id: string; x: number; y: number; scale: number; t0: number; t1: number };
+export type PropMove = { t0: number; t1: number; x: number; y: number; arc: number; bounces: number };
+export type PropEv = { kind: 'prop'; prop: PropKind; id: string; x: number; y: number; scale: number; t0: number; t1: number; moves: PropMove[] };
+
+/** Prop position at time t (px), plus height above its base (lift) and spin angle. */
+export const propAt = (e: PropEv, t: number) => {
+  let x = e.x;
+  let y = e.y;
+  let lift = 0;
+  let spin = 0;
+  for (const m of e.moves) {
+    if (t < m.t0) break;
+    const k = Math.min(1, (t - m.t0) / (m.t1 - m.t0));
+    const e2 = k * k * (3 - 2 * k);
+    const nx = x + (m.x - x) * (m.arc ? k : e2);
+    const ny = y + (m.y - y) * (m.arc ? k : e2);
+    if (k < 1 && m.arc) {
+      // main arc then decaying bounces
+      const hops = 1 + m.bounces;
+      const seg = Math.min(hops - 1, Math.floor(k * hops));
+      const q = k * hops - seg;
+      lift = Math.sin(q * Math.PI) * m.arc * Math.pow(0.45, seg);
+      spin = (nx - x) * 0.8;
+    }
+    x = nx;
+    y = ny;
+  }
+  return { x, y, lift, spin };
+};
 export type FxEv = { kind: 'fx'; fx: Fx; x: number; y: number; t0: number; t1: number };
 export type SfxEv = { kind: 'sfx'; sfx: Sfx; t0: number };
 export type TitleEv = { kind: 'title'; text: string; t0: number; t1: number };
@@ -99,10 +126,14 @@ export const compileScene = (scene: Scene, index: number, start: number): Compil
       for (const who of asList(step.who)) events.push({ kind: 'mood', who, t0, mood: step.mood });
     } else if ('prop' in step) {
       const id = step.id ?? `p${propN++}`;
-      const ev: PropEv = { kind: 'prop', prop: step.prop, id, x: step.x, y: step.y, scale: step.scale ?? 1, t0, t1: Infinity };
+      const ev: PropEv = { kind: 'prop', prop: step.prop, id, x: step.x, y: step.y, scale: step.scale ?? 1, t0, t1: Infinity, moves: [] };
       openProps[id] = ev;
       events.push(ev);
       dur = 0.3;
+    } else if ('moveProp' in step) {
+      const d = step.dur ?? 1;
+      openProps[step.moveProp]?.moves.push({ t0, t1: t0 + d, x: step.x, y: step.y, arc: step.arc ?? 0, bounces: step.bounces ?? 0 });
+      dur = d;
     } else if ('removeProp' in step) {
       if (openProps[step.removeProp]) openProps[step.removeProp].t1 = t0;
       dur = 0.3;

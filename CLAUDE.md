@@ -2,6 +2,7 @@
 
 Serie infantil animada 100% con código: **Remotion** para video, **Next.js** para la web (Vercel importa `main`).
 Dos estilos con el MISMO guion: **3D** (Three.js/@remotion/three, comp `epNN-slug-3d`) y **2.5D** vectorial (SVG, comp `epNN-slug`).
+**El usuario eligió 3D**: renderizar solo 3D (`npm run render -- epNN-slug 3d`). Render 3D ≈ 85 min por minuto de video: lanzarlo con `setsid nohup ... &` (los comandos en background mueren a las 2 h).
 Personajes: `papa` (labrador), `mama` (gata negra), `hijo` (labrador 10), `hija` (gata naranja 7). Idioma: español neutro (tú).
 
 ## Hacer un capítulo nuevo (flujo estándar)
@@ -24,6 +25,9 @@ Duración: 30 s ≈ 6–8 líneas; 2 min ≈ 25–30 líneas. Intro 3.6 s + outr
 - Fx: hearts stars confetti flour sparkle zzz question exclaim sweat. Sfx: pop boing whoosh ding sparkle poof tada drum doorbell giggle.
 - Fondos: living kitchen park(variant 'sunset') bedroom. `point` señala hacia `facing`.
 - Mayúsculas sostenidas se leen bien (el TTS las pasa a minúsculas).
+- Voces: Kokoro offline (`scripts/voices.py`). Evitar onomatopeyas y risas escritas ("Shhh", "Ja, ja"): el TTS las deletrea. Usar palabras ("¡Silencio!") + `sfx: 'giggle'` y `expr: 'laugh'`.
+- Verificar voces con Whisper offline: `python3 scripts/asr.py public/voices/<key>.mp3` (ver scripts/voices.py; modelo sherpa-onnx-whisper-base).
+- Objetos que se mueven: `{ moveProp: 'pelota', x, y, dur, arc, bounces }` (arco = pelota lanzada).
 
 ## Movimiento natural (src/engine/animate.ts)
 `targetPose` = pose deseada (acciones, idle con ruido orgánico, gestos automáticos al hablar, oyentes que asienten).

@@ -11,7 +11,7 @@ import { Logo } from './Logo';
 import { SceneAudio, Subtitle, TitleCard } from './Overlays';
 import { Intro3D, Outro3D, Scene3DView } from '../three/Scene3D';
 import type { Episode } from './script';
-import { FPS, INTRO_SEC, OUTRO_SEC, compileEpisode, type CompiledScene, type LineEv } from './timeline';
+import { FPS, INTRO_SEC, OUTRO_SEC, compileEpisode, propAt, type CompiledScene, type LineEv } from './timeline';
 
 export type EpisodeStyle = '2d' | '3d';
 export type EpisodeProps = { episode: Episode; audio?: boolean; style?: EpisodeStyle };
@@ -105,7 +105,7 @@ export const SceneView: React.FC<{ cs: CompiledScene; audio: boolean }> = ({ cs,
             const pop = Math.min(1, spring({ frame: Math.round((t - e.t0) * FPS), fps: FPS, config: { damping: 9 } }));
             const out = e.t1 - t < 0.25 ? (e.t1 - t) / 0.25 : 1;
             return (
-              <g key={i} transform={`translate(${e.x} ${e.y}) scale(${e.scale * pop * out})`}>
+              <g key={i} transform={`translate(${propAt(e, t).x} ${propAt(e, t).y - propAt(e, t).lift}) rotate(${propAt(e, t).spin}) scale(${e.scale * pop * out})`}>
                 <PropView kind={e.prop} t={t} />
               </g>
             );

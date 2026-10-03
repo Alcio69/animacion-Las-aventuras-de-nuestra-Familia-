@@ -49,7 +49,8 @@ const episode: Episode = {
         { sfx: 'poof', with: true },
         { mood: 'surprised', who: ['papa', 'hijo', 'hija'], with: true },
         { wait: 0.6 },
-        { say: 'hijo', text: '¡Ja, ja! ¡Hay harina por todos lados!', expr: 'laugh', act: 'clap' },
+        { sfx: 'giggle' },
+        { say: 'hijo', text: '¡Mira! ¡Hay harina por todos lados!', expr: 'laugh', act: 'clap' },
         { mood: 'laugh', who: ['papa', 'hija'], with: true },
         { say: 'papa', text: 'No importa. ¡Lo importante es hacerlo juntos!', expr: 'happy', act: 'hug' },
         { title: 'Un ratito después...', dur: 1.8 },
@@ -73,7 +74,7 @@ const episode: Episode = {
       steps: [
         { prop: 'table', id: 'mesa', x: 700, y: 900 },
         { prop: 'cake', id: 'torta', x: 700, y: 742, scale: 0.8, with: true },
-        { say: 'papa', text: '¡Shhh! ¡Ahí viene!', expr: 'excited', act: 'point' },
+        { say: 'papa', text: '¡Silencio, ahí viene mamá!', expr: 'excited', act: 'point' },
         { sfx: 'doorbell' },
         { do: 'walk', who: 'mama', to: 1530 },
         { say: 'hija', text: '¡SORPRESA!', expr: 'excited', act: 'cheer' },

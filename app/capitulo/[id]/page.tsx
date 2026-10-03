@@ -1,3 +1,5 @@
+import fs from 'node:fs';
+import path from 'node:path';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -24,7 +26,7 @@ export default async function EpisodePage({ params }: { params: Promise<{ id: st
       <h2 style={{ marginTop: 0 }}>
         Capítulo {ep.number}: {ep.title}
       </h2>
-      <EpisodePlayer id={ep.id} />
+      <EpisodePlayer id={ep.id} has2d={fs.existsSync(path.join(process.cwd(), 'public', 'episodes', `${ep.id}.mp4`))} />
       <h2>▶ Para subir a YouTube</h2>
       <CopyBox label="Título" text={ep.youtube.title} />
       <CopyBox label="Descripción" text={ep.youtube.description} />

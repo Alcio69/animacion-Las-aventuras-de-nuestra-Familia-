@@ -10,7 +10,7 @@ import { FONT } from '../engine/fonts';
 import { Logo } from '../engine/Logo';
 import { SceneAudio, Subtitle, TitleCard } from '../engine/Overlays';
 import type { Background, Episode } from '../engine/script';
-import { FPS, INTRO_SEC, type CompiledScene, type LineEv } from '../engine/timeline';
+import { FPS, INTRO_SEC, propAt, type CompiledScene, type LineEv } from '../engine/timeline';
 import { FxView } from '../props/Props';
 import { Character3D } from './Character3D';
 import { Lights3D } from './Lights3D';
@@ -23,7 +23,7 @@ export const toX = (x: number) => (x - 960) / 100;
 export const toZ = (y: number) => (y - 930) / 60;
 const TABLE_TOP = 1.61;
 const propPos = (bg: Background, x: number, y: number): [number, number, number] => {
-  if (y >= 880) return [toX(x), 0, -0.9];
+  if (y >= 880) return [toX(x), 0, toZ(y) - 0.5];
   if (bg === 'kitchen' && y < 700) return [toX(x), COUNTER_TOP, COUNTER_Z];
   return [toX(x), TABLE_TOP, -0.9];
 };
@@ -87,9 +87,11 @@ export const Scene3DView: React.FC<{ cs: CompiledScene; audio: boolean }> = ({ c
           if (e.kind !== 'prop' || t < e.t0 || t > e.t1) return null;
           const pop = Math.min(1.08, spring({ frame: Math.round((t - e.t0) * FPS), fps: FPS, config: { damping: 9 } }));
           const out = e.t1 - t < 0.25 ? (e.t1 - t) / 0.25 : 1;
+          const pa = propAt(e, t);
+          const pos = propPos(sc.bg, pa.x, pa.y);
           return (
-            <group key={i} position={propPos(sc.bg, e.x, e.y)} scale={Math.max(0.001, e.scale * pop * out)}>
-              <Prop3D kind={e.prop} t={t} />
+            <group key={i} position={[pos[0], pos[1] + pa.lift / 100, pos[2]]} scale={Math.max(0.001, e.scale * pop * out)}>
+              <Prop3D kind={e.prop} t={t} spin={pa.spin} />
             </group>
           );
         })}

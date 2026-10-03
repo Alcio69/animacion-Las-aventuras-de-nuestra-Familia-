@@ -12,7 +12,7 @@ const STYLES: { id: EpisodeStyle; label: string }[] = [
 ];
 
 /** Live in-browser playback of a chapter (same code that renders the MP4), with a style switch. */
-export default function EpisodePlayer({ id }: { id: string }) {
+export default function EpisodePlayer({ id, has2d = true }: { id: string; has2d?: boolean }) {
   const episode = getEpisode(id)!;
   const { totalFrames } = compileEpisode(episode);
   const [style, setStyle] = useState<EpisodeStyle>('3d');
@@ -20,7 +20,7 @@ export default function EpisodePlayer({ id }: { id: string }) {
   return (
     <div>
       <div className="tabs">
-        {STYLES.map((s) => (
+        {STYLES.filter((s) => has2d || s.id === '3d').map((s) => (
           <button key={s.id} className={`tab ${style === s.id ? 'on' : ''}`} onClick={() => setStyle(s.id)}>
             {s.label}
           </button>
