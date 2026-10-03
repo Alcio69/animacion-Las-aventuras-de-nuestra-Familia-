@@ -263,4 +263,52 @@ sfx('sfx-doorbell', 1.6, (L, R) => {
 sfx('sfx-giggle', 0.9, (L, R) => {
   for (let k = 0; k < 5; k++) sweep(L, R, 700 - k * 30, 900 - k * 30, 0.09, 0.4, 'sine', k * 0.15);
 });
+sfx('sfx-thunder', 3.5, (L, R) => {
+  // crack + long rolling rumble (low-passed noise with slow wobble)
+  let lp = 0;
+  let lp2 = 0;
+  for (let i = 0; i < 3.4 * SR; i++) {
+    const tt = i / SR;
+    const w = rnd() * 2 - 1;
+    lp += 0.02 * (w - lp);
+    lp2 += 0.2 * (w - lp2);
+    const crack = tt < 0.25 ? lp2 * Math.exp(-tt * 14) * 1.2 : 0;
+    const roll = lp * (1 + 0.6 * Math.sin(tt * 9) * Math.sin(tt * 2.3)) * Math.min(1, tt * 8) * Math.exp(-tt * 0.9) * 5;
+    L[i] += crack + roll;
+    R[i] += crack * 0.8 + roll * 1.05;
+  }
+});
+// ambience: steady rain (soft noise bed + random droplets), seamless loop
+{
+  const dur = 12;
+  const L = new Float32Array(dur * SR);
+  const R = new Float32Array(L.length);
+  let a = 0;
+  let b = 0;
+  for (let i = 0; i < L.length; i++) {
+    const w1 = rnd() * 2 - 1;
+    const w2 = rnd() * 2 - 1;
+    a += 0.35 * (w1 - a);
+    b += 0.35 * (w2 - b);
+    L[i] += a * 0.25;
+    R[i] += b * 0.25;
+  }
+  for (let k = 0; k < 900; k++) {
+    const s0 = Math.floor(rnd() * (L.length - 2000));
+    const f = 2500 + rnd() * 4000;
+    const v = 0.05 + rnd() * 0.12;
+    const pan = rnd();
+    for (let i = 0; i < 1500; i++) {
+      const d = Math.sin((2 * Math.PI * f * i) / SR) * Math.exp(-i / 180) * v;
+      L[s0 + i] += d * (1 - pan);
+      R[s0 + i] += d * pan;
+    }
+  }
+  const fade = SR;
+  for (let i = 0; i < fade; i++) {
+    L[i] = L[i] * (i / fade) + L[L.length - fade + i] * (1 - i / fade);
+    R[i] = R[i] * (i / fade) + R[R.length - fade + i] * (1 - i / fade);
+  }
+  writeMp3('amb-rain', L.subarray(0, L.length - fade), R.subarray(0, R.length - fade));
+}
 console.log('audio ok');

@@ -22,8 +22,9 @@ Duración: 30 s ≈ 6–8 líneas; 2 min ≈ 25–30 líneas. Intro 3.6 s + outr
 - Acciones: walk run jump wave cheer dance clap think point shrug hug hips nod shake tremble sneeze turn look hide show.
 - Expresiones: neutral happy laugh excited surprised sad angry worried wink love sleepy proud.
 - Props: table cake bowl flour ball balloon gift book star heart cookie plant (mesada de cocina y=562).
-- Fx: hearts stars confetti flour sparkle zzz question exclaim sweat. Sfx: pop boing whoosh ding sparkle poof tada drum doorbell giggle.
-- Fondos: living kitchen park(variant 'sunset') bedroom. `point` señala hacia `facing`.
+- Fx: hearts stars confetti flour sparkle zzz question exclaim sweat. Sfx: pop boing whoosh ding sparkle poof tada drum doorbell giggle thunder.
+- Fondos: living (variant 'rain' | 'rainbow') kitchen park(variant 'sunset') bedroom. `point` señala hacia `facing`.
+- Lluvia: `variant: 'rain', ambience: 'rain'` en la escena; `{ sfx: 'thunder' }` hace relámpago + trueno.
 - Mayúsculas sostenidas se leen bien (el TTS las pasa a minúsculas).
 - Voces: Kokoro offline (`scripts/voices.py`). Evitar onomatopeyas y risas escritas ("Shhh", "Ja, ja"): el TTS las deletrea. Usar palabras ("¡Silencio!") + `sfx: 'giggle'` y `expr: 'laugh'`.
 - Verificar voces con Whisper offline: `python3 scripts/asr.py public/voices/<key>.mp3` (ver scripts/voices.py; modelo sherpa-onnx-whisper-base).

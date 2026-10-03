@@ -118,7 +118,7 @@ const Cyl: React.FC<{ p: V3; r: number; r2?: number; h: number; c: string; rot?:
   </mesh>
 );
 
-const Cloud3D: React.FC<{ p: V3; s?: number }> = ({ p, s = 1 }) => (
+const Cloud3D: React.FC<{ p: V3; s?: number; c?: string }> = ({ p, s = 1, c = '#FFFFFF' }) => (
   <group position={p} scale={s}>
     {[
       [0, 0, 0, 1],
@@ -128,21 +128,47 @@ const Cloud3D: React.FC<{ p: V3; s?: number }> = ({ p, s = 1 }) => (
     ].map(([x, y, z, r], i) => (
       <mesh key={i} position={[x, y, z]} scale={[r, r * 0.8, r * 0.6]}>
         <sphereGeometry args={[1, 20, 14]} />
-        <meshStandardMaterial color="#FFFFFF" emissive="#FFFFFF" emissiveIntensity={0.35} roughness={1} />
+        <meshStandardMaterial color={c} emissive={c} emissiveIntensity={0.35} roughness={1} />
       </mesh>
     ))}
   </group>
 );
 
-const Window3D: React.FC<{ p: V3; w: number; h: number; t: number; night?: boolean; curtain?: string }> = ({ p, w, h, t, night, curtain }) => {
-  const skyT = useMemo(() => sky(night ? '#1B2550' : '#6CBDF2', night ? '#3B3F7A' : '#D3EEFF', night ? 'skyN' : 'skyD'), [night]);
+export type Weather = 'rain' | 'rainbow' | undefined;
+const RAINBOW = ['#FF6B6B', '#FFA94D', '#FFD43B', '#69DB7C', '#4DABF7', '#9775FA'];
+
+const Window3D: React.FC<{ p: V3; w: number; h: number; t: number; night?: boolean; curtain?: string; weather?: Weather }> = ({ p, w, h, t, night, curtain, weather }) => {
+  const rain = weather === 'rain';
+  const skyT = useMemo(
+    () => (rain ? sky('#6E7C96', '#AEB9CB', 'skyR') : sky(night ? '#1B2550' : '#6CBDF2', night ? '#3B3F7A' : '#D3EEFF', night ? 'skyN' : 'skyD')),
+    [night, rain],
+  );
   return (
     <group position={p}>
       <mesh position={[0, 0, -0.05]}>
         <planeGeometry args={[w, h]} />
         <meshBasicMaterial map={skyT} />
       </mesh>
-      {night ? (
+      {rain ? (
+        <>
+          <Cloud3D p={[(((t * 0.05 + 0.2) % 1.4) - 0.7) * w, h * 0.25, -0.03]} s={0.45} c="#8C96A8" />
+          <Cloud3D p={[(((t * 0.04 + 0.8) % 1.4) - 0.7) * w, h * 0.12, -0.035]} s={0.38} c="#7A8497" />
+          {/* raindrops: thin streaks falling diagonally behind the glass */}
+          {Array.from({ length: 46 }).map((_, i) => {
+            const fall = (t * (5.5 + rnd(i) * 2) + rnd(i + 7) * h) % h;
+            return (
+              <mesh key={i} position={[(rnd(i + 2) - 0.5) * w * 0.95 - fall * 0.08, h / 2 - fall, -0.025]} rotation={[0, 0, 0.08]}>
+                <planeGeometry args={[0.025, 0.28]} />
+                <meshBasicMaterial color="#E7F1FF" transparent opacity={0.75} />
+              </mesh>
+            );
+          })}
+          <mesh position={[0, -h * 0.42, -0.04]} scale={[w * 0.7, h * 0.2, 0.05]}>
+            <sphereGeometry args={[1, 24, 12]} />
+            <meshBasicMaterial color="#6E9A5C" />
+          </mesh>
+        </>
+      ) : night ? (
         <>
           <Sph p={[w * 0.22, h * 0.2, -0.02]} s={0.42} c="#FFF4C2" e={1.2} />
           {Array.from({ length: 10 }).map((_, i) => (
@@ -151,6 +177,13 @@ const Window3D: React.FC<{ p: V3; w: number; h: number; t: number; night?: boole
         </>
       ) : (
         <>
+          {weather === 'rainbow' &&
+            RAINBOW.map((c, i) => (
+              <mesh key={c} position={[0, -h * 0.45, -0.045]} scale={[1, 0.85, 1]}>
+                <torusGeometry args={[w * 0.42 - i * 0.075, 0.04, 8, 48, Math.PI]} />
+                <meshBasicMaterial color={c} />
+              </mesh>
+            ))}
           <Cloud3D p={[(((t * 0.12 + 0.3) % 1.4) - 0.7) * w, h * 0.18, -0.03]} s={0.32} />
           <Cloud3D p={[(((t * 0.07 + 0.9) % 1.4) - 0.7) * w, -h * 0.05, -0.03]} s={0.22} />
           <mesh position={[0, -h * 0.42, -0.04]} scale={[w * 0.7, h * 0.2, 0.05]}>
@@ -221,7 +254,7 @@ const Room: React.FC<{ wall: THREE.Texture; floor: THREE.Texture; wallTint?: str
   </>
 );
 
-const Living3D: React.FC<{ t: number }> = ({ t }) => {
+const Living3D: React.FC<{ t: number; weather?: Weather }> = ({ t, weather }) => {
   const wall = useMemo(() => dotsWall('#FFEBD4', '#F3C9A0'), []);
   const floor = useMemo(() => wood('#DDA16B', '#CF915C'), []);
   return (
@@ -231,7 +264,7 @@ const Living3D: React.FC<{ t: number }> = ({ t }) => {
       <Box a={[44, 2.2, 0.15]} p={[0, 1.1, WALL + 0.08]} c="#F3CDA3" r={0.02} />
       <Box a={[44, 0.14, 0.25]} p={[0, 2.22, WALL + 0.12]} c="#E9BC8E" r={0.02} />
       <Box a={[44, 0.25, 0.2]} p={[0, 0.12, WALL + 0.14]} c="#E2B386" r={0.02} />
-      <Window3D p={[-6.2, 5.1, WALL + 0.1]} w={3.6} h={3.3} t={t} curtain="#C9A7E8" />
+      <Window3D p={[-6.2, 5.1, WALL + 0.1]} w={3.6} h={3.3} t={t} curtain="#C9A7E8" weather={weather} />
       <Frame3D p={[-1.6, 6.1, WALL + 0.1]} w={1.5} h={1.2} c="#BDE0FE">
         <Sph p={[0, 0, 0]} s={[0.32, 0.32, 0.05]} c="#FFD166" />
       </Frame3D>
@@ -432,6 +465,6 @@ export const Set3D: React.FC<{ bg: Background; variant?: string; t: number }> = 
     case 'bedroom':
       return <Bedroom3D t={t} />;
     default:
-      return <Living3D t={t} />;
+      return <Living3D t={t} weather={variant === 'rain' || variant === 'rainbow' ? variant : undefined} />;
   }
 };

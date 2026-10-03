@@ -76,12 +76,18 @@ export const Scene3DView: React.FC<{ cs: CompiledScene; audio: boolean }> = ({ c
   const line = cs.events.find((e): e is LineEv => e.kind === 'line' && e.t0 <= t && t < e.t1);
   const title = cs.events.find((e) => e.kind === 'title' && e.t0 <= t && t < e.t1);
   const night = sc.bg === 'bedroom';
+  // lightning: a quick double flash when a thunder sfx plays
+  const flash = cs.events.reduce((m, e) => {
+    if (e.kind !== 'sfx' || e.sfx !== 'thunder') return m;
+    const d = t - e.t0;
+    return d < 0 || d > 0.5 ? m : Math.max(m, Math.max(0, 1 - d / 0.12), d > 0.18 ? Math.max(0, 0.7 - (d - 0.18) / 0.15) : 0);
+  }, 0);
 
   return (
     <AbsoluteFill style={{ clipPath: `circle(${irisR}% at 50% 50%)`, background: night ? '#2A2560' : '#FCE9D2' }}>
       <Canvas3D>
         <CameraRig x={camX} dist={dist} />
-        <Lights3D night={night} target={[camX, 2.5, 0]} />
+        <Lights3D night={night} target={[camX, 2.5, 0]} dim={sc.variant === 'rain' ? 1 : 0} flash={flash} />
         <Set3D bg={sc.bg} variant={sc.variant} t={t + cs.start} />
         {cs.events.map((e, i) => {
           if (e.kind !== 'prop' || t < e.t0 || t > e.t1) return null;
@@ -120,6 +126,7 @@ export const Scene3DView: React.FC<{ cs: CompiledScene; audio: boolean }> = ({ c
             })}
           </g>
           <rect width={1920} height={1080} fill="url(#vig3)" />
+          {flash > 0 && <rect width={1920} height={1080} fill="#F3F6FF" opacity={flash * 0.35} />}
           {title && title.kind === 'title' && <TitleCard text={title.text} k={(t - title.t0) / (title.t1 - title.t0)} />}
         </svg>
       </AbsoluteFill>
@@ -240,8 +247,8 @@ export const Thumbnail3D: React.FC<{ episode: Episode }> = ({ episode }) => {
     <AbsoluteFill style={{ background: '#FCE9D2' }}>
       <Canvas3D>
         <CameraRig x={0} dist={12.5} y={4.2} lookY={3.4} />
-        <Lights3D target={[0, 2.5, 0]} />
-        <Set3D bg={bg} t={0} />
+        <Lights3D target={[0, 2.5, 0]} dim={th.variant === 'rain' ? 0.6 : 0} />
+        <Set3D bg={bg} variant={th.variant} t={0.7} />
         {th.prop && (
           <group position={bg === 'kitchen' ? [0, COUNTER_TOP, COUNTER_Z] : [0, 0, -1]} scale={1.2}>
             <Prop3D kind={th.prop} t={0} />

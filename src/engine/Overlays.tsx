@@ -8,6 +8,7 @@ import { FPS, type CompiledScene, type LineEv } from './timeline';
 /** Layers shared by the 2D and 3D versions: subtitles, title cards and per-scene audio. */
 export const SceneAudio: React.FC<{ cs: CompiledScene }> = ({ cs }) => (
   <>
+    {cs.scene.ambience && <Html5Audio src={staticFile(`audio/amb-${cs.scene.ambience}.mp3`)} loop volume={0.35} />}
     {cs.events.map((e, i) => {
           if (e.kind === 'line' && e.hasVoice)
             return (

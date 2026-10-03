@@ -36,7 +36,7 @@ export type Action =
 
 export type PropKind = 'table' | 'cake' | 'bowl' | 'flour' | 'ball' | 'balloon' | 'gift' | 'book' | 'star' | 'heart' | 'cookie' | 'plant';
 export type Fx = 'hearts' | 'stars' | 'confetti' | 'flour' | 'sparkle' | 'zzz' | 'question' | 'exclaim' | 'sweat';
-export type Sfx = 'pop' | 'boing' | 'whoosh' | 'ding' | 'sparkle' | 'poof' | 'tada' | 'drum' | 'doorbell' | 'giggle';
+export type Sfx = 'pop' | 'boing' | 'whoosh' | 'ding' | 'sparkle' | 'poof' | 'tada' | 'drum' | 'doorbell' | 'giggle' | 'thunder';
 
 export type Step =
   | {
@@ -86,7 +86,7 @@ export type CastEntry = {
 
 export type Scene = {
   bg: Background;
-  /** Background variant, e.g. time of day for park: 'day' | 'sunset' | 'night'. */
+  /** Background variant: park 'sunset'; living 'rain' | 'rainbow'. */
   variant?: string;
   cast: Partial<Record<CharId, CastEntry>>;
   steps: Step[];
@@ -94,6 +94,8 @@ export type Scene = {
   zoom?: [number, number];
   /** Camera focus x at start and end (default center 960). */
   focus?: [number, number];
+  /** Looping background sound for the whole scene. */
+  ambience?: 'rain';
   /** Extra seconds at the end of the scene (default 0.8). */
   tail?: number;
 };
@@ -107,7 +109,7 @@ export type Episode = {
   scenes: Scene[];
   music?: 'happy' | 'calm' | 'adventure';
   /** YouTube thumbnail (1280x720). Big short text sells clicks: 2-4 words. */
-  thumb?: { bg?: Background; text?: string; prop?: PropKind; exprs?: Partial<Record<CharId, Expression>> };
+  thumb?: { bg?: Background; variant?: string; text?: string; prop?: PropKind; exprs?: Partial<Record<CharId, Expression>> };
   youtube: {
     title: string;
     description: string;
