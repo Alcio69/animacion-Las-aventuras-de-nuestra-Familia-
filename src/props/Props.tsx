@@ -87,6 +87,29 @@ export const PropView: React.FC<{ kind: PropKind; t: number }> = ({ kind, t }) =
           <path d="M 0 0 L 80 -10 L 80 -70 L 0 -60 Z" fill="#A5D8FF" stroke="#1C7ED6" strokeWidth={4} />
         </g>
       );
+    case 'plate':
+      return (
+        <g>
+          <ellipse cx={0} cy={-8} rx={95} ry={22} fill="#FFFFFF" stroke="#CED4DA" strokeWidth={4} />
+          {[-35, 0, 35].map((x, i) => (
+            <g key={x} transform={`translate(${x} ${-22 - (i === 1 ? 6 : 0)})`}>
+              <rect x={-5} y={-4} width={10} height={16} fill="#A9D18E" />
+              <circle cx={-10} cy={-10} r={12} fill="#2F9E44" />
+              <circle cx={10} cy={-10} r={12} fill="#37B24D" />
+              <circle cx={0} cy={-20} r={13} fill="#40C057" />
+            </g>
+          ))}
+        </g>
+      );
+    case 'broccoli':
+      return (
+        <g transform="translate(0 -20)">
+          <rect x={-6} y={-4} width={12} height={22} rx={4} fill="#A9D18E" />
+          <circle cx={-12} cy={-10} r={14} fill="#2F9E44" />
+          <circle cx={12} cy={-10} r={14} fill="#37B24D" />
+          <circle cx={0} cy={-22} r={15} fill="#40C057" />
+        </g>
+      );
     case 'cookie':
       return (
         <g transform="translate(0 -30)">

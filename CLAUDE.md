@@ -21,7 +21,8 @@ Duración: 30 s ≈ 6–8 líneas; 2 min ≈ 25–30 líneas. Intro 3.6 s + outr
 - Piso y=930, x de 0 a 1920; fuera de cámara: -250 / 2250. Separar personajes ≥250 px.
 - Acciones: walk run jump wave cheer dance clap think point shrug hug hips nod shake tremble sneeze turn look hide show.
 - Expresiones: neutral happy laugh excited surprised sad angry worried wink love sleepy proud.
-- Props: table cake bowl flour ball balloon gift book star heart cookie plant (mesada de cocina y=562).
+- Props: table cake bowl flour ball balloon gift book star heart cookie plant plate broccoli (mesada de cocina y=562; sobre la mesa y=760).
+- Encuadre 3D: mantener a los personajes entre x≈400 y x≈1550 (la cámara se mueve un poco y corta los bordes).
 - Fx: hearts stars confetti flour sparkle zzz question exclaim sweat. Sfx: pop boing whoosh ding sparkle poof tada drum doorbell giggle thunder.
 - Fondos: living (variant 'rain' | 'rainbow') kitchen park(variant 'sunset') bedroom. `point` señala hacia `facing`.
 - Lluvia: `variant: 'rain', ambience: 'rain'` en la escena; `{ sfx: 'thunder' }` hace relámpago + trueno.

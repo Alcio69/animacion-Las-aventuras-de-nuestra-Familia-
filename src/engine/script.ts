@@ -34,7 +34,7 @@ export type Action =
   | 'hide'
   | 'show';
 
-export type PropKind = 'table' | 'cake' | 'bowl' | 'flour' | 'ball' | 'balloon' | 'gift' | 'book' | 'star' | 'heart' | 'cookie' | 'plant';
+export type PropKind = 'table' | 'cake' | 'bowl' | 'flour' | 'ball' | 'balloon' | 'gift' | 'book' | 'star' | 'heart' | 'cookie' | 'plant' | 'plate' | 'broccoli';
 export type Fx = 'hearts' | 'stars' | 'confetti' | 'flour' | 'sparkle' | 'zzz' | 'question' | 'exclaim' | 'sweat';
 export type Sfx = 'pop' | 'boing' | 'whoosh' | 'ding' | 'sparkle' | 'poof' | 'tada' | 'drum' | 'doorbell' | 'giggle' | 'thunder';
 

@@ -37,6 +37,22 @@ const star = (() => {
   return new THREE.ExtrudeGeometry(sh, { depth: 0.25, bevelEnabled: true, bevelSize: 0.08, bevelThickness: 0.08, bevelSegments: 2 });
 })();
 
+/** One broccoli "little tree": pale stem + bumpy green crown. */
+const Broccoli3D: React.FC = () => (
+  <group>
+    <Cyl p={[0, 0.14, 0]} r={0.07} r2={0.1} h={0.28} c="#B5D99C" />
+    {[
+      [0, 0.38, 0, 0.17],
+      [-0.13, 0.33, 0.05, 0.13],
+      [0.13, 0.33, -0.03, 0.13],
+      [0.02, 0.32, 0.13, 0.12],
+      [-0.03, 0.31, -0.13, 0.12],
+    ].map(([x, y, z, r], i) => (
+      <Sph key={i} p={[x, y, z]} s={r} c={i % 2 ? '#2F9E44' : '#37B24D'} />
+    ))}
+  </group>
+);
+
 /** 3D props, base at the origin. Sizes match the 2D props (100 px = 1 unit). */
 export const Prop3D: React.FC<{ kind: PropKind; t: number; spin?: number }> = ({ kind, t, spin = 0 }) => {
   switch (kind) {
@@ -146,6 +162,32 @@ export const Prop3D: React.FC<{ kind: PropKind; t: number; spin?: number }> = ({
         <RoundedBox args={[1.4, 0.25, 1.0]} radius={0.04} position={[0, 0.13, 0]} castShadow>
           <M c="#74C0FC" />
         </RoundedBox>
+      );
+    case 'plate':
+      return (
+        <group>
+          <Cyl p={[0, 0.04, 0]} r={0.95} r2={0.8} h={0.08} c="#FFFFFF" />
+          <mesh position={[0, 0.085, 0]} rotation={[-Math.PI / 2, 0, 0]}>
+            <ringGeometry args={[0.7, 0.88, 48]} />
+            <meshStandardMaterial color="#74C0FC" />
+          </mesh>
+          {[
+            [-0.35, 0.1],
+            [0.05, -0.15],
+            [0.38, 0.12],
+            [0.0, 0.3],
+          ].map(([x, z], i) => (
+            <group key={i} position={[x, 0.1, z]} rotation={[0, i * 1.3, 0.15 * (i - 1.5)]} scale={0.85}>
+              <Broccoli3D />
+            </group>
+          ))}
+        </group>
+      );
+    case 'broccoli':
+      return (
+        <group scale={1.1}>
+          <Broccoli3D />
+        </group>
       );
     case 'cookie':
       return <Cyl p={[0, 0.06, 0]} r={0.32} h={0.1} c="#E8B26A" />;
