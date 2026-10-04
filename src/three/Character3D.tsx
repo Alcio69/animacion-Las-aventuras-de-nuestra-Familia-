@@ -421,6 +421,27 @@ const Head3D: React.FC<{ d: Design; m: M; pose: Pose; R: number }> = ({ d, m, po
         );
       })}
       <Mouth3D m={m} pose={pose} R={R} cat={cat} />
+      {d.extras.includes('glasses') && (
+        <group>
+          {[-1, 1].map((sd) => (
+            <mesh key={sd} position={[sd * eyeX, eyeY, eyeZ + er * 0.75]} material={m.ink}>
+              <torusGeometry args={[er * 1.28, er * 0.1, 10, 36]} />
+            </mesh>
+          ))}
+          <mesh position={[0, eyeY + er * 0.15, eyeZ + er * 0.95]} rotation={[0, 0, Math.PI / 2]} material={m.ink}>
+            <cylinderGeometry args={[er * 0.08, er * 0.08, eyeX * 2 - er * 2.5, 8]} />
+          </mesh>
+        </group>
+      )}
+      {d.id === 'dentista' && (
+        // schnauzer beard + bushy brows
+        <group>
+          <Ball p={[0, -R * 0.58, R * 0.5]} s={[R * 0.46, R * 0.3, R * 0.4]} m={m.furLight} />
+          {[-1, 1].map((sd) => (
+            <Ball key={sd} p={[sd * eyeX, eyeY + er * 1.55, eyeZ + er * 0.25]} s={[er * 0.9, er * 0.35, er * 0.45]} m={m.furLight} />
+          ))}
+        </group>
+      )}
 
       {d.extras.includes('bow') && (
         <group position={[R * 0.48, R * 0.86, R * 0.25]} rotation={[0.3, 0, -0.35]}>

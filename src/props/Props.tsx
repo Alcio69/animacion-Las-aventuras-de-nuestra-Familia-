@@ -110,6 +110,32 @@ export const PropView: React.FC<{ kind: PropKind; t: number }> = ({ kind, t }) =
           <circle cx={0} cy={-22} r={15} fill="#40C057" />
         </g>
       );
+    case 'teddy':
+      return (
+        <g fill="#B07A4F">
+          <ellipse cx={0} cy={-40} rx={38} ry={40} />
+          <circle cx={0} cy={-100} r={32} />
+          <circle cx={-26} cy={-126} r={12} />
+          <circle cx={26} cy={-126} r={12} />
+          <ellipse cx={0} cy={-92} rx={13} ry={9} fill="#E8C9A0" />
+          <circle cx={-11} cy={-108} r={4} fill="#1A1A1A" />
+          <circle cx={11} cy={-108} r={4} fill="#1A1A1A" />
+        </g>
+      );
+    case 'flashlight':
+      return (
+        <g transform="translate(0 -40) rotate(-30)">
+          <rect x={-10} y={-35} width={20} height={70} rx={6} fill="#FFD43B" stroke="#E8A500" strokeWidth={3} />
+          <path d="M -14 -35 L 14 -35 L 120 -260 L -120 -260 Z" fill="#FFF3BF" opacity={0.3} />
+        </g>
+      );
+    case 'toothbrush':
+      return (
+        <g transform="translate(0 -60) rotate(20)">
+          <rect x={-6} y={-50} width={12} height={100} rx={5} fill="#4DABF7" />
+          <rect x={-8} y={-74} width={16} height={26} rx={3} fill="#FFFFFF" stroke="#CED4DA" strokeWidth={2} />
+        </g>
+      );
     case 'cookie':
       return (
         <g transform="translate(0 -30)">

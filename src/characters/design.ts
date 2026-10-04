@@ -28,10 +28,37 @@ export type Design = {
   bottom: { base: string; dark: string; kind: 'jeans' | 'shorts' | 'overall-shorts' };
   shoes: { base: string; dark: string; sole: string };
   accent: string; // UI color for name tags / subtitles
-  extras: Array<'backpack' | 'bow' | 'blush'>;
+  extras: Array<'backpack' | 'bow' | 'blush' | 'glasses'>;
 };
 
 export const DESIGNS: Record<CharId, Design> = {
+  // Guest: the family dentist, a friendly grey schnauzer in a white coat.
+  dentista: {
+    id: 'dentista',
+    name: 'Dentista',
+    species: 'dog',
+    age: 45,
+    headR: 94,
+    eyeScale: 0.95,
+    torsoH: 178,
+    torsoTop: 128,
+    torsoBottom: 124,
+    legH: 150,
+    legW: 48,
+    armLen: 166,
+    armW: 38,
+    fur: { base: '#A9A6A2', light: '#D2CFCA', dark: '#77736E', muzzle: '#EEEBE6', ear: '#8D8984' },
+    iris: '#5B7A99',
+    irisDark: '#26394D',
+    lashes: false,
+    outfit: 'jacket',
+    top: { base: '#F8F9FA', dark: '#CED4DA', light: '#FFFFFF' },
+    inner: '#8CE0D2',
+    bottom: { base: '#63C7B8', dark: '#3FA394', kind: 'jeans' },
+    shoes: { base: '#F5F2EA', dark: '#5F6670', sole: '#E2DCCD' },
+    accent: '#12B886',
+    extras: ['glasses'],
+  },
   papa: {
     id: 'papa',
     name: 'Papá',

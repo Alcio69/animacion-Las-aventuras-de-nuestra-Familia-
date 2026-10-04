@@ -189,6 +189,47 @@ export const Prop3D: React.FC<{ kind: PropKind; t: number; spin?: number }> = ({
           <Broccoli3D />
         </group>
       );
+    case 'teddy':
+      return (
+        <group scale={0.9}>
+          <Sph p={[0, 0.45, 0]} s={[0.42, 0.45, 0.36]} c="#B07A4F" />
+          <Sph p={[0, 1.05, 0]} s={0.34} c="#B07A4F" />
+          <Sph p={[0, 0.97, 0.28]} s={[0.15, 0.11, 0.1]} c="#E8C9A0" />
+          <Sph p={[0, 1.02, 0.36]} s={0.05} c="#3B2A1A" />
+          {[-1, 1].map((sd) => (
+            <group key={sd}>
+              <Sph p={[sd * 0.27, 1.32, 0]} s={0.13} c="#B07A4F" />
+              <Sph p={[sd * 0.12, 1.12, 0.29]} s={0.04} c="#1A1A1A" />
+              <Sph p={[sd * 0.42, 0.55, 0.05]} s={[0.13, 0.22, 0.13]} c="#B07A4F" />
+              <Sph p={[sd * 0.22, 0.1, 0.12]} s={[0.15, 0.12, 0.2]} c="#B07A4F" />
+            </group>
+          ))}
+          <Sph p={[0, 0.78, 0.3]} s={[0.12, 0.06, 0.05]} c="#F06595" />
+        </group>
+      );
+    case 'flashlight':
+      return (
+        <group position={[0, 0.6, 0]} rotation={[0, 0, -0.5]}>
+          <Cyl p={[0, 0, 0]} r={0.11} h={0.7} c="#FFD43B" />
+          <Cyl p={[0, 0.42, 0]} r={0.17} r2={0.12} h={0.16} c="#FCC419" />
+          <Cyl p={[0, 0.51, 0]} r={0.16} h={0.02} c="#FFF9DB" e={2} />
+          <mesh position={[0, 1.6, 0]}>
+            <coneGeometry args={[0.8, 2.2, 24, 1, true]} />
+            <meshBasicMaterial color="#FFF3BF" transparent opacity={0.22} depthWrite={false} side={THREE.DoubleSide} />
+          </mesh>
+        </group>
+      );
+    case 'toothbrush':
+      return (
+        <group position={[0, 0.7, 0]} rotation={[0, 0, 0.3]}>
+          <RoundedBox args={[0.12, 1.1, 0.1]} radius={0.04}>
+            <M c="#4DABF7" />
+          </RoundedBox>
+          <RoundedBox args={[0.14, 0.26, 0.16]} radius={0.03} position={[0, 0.62, 0.08]}>
+            <M c="#FFFFFF" />
+          </RoundedBox>
+        </group>
+      );
     case 'cookie':
       return <Cyl p={[0, 0.06, 0]} r={0.32} h={0.1} c="#E8B26A" />;
     case 'star':

@@ -456,8 +456,69 @@ const Bedroom3D: React.FC<{ t: number }> = ({ t }) => {
   );
 };
 
+const Dentist3D: React.FC<{ t: number }> = ({ t }) => {
+  const wall = useMemo(() => tiles('#E7F5FF', '#DCEEFB', 'dtwall', [12, 5]), []);
+  const floor = useMemo(() => tiles('#F8F9FA', '#E9ECEF', 'dtfloor', [14, 5]), []);
+  return (
+    <group>
+      <Room wall={wall} floor={floor} />
+      <Box a={[44, 1.6, 0.15]} p={[0, 0.8, WALL + 0.08]} c="#A5D8FF" r={0.02} />
+      <Window3D p={[6.4, 5.4, WALL + 0.1]} w={3.2} h={2.8} t={t} curtain="#96F2D7" />
+      {/* tooth poster */}
+      <Frame3D p={[-6.6, 5.6, WALL + 0.1]} w={1.9} h={2.3} c="#C3FAE8">
+        <Sph p={[0, 0.25, 0]} s={[0.5, 0.42, 0.12]} c="#FFFFFF" />
+        <Sph p={[-0.22, -0.25, 0]} s={[0.18, 0.4, 0.1]} c="#FFFFFF" />
+        <Sph p={[0.22, -0.25, 0]} s={[0.18, 0.4, 0.1]} c="#FFFFFF" />
+        <Sph p={[-0.15, 0.32, 0.1]} s={0.05} c="#343A40" />
+        <Sph p={[0.15, 0.32, 0.1]} s={0.05} c="#343A40" />
+        <mesh position={[0, 0.16, 0.11]} rotation={[0, 0, Math.PI]}>
+          <torusGeometry args={[0.12, 0.025, 8, 20, Math.PI]} />
+          {std('#343A40')}
+        </mesh>
+      </Frame3D>
+      <Frame3D p={[-3.9, 6.0, WALL + 0.1]} w={1.3} h={1.0} c="#FFE3E3">
+        <Sph p={[0, 0, 0]} s={[0.3, 0.3, 0.05]} c="#FFD43B" />
+      </Frame3D>
+      {/* dentist chair */}
+      <group position={[-2.6, 0, WALL + 2.4]} rotation={[0, 0.35, 0]}>
+        <Cyl p={[0, 0.1, 0]} r={0.9} h={0.2} c="#ADB5BD" />
+        <Cyl p={[0, 0.7, 0]} r={0.22} h={1.1} c="#CED4DA" />
+        <Box a={[1.6, 0.45, 2.2]} p={[0, 1.4, 0.2]} c="#4DABF7" r={0.2} />
+        <Box a={[1.5, 2.2, 0.45]} p={[0, 2.5, -0.95]} c="#4DABF7" r={0.2} rot={[-0.35, 0, 0]} />
+        <Box a={[0.9, 0.5, 0.4]} p={[0, 3.75, -1.35]} c="#74C0FC" r={0.18} rot={[-0.35, 0, 0]} />
+        <Box a={[1.4, 0.3, 1.3]} p={[0, 1.1, 1.65]} c="#4DABF7" r={0.14} rot={[0.5, 0, 0]} />
+        {[-1, 1].map((sd) => (
+          <Box key={sd} a={[0.25, 0.25, 1.4]} p={[sd * 0.95, 1.9, 0.1]} c="#339AF0" r={0.1} />
+        ))}
+      </group>
+      {/* overhead lamp */}
+      <group position={[-1.2, 0, WALL + 0.6]}>
+        <Cyl p={[0, 4.2, 0]} r={0.08} h={8.4} c="#DEE2E6" />
+        <Cyl p={[-0.9, 6.3, 0.8]} r={0.06} h={2.4} c="#DEE2E6" rot={[0.6, 0, 1.1]} />
+        <group position={[-1.7, 5.6, 1.6]} rotation={[0.9, 0, 0.3]}>
+          <Cyl p={[0, 0, 0]} r={0.55} r2={0.4} h={0.25} c="#F1F3F5" />
+          <Cyl p={[0, -0.14, 0]} r={0.42} h={0.04} c="#FFF9DB" e={1.6} />
+        </group>
+        <pointLight position={[-1.7, 5.0, 2.2]} intensity={5} distance={7} color="#FFFBEA" />
+      </group>
+      {/* tool cabinet */}
+      <group position={[2.9, 0, WALL + 1.0]}>
+        <Box a={[2.4, 2.6, 1.4]} p={[0, 1.3, 0]} c="#FFFFFF" r={0.12} />
+        {[0.6, 1.4, 2.2].map((y) => (
+          <Box key={y} a={[2.1, 0.06, 0.06]} p={[0, y, 0.72]} c="#CED4DA" r={0.02} />
+        ))}
+        <Cyl p={[-0.6, 2.85, 0]} r={0.18} h={0.5} c="#63E6BE" />
+        <Cyl p={[0.0, 2.8, 0.1]} r={0.15} h={0.4} c="#FFA8A8" />
+        <Plant3D p={[0.65, 2.6, 0]} s={0.45} t={t} />
+      </group>
+    </group>
+  );
+};
+
 export const Set3D: React.FC<{ bg: Background; variant?: string; t: number }> = ({ bg, variant, t }) => {
   switch (bg) {
+    case 'dentist':
+      return <Dentist3D t={t} />;
     case 'kitchen':
       return <Kitchen3D t={t} />;
     case 'park':

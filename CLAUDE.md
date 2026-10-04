@@ -4,6 +4,7 @@ Serie infantil animada 100% con código: **Remotion** para video, **Next.js** pa
 Dos estilos con el MISMO guion: **3D** (Three.js/@remotion/three, comp `epNN-slug-3d`) y **2.5D** vectorial (SVG, comp `epNN-slug`).
 **El usuario eligió 3D**: renderizar solo 3D (`npm run render -- epNN-slug 3d`). Render 3D ≈ 85 min por minuto de video: lanzarlo con `setsid nohup ... &` (los comandos en background mueren a las 2 h).
 Personajes: `papa` (labrador), `mama` (gata negra), `hijo` (labrador 10), `hija` (gata naranja 7). Idioma: español neutro (tú).
+Invitados (solo aparecen si están en `cast`): `dentista` (schnauzer gris, guardapolvo, anteojos). Para agregar otro invitado: `CharId` + `DESIGNS` (design.ts), `SEED` (animate.ts), `ORDER` (Episode.tsx y Scene3D.tsx), `VOICES` (voices.py), y excluirlo de `BIO` en app/page.tsx.
 
 ## Hacer un capítulo nuevo (flujo estándar)
 1. Copiar `src/episodes/ep01-la-torta-sorpresa/` → `src/episodes/epNN-slug/script.ts`. Editar SOLO datos (formato en `src/engine/script.ts`).
@@ -21,10 +22,10 @@ Duración: 30 s ≈ 6–8 líneas; 2 min ≈ 25–30 líneas. Intro 3.6 s + outr
 - Piso y=930, x de 0 a 1920; fuera de cámara: -250 / 2250. Separar personajes ≥250 px.
 - Acciones: walk run jump wave cheer dance clap think point shrug hug hips nod shake tremble sneeze turn look hide show.
 - Expresiones: neutral happy laugh excited surprised sad angry worried wink love sleepy proud.
-- Props: table cake bowl flour ball balloon gift book star heart cookie plant plate broccoli (mesada de cocina y=562; sobre la mesa y=760).
+- Props: table cake bowl flour ball balloon gift book star heart cookie plant plate broccoli teddy flashlight toothbrush (mesada de cocina y=562; sobre la mesa / "en la mano" y=760).
 - Encuadre 3D: mantener a los personajes entre x≈400 y x≈1550 (la cámara se mueve un poco y corta los bordes).
 - Fx: hearts stars confetti flour sparkle zzz question exclaim sweat. Sfx: pop boing whoosh ding sparkle poof tada drum doorbell giggle thunder.
-- Fondos: living (variant 'rain' | 'rainbow') kitchen park(variant 'sunset') bedroom. `point` señala hacia `facing`.
+- Fondos: living (variant 'rain' | 'rainbow') kitchen park(variant 'sunset') bedroom (noche) dentist. `point` señala hacia `facing`.
 - Lluvia: `variant: 'rain', ambience: 'rain'` en la escena; `{ sfx: 'thunder' }` hace relámpago + trueno.
 - Mayúsculas sostenidas se leen bien (el TTS las pasa a minúsculas).
 - Voces: Kokoro offline (`scripts/voices.py`). Evitar onomatopeyas y risas escritas ("Shhh", "Ja, ja"): el TTS las deletrea. Usar palabras ("¡Silencio!") + `sfx: 'giggle'` y `expr: 'laugh'`.

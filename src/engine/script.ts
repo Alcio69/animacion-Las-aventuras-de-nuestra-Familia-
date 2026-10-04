@@ -11,7 +11,7 @@
 import type { CharId, Expression } from '../characters/types';
 
 export type Speaker = CharId | 'narrador';
-export type Background = 'living' | 'kitchen' | 'park' | 'bedroom';
+export type Background = 'living' | 'kitchen' | 'park' | 'bedroom' | 'dentist';
 export type Action =
   | 'walk' // move to `to` (x in px, 0..1920) — sets facing automatically
   | 'run' // like walk, faster legs
@@ -34,7 +34,7 @@ export type Action =
   | 'hide'
   | 'show';
 
-export type PropKind = 'table' | 'cake' | 'bowl' | 'flour' | 'ball' | 'balloon' | 'gift' | 'book' | 'star' | 'heart' | 'cookie' | 'plant' | 'plate' | 'broccoli';
+export type PropKind = 'table' | 'cake' | 'bowl' | 'flour' | 'ball' | 'balloon' | 'gift' | 'book' | 'star' | 'heart' | 'cookie' | 'plant' | 'plate' | 'broccoli' | 'teddy' | 'flashlight' | 'toothbrush';
 export type Fx = 'hearts' | 'stars' | 'confetti' | 'flour' | 'sparkle' | 'zzz' | 'question' | 'exclaim' | 'sweat';
 export type Sfx = 'pop' | 'boing' | 'whoosh' | 'ding' | 'sparkle' | 'poof' | 'tada' | 'drum' | 'doorbell' | 'giggle' | 'thunder';
 

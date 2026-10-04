@@ -17,7 +17,8 @@ import { Lights3D } from './Lights3D';
 import { Prop3D } from './Props3D';
 import { COUNTER_TOP, COUNTER_Z, Set3D } from './Sets3D';
 
-const ORDER: CharId[] = ['papa', 'mama', 'hijo', 'hija'];
+const ORDER: CharId[] = ['papa', 'mama', 'hijo', 'hija', 'dentista'];
+const FAMILY: CharId[] = ['papa', 'mama', 'hijo', 'hija'];
 /** Script coordinates (px) → world. */
 export const toX = (x: number) => (x - 960) / 100;
 export const toZ = (y: number) => (y - 930) / 60;
@@ -147,7 +148,7 @@ const Family3D: React.FC<{ t: number; frame: number; pop?: boolean; exprs?: Part
   const { fps } = useVideoConfig();
   return (
     <>
-      {ORDER.map((id, i) => {
+      {FAMILY.map((id, i) => {
         const p = restPose(t);
         p.expr = exprs?.[id] ?? (i % 2 ? 'laugh' : 'excited');
         p.armR = { up: 122, bend: 28 + Math.sin(t * 11 + i) * 26 };
