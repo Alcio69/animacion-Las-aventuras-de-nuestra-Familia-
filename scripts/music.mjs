@@ -311,4 +311,18 @@ sfx('sfx-thunder', 3.5, (L, R) => {
   }
   writeMp3('amb-rain', L.subarray(0, L.length - fade), R.subarray(0, R.length - fade));
 }
+sfx('sfx-crash', 1.4, (L, R) => {
+  // ceramic smash: bright noise burst + a few clinking shards
+  let hp = 0;
+  for (let i = 0; i < 0.5 * SR; i++) {
+    const tt = i / SR;
+    const w = rnd() * 2 - 1;
+    const h = w - hp * 0.7;
+    hp = w;
+    const v = h * Math.exp(-tt * 12) * 0.9;
+    L[i] += v;
+    R[i] += v * 0.9;
+  }
+  [0.05, 0.12, 0.2, 0.31, 0.45, 0.62].forEach((t0, k) => bell(L, R, t0, 96 + (k % 3) * 3, 0.18, 0.4, k % 2 ? 0.6 : -0.6));
+});
 console.log('audio ok');

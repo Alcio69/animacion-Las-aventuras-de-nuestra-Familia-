@@ -5,7 +5,7 @@ import type { CharId } from '../src/characters/types';
 import { compileEpisode } from '../src/engine/timeline';
 import { EPISODES } from '../src/episodes';
 
-const BIO: Record<Exclude<CharId, 'dentista'>, { species: string; traits: string[]; bg: string }> = {
+const BIO: Record<Exclude<CharId, 'dentista' | 'lola'>, { species: string; traits: string[]; bg: string }> = {
   papa: { species: 'Perro labrador · 36 años', traits: ['Cariñoso y juguetón', 'Algo despistado', 'Le encanta pasar tiempo en familia'], bg: '#E7F1FF' },
   mama: { species: 'Gata negra · 32 años', traits: ['Inteligente y creativa', 'Paciente y observadora', 'Siempre encuentra soluciones'], bg: '#F8E8F6' },
   hijo: { species: 'Perro labrador · 10 años', traits: ['Curioso y aventurero', 'A veces se mete en problemas', 'Muy cariñoso con su hermana'], bg: '#E6F4FF' },
@@ -43,7 +43,7 @@ export default function Home() {
         </div>
         <h2>🐾 La familia</h2>
         <div className="chars">
-          {(Object.keys(BIO) as Exclude<CharId, 'dentista'>[]).map((id) => (
+          {(Object.keys(BIO) as Exclude<CharId, 'dentista' | 'lola'>[]).map((id) => (
             <div key={id} className="char" style={{ background: BIO[id].bg }}>
               <CharacterArt id={id} />
               <h3 style={{ color: DESIGNS[id].accent }}>{DESIGNS[id].name}</h3>

@@ -21,7 +21,7 @@ const easeOutBack = (k: number) => {
   return 1 + (c + 1) * Math.pow(k - 1, 3) + c * Math.pow(k - 1, 2);
 };
 const lerpArm = (a: Arm, b: Arm, k: number): Arm => ({ up: lerp(a.up, b.up, k), bend: lerp(a.bend, b.bend, k) });
-const SEED: Record<CharId, number> = { papa: 11, mama: 23, hijo: 37, hija: 53, dentista: 67 };
+const SEED: Record<CharId, number> = { papa: 11, mama: 23, hijo: 37, hija: 53, dentista: 67, lola: 79 };
 
 /** Smooth 1D value noise in [-1, 1]. */
 const hash = (n: number) => {

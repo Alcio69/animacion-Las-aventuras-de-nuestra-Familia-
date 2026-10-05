@@ -37,6 +37,43 @@ const star = (() => {
   return new THREE.ExtrudeGeometry(sh, { depth: 0.25, bevelEnabled: true, bevelSize: 0.08, bevelThickness: 0.08, bevelSegments: 2 });
 })();
 
+/** A child's crayon drawing (sun, house, family) as a canvas texture. */
+let drawingCache: THREE.Texture | null = null;
+const drawingTex = () => {
+  if (drawingCache) return drawingCache;
+  const cv = document.createElement('canvas');
+  cv.width = 300;
+  cv.height = 210;
+  const c = cv.getContext('2d')!;
+  c.fillStyle = '#FFFDF5';
+  c.fillRect(0, 0, 300, 210);
+  c.lineWidth = 6;
+  c.lineCap = 'round';
+  c.fillStyle = '#FFD43B';
+  c.beginPath();
+  c.arc(250, 45, 26, 0, Math.PI * 2);
+  c.fill();
+  c.strokeStyle = '#FF922B';
+  c.strokeRect(50, 100, 90, 80);
+  c.beginPath();
+  c.moveTo(40, 100);
+  c.lineTo(95, 55);
+  c.lineTo(150, 100);
+  c.stroke();
+  c.fillStyle = '#69DB7C';
+  c.fillRect(0, 185, 300, 25);
+  ['#F59F00', '#212529', '#F59F00', '#E8590C'].forEach((col, i) => {
+    c.fillStyle = col;
+    c.beginPath();
+    c.arc(180 + i * 28, 150 - (i > 1 ? -8 : 0), 11 - (i > 1 ? 2 : 0), 0, Math.PI * 2);
+    c.fill();
+    c.fillRect(175 + i * 28, 160, 10, 24);
+  });
+  drawingCache = new THREE.CanvasTexture(cv);
+  drawingCache.colorSpace = THREE.SRGBColorSpace;
+  return drawingCache;
+};
+
 /** One broccoli "little tree": pale stem + bumpy green crown. */
 const Broccoli3D: React.FC = () => (
   <group>
@@ -228,6 +265,145 @@ export const Prop3D: React.FC<{ kind: PropKind; t: number; spin?: number }> = ({
           <RoundedBox args={[0.14, 0.26, 0.16]} radius={0.03} position={[0, 0.62, 0.08]}>
             <M c="#FFFFFF" />
           </RoundedBox>
+        </group>
+      );
+    case 'toybox':
+      return (
+        <group>
+          <RoundedBox args={[2.0, 1.2, 1.2]} radius={0.08} position={[0, 0.6, 0]} castShadow>
+            <M c="#C08552" />
+          </RoundedBox>
+          <RoundedBox args={[2.1, 0.18, 1.3]} radius={0.06} position={[0, 1.35, -0.55]} rotation={[-1.1, 0, 0]} castShadow>
+            <M c="#A86F42" />
+          </RoundedBox>
+          <mesh geometry={star} position={[0, 0.65, 0.62]} scale={0.28}>
+            <M c="#FFD43B" />
+          </mesh>
+        </group>
+      );
+    case 'block':
+      return (
+        <group position={[0, 0.25, 0]} rotation={[0, 0.5 + spin * 0.02, (-spin * Math.PI) / 180]}>
+          <RoundedBox args={[0.5, 0.5, 0.5]} radius={0.06} castShadow>
+            <M c="#FF6B6B" />
+          </RoundedBox>
+          <mesh position={[0, 0, 0.26]}>
+            <planeGeometry args={[0.28, 0.28]} />
+            <meshStandardMaterial color="#FFFFFF" />
+          </mesh>
+        </group>
+      );
+    case 'car':
+      return (
+        <group rotation={[0, 0.4, (-spin * Math.PI) / 360]}>
+          <RoundedBox args={[1.0, 0.32, 0.55]} radius={0.1} position={[0, 0.3, 0]} castShadow>
+            <M c="#4DABF7" />
+          </RoundedBox>
+          <RoundedBox args={[0.55, 0.28, 0.5]} radius={0.1} position={[-0.05, 0.56, 0]} castShadow>
+            <M c="#D0EBFF" />
+          </RoundedBox>
+          {[-0.32, 0.32].map((x) =>
+            [-0.28, 0.28].map((z) => (
+              <mesh key={`${x}${z}`} position={[x, 0.13, z]} rotation={[Math.PI / 2, 0, 0]} castShadow>
+                <cylinderGeometry args={[0.13, 0.13, 0.08, 20]} />
+                <M c="#343A40" />
+              </mesh>
+            )),
+          )}
+        </group>
+      );
+    case 'vase':
+    case 'vaseFixed':
+      return (
+        <group>
+          <mesh position={[0, 0, 0]} castShadow>
+            <latheGeometry args={[[0, 0, 0.35, 0, 0.42, 0.25, 0.4, 0.6, 0.22, 0.85, 0.26, 1.0].reduce<THREE.Vector2[]>((a, v, i, arr) => (i % 2 ? a : [...a, new THREE.Vector2(arr[i], arr[i + 1])]), []), 40]} />
+            <meshPhysicalMaterial color="#5C7CFA" roughness={0.2} clearcoat={1} side={THREE.DoubleSide} />
+          </mesh>
+          {kind === 'vaseFixed' &&
+            [
+              [0.05, 0.35, 0.4],
+              [-0.1, 0.55, -0.5],
+            ].map(([x, y, r], i) => (
+              <RoundedBox key={i} args={[0.5, 0.09, 0.02]} radius={0.01} position={[x, y, 0.4]} rotation={[0, 0, r]}>
+                <M c="#FFF3BF" />
+              </RoundedBox>
+            ))}
+          {[-0.15, 0, 0.15].map((x, i) => (
+            <group key={x} position={[x, 0.95, 0]} rotation={[0, 0, -x * 1.5]}>
+              <Cyl p={[0, 0.3, 0]} r={0.02} h={0.6} c="#2F9E44" />
+              <Sph p={[0, 0.65, 0]} s={0.13} c={['#FF8787', '#FFD43B', '#DA77F2'][i]} />
+              <Sph p={[0, 0.65, 0.05]} s={0.05} c="#FFF3BF" />
+            </group>
+          ))}
+        </group>
+      );
+    case 'vaseBroken':
+      return (
+        <group>
+          {[
+            [-0.4, 0.3, 0.1, 0.8],
+            [0.3, -0.2, 0.2, -0.6],
+            [0.05, 0.35, -0.2, 2.2],
+            [-0.15, -0.35, 0.3, 1.2],
+            [0.45, 0.2, -0.1, -1.6],
+          ].map(([x, z, ry, rz], i) => (
+            <mesh key={i} position={[x, 0.06, z]} rotation={[0.3, ry, rz]} castShadow>
+              <boxGeometry args={[0.32, 0.08, 0.22]} />
+              <meshPhysicalMaterial color="#5C7CFA" roughness={0.2} clearcoat={1} />
+            </mesh>
+          ))}
+          {[-0.3, 0.1, 0.4].map((x, i) => (
+            <group key={x} position={[x, 0.06, 0.3 - i * 0.2]} rotation={[0, i, Math.PI / 2]}>
+              <Cyl p={[0, 0.3, 0]} r={0.02} h={0.6} c="#2F9E44" />
+              <Sph p={[0, 0.65, 0]} s={0.13} c={['#FF8787', '#FFD43B', '#DA77F2'][i]} />
+            </group>
+          ))}
+        </group>
+      );
+    case 'drawing': {
+      return (
+        <group position={[0, 0.2, 0.2]} rotation={[0, 0, -0.08]}>
+          <mesh castShadow>
+            <boxGeometry args={[1.1, 0.8, 0.02]} />
+            <meshStandardMaterial color="#FFFFFF" />
+          </mesh>
+          <mesh position={[0, 0, 0.012]}>
+            <planeGeometry args={[1.0, 0.7]} />
+            <meshBasicMaterial map={drawingTex()} toneMapped={false} />
+          </mesh>
+        </group>
+      );
+    }
+    case 'tree':
+      // sways by itself; `spin` (from a moveProp shake) makes it wobble
+      return (
+        <group rotation={[0, 0, (Math.sin(t * 1.1) * 0.6 - spin * 0.6) * (Math.PI / 180)]}>
+          <Cyl p={[0, 1.6, 0]} r={0.32} r2={0.48} h={3.2} c="#8B5E3C" />
+          <Sph p={[0, 4.5, 0]} s={1.9} c="#5BAA4A" />
+          <Sph p={[-1.4, 3.8, 0.3]} s={1.35} c="#4F9D44" />
+          <Sph p={[1.4, 3.9, 0.2]} s={1.3} c="#5BAA4A" />
+          <Sph p={[0.2, 3.6, 1.2]} s={1.2} c="#66B86F" />
+          {[
+            [-0.8, 4.0, 1.5],
+            [0.9, 4.6, 1.3],
+            [0.3, 5.3, 1.1],
+          ].map(([x, y, z], i) => (
+            <Sph key={i} p={[x, y, z]} s={0.16} c="#FF6B6B" />
+          ))}
+        </group>
+      );
+    case 'glass':
+      return (
+        <group>
+          <mesh position={[0, 0.3, 0]}>
+            <cylinderGeometry args={[0.2, 0.17, 0.6, 32, 1, true]} />
+            <meshPhysicalMaterial color="#E7F5FF" transparent opacity={0.35} roughness={0.05} side={THREE.DoubleSide} />
+          </mesh>
+          <mesh position={[0, 0.22, 0]}>
+            <cylinderGeometry args={[0.185, 0.165, 0.42, 32]} />
+            <meshPhysicalMaterial color="#74C0FC" transparent opacity={0.75} roughness={0.05} />
+          </mesh>
         </group>
       );
     case 'cookie':

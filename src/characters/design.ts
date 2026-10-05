@@ -32,6 +32,33 @@ export type Design = {
 };
 
 export const DESIGNS: Record<CharId, Design> = {
+  // Guest: Lola, Hija's best friend — a white kitten with round glasses and yellow overalls.
+  lola: {
+    id: 'lola',
+    name: 'Lola',
+    species: 'cat',
+    age: 7,
+    headR: 80,
+    eyeScale: 1.15,
+    torsoH: 94,
+    torsoTop: 84,
+    torsoBottom: 84,
+    legH: 84,
+    legW: 31,
+    armLen: 96,
+    armW: 27,
+    fur: { base: '#F3EEE7', light: '#FFFFFF', dark: '#CFC5B8', muzzle: '#FFFFFF', ear: '#F7A9B8' },
+    iris: '#7A5AF8',
+    irisDark: '#3B2A8C',
+    lashes: true,
+    outfit: 'overalls',
+    top: { base: '#FFD43B', dark: '#F2B705', light: '#FFE066' },
+    inner: '#A5D8FF',
+    bottom: { base: '#FFD43B', dark: '#F2B705', kind: 'overall-shorts' },
+    shoes: { base: '#4DABF7', dark: '#1C7ED6', sole: '#FFFFFF' },
+    accent: '#F59F00',
+    extras: ['glasses', 'blush'],
+  },
   // Guest: the family dentist, a friendly grey schnauzer in a white coat.
   dentista: {
     id: 'dentista',

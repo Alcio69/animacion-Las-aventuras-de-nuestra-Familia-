@@ -17,15 +17,24 @@ import { Lights3D } from './Lights3D';
 import { Prop3D } from './Props3D';
 import { COUNTER_TOP, COUNTER_Z, Set3D } from './Sets3D';
 
-const ORDER: CharId[] = ['papa', 'mama', 'hijo', 'hija', 'dentista'];
+const ORDER: CharId[] = ['papa', 'mama', 'hijo', 'hija', 'dentista', 'lola'];
 const FAMILY: CharId[] = ['papa', 'mama', 'hijo', 'hija'];
 /** Script coordinates (px) → world. */
 export const toX = (x: number) => (x - 960) / 100;
 export const toZ = (y: number) => (y - 930) / 60;
 const TABLE_TOP = 1.61;
 const propPos = (bg: Background, x: number, y: number): [number, number, number] => {
+  // high up in the air (e.g. a ball stuck in a tree): real height, just in front of the characters' plane
+  if (y < 520) return [toX(x), (930 - y) / 100, 0.3];
   if (y >= 880) return [toX(x), 0, toZ(y) - 0.5];
+  // outdoors there is no table: any height is real height (balls flying, falling from trees)
+  if (bg === 'park') return [toX(x), (930 - y) / 100, 0.3];
   if (bg === 'kitchen' && y < 700) return [toX(x), COUNTER_TOP, COUNTER_Z];
+  // between the floor (y=880) and the table / hand height (y=760) blend smoothly, so props can fly up onto a table
+  if (y > 760) {
+    const k = (880 - y) / 120;
+    return [toX(x), TABLE_TOP * k, toZ(880) - 0.5 + (-0.9 - (toZ(880) - 0.5)) * k];
+  }
   return [toX(x), TABLE_TOP, -0.9];
 };
 
@@ -76,7 +85,7 @@ export const Scene3DView: React.FC<{ cs: CompiledScene; audio: boolean }> = ({ c
   const irisR = Math.max(0, ease(Math.max(0, iris))) * 120;
   const line = cs.events.find((e): e is LineEv => e.kind === 'line' && e.t0 <= t && t < e.t1);
   const title = cs.events.find((e) => e.kind === 'title' && e.t0 <= t && t < e.t1);
-  const night = sc.bg === 'bedroom';
+  const night = sc.bg === 'bedroom' && sc.variant !== 'day';
   // lightning: a quick double flash when a thunder sfx plays
   const flash = cs.events.reduce((m, e) => {
     if (e.kind !== 'sfx' || e.sfx !== 'thunder') return m;

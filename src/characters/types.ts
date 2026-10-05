@@ -1,4 +1,4 @@
-export type CharId = 'papa' | 'mama' | 'hijo' | 'hija' | 'dentista';
+export type CharId = 'papa' | 'mama' | 'hijo' | 'hija' | 'dentista' | 'lola';
 
 /** The four main characters (intro, outro, thumbnails, website). Guests like `dentista` only appear when cast. */
 export const FAMILY: CharId[] = ['papa', 'mama', 'hijo', 'hija'];

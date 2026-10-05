@@ -29,6 +29,7 @@ VOICES = {
     "hijo": {"engine": "kokoro", "sid": 28, "speed": 1.0, "pitch": 2.5, "formant": "shifted"},
     "hija": {"engine": "kokoro", "sid": 28, "speed": 1.0, "pitch": 5.0, "formant": "shifted"},
     "narrador": {"engine": "kokoro", "sid": 53, "speed": 0.9, "pitch": 0.0},
+    "lola": {"engine": "kokoro", "sid": 28, "speed": 1.06, "pitch": 3.8, "formant": "shifted"},
     "dentista": {"engine": "kokoro", "sid": 53, "speed": 1.0, "pitch": 2.0, "formant": "preserved"},
 }
 KOKORO = "kokoro-multi-lang-v1_0"

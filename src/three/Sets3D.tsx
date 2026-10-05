@@ -433,13 +433,13 @@ const Park3D: React.FC<{ t: number; variant?: string }> = ({ t, variant }) => {
   );
 };
 
-const Bedroom3D: React.FC<{ t: number }> = ({ t }) => {
-  const wall = useMemo(() => dotsWall('#45428A', '#5A55A8'), []);
+const Bedroom3D: React.FC<{ t: number; day?: boolean }> = ({ t, day }) => {
+  const wall = useMemo(() => (day ? dotsWall('#D3F0E5', '#B2E5D1') : dotsWall('#45428A', '#5A55A8')), [day]);
   const floor = useMemo(() => wood('#8C6A8F', '#7D5E82'), []);
   return (
     <group>
       <Room wall={wall} floor={floor} />
-      <Window3D p={[4.8, 5.4, WALL + 0.1]} w={3.6} h={3.2} t={t} night curtain="#7B6FD0" />
+      <Window3D p={[4.8, 5.4, WALL + 0.1]} w={3.6} h={3.2} t={t} night={!day} curtain={day ? '#74C0FC' : '#7B6FD0'} />
       <group position={[-6.2, 0, WALL + 2.0]}>
         <Box a={[0.4, 3.0, 3.2]} p={[-3.0, 1.5, 0]} c="#C08552" r={0.12} />
         <Box a={[6.0, 0.9, 3.0]} p={[0, 1.0, 0]} c="#FFFFFF" r={0.3} />
@@ -515,16 +515,84 @@ const Dentist3D: React.FC<{ t: number }> = ({ t }) => {
   );
 };
 
+const chalkboard = () =>
+  canvasTex('chalk', 1024, 512, (c) => {
+    c.fillStyle = '#2F5D50';
+    c.fillRect(0, 0, 1024, 512);
+    for (let i = 0; i < 400; i++) {
+      c.fillStyle = 'rgba(255,255,255,0.03)';
+      c.fillRect(rnd(i) * 1024, rnd(i + 1) * 512, 30, 3);
+    }
+    c.fillStyle = '#F8F9FA';
+    c.font = 'bold 120px sans-serif';
+    c.textAlign = 'center';
+    c.fillText('¡Hola!', 512, 190);
+    c.font = 'bold 90px sans-serif';
+    c.fillStyle = '#FFE066';
+    c.fillText('A  B  C', 300, 380);
+    c.fillStyle = '#99E9F2';
+    c.fillText('1 + 2 = 3', 740, 380);
+  });
+
+const School3D: React.FC<{ t: number }> = ({ t }) => {
+  const wall = useMemo(() => dotsWall('#FFF4DB', '#FFE8A3'), []);
+  const floor = useMemo(() => wood('#E3B57E', '#D6A56C'), []);
+  const board = useMemo(() => chalkboard(), []);
+  const flags = ['#FF6B6B', '#FFA94D', '#FFD43B', '#69DB7C', '#4DABF7', '#9775FA', '#F783AC'];
+  return (
+    <group>
+      <Room wall={wall} floor={floor} />
+      <Box a={[44, 1.8, 0.15]} p={[0, 0.9, WALL + 0.08]} c="#FFD8A8" r={0.02} />
+      {/* chalkboard */}
+      <Box a={[7.4, 3.6, 0.2]} p={[-1.0, 5.3, WALL + 0.12]} c="#B07A4F" r={0.08} />
+      <mesh position={[-1.0, 5.3, WALL + 0.24]}>
+        <planeGeometry args={[7.0, 3.2]} />
+        <meshStandardMaterial map={board} roughness={0.95} />
+      </mesh>
+      <Box a={[7.0, 0.14, 0.4]} p={[-1.0, 3.45, WALL + 0.35]} c="#B07A4F" r={0.04} />
+      {/* alphabet bunting */}
+      {flags.map((c, i) => (
+        <mesh key={c} position={[-8.6 + i * 2.5, 8.4 - Math.sin((i / 6) * Math.PI) * 0.4, WALL + 0.2]} rotation={[0, 0, Math.PI]}>
+          <coneGeometry args={[0.45, 0.9, 3]} />
+          {std(c)}
+        </mesh>
+      ))}
+      <Window3D p={[6.6, 5.4, WALL + 0.1]} w={3.0} h={2.8} t={t} curtain="#FFC078" />
+      {/* clock */}
+      <group position={[3.6, 7.4, WALL + 0.15]}>
+        <Cyl p={[0, 0, 0]} r={0.55} h={0.12} c="#FFFFFF" rot={[Math.PI / 2, 0, 0]} />
+        <Box a={[0.06, 0.4, 0.04]} p={[0, 0.15, 0.08]} c="#343A40" r={0.01} />
+        <Box a={[0.3, 0.05, 0.04]} p={[0.12, 0, 0.08]} c="#343A40" r={0.01} rot={[0, 0, t * 0.2]} />
+      </group>
+      {/* kids' desks in the back */}
+      {[-6.8, -3.8, 4.6].map((x) => (
+        <group key={x} position={[x, 0, WALL + 2.0]}>
+          <Box a={[2.0, 0.12, 1.2]} p={[0, 1.7, 0]} c="#FFD43B" r={0.04} />
+          {[-0.85, 0.85].map((lx) => (
+            <Cyl key={lx} p={[lx, 0.85, 0]} r={0.06} h={1.7} c="#868E96" />
+          ))}
+          <Box a={[0.9, 0.12, 0.9]} p={[0, 1.0, 1.1]} c="#4DABF7" r={0.04} />
+          <Box a={[0.9, 0.9, 0.12]} p={[0, 1.5, 1.55]} c="#4DABF7" r={0.04} />
+          <Box a={[0.5, 0.06, 0.35]} p={[0.3, 1.8, 0.1]} c="#FF8787" r={0.02} />
+        </group>
+      ))}
+      <Plant3D p={[8.6, 0, WALL + 0.8]} s={1.0} t={t} />
+    </group>
+  );
+};
+
 export const Set3D: React.FC<{ bg: Background; variant?: string; t: number }> = ({ bg, variant, t }) => {
   switch (bg) {
     case 'dentist':
       return <Dentist3D t={t} />;
+    case 'school':
+      return <School3D t={t} />;
     case 'kitchen':
       return <Kitchen3D t={t} />;
     case 'park':
       return <Park3D t={t} variant={variant} />;
     case 'bedroom':
-      return <Bedroom3D t={t} />;
+      return <Bedroom3D t={t} day={variant === 'day'} />;
     default:
       return <Living3D t={t} weather={variant === 'rain' || variant === 'rainbow' ? variant : undefined} />;
   }

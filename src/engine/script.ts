@@ -11,7 +11,7 @@
 import type { CharId, Expression } from '../characters/types';
 
 export type Speaker = CharId | 'narrador';
-export type Background = 'living' | 'kitchen' | 'park' | 'bedroom' | 'dentist';
+export type Background = 'living' | 'kitchen' | 'park' | 'bedroom' | 'dentist' | 'school';
 export type Action =
   | 'walk' // move to `to` (x in px, 0..1920) — sets facing automatically
   | 'run' // like walk, faster legs
@@ -34,9 +34,10 @@ export type Action =
   | 'hide'
   | 'show';
 
-export type PropKind = 'table' | 'cake' | 'bowl' | 'flour' | 'ball' | 'balloon' | 'gift' | 'book' | 'star' | 'heart' | 'cookie' | 'plant' | 'plate' | 'broccoli' | 'teddy' | 'flashlight' | 'toothbrush';
+export type PropKind = 'table' | 'cake' | 'bowl' | 'flour' | 'ball' | 'balloon' | 'gift' | 'book' | 'star' | 'heart' | 'cookie' | 'plant' | 'plate' | 'broccoli' | 'teddy' | 'flashlight' | 'toothbrush'
+  | 'toybox' | 'block' | 'car' | 'vase' | 'vaseBroken' | 'vaseFixed' | 'drawing' | 'tree' | 'glass';
 export type Fx = 'hearts' | 'stars' | 'confetti' | 'flour' | 'sparkle' | 'zzz' | 'question' | 'exclaim' | 'sweat';
-export type Sfx = 'pop' | 'boing' | 'whoosh' | 'ding' | 'sparkle' | 'poof' | 'tada' | 'drum' | 'doorbell' | 'giggle' | 'thunder';
+export type Sfx = 'pop' | 'boing' | 'whoosh' | 'ding' | 'sparkle' | 'poof' | 'tada' | 'drum' | 'doorbell' | 'giggle' | 'thunder' | 'crash';
 
 export type Step =
   | {
@@ -86,7 +87,7 @@ export type CastEntry = {
 
 export type Scene = {
   bg: Background;
-  /** Background variant: park 'sunset'; living 'rain' | 'rainbow'. */
+  /** Background variant: park 'sunset'; living 'rain' | 'rainbow'; bedroom 'day'. */
   variant?: string;
   cast: Partial<Record<CharId, CastEntry>>;
   steps: Step[];
