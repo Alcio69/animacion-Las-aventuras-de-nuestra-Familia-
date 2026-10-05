@@ -42,6 +42,8 @@ for (const style of styles) {
     browserExecutable,
     chromiumOptions,
     concurrency: Math.max(1, os.cpus().length - 1),
+    // 3D frames can take >30 s under load (shader compile at scene changes)
+    timeoutInMilliseconds: 180000,
     onProgress: ({ progress }) => {
       const p = Math.floor(progress * 10);
       if (p !== last) process.stdout.write(`\r${id}: ${p * 10}%`), (last = p);
