@@ -2,7 +2,7 @@
 
 Serie infantil animada 100% con código: **Remotion** para video, **Next.js** para la web (Vercel importa `main`).
 Dos estilos con el MISMO guion: **3D** (Three.js/@remotion/three, comp `epNN-slug-3d`) y **2.5D** vectorial (SVG, comp `epNN-slug`).
-**El usuario eligió 3D**: renderizar solo 3D (`npm run render -- epNN-slug 3d`). Render 3D ≈ 85 min por minuto de video: lanzarlo con `setsid nohup ... &` (los comandos en background mueren a las 2 h).
+**El usuario eligió 3D**: renderizar solo 3D (`npm run render -- epNN-slug 3d`). Render 3D ≈ 85 min por minuto de video y el contenedor puede reiniciarse: usar la cola reanudable `setsid nohup scripts/render-queue.sh epNN-a epNN-b > out/logs/queue.log 2>&1 < /dev/null & disown` (renderiza en tramos de 8 s en `out/chunks/`; relanzarla tras un reinicio sigue donde quedó; si cambia el guion, borrar `out/chunks/epNN-slug-3d/`). La web solo lista capítulos con `-3d.mp4`. Miniatura con invitados: `thumb.cast`.
 Personajes: `papa` (labrador), `mama` (gata negra), `hijo` (labrador 10), `hija` (gata naranja 7). Idioma: español neutro (tú).
 Invitados (solo aparecen si están en `cast`): `dentista` (schnauzer), `lola` (gatita amiga de Hija), `tomi` (conejito, usa silla de ruedas), `benja` (beagle, compañero de Hijo) y sus papás `benjaPapa`/`benjaMama`, `abuela` (labradora mayor, mamá de Papá). Para agregar otro invitado: `CharId` (types.ts), `DESIGNS` (design.ts; species dog|cat|bunny), `VOICES` (voices.py). ORDER y SEED se derivan solos; `BIO` en app/page.tsx es solo familia.
 Vehículos: `cast: { tomi: { x, vehicle: 'wheelchair' } }` o `'bike'` (walk/run = rodar/pedalear). Acción `fall` = caerse y levantarse.
