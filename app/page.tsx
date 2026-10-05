@@ -3,7 +3,7 @@ import { CharacterArt, FamilyArt, LogoArt } from '../components/Art';
 import { DESIGNS } from '../src/characters/design';
 import type { CharId } from '../src/characters/types';
 import { compileEpisode } from '../src/engine/timeline';
-import { EPISODES } from '../src/episodes';
+import { PUBLISHED } from './published';
 
 type FamilyId = 'papa' | 'mama' | 'hijo' | 'hija';
 const BIO: Record<FamilyId, { species: string; traits: string[]; bg: string }> = {
@@ -16,7 +16,7 @@ const BIO: Record<FamilyId, { species: string; traits: string[]; bg: string }> =
 const fmt = (s: number) => `${Math.floor(s / 60)}:${String(Math.round(s % 60)).padStart(2, '0')}`;
 
 export default function Home() {
-  const eps = [...EPISODES].sort((a, b) => b.number - a.number);
+  const eps = [...PUBLISHED].sort((a, b) => b.number - a.number);
   return (
     <main>
       <section className="hero">

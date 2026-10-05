@@ -148,25 +148,30 @@ export const Scene3DView: React.FC<{ cs: CompiledScene; audio: boolean }> = ({ c
 };
 
 /** Family line-up used by the 3D intro, outro and thumbnail. */
-const Family3D: React.FC<{ t: number; frame: number; pop?: boolean; exprs?: Partial<Record<CharId, import('../characters/types').Expression>>; spacing?: number }> = ({
-  t,
-  frame,
-  pop,
-  exprs,
-  spacing = 3.3,
-}) => {
+const Family3D: React.FC<{
+  t: number;
+  frame: number;
+  pop?: boolean;
+  exprs?: Partial<Record<CharId, import('../characters/types').Expression>>;
+  spacing?: number;
+  ids?: CharId[];
+  vehicles?: Partial<Record<CharId, number>>;
+}> = ({ t, frame, pop, exprs, spacing = 3.3, ids = FAMILY, vehicles }) => {
+  const mid = (ids.length - 1) / 2;
   const { fps } = useVideoConfig();
   return (
     <>
-      {FAMILY.map((id, i) => {
+      {ids.map((id, i) => {
         const p = restPose(t);
         p.expr = exprs?.[id] ?? (i % 2 ? 'laugh' : 'excited');
         p.armR = { up: 122, bend: 28 + Math.sin(t * 11 + i) * 26 };
-        p.yaw = (i - 1.5) * -0.12;
+        p.yaw = (i - mid) * -0.12;
+        p.vehicle = vehicles?.[id] ?? 0;
+        if (p.vehicle) p.armR = { up: 122, bend: 20 };
         p.wag = 1.2;
         p.bob = Math.sin(t * 4 + i) * 3;
         const s = pop ? spring({ frame: frame - 10 - i * 6, fps, config: { damping: 10 } }) : 1;
-        return <Character3D key={id} id={id} pose={p} position={[(i - 1.5) * spacing, -3 + 3 * s, 0]} />;
+        return <Character3D key={id} id={id} pose={p} position={[(i - mid) * spacing, -3 + 3 * s, 0]} />;
       })}
       <mesh rotation={[-Math.PI / 2, 0, 0]} receiveShadow>
         <circleGeometry args={[30, 48]} />
@@ -174,6 +179,17 @@ const Family3D: React.FC<{ t: number; frame: number; pop?: boolean; exprs?: Part
       </mesh>
     </>
   );
+};
+
+/** Guests shown in the thumbnail keep the vehicle they use in the episode (e.g. Tomi's wheelchair). */
+const thumbVehicles = (episode: Episode, ids?: CharId[]) => {
+  const v: Partial<Record<CharId, number>> = {};
+  for (const sc of episode.scenes)
+    for (const id of ids ?? []) {
+      const veh = sc.cast[id]?.vehicle;
+      if (veh) v[id] = veh === 'wheelchair' ? 1 : 2;
+    }
+  return v;
 };
 
 export const Intro3D: React.FC<{ episode: Episode; audio: boolean }> = ({ episode, audio }) => {
@@ -252,7 +268,7 @@ export const Outro3D: React.FC<{ audio: boolean }> = ({ audio }) => {
 export const Thumbnail3D: React.FC<{ episode: Episode }> = ({ episode }) => {
   const th = episode.thumb ?? {};
   const text = th.text ?? episode.title.toUpperCase();
-  const size = Math.min(200, 1750 / (text.length * 0.62));
+  const size = Math.min(200, 1560 / (text.length * 0.62));
   const bg = th.bg ?? episode.scenes[0].bg;
   return (
     <AbsoluteFill style={{ background: '#FCE9D2' }}>
@@ -265,7 +281,7 @@ export const Thumbnail3D: React.FC<{ episode: Episode }> = ({ episode }) => {
             <Prop3D kind={th.prop} t={0} />
           </group>
         )}
-        <Family3D t={0.4} frame={100} exprs={th.exprs} spacing={3.1} />
+        <Family3D t={0.4} frame={100} exprs={th.exprs} ids={th.cast} vehicles={thumbVehicles(episode, th.cast)} spacing={th.cast && th.cast.length > 4 ? 2.3 : 3.1} />
       </Canvas3D>
       <AbsoluteFill>
         <svg viewBox="0 0 1920 1080" width="100%" height="100%">

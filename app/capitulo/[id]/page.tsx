@@ -5,10 +5,11 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import CopyBox from '../../../components/CopyBox';
 import EpisodePlayer from '../../../components/EpisodePlayer';
-import { EPISODES, getEpisode } from '../../../src/episodes';
+import { getEpisode } from '../../../src/episodes';
+import { PUBLISHED } from '../../published';
 
 export const dynamicParams = false;
-export const generateStaticParams = () => EPISODES.map((e) => ({ id: e.id }));
+export const generateStaticParams = () => PUBLISHED.map((e) => ({ id: e.id }));
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
   const ep = getEpisode((await params).id);

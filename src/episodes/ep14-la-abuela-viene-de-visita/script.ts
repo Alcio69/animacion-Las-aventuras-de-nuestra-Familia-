@@ -13,7 +13,7 @@ const episode: Episode = {
   title: 'La abuela viene de visita',
   subtitle: 'La abuela camina despacito y repite sus historias… ¿se van a aburrir?',
   music: 'calm',
-  thumb: { bg: 'kitchen', text: '¡LLEGÓ LA ABUELA!', prop: 'cookie', exprs: { hijo: 'excited', hija: 'love', papa: 'laugh', mama: 'happy' } },
+  thumb: { bg: 'kitchen', text: '¡LLEGÓ LA ABUELA!', prop: 'cookie', exprs: { hijo: 'excited', hija: 'love', papa: 'laugh', mama: 'happy', abuela: 'love' }, cast: ['papa', 'hijo', 'abuela', 'hija', 'mama'] },
   scenes: [
     {
       bg: 'living',

@@ -113,7 +113,8 @@ export type Episode = {
   scenes: Scene[];
   music?: 'happy' | 'calm' | 'adventure';
   /** YouTube thumbnail (1280x720). Big short text sells clicks: 2-4 words. */
-  thumb?: { bg?: Background; variant?: string; text?: string; prop?: PropKind; exprs?: Partial<Record<CharId, Expression>> };
+  /** `cast` = who appears (default: the 4 family members), e.g. ['hijo', 'abuela', 'hija']. */
+  thumb?: { bg?: Background; variant?: string; text?: string; prop?: PropKind; exprs?: Partial<Record<CharId, Expression>>; cast?: CharId[] };
   youtube: {
     title: string;
     description: string;

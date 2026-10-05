@@ -12,7 +12,7 @@ const episode: Episode = {
   title: 'Los papás de Benja',
   subtitle: 'Los papás de Benja van a vivir en casas separadas… y él tiene miedo',
   music: 'calm',
-  thumb: { bg: 'school', text: 'DOS CASAS, UN AMOR', prop: 'heart', exprs: { hijo: 'love', hija: 'love', papa: 'love', mama: 'love' } },
+  thumb: { bg: 'school', text: 'DOS CASAS, UN AMOR', prop: 'heart', exprs: { benjaPapa: 'love', benja: 'laugh', benjaMama: 'love', hijo: 'happy' }, cast: ['benjaPapa', 'benja', 'benjaMama', 'hijo'] },
   scenes: [
     {
       bg: 'school',

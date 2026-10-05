@@ -11,7 +11,7 @@ const episode: Episode = {
   title: '¡Sin rueditas!',
   subtitle: 'Hija quiere andar en bici sin rueditas… pero se cae una y otra vez',
   music: 'adventure',
-  thumb: { bg: 'park', text: '¡SIN RUEDITAS!', prop: 'star', exprs: { hija: 'excited', hijo: 'excited', papa: 'proud', mama: 'love' } },
+  thumb: { bg: 'park', text: '¡SIN RUEDITAS!', prop: 'star', exprs: { hija: 'excited', hijo: 'excited', papa: 'proud', mama: 'love' }, cast: ['papa', 'hija', 'hijo', 'mama'] },
   scenes: [
     {
       bg: 'park',

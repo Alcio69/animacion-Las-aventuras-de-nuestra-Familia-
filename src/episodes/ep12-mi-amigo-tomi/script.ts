@@ -11,7 +11,7 @@ const episode: Episode = {
   title: 'Mi amigo Tomi',
   subtitle: 'Llega un compañero nuevo que usa silla de ruedas… ¿podrá jugar con ellos?',
   music: 'happy',
-  thumb: { bg: 'park', text: '¡UN AMIGO NUEVO!', prop: 'ball', exprs: { hijo: 'excited', hija: 'happy', papa: 'love', mama: 'love' } },
+  thumb: { bg: 'park', text: '¡UN AMIGO NUEVO!', prop: 'ball', exprs: { hijo: 'excited', tomi: 'laugh', benja: 'excited' }, cast: ['hijo', 'tomi', 'benja'] },
   scenes: [
     {
       bg: 'school',
