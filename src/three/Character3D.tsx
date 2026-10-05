@@ -84,7 +84,11 @@ export const Character3D: React.FC<{ id: CharId; pose: Pose; position: V3; scale
 
   return (
     <group position={position} scale={scale}>
-      <group rotation={[0, yaw, 0]} position={[0, pose.lift * S, 0]} scale={[1 / Math.sqrt(sq), sq, 1 / Math.sqrt(sq)]}>
+      <group rotation={[0, yaw, 0]}>
+      <group rotation={[0, 0, -pose.tip * DEG * (pose.yaw < 0 ? -1 : 1)]}>
+      {pose.vehicle === 1 && <Wheelchair3D d={d} roll={pose.roll} />}
+      {pose.vehicle === 2 && <Bike3D d={d} roll={pose.roll} />}
+      <group position={[0, pose.lift * S, 0]} scale={[1 / Math.sqrt(sq), sq, 1 / Math.sqrt(sq)]}>
         <Tail3D d={d} m={m} pose={pose} hipY={hipY} bw={bw} />
         {([-1, 1] as const).map((side) => (
           <Leg3D key={side} d={d} m={m} side={side} swing={side < 0 ? pose.legL : pose.legR} knee={side < 0 ? pose.kneeL : pose.kneeR} hipY={hipY} bw={bw} />
@@ -104,15 +108,149 @@ export const Character3D: React.FC<{ id: CharId; pose: Pose; position: V3; scale
             <Head3D d={d} m={m} pose={pose} R={R} />
           </group>
           {([-1, 1] as const).map((side) => (
-            <Arm3D key={side} d={d} m={m} side={side} arm={side < 0 ? pose.armL : pose.armR} swing={side < 0 ? pose.swingL : pose.swingR} shoulderY={shoulderY} tw={tw} />
+            // armR = the arm towards facing (the 2D style mirrors; here we swap when turned left)
+            <Arm3D key={side} d={d} m={m} side={side} arm={side * lookSide < 0 ? pose.armL : pose.armR} swing={side * lookSide < 0 ? pose.swingL : pose.swingR} shoulderY={shoulderY} tw={tw} />
           ))}
         </group>
+      </group>
+      </group>
       </group>
     </group>
   );
 };
 
 type M = ReturnType<typeof makeMats>;
+
+/** Wheelchair sized to the rider; forward is +z. `roll` (px travelled) turns the wheels. */
+const Wheelchair3D: React.FC<{ d: Design; roll: number }> = ({ d, roll }) => {
+  const L = d.legH * S;
+  const seat = L * 0.55;
+  const wr = seat * 0.82;
+  const half = (d.torsoBottom * S) / 2 + 0.16;
+  const ang = (roll * S) / wr;
+  const metal = '#ADB5BD';
+  return (
+    <group>
+      {/* seat + backrest */}
+      <RoundedBox args={[half * 2 - 0.1, 0.12, L * 0.55]} radius={0.04} position={[0, seat - 0.16, L * 0.18]} castShadow>
+        <meshStandardMaterial color="#1971C2" roughness={0.6} />
+      </RoundedBox>
+      <RoundedBox args={[half * 2 - 0.1, L * 0.75, 0.1]} radius={0.04} position={[0, seat + L * 0.28, -L * 0.12]} rotation={[-0.12, 0, 0]} castShadow>
+        <meshStandardMaterial color="#1971C2" roughness={0.6} />
+      </RoundedBox>
+      {/* frame + footrest */}
+      {[-1, 1].map((sd) => (
+        <group key={sd}>
+          <mesh position={[sd * (half - 0.05), seat - 0.25, L * 0.2]} rotation={[Math.PI / 2, 0, 0]} castShadow>
+            <cylinderGeometry args={[0.035, 0.035, L * 0.7, 10]} />
+            <meshStandardMaterial color={metal} metalness={0.6} roughness={0.3} />
+          </mesh>
+          <mesh position={[sd * (half - 0.05), seat + L * 0.62, -L * 0.2]} rotation={[0, 0, 0]}>
+            <cylinderGeometry args={[0.035, 0.035, L * 0.35, 10]} />
+            <meshStandardMaterial color={metal} metalness={0.6} roughness={0.3} />
+          </mesh>
+          {/* big wheel with push rim and spokes */}
+          <group position={[sd * half, wr, 0]} rotation={[ang, 0, Math.PI / 2]}>
+            <mesh castShadow>
+              <torusGeometry args={[wr, 0.045, 12, 40]} />
+              <meshStandardMaterial color="#343A40" roughness={0.8} />
+            </mesh>
+            <mesh>
+              <torusGeometry args={[wr * 0.86, 0.018, 8, 40]} />
+              <meshStandardMaterial color={metal} metalness={0.7} roughness={0.25} />
+            </mesh>
+            {[0, 1, 2, 3, 4, 5].map((i) => (
+              <mesh key={i} rotation={[0, 0, (i * Math.PI) / 6]}>
+                <boxGeometry args={[wr * 1.7, 0.012, 0.012]} />
+                <meshStandardMaterial color={metal} metalness={0.7} roughness={0.25} />
+              </mesh>
+            ))}
+            <mesh rotation={[Math.PI / 2, 0, 0]}>
+              <cylinderGeometry args={[0.05, 0.05, 0.08, 12]} />
+              <meshStandardMaterial color={metal} />
+            </mesh>
+          </group>
+          {/* front caster */}
+          <mesh position={[sd * (half - 0.12), 0.08, L * 0.62]} rotation={[0, 0, Math.PI / 2]} castShadow>
+            <cylinderGeometry args={[0.08, 0.08, 0.05, 16]} />
+            <meshStandardMaterial color="#343A40" />
+          </mesh>
+          <mesh position={[sd * (half - 0.12), seat * 0.4, L * 0.62]}>
+            <cylinderGeometry args={[0.025, 0.025, seat * 0.8, 8]} />
+            <meshStandardMaterial color={metal} metalness={0.6} roughness={0.3} />
+          </mesh>
+        </group>
+      ))}
+      <RoundedBox args={[half * 2 - 0.2, 0.05, 0.22]} radius={0.02} position={[0, 0.16, L * 0.72]}>
+        <meshStandardMaterial color="#343A40" />
+      </RoundedBox>
+    </group>
+  );
+};
+
+/** Kid's bicycle; forward is +z. */
+const Bike3D: React.FC<{ d: Design; roll: number }> = ({ d, roll }) => {
+  const L = d.legH * S;
+  const wr = L * 0.42;
+  const wb = L * 0.75;
+  const ang = (roll * S) / wr;
+  const seatY = L * 0.92;
+  const frame = '#E64980';
+  const Wheel = ({ z }: { z: number }) => (
+    <group position={[0, wr, z]} rotation={[ang, 0, Math.PI / 2]}>
+      <mesh castShadow>
+        <torusGeometry args={[wr, 0.05, 12, 40]} />
+        <meshStandardMaterial color="#212529" roughness={0.85} />
+      </mesh>
+      {[0, 1, 2, 3].map((i) => (
+        <mesh key={i} rotation={[0, 0, (i * Math.PI) / 4]}>
+          <boxGeometry args={[wr * 1.8, 0.015, 0.015]} />
+          <meshStandardMaterial color="#DEE2E6" metalness={0.6} roughness={0.3} />
+        </mesh>
+      ))}
+    </group>
+  );
+  const Tube: React.FC<{ a: V3; b: V3; r?: number; c?: string }> = ({ a, b, r = 0.045, c = frame }) => {
+    const va = new THREE.Vector3(...a);
+    const vb = new THREE.Vector3(...b);
+    const mid = va.clone().add(vb).multiplyScalar(0.5);
+    const dir = vb.clone().sub(va);
+    const q = new THREE.Quaternion().setFromUnitVectors(new THREE.Vector3(0, 1, 0), dir.clone().normalize());
+    return (
+      <mesh position={mid} quaternion={q} castShadow>
+        <cylinderGeometry args={[r, r, dir.length(), 10]} />
+        <meshStandardMaterial color={c} roughness={0.35} metalness={0.2} />
+      </mesh>
+    );
+  };
+  const crank: V3 = [0, wr * 0.95, 0];
+  return (
+    <group>
+      <Wheel z={-wb} />
+      <Wheel z={wb} />
+      <Tube a={[0, wr, -wb]} b={crank} />
+      <Tube a={crank} b={[0, seatY - 0.08, -wb * 0.25]} />
+      <Tube a={[0, seatY - 0.12, -wb * 0.2]} b={[0, L * 1.05, wb * 0.75]} />
+      <Tube a={crank} b={[0, L * 1.05, wb * 0.75]} />
+      <Tube a={[0, L * 1.05, wb * 0.75]} b={[0, wr, wb]} r={0.04} />
+      <Tube a={[0, L * 1.05, wb * 0.75]} b={[0, L * 1.35, wb * 0.68]} r={0.035} c="#ADB5BD" />
+      <Tube a={[-0.35, L * 1.35, wb * 0.68]} b={[0.35, L * 1.35, wb * 0.68]} r={0.03} c="#ADB5BD" />
+      {[-1, 1].map((sd) => (
+        <mesh key={sd} position={[sd * 0.37, L * 1.35, wb * 0.68]} rotation={[0, 0, Math.PI / 2]}>
+          <cylinderGeometry args={[0.045, 0.045, 0.14, 12]} />
+          <meshStandardMaterial color="#FFFFFF" />
+        </mesh>
+      ))}
+      <RoundedBox args={[0.22, 0.07, 0.36]} radius={0.03} position={[0, seatY, -wb * 0.25]} castShadow>
+        <meshStandardMaterial color="#343A40" />
+      </RoundedBox>
+      <mesh position={[0, L * 1.42, wb * 0.75]}>
+        <sphereGeometry args={[0.07, 12, 8]} />
+        <meshStandardMaterial color="#FFD43B" emissive="#FFD43B" emissiveIntensity={0.3} />
+      </mesh>
+    </group>
+  );
+};
 
 const Torso3D: React.FC<{ d: Design; m: M; hipY: number; tw: number; bw: number; depth: number; breath: number }> = ({ d, m, hipY, tw, bw, depth, breath }) => {
   const h = d.torsoH * S;
@@ -283,6 +421,7 @@ const Arm3D: React.FC<{ d: Design; m: M; side: -1 | 1; arm: { up: number; bend: 
 const Tail3D: React.FC<{ d: Design; m: M; pose: Pose; hipY: number; bw: number }> = ({ d, m, pose, hipY, bw }) => {
   const k = d.headR / 96;
   const dog = d.species === 'dog';
+  if (d.species === 'bunny') return <Ball p={[0, hipY + 0.2, -bw * 0.45]} s={0.16} m={m.furLight} />;
   const wag = dog ? Math.sin(pose.t * 14) * 0.45 * pose.wag : Math.sin(pose.t * 2.1) * 0.25;
   const drag = Math.max(-0.4, Math.min(0.4, -pose.vx * 0.0008));
   const curl = Math.sin(pose.t * 1.6 + 1) * 0.25;
@@ -338,7 +477,8 @@ const Tail3D: React.FC<{ d: Design; m: M; pose: Pose; hipY: number; bw: number }
 };
 
 const Head3D: React.FC<{ d: Design; m: M; pose: Pose; R: number }> = ({ d, m, pose, R }) => {
-  const cat = d.species === 'cat';
+  const cat = d.species !== 'dog';
+  const bunny = d.species === 'bunny';
   const spec = FACES[pose.expr];
   const er = R * (cat ? 0.26 : 0.25) * d.eyeScale;
   const eyeX = R * (cat ? 0.4 : 0.38);
@@ -356,12 +496,22 @@ const Head3D: React.FC<{ d: Design; m: M; pose: Pose; R: number }> = ({ d, m, po
           {[-1, 1].map((sd) => (
             <group key={sd}>
               <Ball p={[sd * R * 0.78, -R * 0.32, R * 0.22]} s={[R * 0.32, R * 0.24, R * 0.3]} r={[0, 0, sd * 0.5]} m={m.fur} />
-              <mesh position={[sd * R * 0.58, R * 0.8, R * 0.02]} rotation={[0.05, 0, -sd * 0.38]} scale={[1, 1, 0.6]} material={m.fur} castShadow>
-                <coneGeometry args={[R * 0.4, R * 0.78, 28]} />
-              </mesh>
-              <mesh position={[sd * R * 0.57, R * 0.78, R * 0.15]} rotation={[0.1, 0, -sd * 0.38]} scale={[1, 1, 0.35]} material={m.ear}>
-                <coneGeometry args={[R * 0.27, R * 0.56, 24]} />
-              </mesh>
+              {bunny ? (
+                // long bunny ears; the left one flops a little and both sway
+                <group position={[sd * R * 0.32, R * 0.72, -R * 0.05]} rotation={[0, 0, -sd * (0.12 + (sd < 0 ? 0.25 : 0)) + Math.sin(pose.t * 2 + sd) * 0.05]}>
+                  <Ball p={[0, R * 0.62, 0]} s={[R * 0.2, R * 0.66, R * 0.12]} m={m.fur} />
+                  <Ball p={[0, R * 0.6, R * 0.06]} s={[R * 0.12, R * 0.52, R * 0.07]} m={m.ear} />
+                </group>
+              ) : (
+                <>
+                  <mesh position={[sd * R * 0.58, R * 0.8, R * 0.02]} rotation={[0.05, 0, -sd * 0.38]} scale={[1, 1, 0.6]} material={m.fur} castShadow>
+                    <coneGeometry args={[R * 0.4, R * 0.78, 28]} />
+                  </mesh>
+                  <mesh position={[sd * R * 0.57, R * 0.78, R * 0.15]} rotation={[0.1, 0, -sd * 0.38]} scale={[1, 1, 0.35]} material={m.ear}>
+                    <coneGeometry args={[R * 0.27, R * 0.56, 24]} />
+                  </mesh>
+                </>
+              )}
             </group>
           ))}
           {/* muzzle */}
@@ -369,6 +519,10 @@ const Head3D: React.FC<{ d: Design; m: M; pose: Pose; R: number }> = ({ d, m, po
           <Ball p={[R * 0.13, -R * 0.3, R * 0.8]} s={[R * 0.19, R * 0.15, R * 0.14]} m={m.furLight} />
           <Ball p={[0, -R * 0.42, R * 0.78]} s={[R * 0.15, R * 0.1, R * 0.12]} m={m.furLight} />
           <Ball p={[0, -R * 0.17, R * 0.92]} s={[R * 0.09, R * 0.065, R * 0.06]} m={m.nose} />
+          {bunny &&
+            [-1, 1].map((sd) => (
+              <RoundedBox key={sd} args={[R * 0.1, R * 0.13, R * 0.04]} radius={R * 0.015} position={[sd * R * 0.055, -R * 0.5, R * 0.86]} material={m.white} />
+            ))}
           {d.fur.stripe &&
             [-0.2, 0, 0.2].map((x) => <Ball key={x} p={[R * x, R * 0.68, R * 0.6]} s={[R * 0.045, R * 0.17, R * 0.05]} r={[-0.75, 0, x * 1.2]} m={m.stripe} />)}
           {/* whiskers */}
@@ -443,6 +597,13 @@ const Head3D: React.FC<{ d: Design; m: M; pose: Pose; R: number }> = ({ d, m, po
         </group>
       )}
 
+      {d.extras.includes('bun') && (
+        // grandma's hair bun
+        <group>
+          <Ball p={[0, R * 1.02, -R * 0.15]} s={R * 0.34} m={m.furLight} />
+          <Ball p={[0, R * 0.8, -R * 0.05]} s={[R * 0.62, R * 0.26, R * 0.55]} m={m.furLight} />
+        </group>
+      )}
       {d.extras.includes('bow') && (
         <group position={[R * 0.48, R * 0.86, R * 0.25]} rotation={[0.3, 0, -0.35]}>
           <mesh position={[-R * 0.16, 0, 0]} rotation={[0, 0, -Math.PI / 2]} material={m.bow} castShadow>

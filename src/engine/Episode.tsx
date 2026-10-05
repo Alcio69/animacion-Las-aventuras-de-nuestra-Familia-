@@ -54,7 +54,7 @@ export const EpisodeVideo: React.FC<EpisodeProps> = ({ episode, audio = true, st
   );
 };
 
-const ORDER: CharId[] = ['papa', 'mama', 'hijo', 'hija', 'dentista', 'lola'];
+const ORDER = Object.keys(DESIGNS) as CharId[];
 
 export const SceneView: React.FC<{ cs: CompiledScene; audio: boolean }> = ({ cs, audio }) => {
   const frame = useCurrentFrame();

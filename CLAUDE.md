@@ -4,7 +4,8 @@ Serie infantil animada 100% con código: **Remotion** para video, **Next.js** pa
 Dos estilos con el MISMO guion: **3D** (Three.js/@remotion/three, comp `epNN-slug-3d`) y **2.5D** vectorial (SVG, comp `epNN-slug`).
 **El usuario eligió 3D**: renderizar solo 3D (`npm run render -- epNN-slug 3d`). Render 3D ≈ 85 min por minuto de video: lanzarlo con `setsid nohup ... &` (los comandos en background mueren a las 2 h).
 Personajes: `papa` (labrador), `mama` (gata negra), `hijo` (labrador 10), `hija` (gata naranja 7). Idioma: español neutro (tú).
-Invitados (solo aparecen si están en `cast`): `dentista` (schnauzer gris, guardapolvo, anteojos), `lola` (gatita blanca con anteojos y jardinero amarillo, mejor amiga de Hija). Para agregar otro invitado: `CharId` + `DESIGNS` (design.ts), `SEED` (animate.ts), `ORDER` (Episode.tsx y Scene3D.tsx), `VOICES` (voices.py), y excluirlo de `BIO` en app/page.tsx.
+Invitados (solo aparecen si están en `cast`): `dentista` (schnauzer), `lola` (gatita amiga de Hija), `tomi` (conejito, usa silla de ruedas), `benja` (beagle, compañero de Hijo) y sus papás `benjaPapa`/`benjaMama`, `abuela` (labradora mayor, mamá de Papá). Para agregar otro invitado: `CharId` (types.ts), `DESIGNS` (design.ts; species dog|cat|bunny), `VOICES` (voices.py). ORDER y SEED se derivan solos; `BIO` en app/page.tsx es solo familia.
+Vehículos: `cast: { tomi: { x, vehicle: 'wheelchair' } }` o `'bike'` (walk/run = rodar/pedalear). Acción `fall` = caerse y levantarse.
 
 ## Hacer un capítulo nuevo (flujo estándar)
 1. Copiar `src/episodes/ep01-la-torta-sorpresa/` → `src/episodes/epNN-slug/script.ts`. Editar SOLO datos (formato en `src/engine/script.ts`).
@@ -20,7 +21,7 @@ Duración: 30 s ≈ 6–8 líneas; 2 min ≈ 25–30 líneas. Intro 3.6 s + outr
 ## Reglas del guion (script.ts)
 - Pasos en secuencia; `with: true` = en paralelo con el paso anterior (`delay` en s).
 - Piso y=930, x de 0 a 1920; fuera de cámara: -250 / 2250. Separar personajes ≥250 px.
-- Acciones: walk run jump wave cheer dance clap think point shrug hug hips nod shake tremble sneeze turn look hide show.
+- Acciones: walk run jump wave cheer dance clap think point shrug hug hips nod shake tremble sneeze turn look hide show fall.
 - Expresiones: neutral happy laugh excited surprised sad angry worried wink love sleepy proud.
 - Props: table cake bowl flour ball balloon gift book star heart cookie plant plate broccoli teddy flashlight toothbrush toybox block car vase vaseBroken vaseFixed drawing tree glass (mesada de cocina y=562; sobre la mesa / "en la mano" y=760).
 - Encuadre 3D: mantener a los personajes entre x≈400 y x≈1550 (la cámara se mueve un poco y corta los bordes).
@@ -28,7 +29,7 @@ Duración: 30 s ≈ 6–8 líneas; 2 min ≈ 25–30 líneas. Intro 3.6 s + outr
 - Fondos: living (variant 'rain' | 'rainbow') kitchen park(variant 'sunset') bedroom (noche; variant 'day') dentist school. `point` señala hacia `facing`.
 - Lluvia: `variant: 'rain', ambience: 'rain'` en la escena; `{ sfx: 'thunder' }` hace relámpago + trueno.
 - Mayúsculas sostenidas se leen bien (el TTS las pasa a minúsculas).
-- Voces: Kokoro offline (`scripts/voices.py`). Evitar onomatopeyas y risas escritas ("Shhh", "Ja, ja"): el TTS las deletrea. Usar palabras ("¡Silencio!") + `sfx: 'giggle'` y `expr: 'laugh'`. "¡Oh, no!" sale mal: usar "¡No puede ser!". Frases de 1–2 palabras suenan peor: alargarlas.
+- Voces: Kokoro offline (`scripts/voices.py`). Evitar onomatopeyas y risas escritas ("Shhh", "Ja, ja"): el TTS las deletrea. Usar palabras ("¡Silencio!") + `sfx: 'giggle'` y `expr: 'laugh'`. "¡Oh, no!" sale mal: usar "¡No puede ser!". Frases de 1–2 palabras suenan peor: alargarlas. Hijo dice mal "¡Miren!" al inicio: usar "¡Vengan a ver!".
 - Verificar voces con Whisper offline: `python3 scripts/asr.py public/voices/<key>.mp3` (ver scripts/voices.py; modelo sherpa-onnx-whisper-base).
 - Objetos que se mueven: `{ moveProp: 'pelota', x, y, dur, arc, bounces }` (arco = pelota lanzada). y<520 = en el aire (altura real); en el parque toda altura es real. Sacudir un árbol: moveProp con arc chico y bounces.
 

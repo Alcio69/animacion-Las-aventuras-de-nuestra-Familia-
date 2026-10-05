@@ -1,4 +1,4 @@
-export type CharId = 'papa' | 'mama' | 'hijo' | 'hija' | 'dentista' | 'lola';
+export type CharId = 'papa' | 'mama' | 'hijo' | 'hija' | 'dentista' | 'lola' | 'tomi' | 'benja' | 'benjaPapa' | 'benjaMama' | 'abuela';
 
 /** The four main characters (intro, outro, thumbnails, website). Guests like `dentista` only appear when cast. */
 export const FAMILY: CharId[] = ['papa', 'mama', 'hijo', 'hija'];
@@ -67,6 +67,12 @@ export type Pose = {
   vy: number;
   /** Breathing 0..1 (chest expansion). */
   breath: number;
+  /** 0 = on foot, 1 = wheelchair, 2 = bicycle. */
+  vehicle: number;
+  /** Distance travelled (px), turns wheels and pedals. */
+  roll: number;
+  /** Whole-body tip over to the side, degrees (falling). */
+  tip: number;
 };
 
 export const restPose = (t = 0): Pose => ({
@@ -96,4 +102,7 @@ export const restPose = (t = 0): Pose => ({
   vx: 0,
   vy: 0,
   breath: 0,
+  vehicle: 0,
+  roll: 0,
+  tip: 0,
 });

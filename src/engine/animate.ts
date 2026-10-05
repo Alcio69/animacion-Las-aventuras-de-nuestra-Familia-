@@ -21,7 +21,10 @@ const easeOutBack = (k: number) => {
   return 1 + (c + 1) * Math.pow(k - 1, 3) + c * Math.pow(k - 1, 2);
 };
 const lerpArm = (a: Arm, b: Arm, k: number): Arm => ({ up: lerp(a.up, b.up, k), bend: lerp(a.bend, b.bend, k) });
-const SEED: Record<CharId, number> = { papa: 11, mama: 23, hijo: 37, hija: 53, dentista: 67, lola: 79 };
+const SEED_FIXED: Partial<Record<CharId, number>> = { papa: 11, mama: 23, hijo: 37, hija: 53, dentista: 67, lola: 79 };
+const SEED = new Proxy(SEED_FIXED as Record<CharId, number>, {
+  get: (o, k: string) => o[k as CharId] ?? [...k].reduce((a, c) => (a * 31 + c.charCodeAt(0)) % 997, 7),
+});
 
 /** Smooth 1D value noise in [-1, 1]. */
 const hash = (n: number) => {
@@ -323,6 +326,15 @@ export const targetPose = (cs: CompiledScene, id: CharId, t: number): Raw | null
         pose.kneeL += 20 * w;
         pose.kneeR += 20 * w;
         break;
+      case 'fall': {
+        // lose balance, tip over sideways, then get back up
+        const down = k < 0.35 ? smooth(k / 0.35) : k < 0.62 ? 1 : 1 - smooth((k - 0.62) / 0.38);
+        pose.tip = 72 * down;
+        pose.expr = k < 0.35 ? 'surprised' : k < 0.75 ? 'sad' : pose.expr;
+        pose.armL = lerpArm(pose.armL, { up: 70, bend: 40 }, down);
+        pose.armR = lerpArm(pose.armR, { up: 70, bend: 40 }, down);
+        break;
+      }
       case 'sneeze':
         if (k < 0.65) {
           const q = smooth(k / 0.65);
@@ -343,6 +355,43 @@ export const targetPose = (cs: CompiledScene, id: CharId, t: number): Raw | null
         break;
       default:
         break;
+    }
+  }
+  // ---- vehicles: wheelchair / bicycle override the legs (and the hands while moving) ----
+  if (cast.vehicle) {
+    const moving = acts.some((a) => (a.action === 'walk' || a.action === 'run') && t < a.t1);
+    const busyArms = acts.some((a) => a.action !== 'walk' && a.action !== 'run' && a.action !== 'fall' && t < a.t1);
+    pose.roll = x;
+    pose.hipX *= 0.3;
+    if (cast.vehicle === 'wheelchair') {
+      pose.vehicle = 1;
+      pose.legL = pose.legR = 84;
+      pose.kneeL = pose.kneeR = 86;
+      pose.swingL = pose.swingR = 0;
+      pose.lift = -d.legH * 0.45 + pose.lift * 0.15;
+      pose.bob *= 0.5;
+      pose.bodyTilt = 0;
+      if (moving && !busyArms) {
+        const ph = x / 55;
+        pose.armL = { up: 16, bend: -25 + Math.sin(ph) * 20 };
+        pose.armR = { up: 16, bend: -25 + Math.sin(ph) * 20 };
+        pose.swingL = pose.swingR = 20 + Math.sin(ph) * 22;
+      }
+    } else {
+      pose.vehicle = 2;
+      const ph = x / 40;
+      pose.legL = 48 + Math.sin(ph) * 26;
+      pose.legR = 48 + Math.sin(ph + Math.PI) * 26;
+      pose.kneeL = 72 + Math.sin(ph) * 30;
+      pose.kneeR = 72 + Math.sin(ph + Math.PI) * 30;
+      pose.lift = -d.legH * 0.08;
+      pose.bob *= 0.4;
+      pose.bodyTilt = 0;
+      if (!busyArms) {
+        pose.armL = { up: 10, bend: -10 };
+        pose.armR = { up: 10, bend: -10 };
+        pose.swingL = pose.swingR = 62;
+      }
     }
   }
   return { pose, x, y, scale: cast.scale ?? 1, visible, speaking };
@@ -396,6 +445,8 @@ export const solveCharacter = (cs: CompiledScene, id: CharId, t: number): CharSt
   const back = samples[3];
   p.vx = (now.x - back.x) / (3 * dt);
   p.vy = (now.pose.lift - back.pose.lift) / (3 * dt);
+  p.tip = f(K_FAST, (r) => r.pose.tip);
+  if (now.pose.vehicle) p.lift = now.pose.lift + (p.lift - now.pose.lift) * 0.3;
 
   const facing: 1 | -1 = p.yaw < 0 ? -1 : 1;
   return { pose: p, x: now.x, y: now.y, facing, scale: now.scale, visible: f(K_BODY, (r) => r.visible) };

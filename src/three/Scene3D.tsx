@@ -3,6 +3,7 @@ import { ThreeCanvas } from '@remotion/three';
 import React, { useLayoutEffect } from 'react';
 import { AbsoluteFill, Html5Audio, interpolate, spring, staticFile, useCurrentFrame, useVideoConfig } from 'remotion';
 import * as THREE from 'three';
+import { DESIGNS } from '../characters/design';
 import type { CharId } from '../characters/types';
 import { restPose } from '../characters/types';
 import { solveCharacter } from '../engine/animate';
@@ -17,7 +18,7 @@ import { Lights3D } from './Lights3D';
 import { Prop3D } from './Props3D';
 import { COUNTER_TOP, COUNTER_Z, Set3D } from './Sets3D';
 
-const ORDER: CharId[] = ['papa', 'mama', 'hijo', 'hija', 'dentista', 'lola'];
+const ORDER = Object.keys(DESIGNS) as CharId[];
 const FAMILY: CharId[] = ['papa', 'mama', 'hijo', 'hija'];
 /** Script coordinates (px) → world. */
 export const toX = (x: number) => (x - 960) / 100;

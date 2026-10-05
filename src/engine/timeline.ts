@@ -76,6 +76,7 @@ const DEFAULT_DUR: Record<Action, number> = {
   look: 0.3,
   hide: 0.4,
   show: 0.4,
+  fall: 1.8,
 };
 
 /** Rough speaking time when a voice file hasn't been generated yet. */

@@ -30,6 +30,11 @@ VOICES = {
     "hija": {"engine": "kokoro", "sid": 28, "speed": 1.0, "pitch": 5.0, "formant": "shifted"},
     "narrador": {"engine": "kokoro", "sid": 53, "speed": 0.9, "pitch": 0.0},
     "lola": {"engine": "kokoro", "sid": 28, "speed": 1.06, "pitch": 3.8, "formant": "shifted"},
+    "tomi": {"engine": "kokoro", "sid": 29, "speed": 1.0, "pitch": 6.0, "formant": "shifted"},
+    "benja": {"engine": "kokoro", "sid": 53, "speed": 1.0, "pitch": 5.5, "formant": "shifted"},
+    "benjaPapa": {"engine": "kokoro", "sid": 29, "speed": 0.95, "pitch": -3.0, "formant": "preserved"},
+    "benjaMama": {"engine": "kokoro", "sid": 28, "speed": 0.95, "pitch": -1.5, "formant": "preserved"},
+    "abuela": {"engine": "kokoro", "sid": 28, "speed": 0.86, "pitch": -2.5, "formant": "preserved"},
     "dentista": {"engine": "kokoro", "sid": 53, "speed": 1.0, "pitch": 2.0, "formant": "preserved"},
 }
 KOKORO = "kokoro-multi-lang-v1_0"

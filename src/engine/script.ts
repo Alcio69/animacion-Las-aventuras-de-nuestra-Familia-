@@ -32,7 +32,8 @@ export type Action =
   | 'turn' // flip facing
   | 'look' // set gaze: `look` value -1..1
   | 'hide'
-  | 'show';
+  | 'show'
+  | 'fall'; // tip over (e.g. off a bike) and get back up
 
 export type PropKind = 'table' | 'cake' | 'bowl' | 'flour' | 'ball' | 'balloon' | 'gift' | 'book' | 'star' | 'heart' | 'cookie' | 'plant' | 'plate' | 'broccoli' | 'teddy' | 'flashlight' | 'toothbrush'
   | 'toybox' | 'block' | 'car' | 'vase' | 'vaseBroken' | 'vaseFixed' | 'drawing' | 'tree' | 'glass';
@@ -83,6 +84,8 @@ export type CastEntry = {
   mood?: Expression;
   scale?: number;
   hidden?: boolean;
+  /** Character rides/sits in something for the whole scene. */
+  vehicle?: 'wheelchair' | 'bike';
 };
 
 export type Scene = {

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Composition } from 'remotion';
 import { Test3D } from '../src/three/Test3D';
+import { Guests3D } from '../src/three/Guests3D';
 import { CharacterSheet } from '../src/engine/CharacterSheet';
 import { EpisodeVideo } from '../src/engine/Episode';
 import { Thumbnail } from '../src/engine/Thumbnail';
@@ -35,6 +36,7 @@ export const RemotionRoot: React.FC = () => (
       </React.Fragment>
     ))}
     <Composition id="personajes-3d" component={Test3D} durationInFrames={90} fps={FPS} width={1920} height={1080} />
+    <Composition id="invitados-3d" component={Guests3D} durationInFrames={90} fps={FPS} width={1920} height={1080} />
     <Composition id="personajes" component={CharacterSheet} durationInFrames={90} fps={FPS} width={1920} height={1080} />
   </>
 );
