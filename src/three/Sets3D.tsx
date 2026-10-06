@@ -685,6 +685,92 @@ const School3D: React.FC<{ t: number }> = ({ t }) => {
   );
 };
 
+
+const sand = () =>
+  canvasTex('sand', 512, 512, (c) => {
+    c.fillStyle = '#F2D59A';
+    c.fillRect(0, 0, 512, 512);
+    for (let i = 0; i < 3000; i++) {
+      c.fillStyle = rnd(i) > 0.5 ? 'rgba(255,255,255,0.12)' : 'rgba(150,100,40,0.1)';
+      c.fillRect(rnd(i + 1) * 512, rnd(i + 2) * 512, 3, 3);
+    }
+  }, [10, 6]);
+
+const Palm3D: React.FC<{ p: V3; s?: number; t: number }> = ({ p, s = 1, t }) => (
+  <group position={p} scale={s}>
+    {Array.from({ length: 7 }, (_, i) => (
+      <Cyl key={i} p={[i * i * 0.012, 0.45 + i * 0.85, 0]} r={0.26 - i * 0.015} r2={0.3 - i * 0.015} h={0.9} c={i % 2 ? '#A97142' : '#B97E4C'} rot={[0, 0, -i * 0.03]} />
+    ))}
+    <group position={[0.6, 6.2, 0]} rotation={[0, 0, Math.sin(t * 0.9) * 0.04]}>
+      {Array.from({ length: 7 }, (_, i) => {
+        const a = (i / 7) * Math.PI * 2;
+        return (
+          <mesh key={i} position={[Math.cos(a) * 1.1, -0.35, Math.sin(a) * 1.1]} rotation={[Math.sin(a) * 0.6, -a, -Math.cos(a) * 0.6]} scale={[1.6, 0.08, 0.45]} castShadow>
+            <sphereGeometry args={[1, 16, 8]} />
+            {std(i % 2 ? '#3E9E45' : '#4CB052')}
+          </mesh>
+        );
+      })}
+      <Sph p={[0.1, -0.3, 0.2]} s={0.22} c="#7A4E2D" />
+      <Sph p={[-0.2, -0.32, -0.1]} s={0.2} c="#6B4226" />
+    </group>
+  </group>
+);
+
+const Beach3D: React.FC<{ t: number; variant?: string }> = ({ t, variant }) => {
+  const sunset = variant === 'sunset';
+  const skyT = useMemo(() => sky(sunset ? '#FF8E72' : '#4DB6F0', sunset ? '#FFD8A0' : '#D6F1FF', sunset ? 'skyBS' : 'skyB'), [sunset]);
+  const sd = useMemo(() => sand(), []);
+  return (
+    <group>
+      <mesh position={[0, 12, -40]}>
+        <planeGeometry args={[150, 50]} />
+        <meshBasicMaterial map={skyT} />
+      </mesh>
+      <Sph p={[-16, sunset ? 6 : 15, -38]} s={2.6} c={sunset ? '#FF9F43' : '#FFE066'} e={1.3} />
+      {[0, 1, 2].map((i) => (
+        <Cloud3D key={i} p={[((t * (0.2 + i * 0.05) + i * 13) % 70) - 35, 13 + i * 2.2, -36]} s={1.6 + i * 0.4} c={sunset ? '#FFE3D3' : '#FFFFFF'} />
+      ))}
+      {/* sea */}
+      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, 0.02, -24]}>
+        <planeGeometry args={[160, 34]} />
+        {std(sunset ? '#4F9FC9' : '#38B6D8', { roughness: 0.25, metalness: 0.1 })}
+      </mesh>
+      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, 0.03, -8.4]}>
+        <planeGeometry args={[160, 3]} />
+        {std('#63D3E8', { roughness: 0.3 })}
+      </mesh>
+      {/* foam lines coming and going */}
+      {[0, 1, 2].map((i) => {
+        const k = (t * 0.18 + i / 3) % 1;
+        return (
+          <mesh key={i} rotation={[-Math.PI / 2, 0, 0]} position={[0, 0.05, -12 + k * 5]}>
+            <planeGeometry args={[160, 0.18 + 0.2 * Math.sin(k * Math.PI)]} />
+            <meshBasicMaterial color="#FFFFFF" transparent opacity={0.85 * Math.sin(k * Math.PI)} />
+          </mesh>
+        );
+      })}
+      {/* sand */}
+      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, 0, 4]} receiveShadow>
+        <planeGeometry args={[160, 26]} />
+        <meshStandardMaterial map={sd} roughness={1} />
+      </mesh>
+      <Palm3D p={[-10.5, 0, -5]} s={1.1} t={t} />
+      <Palm3D p={[11, 0, -6]} s={1.25} t={t + 2} />
+      {/* shells and a starfish */}
+      {Array.from({ length: 9 }, (_, i) => {
+        const x = (rnd(i + 40) - 0.5) * 22;
+        if (Math.abs(x) < 4) return null;
+        return <Sph key={i} p={[x, 0.06, -2 + rnd(i + 41) * 5]} s={[0.14, 0.07, 0.12]} c={['#FFF0F6', '#FFD8A8', '#FFC9C9'][i % 3]} />;
+      })}
+      <mesh position={[-6.5, 0.05, 2.5]} rotation={[-Math.PI / 2, 0, 0.3]}>
+        <circleGeometry args={[0.3, 5]} />
+        {std('#FF8787')}
+      </mesh>
+    </group>
+  );
+};
+
 export const Set3D: React.FC<{ bg: Background; variant?: string; t: number }> = ({ bg, variant, t }) => {
   switch (bg) {
     case 'dentist':
@@ -695,6 +781,8 @@ export const Set3D: React.FC<{ bg: Background; variant?: string; t: number }> = 
       return <Kitchen3D t={t} />;
     case 'park':
       return <Park3D t={t} variant={variant} />;
+    case 'beach':
+      return <Beach3D t={t} variant={variant} />;
     case 'bedroom':
       return <Bedroom3D t={t} day={variant === 'day'} />;
     default:

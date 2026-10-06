@@ -29,7 +29,7 @@ const propPos = (bg: Background, x: number, y: number): [number, number, number]
   if (y < 520) return [toX(x), (930 - y) / 100, 0.3];
   if (y >= 880) return [toX(x), 0, toZ(y) - 0.5];
   // outdoors there is no table: any height is real height (balls flying, falling from trees)
-  if (bg === 'park') return [toX(x), (930 - y) / 100, 0.3];
+  if (bg === 'park' || bg === 'beach') return [toX(x), (930 - y) / 100, 0.3];
   if (bg === 'kitchen' && y < 700) return [toX(x), COUNTER_TOP, COUNTER_Z];
   // between the floor (y=880) and the table / hand height (y=760) blend smoothly, so props can fly up onto a table
   if (y > 760) {
@@ -95,7 +95,9 @@ export const Scene3DView: React.FC<{ cs: CompiledScene; audio: boolean }> = ({ c
   }, 0);
 
   return (
-    <AbsoluteFill style={{ clipPath: `circle(${irisR}% at 50% 50%)`, background: night ? '#2A2560' : '#FCE9D2' }}>
+    <AbsoluteFill
+      style={{ clipPath: `circle(${irisR}% at 50% 50%)`, background: night ? '#2A2560' : '#FCE9D2', filter: sc.flashback ? 'sepia(0.5) saturate(0.9) brightness(1.04)' : undefined }}
+    >
       <Canvas3D>
         <CameraRig x={camX} dist={dist} />
         <Lights3D night={night} target={[camX, 2.5, 0]} dim={sc.variant === 'rain' ? 1 : 0} flash={flash} />

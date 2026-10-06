@@ -543,6 +543,119 @@ export const Prop3D: React.FC<{ kind: PropKind; t: number; spin?: number }> = ({
           ))}
         </group>
       );
+    case 'baby': {
+      // baby Hija: an orange kitten wrapped in a pink blanket, sleeping peacefully
+      const br = 1 + Math.sin(t * 2.2) * 0.02;
+      return (
+        <group position={[0, 0.25, 0]} rotation={[0, 0, 0.1]}>
+          <mesh position={[0.2, 0, 0]} scale={[0.55 * br, 0.26 * br, 0.32]} castShadow>
+            <sphereGeometry args={[1, 24, 16]} />
+            <M c="#F8BCD6" r={0.85} />
+          </mesh>
+          <Sph p={[-0.32, 0.1, 0]} s={0.27} c="#F39136" />
+          <Sph p={[-0.36, 0.04, 0.2]} s={[0.12, 0.08, 0.08]} c="#FFE6C8" />
+          {[-1, 1].map((sd) => (
+            <mesh key={sd} position={[-0.3 + sd * 0.15, 0.33, 0]} rotation={[0, 0, -sd * 0.4]}>
+              <coneGeometry args={[0.09, 0.16, 12]} />
+              <M c="#F39136" />
+            </mesh>
+          ))}
+          {/* closed eyes */}
+          {[-1, 1].map((sd) => (
+            <mesh key={sd} position={[-0.36 + sd * 0.09, 0.14, 0.24]} rotation={[0, 0, Math.PI / 2]}>
+              <torusGeometry args={[0.035, 0.012, 6, 12, Math.PI]} />
+              <M c="#3A2516" />
+            </mesh>
+          ))}
+          <Sph p={[-0.22, 0.32, 0.12]} s={[0.07, 0.05, 0.04]} c="#F2809F" />
+        </group>
+      );
+    }
+    case 'crib':
+      // wooden baby crib; its mattress is at "table" height (y=760) so a baby prop at y=760 lies inside
+      return (
+        <group>
+          <RoundedBox args={[2.3, 0.18, 1.2]} radius={0.05} position={[0, 1.45, 0]} castShadow receiveShadow>
+            <M c="#FFF0F6" r={0.9} />
+          </RoundedBox>
+          {[-1, 1].map((sx) =>
+            [-1, 1].map((sz) => <Cyl key={`${sx}${sz}`} p={[sx * 1.15, 1.15, sz * 0.6]} r={0.07} h={2.3} c="#E9C9A0" />),
+          )}
+          {[-1, 1].map((sz) => (
+            <group key={sz}>
+              <Cyl p={[0, 2.25, sz * 0.6]} r={0.05} h={2.3} c="#E9C9A0" />
+              {Array.from({ length: 9 }, (_, i) => (
+                <Cyl key={i} p={[-1.0 + i * 0.25, 1.85, sz * 0.6]} r={0.025} h={0.8} c="#F3DCC0" />
+              ))}
+            </group>
+          ))}
+          <RoundedBox args={[2.3, 0.6, 0.1]} radius={0.04} position={[0, 1.1, 0]} castShadow>
+            <M c="#E9C9A0" />
+          </RoundedBox>
+        </group>
+      );
+    case 'suitcase':
+      return (
+        <group>
+          <RoundedBox args={[1.3, 0.95, 0.5]} radius={0.12} position={[0, 0.55, 0]} castShadow>
+            <M c="#FF922B" r={0.45} />
+          </RoundedBox>
+          <RoundedBox args={[0.5, 0.08, 0.12]} radius={0.04} position={[0, 1.08, 0]}>
+            <M c="#495057" />
+          </RoundedBox>
+          {[-0.4, 0.4].map((x) => (
+            <RoundedBox key={x} args={[0.08, 0.97, 0.53]} radius={0.03} position={[x, 0.55, 0]}>
+              <M c="#E8590C" />
+            </RoundedBox>
+          ))}
+          <mesh position={[0.1, 0.62, 0.26]}>
+            <circleGeometry args={[0.13, 20]} />
+            <meshBasicMaterial color="#4DABF7" />
+          </mesh>
+          <mesh position={[-0.15, 0.4, 0.26]} rotation={[0, 0, 0.3]}>
+            <planeGeometry args={[0.22, 0.14]} />
+            <meshBasicMaterial color="#FFD43B" />
+          </mesh>
+        </group>
+      );
+    case 'sandcastle':
+      return (
+        <group>
+          <Cyl p={[0, 0.3, 0]} r={0.8} r2={0.9} h={0.6} c="#E9C46A" />
+          <Cyl p={[0, 0.85, 0]} r={0.5} r2={0.6} h={0.5} c="#EDCB7C" />
+          {[-1, 1].map((sd) => (
+            <group key={sd}>
+              <Cyl p={[sd * 0.75, 0.75, 0.2]} r={0.2} r2={0.24} h={0.9} c="#E9C46A" />
+              <mesh position={[sd * 0.75, 1.32, 0.2]}>
+                <coneGeometry args={[0.24, 0.3, 16]} />
+                <M c="#DDB45A" />
+              </mesh>
+            </group>
+          ))}
+          <Cyl p={[0, 1.4, 0]} r={0.025} h={0.6} c="#8B5E3C" />
+          <mesh position={[0.15, 1.6, 0]} rotation={[0, 0, Math.sin(t * 5) * 0.15]}>
+            <planeGeometry args={[0.3, 0.2]} />
+            <meshBasicMaterial color="#FF6B6B" side={THREE.DoubleSide} />
+          </mesh>
+        </group>
+      );
+    case 'umbrella':
+      // beach umbrella with a striped canopy and a towel
+      return (
+        <group>
+          <Cyl p={[0, 1.7, 0]} r={0.05} h={3.4} c="#F1F3F5" />
+          {Array.from({ length: 8 }, (_, i) => (
+            <mesh key={i} position={[0, 3.45, 0]} castShadow>
+              <coneGeometry args={[1.8, 0.7, 24, 1, true, (i / 8) * Math.PI * 2, Math.PI / 4]} />
+              <meshPhysicalMaterial color={i % 2 ? '#FFFFFF' : '#FF6B6B'} roughness={0.7} side={THREE.DoubleSide} />
+            </mesh>
+          ))}
+          <mesh position={[0.9, 0.02, 0.6]} rotation={[-Math.PI / 2, 0, 0.3]} receiveShadow>
+            <planeGeometry args={[1.0, 1.9]} />
+            <meshStandardMaterial color="#4DABF7" />
+          </mesh>
+        </group>
+      );
     case 'cookie':
       return <Cyl p={[0, 0.06, 0]} r={0.32} h={0.1} c="#E8B26A" />;
     case 'star':

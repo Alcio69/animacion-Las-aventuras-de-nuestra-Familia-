@@ -267,13 +267,13 @@ const Hat3D: React.FC<{ kind: number; R: number; cat: boolean }> = ({ kind, R, c
   );
 };
 
-/** Wheelchair sized to the rider; forward is +z. `roll` (px travelled) turns the wheels. */
+/** Wheelchair sized to the rider; forward is +z. Wheels are drawn still. */
 const Wheelchair3D: React.FC<{ d: Design; roll: number }> = ({ d, roll }) => {
   const L = d.legH * S;
   const seat = L * 0.55;
   const wr = seat * 0.82;
   const half = (d.torsoBottom * S) / 2 + 0.16;
-  const ang = (roll * S) / wr;
+  const ang = 0 * roll; // wheels stay still (spinning looked wrong on screen)
   const metal = '#ADB5BD';
   return (
     <group>
@@ -339,7 +339,7 @@ const Bike3D: React.FC<{ d: Design; roll: number }> = ({ d, roll }) => {
   const L = d.legH * S;
   const wr = L * 0.42;
   const wb = L * 0.75;
-  const ang = (roll * S) / wr;
+  const ang = 0 * roll; // wheels stay still (spinning looked wrong on screen)
   const seatY = L * 0.92;
   const frame = '#E64980';
   const Wheel = ({ z }: { z: number }) => (

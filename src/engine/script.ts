@@ -11,7 +11,7 @@
 import type { CharId, Expression } from '../characters/types';
 
 export type Speaker = CharId | 'narrador';
-export type Background = 'living' | 'kitchen' | 'park' | 'bedroom' | 'dentist' | 'school';
+export type Background = 'living' | 'kitchen' | 'park' | 'bedroom' | 'dentist' | 'school' | 'beach';
 export type Action =
   | 'walk' // move to `to` (x in px, 0..1920) — sets facing automatically
   | 'run' // like walk, faster legs
@@ -37,7 +37,8 @@ export type Action =
 
 export type PropKind = 'table' | 'cake' | 'bowl' | 'flour' | 'ball' | 'balloon' | 'gift' | 'book' | 'star' | 'heart' | 'cookie' | 'plant' | 'plate' | 'broccoli' | 'teddy' | 'flashlight' | 'toothbrush'
   | 'toybox' | 'block' | 'car' | 'vase' | 'vaseBroken' | 'vaseFixed' | 'drawing' | 'tree' | 'glass'
-  | 'pumpkin' | 'candy' | 'tablet' | 'timer' | 'xmasTree' | 'letter';
+  | 'pumpkin' | 'candy' | 'tablet' | 'timer' | 'xmasTree' | 'letter'
+  | 'baby' | 'crib' | 'suitcase' | 'sandcastle' | 'umbrella';
 export type Fx = 'hearts' | 'stars' | 'confetti' | 'flour' | 'sparkle' | 'zzz' | 'question' | 'exclaim' | 'sweat';
 export type Sfx = 'pop' | 'boing' | 'whoosh' | 'ding' | 'sparkle' | 'poof' | 'tada' | 'drum' | 'doorbell' | 'giggle' | 'thunder' | 'crash';
 
@@ -109,6 +110,8 @@ export type Scene = {
   ambience?: 'rain';
   /** Extra seconds at the end of the scene (default 0.8). */
   tail?: number;
+  /** A memory: warm sepia tone over the whole scene. */
+  flashback?: boolean;
 };
 
 export type Episode = {
