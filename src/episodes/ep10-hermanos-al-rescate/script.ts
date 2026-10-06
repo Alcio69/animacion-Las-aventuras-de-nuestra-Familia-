@@ -12,7 +12,7 @@ const episode: Episode = {
   id: 'ep10-hermanos-al-rescate',
   number: 10,
   title: 'Hermanos al rescate',
-  subtitle: 'Hija está celosa de su hermano… hasta que la pelota queda atrapada en un árbol',
+  subtitle: 'Tini está celosa de su hermano… hasta que la pelota queda atrapada en un árbol',
   music: 'adventure',
   thumb: { bg: 'park', text: '¡AL RESCATE!', prop: 'ball', exprs: { hijo: 'excited', hija: 'excited', papa: 'surprised', mama: 'happy' } },
   scenes: [
@@ -95,9 +95,9 @@ const episode: Episode = {
   ],
   youtube: {
     title: 'Hermanos al Rescate 🌳 Celos entre Hermanos | Las Aventuras de Nuestra Familia | Cuentos para Niños',
-    description: `Hija se pone celosa porque Papá felicita el dibujo de su hermano… ¡y terminan peleando! 😤 Pero en el parque, la pelota queda atrapada en un árbol y solo trabajando juntos la pueden rescatar. 🌳⚽ Un cuento infantil sobre los celos entre hermanos y el trabajo en equipo.
+    description: `Tini se pone celosa porque Max felicita el dibujo de su hermano… ¡y terminan peleando! 😤 Pero en el parque, la pelota queda atrapada en un árbol y solo trabajando juntos la pueden rescatar. 🌳⚽ Un cuento infantil sobre los celos entre hermanos y el trabajo en equipo.
 
-🐶🐱 En "Las Aventuras de Nuestra Familia" acompañamos a Papá (un labrador juguetón), Mamá (una gatita negra muy inteligente), Hijo (un perrito aventurero) e Hija (una gatita naranja súper divertida) en historias cortas con valores para toda la familia.
+🐶🐱 En "Las Aventuras de Nuestra Familia" acompañamos a Max, el papá (un labrador juguetón), Luna, la mamá (una gatita negra muy inteligente), Lio (un perrito aventurero) y Martina, "Tini" (una gatita naranja súper divertida) en historias cortas con valores para toda la familia.
 
 ✨ En este capítulo aprendemos:
 • Que los celos se pasan cuando hablamos y nos perdonamos

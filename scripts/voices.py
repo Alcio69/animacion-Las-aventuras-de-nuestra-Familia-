@@ -97,12 +97,12 @@ def engine(model):
 
 
 # Foreign words the Spanish voice mispronounces: written phonetically for the voice only (subtitles keep the real word).
-SAY = {"Halloween": "Jálouin"}
+SAY = {"Halloween": "Jálouin", "Lio": "Lío"}
 
 
 def spoken(text):
     for word, sound in SAY.items():
-        text = re.sub(word, sound, text, flags=re.IGNORECASE)
+        text = re.sub(r"\b" + word + r"\b", sound, text, flags=re.IGNORECASE)
     return text
 
 

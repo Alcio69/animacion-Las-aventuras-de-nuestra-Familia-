@@ -11,7 +11,7 @@ const episode: Episode = {
   id: 'ep08-el-primer-dia-de-escuela',
   number: 8,
   title: 'El primer día de escuela',
-  subtitle: 'Hija tiene miedo de su primer día… ¿y si no tiene amigos?',
+  subtitle: 'Tini tiene miedo de su primer día… ¿y si no tiene amigos?',
   music: 'happy',
   thumb: { bg: 'school', text: '¡PRIMER DÍA!', prop: 'drawing', exprs: { hija: 'worried', hijo: 'happy', mama: 'love', papa: 'excited' } },
   scenes: [
@@ -82,9 +82,9 @@ const episode: Episode = {
   ],
   youtube: {
     title: 'Mi Primer Día de Escuela 🎒 ¡No Quiero Ir! | Las Aventuras de Nuestra Familia | Cuentos para Niños',
-    description: `¡Hoy es el primer día de escuela de Hija! 🎒 Pero tiene miedo: "¿Y si nadie quiere ser mi amigo?" 😟 Así fue como conoció a Lola, ¡su mejor amiga! 💛 Un cuento infantil para acompañar a los niños en el comienzo de clases y en la adaptación escolar.
+    description: `¡Hoy es el primer día de escuela de Tini! 🎒 Pero tiene miedo: "¿Y si nadie quiere ser mi amigo?" 😟 Así fue como conoció a Lola, ¡su mejor amiga! 💛 Un cuento infantil para acompañar a los niños en el comienzo de clases y en la adaptación escolar.
 
-🐶🐱 En "Las Aventuras de Nuestra Familia" acompañamos a Papá (un labrador juguetón), Mamá (una gatita negra muy inteligente), Hijo (un perrito aventurero) e Hija (una gatita naranja súper divertida) en historias cortas con valores para toda la familia.
+🐶🐱 En "Las Aventuras de Nuestra Familia" acompañamos a Max, el papá (un labrador juguetón), Luna, la mamá (una gatita negra muy inteligente), Lio (un perrito aventurero) y Martina, "Tini" (una gatita naranja súper divertida) en historias cortas con valores para toda la familia.
 
 ✨ En este capítulo aprendemos:
 • Que está bien sentir miedo en el primer día de clases

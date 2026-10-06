@@ -12,7 +12,7 @@ const episode: Episode = {
   id: 'ep23-no-me-hables-asi',
   number: 23,
   title: '¡No me hables así!',
-  subtitle: 'Hijo e Hija le contestan mal a Mamá… y ella se pone muy triste',
+  subtitle: 'Lio y Tini le contestan mal a Luna… y ella se pone muy triste',
   music: 'calm',
   thumb: { bg: 'kitchen', text: '¡NO ME HABLES ASÍ!', prop: 'plate', exprs: { hijo: 'angry', hija: 'angry', mama: 'sad', papa: 'surprised' } },
   scenes: [
@@ -89,9 +89,9 @@ const episode: Episode = {
   ],
   youtube: {
     title: '¡No Me Hables Así! 🙊 Respeto a los Papás | Las Aventuras de Nuestra Familia | Cuentos con Valores',
-    description: `Mamá pide ayuda para poner la mesa y Hijo e Hija le contestan mal: "¡Hazlo tú!" 😠 Mamá se pone muy triste… Con la ayuda de Papá, los chicos entienden que se puede estar enojado y aun así hablar con respeto. 💛 Un cuento infantil sobre cómo hablarles a los papás, el respeto en la familia y pedir perdón.
+    description: `Luna pide ayuda para poner la mesa y Lio y Tini le contestan mal: "¡Hazlo tú!" 😠 Luna se pone muy triste… Con la ayuda de Max, los chicos entienden que se puede estar enojado y aun así hablar con respeto. 💛 Un cuento infantil sobre cómo hablarles a los papás, el respeto en la familia y pedir perdón.
 
-🐶🐱 En "Las Aventuras de Nuestra Familia" acompañamos a Papá (un labrador juguetón), Mamá (una gatita negra muy inteligente), Hijo (un perrito aventurero) e Hija (una gatita naranja súper divertida) en historias cortas con valores para toda la familia.
+🐶🐱 En "Las Aventuras de Nuestra Familia" acompañamos a Max, el papá (un labrador juguetón), Luna, la mamá (una gatita negra muy inteligente), Lio (un perrito aventurero) y Martina, "Tini" (una gatita naranja súper divertida) en historias cortas con valores para toda la familia.
 
 ✨ En este capítulo aprendemos:
 • Que las palabras pueden lastimar

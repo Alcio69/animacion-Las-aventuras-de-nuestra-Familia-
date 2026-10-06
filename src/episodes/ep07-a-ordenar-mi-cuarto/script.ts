@@ -20,7 +20,7 @@ const episode: Episode = {
   id: 'ep07-a-ordenar-mi-cuarto',
   number: 7,
   title: '¡A ordenar mi cuarto!',
-  subtitle: 'El cuarto de Hijo es un desastre… y su estrella de los valientes desapareció',
+  subtitle: 'El cuarto de Lio es un desastre… y su estrella de los valientes desapareció',
   music: 'happy',
   thumb: { bg: 'bedroom', variant: 'day', text: '¡QUÉ DESORDEN!', prop: 'toybox', exprs: { hijo: 'worried', papa: 'surprised', mama: 'laugh', hija: 'laugh' } },
   scenes: [
@@ -95,9 +95,9 @@ const episode: Episode = {
   ],
   youtube: {
     title: '¡A Ordenar mi Cuarto! 🧸 Las Aventuras de Nuestra Familia | Cuentos para Niños sobre el Orden',
-    description: `El cuarto de Hijo parece que lo atravesó un huracán… 🌪️ ¡y su estrella de los valientes desapareció! Papá tiene una idea genial: convertir el orden en una carrera divertida. 🏁🧸 Un cuento infantil para enseñar a los niños a ordenar sus juguetes jugando.
+    description: `El cuarto de Lio parece que lo atravesó un huracán… 🌪️ ¡y su estrella de los valientes desapareció! Max tiene una idea genial: convertir el orden en una carrera divertida. 🏁🧸 Un cuento infantil para enseñar a los niños a ordenar sus juguetes jugando.
 
-🐶🐱 En "Las Aventuras de Nuestra Familia" acompañamos a Papá (un labrador juguetón), Mamá (una gatita negra muy inteligente), Hijo (un perrito aventurero) e Hija (una gatita naranja súper divertida) en historias cortas con valores para toda la familia.
+🐶🐱 En "Las Aventuras de Nuestra Familia" acompañamos a Max, el papá (un labrador juguetón), Luna, la mamá (una gatita negra muy inteligente), Lio (un perrito aventurero) y Martina, "Tini" (una gatita naranja súper divertida) en historias cortas con valores para toda la familia.
 
 ✨ En este capítulo aprendemos:
 • Que ordenar puede ser un juego

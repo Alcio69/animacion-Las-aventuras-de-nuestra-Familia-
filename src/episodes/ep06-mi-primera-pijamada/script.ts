@@ -10,7 +10,7 @@ const episode: Episode = {
   id: 'ep06-mi-primera-pijamada',
   number: 6,
   title: 'Mi primera pijamada',
-  subtitle: 'Hija está invitada a su primera pijamada… pero le da miedo dormir lejos de casa',
+  subtitle: 'Tini está invitada a su primera pijamada… pero le da miedo dormir lejos de casa',
   music: 'calm',
   thumb: { bg: 'bedroom', text: '¡TENGO MIEDO!', prop: 'teddy', exprs: { hija: 'worried', hijo: 'happy', papa: 'love', mama: 'happy' } },
   scenes: [
@@ -87,9 +87,9 @@ const episode: Episode = {
   ],
   youtube: {
     title: 'Mi Primera Pijamada 🌙 ¡Tengo Miedo! | Las Aventuras de Nuestra Familia | Cuentos para Dormir',
-    description: `¡Hija está invitada a su primera pijamada! 🎉 Pero… ¿y si le da miedo dormir lejos de casa? 😟🌙 Papá tiene una gran idea: ¡una pijamada de práctica en casa, con linterna y osito incluidos! 🧸🔦 Un cuento infantil para perderle el miedo a la oscuridad y a dormir fuera de casa.
+    description: `¡Tini está invitada a su primera pijamada! 🎉 Pero… ¿y si le da miedo dormir lejos de casa? 😟🌙 Max tiene una gran idea: ¡una pijamada de práctica en casa, con linterna y osito incluidos! 🧸🔦 Un cuento infantil para perderle el miedo a la oscuridad y a dormir fuera de casa.
 
-🐶🐱 En "Las Aventuras de Nuestra Familia" acompañamos a Papá (un labrador juguetón), Mamá (una gatita negra muy inteligente), Hijo (un perrito aventurero) e Hija (una gatita naranja súper divertida) en historias cortas con valores para toda la familia.
+🐶🐱 En "Las Aventuras de Nuestra Familia" acompañamos a Max, el papá (un labrador juguetón), Luna, la mamá (una gatita negra muy inteligente), Lio (un perrito aventurero) y Martina, "Tini" (una gatita naranja súper divertida) en historias cortas con valores para toda la familia.
 
 ✨ En este capítulo aprendemos:
 • Que está bien sentir miedo ante algo nuevo

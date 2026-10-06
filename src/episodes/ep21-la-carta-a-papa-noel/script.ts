@@ -12,7 +12,7 @@ const episode: Episode = {
   id: 'ep21-la-carta-a-papa-noel',
   number: 21,
   title: 'La carta a Papá Noel',
-  subtitle: 'Hijo e Hija escriben una lista de regalos larguísima… pero descubren algo mejor',
+  subtitle: 'Lio y Tini escriben una lista de regalos larguísima… pero descubren algo mejor',
   music: 'happy',
   thumb: {
     bg: 'living',
@@ -95,9 +95,9 @@ const episode: Episode = {
   ],
   youtube: {
     title: 'La Carta a Papá Noel 🎄 Cuento de Navidad para Niños | Las Aventuras de Nuestra Familia',
-    description: `¡Llegó la Navidad! 🎄🎅 Hijo e Hija escriben su carta a Papá Noel con una lista de regalos larguísima… Pero Mamá les propone algo especial: regalar juguetes a niños que no van a recibir ninguno. 🎁💛 Un cuento de Navidad para niños sobre la generosidad y el verdadero espíritu navideño.
+    description: `¡Llegó la Navidad! 🎄🎅 Lio y Tini escriben su carta a Papá Noel con una lista de regalos larguísima… Pero Luna les propone algo especial: regalar juguetes a niños que no van a recibir ninguno. 🎁💛 Un cuento de Navidad para niños sobre la generosidad y el verdadero espíritu navideño.
 
-🐶🐱 En "Las Aventuras de Nuestra Familia" acompañamos a Papá (un labrador juguetón), Mamá (una gatita negra muy inteligente), Hijo (un perrito aventurero) e Hija (una gatita naranja súper divertida) en historias cortas con valores para toda la familia.
+🐶🐱 En "Las Aventuras de Nuestra Familia" acompañamos a Max, el papá (un labrador juguetón), Luna, la mamá (una gatita negra muy inteligente), Lio (un perrito aventurero) y Martina, "Tini" (una gatita naranja súper divertida) en historias cortas con valores para toda la familia.
 
 ✨ En este capítulo aprendemos:
 • Que dar hace tan feliz como recibir

@@ -8,7 +8,7 @@ const episode: Episode = {
   id: 'ep02-la-pelota-de-todos',
   number: 2,
   title: 'La pelota de todos',
-  subtitle: 'Hijo estrena una pelota… ¿la va a compartir con su hermana?',
+  subtitle: 'Lio estrena una pelota… ¿la va a compartir con su hermana?',
   music: 'happy',
   thumb: { bg: 'park', text: '¡ES MÍA!', prop: 'ball', exprs: { hijo: 'angry', hija: 'sad', papa: 'surprised', mama: 'worried' } },
   scenes: [
@@ -92,9 +92,9 @@ const episode: Episode = {
   ],
   youtube: {
     title: '¡No Quiero Compartir! ⚽ La Pelota de Todos | Las Aventuras de Nuestra Familia | Cuentos para Niños',
-    description: `Hijo estrena una pelota nueva y no quiere prestársela a su hermanita. 😢 ¿Qué pasará cuando Mamá le enseñe que jugar juntos es el doble de divertido? ⚽💛 Un cuento infantil sobre aprender a compartir.
+    description: `Lio estrena una pelota nueva y no quiere prestársela a su hermanita. 😢 ¿Qué pasará cuando Luna le enseñe que jugar juntos es el doble de divertido? ⚽💛 Un cuento infantil sobre aprender a compartir.
 
-🐶🐱 En "Las Aventuras de Nuestra Familia" acompañamos a Papá (un labrador juguetón), Mamá (una gatita negra muy inteligente), Hijo (un perrito aventurero) e Hija (una gatita naranja súper divertida) en historias cortas con valores para toda la familia.
+🐶🐱 En "Las Aventuras de Nuestra Familia" acompañamos a Max, el papá (un labrador juguetón), Luna, la mamá (una gatita negra muy inteligente), Lio (un perrito aventurero) y Martina, "Tini" (una gatita naranja súper divertida) en historias cortas con valores para toda la familia.
 
 ✨ En este capítulo aprendemos:
 • Que compartir multiplica la alegría

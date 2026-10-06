@@ -90,9 +90,9 @@ const episode: Episode = {
   ],
   youtube: {
     title: 'La Abuela Viene de Visita 👵 Paciencia y Amor | Las Aventuras de Nuestra Familia | Cuentos para Niños',
-    description: `¡Llegó la abuela! 👵💜 Camina despacito y cuenta las mismas historias… y al principio Hijo e Hija se aburren un poco. Pero la abuela tiene una receta secreta de galletitas 🍪 y fotos de Papá cuando era bebé. 📸😂 Un cuento infantil sobre el amor a los abuelos y la paciencia.
+    description: `¡Llegó la abuela! 👵💜 Camina despacito y cuenta las mismas historias… y al principio Lio y Tini se aburren un poco. Pero la abuela tiene una receta secreta de galletitas 🍪 y fotos de Max cuando era bebé. 📸😂 Un cuento infantil sobre el amor a los abuelos y la paciencia.
 
-🐶🐱 En "Las Aventuras de Nuestra Familia" acompañamos a Papá (un labrador juguetón), Mamá (una gatita negra muy inteligente), Hijo (un perrito aventurero) e Hija (una gatita naranja súper divertida) en historias cortas con valores para toda la familia.
+🐶🐱 En "Las Aventuras de Nuestra Familia" acompañamos a Max, el papá (un labrador juguetón), Luna, la mamá (una gatita negra muy inteligente), Lio (un perrito aventurero) y Martina, "Tini" (una gatita naranja súper divertida) en historias cortas con valores para toda la familia.
 
 ✨ En este capítulo aprendemos:
 • A tener paciencia con nuestros mayores

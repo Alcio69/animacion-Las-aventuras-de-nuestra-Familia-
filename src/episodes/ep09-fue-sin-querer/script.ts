@@ -12,7 +12,7 @@ const episode: Episode = {
   id: 'ep09-fue-sin-querer',
   number: 9,
   title: '¡Fue sin querer!',
-  subtitle: 'Hijo rompe el florero favorito de Mamá… ¿lo va a esconder o va a decir la verdad?',
+  subtitle: 'Lio rompe el florero favorito de Luna… ¿lo va a esconder o va a decir la verdad?',
   music: 'happy',
   thumb: { bg: 'living', text: '¡FUE SIN QUERER!', prop: 'vaseBroken', exprs: { hijo: 'worried', mama: 'surprised', papa: 'surprised', hija: 'surprised' } },
   scenes: [
@@ -99,9 +99,9 @@ const episode: Episode = {
   ],
   youtube: {
     title: '¡Fue Sin Querer! 💙 Decir la Verdad | Las Aventuras de Nuestra Familia | Cuentos para Niños',
-    description: `Hijo juega a la pelota adentro de casa y… ¡CRASH! 💥 Rompe el florero favorito de Mamá. ¿Lo va a esconder o va a decir la verdad? 😟💙 Un cuento infantil sobre la honestidad, pedir perdón y reparar los errores juntos.
+    description: `Lio juega a la pelota adentro de casa y… ¡CRASH! 💥 Rompe el florero favorito de Luna. ¿Lo va a esconder o va a decir la verdad? 😟💙 Un cuento infantil sobre la honestidad, pedir perdón y reparar los errores juntos.
 
-🐶🐱 En "Las Aventuras de Nuestra Familia" acompañamos a Papá (un labrador juguetón), Mamá (una gatita negra muy inteligente), Hijo (un perrito aventurero) e Hija (una gatita naranja súper divertida) en historias cortas con valores para toda la familia.
+🐶🐱 En "Las Aventuras de Nuestra Familia" acompañamos a Max, el papá (un labrador juguetón), Luna, la mamá (una gatita negra muy inteligente), Lio (un perrito aventurero) y Martina, "Tini" (una gatita naranja súper divertida) en historias cortas con valores para toda la familia.
 
 ✨ En este capítulo aprendemos:
 • Que decir la verdad es ser valiente

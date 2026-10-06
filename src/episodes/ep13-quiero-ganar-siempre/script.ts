@@ -11,7 +11,7 @@ const episode: Episode = {
   id: 'ep13-quiero-ganar-siempre',
   number: 13,
   title: '¡Quiero ganar siempre!',
-  subtitle: 'Hija pierde una carrera y se enoja muchísimo…',
+  subtitle: 'Tini pierde una carrera y se enoja muchísimo…',
   music: 'adventure',
   thumb: { bg: 'park', text: '¡NO VALE!', prop: 'star', exprs: { hija: 'angry', hijo: 'laugh', papa: 'surprised', mama: 'worried' } },
   scenes: [
@@ -80,9 +80,9 @@ const episode: Episode = {
   ],
   youtube: {
     title: '¡Quiero Ganar Siempre! 🏆 Saber Perder | Las Aventuras de Nuestra Familia | Cuentos para Niños',
-    description: `Hija pierde una carrera contra su hermano y se enoja muchísimo: "¡No vale! ¡No juego más!" 😤🏃 Pero Papá le cuenta un secreto de cuando era chiquito… Un cuento infantil sobre aprender a perder, la frustración y la deportividad.
+    description: `Tini pierde una carrera contra su hermano y se enoja muchísimo: "¡No vale! ¡No juego más!" 😤🏃 Pero Max le cuenta un secreto de cuando era chiquito… Un cuento infantil sobre aprender a perder, la frustración y la deportividad.
 
-🐶🐱 En "Las Aventuras de Nuestra Familia" acompañamos a Papá (un labrador juguetón), Mamá (una gatita negra muy inteligente), Hijo (un perrito aventurero) e Hija (una gatita naranja súper divertida) en historias cortas con valores para toda la familia.
+🐶🐱 En "Las Aventuras de Nuestra Familia" acompañamos a Max, el papá (un labrador juguetón), Luna, la mamá (una gatita negra muy inteligente), Lio (un perrito aventurero) y Martina, "Tini" (una gatita naranja súper divertida) en historias cortas con valores para toda la familia.
 
 ✨ En este capítulo aprendemos:
 • Que perder también es parte del juego

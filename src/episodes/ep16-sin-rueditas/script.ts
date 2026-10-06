@@ -9,7 +9,7 @@ const episode: Episode = {
   id: 'ep16-sin-rueditas',
   number: 16,
   title: '¡Sin rueditas!',
-  subtitle: 'Hija quiere andar en bici sin rueditas… pero se cae una y otra vez',
+  subtitle: 'Tini quiere andar en bici sin rueditas… pero se cae una y otra vez',
   music: 'adventure',
   thumb: { bg: 'park', text: '¡SIN RUEDITAS!', prop: 'star', exprs: { hija: 'excited', hijo: 'excited', papa: 'proud', mama: 'love' }, cast: ['papa', 'hija', 'hijo', 'mama'] },
   scenes: [
@@ -80,9 +80,9 @@ const episode: Episode = {
   ],
   youtube: {
     title: '¡Sin Rueditas! 🚲 Aprender a Andar en Bici | Las Aventuras de Nuestra Familia | Cuentos para Niños',
-    description: `¡Hija quiere andar en bici sin rueditas! 🚲 Pero se cae una vez… y otra vez… 😢 Con la ayuda de Papá y el aliento de su hermano, aprende que el secreto es no rendirse. 💪🌅 Un cuento infantil sobre la perseverancia y aprender cosas nuevas.
+    description: `¡Tini quiere andar en bici sin rueditas! 🚲 Pero se cae una vez… y otra vez… 😢 Con la ayuda de Max y el aliento de su hermano, aprende que el secreto es no rendirse. 💪🌅 Un cuento infantil sobre la perseverancia y aprender cosas nuevas.
 
-🐶🐱 En "Las Aventuras de Nuestra Familia" acompañamos a Papá (un labrador juguetón), Mamá (una gatita negra muy inteligente), Hijo (un perrito aventurero) e Hija (una gatita naranja súper divertida) en historias cortas con valores para toda la familia.
+🐶🐱 En "Las Aventuras de Nuestra Familia" acompañamos a Max, el papá (un labrador juguetón), Luna, la mamá (una gatita negra muy inteligente), Lio (un perrito aventurero) y Martina, "Tini" (una gatita naranja súper divertida) en historias cortas con valores para toda la familia.
 
 ✨ En este capítulo aprendemos:
 • Que equivocarse es parte de aprender

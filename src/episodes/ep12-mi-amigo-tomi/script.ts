@@ -24,7 +24,7 @@ const episode: Episode = {
         { say: 'hijo', text: '¡Vengan a ver! Llegó un compañero nuevo a la escuela.', expr: 'surprised', act: 'point' },
         { do: 'walk', who: 'tomi', to: 1250 },
         { say: 'tomi', text: '¡Hola! Me llamo Tomi. Me mudé hace poquito.', expr: 'happy', act: 'wave' },
-        { say: 'benja', text: 'Hijo, Tomi usa silla de ruedas. ¿Cómo va a jugar con nosotros?', expr: 'worried' },
+        { say: 'benja', text: 'Lio, Tomi usa silla de ruedas. ¿Cómo va a jugar con nosotros?', expr: 'worried' },
         { say: 'hijo', text: 'No sé. A lo mejor no puede jugar a la pelota.', expr: 'worried', act: 'shrug' },
         { mood: 'sad', who: 'tomi' },
         { wait: 0.6 },
@@ -82,9 +82,9 @@ const episode: Episode = {
   ],
   youtube: {
     title: 'Mi Amigo Tomi 🐰 Un Amigo Diferente | Las Aventuras de Nuestra Familia | Cuentos sobre Inclusión',
-    description: `A la escuela de Hijo llega Tomi, un compañero nuevo que usa silla de ruedas. 🐰♿ Al principio los chicos piensan que no va a poder jugar con ellos… ¡pero Tomi les demuestra que es el más rápido del recreo! ⚽ Un cuento infantil sobre la inclusión, la diversidad y la amistad.
+    description: `A la escuela de Lio llega Tomi, un compañero nuevo que usa silla de ruedas. 🐰♿ Al principio los chicos piensan que no va a poder jugar con ellos… ¡pero Tomi les demuestra que es el más rápido del recreo! ⚽ Un cuento infantil sobre la inclusión, la diversidad y la amistad.
 
-🐶🐱 En "Las Aventuras de Nuestra Familia" acompañamos a Papá (un labrador juguetón), Mamá (una gatita negra muy inteligente), Hijo (un perrito aventurero) e Hija (una gatita naranja súper divertida) en historias cortas con valores para toda la familia.
+🐶🐱 En "Las Aventuras de Nuestra Familia" acompañamos a Max, el papá (un labrador juguetón), Luna, la mamá (una gatita negra muy inteligente), Lio (un perrito aventurero) y Martina, "Tini" (una gatita naranja súper divertida) en historias cortas con valores para toda la familia.
 
 ✨ En este capítulo aprendemos:
 • Que todos somos diferentes, y eso es lo lindo

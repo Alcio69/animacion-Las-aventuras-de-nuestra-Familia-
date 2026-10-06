@@ -8,7 +8,7 @@ const episode: Episode = {
   id: 'ep01-la-torta-sorpresa',
   number: 1,
   title: 'La torta sorpresa',
-  subtitle: 'Papá y los chicos preparan algo muy especial para Mamá',
+  subtitle: 'Max y los chicos preparan algo muy especial para Luna',
   music: 'happy',
   thumb: { bg: 'kitchen', text: '¡TORTA SORPRESA!', prop: 'cake', exprs: { hija: 'surprised', hijo: 'laugh', papa: 'excited', mama: 'love' } },
   scenes: [
@@ -92,9 +92,9 @@ const episode: Episode = {
   ],
   youtube: {
     title: 'La Torta Sorpresa 🎂 Las Aventuras de Nuestra Familia | Cuentos para Niños en Español',
-    description: `¡Hoy es el cumpleaños de Mamá! 🎉 Papá, Hijo e Hija preparan una torta sorpresa... pero la harina tiene otros planes. 😂 Un cuento infantil sobre la familia, el trabajo en equipo y el amor.
+    description: `¡Hoy es el cumpleaños de Luna! 🎉 Max, Lio y Tini preparan una torta sorpresa... pero la harina tiene otros planes. 😂 Un cuento infantil sobre la familia, el trabajo en equipo y el amor.
 
-🐶🐱 En "Las Aventuras de Nuestra Familia" acompañamos a Papá (un labrador juguetón), Mamá (una gatita negra muy inteligente), Hijo (un perrito aventurero) e Hija (una gatita naranja súper divertida) en historias cortas con valores para toda la familia.
+🐶🐱 En "Las Aventuras de Nuestra Familia" acompañamos a Max, el papá (un labrador juguetón), Luna, la mamá (una gatita negra muy inteligente), Lio (un perrito aventurero) y Martina, "Tini" (una gatita naranja súper divertida) en historias cortas con valores para toda la familia.
 
 ✨ En este capítulo aprendemos:
 • Que lo importante es hacer las cosas juntos

@@ -12,7 +12,7 @@ const episode: Episode = {
   id: 'ep22-voy-a-tener-una-hermanita',
   number: 22,
   title: '¡Voy a tener una hermanita!',
-  subtitle: 'Hijo recuerda cuando era chiquito y se enteró de que iba a tener una hermanita…',
+  subtitle: 'Lio recuerda cuando era chiquito y se enteró de que iba a tener una hermanita…',
   music: 'calm',
   thumb: { bg: 'bedroom', variant: 'day', text: '¡UNA HERMANITA!', prop: 'baby', exprs: { papa: 'love', mama: 'love', hijo: 'surprised', hija: 'laugh' } },
   scenes: [
@@ -98,9 +98,9 @@ const episode: Episode = {
   ],
   youtube: {
     title: '¡Voy a Tener una Hermanita! 👶 Celos del Hermano Mayor | Las Aventuras de Nuestra Familia | Cuentos para Niños',
-    description: `Hija le pregunta a su hermano: "¿Te pusiste contento cuando yo iba a nacer?" 👶 Y Hijo recuerda cuando era chiquito y se enteró de que iba a tener una hermanita… ¡y tuvo un poquito de celos! 💛 Un cuento infantil para preparar a los niños para la llegada de un hermanito o hermanita, y hablar de los celos entre hermanos.
+    description: `Tini le pregunta a su hermano: "¿Te pusiste contento cuando yo iba a nacer?" 👶 Y Lio recuerda cuando era chiquito y se enteró de que iba a tener una hermanita… ¡y tuvo un poquito de celos! 💛 Un cuento infantil para preparar a los niños para la llegada de un hermanito o hermanita, y hablar de los celos entre hermanos.
 
-🐶🐱 En "Las Aventuras de Nuestra Familia" acompañamos a Papá (un labrador juguetón), Mamá (una gatita negra muy inteligente), Hijo (un perrito aventurero) e Hija (una gatita naranja súper divertida) en historias cortas con valores para toda la familia.
+🐶🐱 En "Las Aventuras de Nuestra Familia" acompañamos a Max, el papá (un labrador juguetón), Luna, la mamá (una gatita negra muy inteligente), Lio (un perrito aventurero) y Martina, "Tini" (una gatita naranja súper divertida) en historias cortas con valores para toda la familia.
 
 ✨ En este capítulo aprendemos:
 • Que sentir celos es normal

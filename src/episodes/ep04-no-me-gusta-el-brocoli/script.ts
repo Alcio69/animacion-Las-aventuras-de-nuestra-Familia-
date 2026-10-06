@@ -12,7 +12,7 @@ const episode: Episode = {
   id: 'ep04-no-me-gusta-el-brocoli',
   number: 4,
   title: '¡No me gusta el brócoli!',
-  subtitle: 'Hija no quiere ni probarlo… ¿podrá Papá hacerle cambiar de idea?',
+  subtitle: 'Tini no quiere ni probarlo… ¿podrá Max hacerle cambiar de idea?',
   music: 'happy',
   thumb: { bg: 'kitchen', text: '¡NO ME GUSTA!', prop: 'plate', exprs: { hija: 'angry', hijo: 'laugh', papa: 'excited', mama: 'worried' } },
   scenes: [
@@ -105,9 +105,9 @@ const episode: Episode = {
   ],
   youtube: {
     title: '¡No Me Gusta el Brócoli! 🥦 Las Aventuras de Nuestra Familia | Cuentos para Niños que No Quieren Comer',
-    description: `¡Hija no quiere ni probar el brócoli! 🥦😖 "Tiene cara de feo", dice… Pero Papá tiene una idea genial: ¿y si en realidad son árboles mágicos que comen los dinosaurios? 🦖 Un cuento infantil para niños que no quieren comer verduras y para animarse a probar cosas nuevas.
+    description: `¡Tini no quiere ni probar el brócoli! 🥦😖 "Tiene cara de feo", dice… Pero Max tiene una idea genial: ¿y si en realidad son árboles mágicos que comen los dinosaurios? 🦖 Un cuento infantil para niños que no quieren comer verduras y para animarse a probar cosas nuevas.
 
-🐶🐱 En "Las Aventuras de Nuestra Familia" acompañamos a Papá (un labrador juguetón), Mamá (una gatita negra muy inteligente), Hijo (un perrito aventurero) e Hija (una gatita naranja súper divertida) en historias cortas con valores para toda la familia.
+🐶🐱 En "Las Aventuras de Nuestra Familia" acompañamos a Max, el papá (un labrador juguetón), Luna, la mamá (una gatita negra muy inteligente), Lio (un perrito aventurero) y Martina, "Tini" (una gatita naranja súper divertida) en historias cortas con valores para toda la familia.
 
 ✨ En este capítulo aprendemos:
 • Que no hay que decir "no me gusta" sin probar

@@ -11,7 +11,7 @@ const episode: Episode = {
   id: 'ep11-no-quiero-dormir',
   number: 11,
   title: '¡No quiero dormir!',
-  subtitle: 'Hija inventa mil excusas para no ir a la cama…',
+  subtitle: 'Tini inventa mil excusas para no ir a la cama…',
   music: 'calm',
   thumb: { bg: 'bedroom', text: '¡NO QUIERO DORMIR!', prop: 'teddy', exprs: { hija: 'angry', mama: 'sleepy', papa: 'sleepy', hijo: 'laugh' } },
   scenes: [
@@ -89,9 +89,9 @@ const episode: Episode = {
   ],
   youtube: {
     title: '¡No Quiero Dormir! 🌙 La Rutina Mágica | Las Aventuras de Nuestra Familia | Cuentos para Dormir',
-    description: `¡Hija no quiere ir a la cama! 😆🌙 Que tiene sed, que otro cuento, que hay un monstruo en el armario… Pero Mamá le enseña la rutina mágica para dormir: pijama, dientes, cuento y un abrazo bien grande. 🧸💤 Un cuento para dormir que ayuda a los niños con la rutina de la noche.
+    description: `¡Tini no quiere ir a la cama! 😆🌙 Que tiene sed, que otro cuento, que hay un monstruo en el armario… Pero Luna le enseña la rutina mágica para dormir: pijama, dientes, cuento y un abrazo bien grande. 🧸💤 Un cuento para dormir que ayuda a los niños con la rutina de la noche.
 
-🐶🐱 En "Las Aventuras de Nuestra Familia" acompañamos a Papá (un labrador juguetón), Mamá (una gatita negra muy inteligente), Hijo (un perrito aventurero) e Hija (una gatita naranja súper divertida) en historias cortas con valores para toda la familia.
+🐶🐱 En "Las Aventuras de Nuestra Familia" acompañamos a Max, el papá (un labrador juguetón), Luna, la mamá (una gatita negra muy inteligente), Lio (un perrito aventurero) y Martina, "Tini" (una gatita naranja súper divertida) en historias cortas con valores para toda la familia.
 
 ✨ En este capítulo aprendemos:
 • Una rutina sencilla para irse a dormir

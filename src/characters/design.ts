@@ -295,7 +295,7 @@ export const DESIGNS: Record<CharId, Design> = {
   },
   papa: {
     id: 'papa',
-    name: 'Papá',
+    name: 'Max',
     species: 'dog',
     age: 36,
     headR: 96,
@@ -321,7 +321,7 @@ export const DESIGNS: Record<CharId, Design> = {
   },
   mama: {
     id: 'mama',
-    name: 'Mamá',
+    name: 'Luna',
     species: 'cat',
     age: 32,
     headR: 90,
@@ -346,7 +346,7 @@ export const DESIGNS: Record<CharId, Design> = {
   },
   hijo: {
     id: 'hijo',
-    name: 'Hijo',
+    name: 'Lio',
     species: 'dog',
     age: 10,
     headR: 88,
@@ -371,7 +371,7 @@ export const DESIGNS: Record<CharId, Design> = {
   },
   hija: {
     id: 'hija',
-    name: 'Hija',
+    name: 'Tini',
     species: 'cat',
     age: 7,
     headR: 82,

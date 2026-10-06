@@ -12,7 +12,7 @@ const episode: Episode = {
   id: 'ep18-quiero-la-tablet',
   number: 18,
   title: '¡Quiero la tablet!',
-  subtitle: 'Hijo no quiere soltar la tablet… ¡y se arma un berrinche!',
+  subtitle: 'Lio no quiere soltar la tablet… ¡y se arma un berrinche!',
   music: 'happy',
   thumb: { bg: 'living', text: '¡QUIERO LA TABLET!', prop: 'tablet', exprs: { hijo: 'angry', mama: 'surprised', papa: 'worried', hija: 'surprised' } },
   scenes: [
@@ -96,9 +96,9 @@ const episode: Episode = {
   ],
   youtube: {
     title: '¡Quiero la Tablet! 📱 Berrinches y Pantallas | Las Aventuras de Nuestra Familia | Cuentos para Niños',
-    description: `Hijo pasó toda la tarde con la tablet y cuando Mamá le pide apagarla… ¡se arma un berrinche! 📱😤 Con calma, respirando juntos y un reloj de arena, la familia encuentra algo mucho más divertido que la pantalla: ¡construir el castillo más alto del mundo! 🏰 Un cuento infantil sobre berrinches, límites y el uso de pantallas en niños.
+    description: `Lio pasó toda la tarde con la tablet y cuando Luna le pide apagarla… ¡se arma un berrinche! 📱😤 Con calma, respirando juntos y un reloj de arena, la familia encuentra algo mucho más divertido que la pantalla: ¡construir el castillo más alto del mundo! 🏰 Un cuento infantil sobre berrinches, límites y el uso de pantallas en niños.
 
-🐶🐱 En "Las Aventuras de Nuestra Familia" acompañamos a Papá (un labrador juguetón), Mamá (una gatita negra muy inteligente), Hijo (un perrito aventurero) e Hija (una gatita naranja súper divertida) en historias cortas con valores para toda la familia.
+🐶🐱 En "Las Aventuras de Nuestra Familia" acompañamos a Max, el papá (un labrador juguetón), Luna, la mamá (una gatita negra muy inteligente), Lio (un perrito aventurero) y Martina, "Tini" (una gatita naranja súper divertida) en historias cortas con valores para toda la familia.
 
 ✨ En este capítulo aprendemos:
 • A calmarnos cuando estamos enojados (¡respirar ayuda!)

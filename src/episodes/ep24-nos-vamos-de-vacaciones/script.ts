@@ -81,9 +81,9 @@ const episode: Episode = {
   ],
   youtube: {
     title: '¡Nos Vamos de Vacaciones! 🏖️ Un Día en la Playa | Las Aventuras de Nuestra Familia | Cuentos para Niños',
-    description: `¡Llegaron las vacaciones! 🏖️☀️ La familia se va a la playa y Hijo e Hija construyen el castillo de arena más lindo… ¡hasta que una ola se lo lleva! 🌊 Con la ayuda de Papá descubren que lo mejor es volver a intentarlo todos juntos. Un cuento infantil sobre las vacaciones en familia y cómo manejar la frustración cuando algo sale distinto.
+    description: `¡Llegaron las vacaciones! 🏖️☀️ La familia se va a la playa y Lio y Tini construyen el castillo de arena más lindo… ¡hasta que una ola se lo lleva! 🌊 Con la ayuda de Max descubren que lo mejor es volver a intentarlo todos juntos. Un cuento infantil sobre las vacaciones en familia y cómo manejar la frustración cuando algo sale distinto.
 
-🐶🐱 En "Las Aventuras de Nuestra Familia" acompañamos a Papá (un labrador juguetón), Mamá (una gatita negra muy inteligente), Hijo (un perrito aventurero) e Hija (una gatita naranja súper divertida) en historias cortas con valores para toda la familia.
+🐶🐱 En "Las Aventuras de Nuestra Familia" acompañamos a Max, el papá (un labrador juguetón), Luna, la mamá (una gatita negra muy inteligente), Lio (un perrito aventurero) y Martina, "Tini" (una gatita naranja súper divertida) en historias cortas con valores para toda la familia.
 
 ✨ En este capítulo aprendemos:
 • A disfrutar el tiempo en familia

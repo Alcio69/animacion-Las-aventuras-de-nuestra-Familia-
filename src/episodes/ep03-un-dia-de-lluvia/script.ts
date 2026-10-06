@@ -99,9 +99,9 @@ const episode: Episode = {
   ],
   youtube: {
     title: '¡Me Aburro! ☔ Un Día de Lluvia | Las Aventuras de Nuestra Familia | Cuentos para Niños',
-    description: `Llueve y no se puede salir a jugar… 🌧️ Hijo e Hija están súper aburridos, ¡y encima un trueno los asusta! Pero Papá y Mamá tienen ideas geniales para convertir el día de lluvia en una aventura. 🎈🏴‍☠️🌈 Un cuento infantil sobre la imaginación y cómo jugar en casa.
+    description: `Llueve y no se puede salir a jugar… 🌧️ Lio y Tini están súper aburridos, ¡y encima un trueno los asusta! Pero Max y Luna tienen ideas geniales para convertir el día de lluvia en una aventura. 🎈🏴‍☠️🌈 Un cuento infantil sobre la imaginación y cómo jugar en casa.
 
-🐶🐱 En "Las Aventuras de Nuestra Familia" acompañamos a Papá (un labrador juguetón), Mamá (una gatita negra muy inteligente), Hijo (un perrito aventurero) e Hija (una gatita naranja súper divertida) en historias cortas con valores para toda la familia.
+🐶🐱 En "Las Aventuras de Nuestra Familia" acompañamos a Max, el papá (un labrador juguetón), Luna, la mamá (una gatita negra muy inteligente), Lio (un perrito aventurero) y Martina, "Tini" (una gatita naranja súper divertida) en historias cortas con valores para toda la familia.
 
 ✨ En este capítulo aprendemos:
 • Qué hacer cuando nos aburrimos

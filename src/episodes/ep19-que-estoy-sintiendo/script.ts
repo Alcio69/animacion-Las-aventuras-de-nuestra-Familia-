@@ -12,7 +12,7 @@ const episode: Episode = {
   id: 'ep19-que-estoy-sintiendo',
   number: 19,
   title: '¿Qué estoy sintiendo?',
-  subtitle: 'Hija siente muchas cosas a la vez y no sabe qué le pasa…',
+  subtitle: 'Tini siente muchas cosas a la vez y no sabe qué le pasa…',
   music: 'calm',
   thumb: { bg: 'bedroom', variant: 'day', text: '¿QUÉ SIENTO?', prop: 'heart', exprs: { papa: 'surprised', mama: 'love', hijo: 'sad', hija: 'angry' } },
   scenes: [
@@ -92,9 +92,9 @@ const episode: Episode = {
   ],
   youtube: {
     title: 'Las Emociones para Niños 🌈 ¿Qué Estoy Sintiendo? | Las Aventuras de Nuestra Familia | Educación Emocional',
-    description: `A Hija se le rompe su dibujo y de repente siente muchas cosas a la vez: enojo, tristeza, ganas de gritar y de llorar… 😠😢 Mamá le enseña a ponerle nombre a cada emoción y a calmarse respirando. 🌈🌸 Un cuento infantil para aprender las emociones: enojo, tristeza, miedo y alegría.
+    description: `A Tini se le rompe su dibujo y de repente siente muchas cosas a la vez: enojo, tristeza, ganas de gritar y de llorar… 😠😢 Luna le enseña a ponerle nombre a cada emoción y a calmarse respirando. 🌈🌸 Un cuento infantil para aprender las emociones: enojo, tristeza, miedo y alegría.
 
-🐶🐱 En "Las Aventuras de Nuestra Familia" acompañamos a Papá (un labrador juguetón), Mamá (una gatita negra muy inteligente), Hijo (un perrito aventurero) e Hija (una gatita naranja súper divertida) en historias cortas con valores para toda la familia.
+🐶🐱 En "Las Aventuras de Nuestra Familia" acompañamos a Max, el papá (un labrador juguetón), Luna, la mamá (una gatita negra muy inteligente), Lio (un perrito aventurero) y Martina, "Tini" (una gatita naranja súper divertida) en historias cortas con valores para toda la familia.
 
 ✨ En este capítulo aprendemos:
 • A reconocer y nombrar las emociones

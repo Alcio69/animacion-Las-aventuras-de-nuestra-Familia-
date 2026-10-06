@@ -11,7 +11,7 @@ const episode: Episode = {
   id: 'ep05-no-quiero-ir-al-dentista',
   number: 5,
   title: '¡No quiero ir al dentista!',
-  subtitle: 'Hijo tiene miedo de su primera visita al dentista…',
+  subtitle: 'Lio tiene miedo de su primera visita al dentista…',
   music: 'happy',
   thumb: { bg: 'dentist', text: '¡NO QUIERO IR!', prop: 'toothbrush', exprs: { hijo: 'worried', hija: 'happy', papa: 'surprised', mama: 'love' } },
   scenes: [
@@ -43,7 +43,7 @@ const episode: Episode = {
         dentista: { x: 1300, mood: 'happy', facing: -1 },
       },
       steps: [
-        { say: 'dentista', text: '¡Hola, Hijo! Bienvenido. Hoy solo vamos a contar tus dientes.', expr: 'happy', act: 'wave' },
+        { say: 'dentista', text: '¡Hola, Lio! Bienvenido. Hoy solo vamos a contar tus dientes.', expr: 'happy', act: 'wave' },
         { say: 'hijo', text: '¿Solo contarlos? ¿No me va a doler?', expr: 'worried', act: 'shrug' },
         { say: 'dentista', text: 'Para nada. Abre la boca bien grande, como un león.', expr: 'happy', act: 'point' },
         { mood: 'surprised', who: 'hijo' },
@@ -84,9 +84,9 @@ const episode: Episode = {
   ],
   youtube: {
     title: '¡No Quiero Ir al Dentista! 🦷 Las Aventuras de Nuestra Familia | Cuentos para Niños',
-    description: `Hijo tiene que ir al dentista y está muy asustado: "¿Y si me duele?" 😟🦷 Pero el dentista resulta ser súper amable… ¡y hasta le regala la estrella de los valientes! ⭐ Un cuento infantil para perderle el miedo al dentista y aprender a cuidar los dientes.
+    description: `Lio tiene que ir al dentista y está muy asustado: "¿Y si me duele?" 😟🦷 Pero el dentista resulta ser súper amable… ¡y hasta le regala la estrella de los valientes! ⭐ Un cuento infantil para perderle el miedo al dentista y aprender a cuidar los dientes.
 
-🐶🐱 En "Las Aventuras de Nuestra Familia" acompañamos a Papá (un labrador juguetón), Mamá (una gatita negra muy inteligente), Hijo (un perrito aventurero) e Hija (una gatita naranja súper divertida) en historias cortas con valores para toda la familia.
+🐶🐱 En "Las Aventuras de Nuestra Familia" acompañamos a Max, el papá (un labrador juguetón), Luna, la mamá (una gatita negra muy inteligente), Lio (un perrito aventurero) y Martina, "Tini" (una gatita naranja súper divertida) en historias cortas con valores para toda la familia.
 
 ✨ En este capítulo aprendemos:
 • Que el dentista es nuestro amigo

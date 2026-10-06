@@ -9,7 +9,7 @@ const episode: Episode = {
   id: 'ep25-me-da-verguenza',
   number: 25,
   title: '¡Me da vergüenza!',
-  subtitle: 'Hija tiene que cantar en el acto de la escuela… pero es muy tímida',
+  subtitle: 'Tini tiene que cantar en el acto de la escuela… pero es muy tímida',
   music: 'calm',
   thumb: {
     bg: 'school',
@@ -27,7 +27,7 @@ const episode: Episode = {
         maestra: { x: 1260, mood: 'happy', facing: -1 },
       },
       steps: [
-        { say: 'maestra', text: 'El viernes es el acto de la escuela. Hija, ¿te gustaría cantar una canción?', expr: 'happy', act: 'point' },
+        { say: 'maestra', text: 'El viernes es el acto de la escuela. Tini, ¿te gustaría cantar una canción?', expr: 'happy', act: 'point' },
         { mood: 'worried', who: 'hija' },
         { fx: 'sweat', x: 560, y: 500, with: true },
         { say: 'hija', text: '¿Yo? No sé... me da mucha vergüenza cantar delante de todos.', expr: 'worried', act: 'tremble' },
@@ -70,7 +70,7 @@ const episode: Episode = {
       },
       steps: [
         { title: 'El día del acto...', dur: 1.6 },
-        { say: 'maestra', text: 'Y ahora, ¡un fuerte aplauso para Hija!', expr: 'excited', act: 'clap' },
+        { say: 'maestra', text: 'Y ahora, ¡un fuerte aplauso para Tini!', expr: 'excited', act: 'clap' },
         { do: 'clap', who: ['nico', 'lola', 'mati'], dur: 1.6, with: true },
         { say: 'hija', text: 'Tengo un poquito de miedo... pero me voy a animar. ¡Ahí va mi canción!', expr: 'worried', act: 'nod' },
         { mood: 'happy', who: 'hija' },
@@ -89,9 +89,9 @@ const episode: Episode = {
   ],
   youtube: {
     title: '¡Me Da Vergüenza! 🙈 La Timidez en Niños | Las Aventuras de Nuestra Familia | Cuentos para Niños',
-    description: `La maestra invita a Hija a cantar en el acto de la escuela… ¡pero a ella le da muchísima vergüenza! 🙈 Mamá le enseña un truco: practicar con un público de ositos. 🧸🎤 Un cuento infantil sobre la timidez, la vergüenza y cómo animarse de a poquito.
+    description: `La maestra invita a Tini a cantar en el acto de la escuela… ¡pero a ella le da muchísima vergüenza! 🙈 Luna le enseña un truco: practicar con un público de ositos. 🧸🎤 Un cuento infantil sobre la timidez, la vergüenza y cómo animarse de a poquito.
 
-🐶🐱 En "Las Aventuras de Nuestra Familia" acompañamos a Papá (un labrador juguetón), Mamá (una gatita negra muy inteligente), Hijo (un perrito aventurero) e Hija (una gatita naranja súper divertida) en historias cortas con valores para toda la familia.
+🐶🐱 En "Las Aventuras de Nuestra Familia" acompañamos a Max, el papá (un labrador juguetón), Luna, la mamá (una gatita negra muy inteligente), Lio (un perrito aventurero) y Martina, "Tini" (una gatita naranja súper divertida) en historias cortas con valores para toda la familia.
 
 ✨ En este capítulo aprendemos:
 • Que ser tímido no tiene nada de malo

@@ -80,11 +80,11 @@ const episode: Episode = {
   ],
   youtube: {
     title: 'Los Papás de Benja 💙 Cuando Papá y Mamá se Separan | Las Aventuras de Nuestra Familia | Cuentos para Niños',
-    description: `Benja, el compañero de Hijo, está muy triste: sus papás van a dejar de vivir juntos. 💙 Tiene miedo de que sea su culpa y de que ya no lo quieran… Con ayuda de Papá y Mamá, Hijo aprende algo muy importante para contarle a su amigo: el amor de los papás por sus hijos nunca se separa. 🏠❤️🏠
+    description: `Benja, el compañero de Lio, está muy triste: sus papás van a dejar de vivir juntos. 💙 Tiene miedo de que sea su culpa y de que ya no lo quieran… Con ayuda de Max y Luna, Lio aprende algo muy importante para contarle a su amigo: el amor de los papás por sus hijos nunca se separa. 🏠❤️🏠
 
 Un cuento infantil, cálido y tranquilizador, para acompañar a los niños cuando sus papás se separan o se divorcian.
 
-🐶🐱 En "Las Aventuras de Nuestra Familia" acompañamos a Papá (un labrador juguetón), Mamá (una gatita negra muy inteligente), Hijo (un perrito aventurero) e Hija (una gatita naranja súper divertida) en historias cortas con valores para toda la familia.
+🐶🐱 En "Las Aventuras de Nuestra Familia" acompañamos a Max, el papá (un labrador juguetón), Luna, la mamá (una gatita negra muy inteligente), Lio (un perrito aventurero) y Martina, "Tini" (una gatita naranja súper divertida) en historias cortas con valores para toda la familia.
 
 ✨ En este capítulo aprendemos:
 • Que la separación de los papás nunca es culpa de los hijos

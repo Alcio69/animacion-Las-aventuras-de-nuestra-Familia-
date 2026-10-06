@@ -9,7 +9,7 @@ const episode: Episode = {
   id: 'ep20-no-me-gusta-que-se-burlen',
   number: 20,
   title: 'No me gusta que se burlen de mí',
-  subtitle: 'Dos compañeros se burlan del moño de Hija… ¿qué puede hacer?',
+  subtitle: 'Dos compañeros se burlan del moño de Tini… ¿qué puede hacer?',
   music: 'calm',
   thumb: {
     bg: 'school',
@@ -38,7 +38,7 @@ const episode: Episode = {
         { mood: 'proud', who: 'lola' },
         { say: 'lola', text: 'Una broma es cuando todos se ríen. Si a ella no le gusta, no es una broma.', expr: 'proud', act: 'hips' },
         { mood: 'surprised', who: ['nico', 'mati'] },
-        { say: 'lola', text: 'Ven, Hija. Vamos a contarle a la maestra.', expr: 'love', act: 'hug' },
+        { say: 'lola', text: 'Ven conmigo, Tini. Vamos a contarle a la maestra.', expr: 'love', act: 'hug' },
       ],
     },
     {
@@ -54,7 +54,7 @@ const episode: Episode = {
         { say: 'maestra', text: 'Hiciste muy bien en contármelo. Pedir ayuda es de valientes.', expr: 'love', act: 'nod' },
         { say: 'maestra', text: 'Y tú, Lola, fuiste una gran amiga al defenderla.', expr: 'proud', act: 'clap' },
         { mood: 'proud', who: 'lola' },
-        { say: 'maestra', text: 'No te preocupes, Hija. Voy a hablar con ellos ahora mismo.', expr: 'happy', act: 'hug' },
+        { say: 'maestra', text: 'No te preocupes, Tini. Voy a hablar con ellos ahora mismo.', expr: 'happy', act: 'hug' },
         { mood: 'happy', who: 'hija' },
       ],
     },
@@ -73,7 +73,7 @@ const episode: Episode = {
         { say: 'nico', text: 'Me sentiría muy triste. No lo había pensado así.', expr: 'sad' },
         { do: 'walk', who: 'hija', to: 1260 },
         { do: 'walk', who: 'lola', to: 1510, with: true, delay: 0.3 },
-        { say: 'mati', text: 'Perdón, Hija. Te prometemos que no lo vamos a hacer nunca más.', expr: 'sad', act: 'nod' },
+        { say: 'mati', text: 'Te pedimos perdón, Tini. No lo vamos a hacer nunca más.', expr: 'sad', act: 'nod' },
         { say: 'nico', text: 'Y la verdad... tu moño es muy lindo.', expr: 'love' },
         { mood: 'laugh', who: 'hija' },
         { say: 'hija', text: '¡Gracias! ¿Quieren jugar con nosotras en el recreo?', expr: 'laugh', act: 'wave' },
@@ -88,9 +88,9 @@ const episode: Episode = {
   ],
   youtube: {
     title: 'No Me Gusta que se Burlen de Mí 🛑 Bullying para Niños | Las Aventuras de Nuestra Familia | Cuentos con Valores',
-    description: `En la escuela, dos compañeros se burlan del moño nuevo de Hija: "¡Moño de mariposa!" 😢 Su amiga Lola la defiende y juntas le cuentan a la maestra. 🛑💛 Un cuento infantil sobre el bullying y las burlas en la escuela: qué hacer si se burlan de ti, cómo defender a un amigo y por qué una "broma" que lastima no es una broma.
+    description: `En la escuela, dos compañeros se burlan del moño nuevo de Tini: "¡Moño de mariposa!" 😢 Su amiga Lola la defiende y juntas le cuentan a la maestra. 🛑💛 Un cuento infantil sobre el bullying y las burlas en la escuela: qué hacer si se burlan de ti, cómo defender a un amigo y por qué una "broma" que lastima no es una broma.
 
-🐶🐱 En "Las Aventuras de Nuestra Familia" acompañamos a Papá (un labrador juguetón), Mamá (una gatita negra muy inteligente), Hijo (un perrito aventurero) e Hija (una gatita naranja súper divertida) en historias cortas con valores para toda la familia.
+🐶🐱 En "Las Aventuras de Nuestra Familia" acompañamos a Max, el papá (un labrador juguetón), Luna, la mamá (una gatita negra muy inteligente), Lio (un perrito aventurero) y Martina, "Tini" (una gatita naranja súper divertida) en historias cortas con valores para toda la familia.
 
 ✨ En este capítulo aprendemos:
 • Que burlarse de alguien lastima

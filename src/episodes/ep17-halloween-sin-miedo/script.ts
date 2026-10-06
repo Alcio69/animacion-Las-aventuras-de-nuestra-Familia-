@@ -9,7 +9,7 @@ const episode: Episode = {
   id: 'ep17-halloween-sin-miedo',
   number: 17,
   title: '¡Halloween sin miedo!',
-  subtitle: 'A Hija le dan miedo los disfraces… ¿quién se esconde debajo de esa sábana?',
+  subtitle: 'A Tini le dan miedo los disfraces… ¿quién se esconde debajo de esa sábana?',
   music: 'adventure',
   thumb: {
     bg: 'living',
@@ -98,9 +98,9 @@ const episode: Episode = {
   ],
   youtube: {
     title: '¡Halloween Sin Miedo! 🎃 Cuento de Halloween para Niños | Las Aventuras de Nuestra Familia',
-    description: `¡Es noche de Halloween! 🎃👻 Hijo está disfrazado de calabaza y Mamá de bruja, pero a Hija los disfraces le dan mucho miedo… Cuando aparece un fantasma en el parque, descubre un secreto: ¡debajo de cada disfraz hay alguien conocido! Un cuento de Halloween para niños, divertido y nada aterrador, sobre cómo enfrentar los miedos.
+    description: `¡Es noche de Halloween! 🎃👻 Lio está disfrazado de calabaza y Luna de bruja, pero a Tini los disfraces le dan mucho miedo… Cuando aparece un fantasma en el parque, descubre un secreto: ¡debajo de cada disfraz hay alguien conocido! Un cuento de Halloween para niños, divertido y nada aterrador, sobre cómo enfrentar los miedos.
 
-🐶🐱 En "Las Aventuras de Nuestra Familia" acompañamos a Papá (un labrador juguetón), Mamá (una gatita negra muy inteligente), Hijo (un perrito aventurero) e Hija (una gatita naranja súper divertida) en historias cortas con valores para toda la familia.
+🐶🐱 En "Las Aventuras de Nuestra Familia" acompañamos a Max, el papá (un labrador juguetón), Luna, la mamá (una gatita negra muy inteligente), Lio (un perrito aventurero) y Martina, "Tini" (una gatita naranja súper divertida) en historias cortas con valores para toda la familia.
 
 ✨ En este capítulo aprendemos:
 • Que sentir miedo está bien

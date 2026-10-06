@@ -3,7 +3,7 @@ import './globals.css';
 
 export const metadata: Metadata = {
   title: 'Las Aventuras de Nuestra Familia — cuentos animados para niños',
-  description: 'Serie animada infantil en español: Papá, Mamá, Hijo e Hija viven pequeñas aventuras llenas de valores. Nuevos capítulos cada semana.',
+  description: 'Serie animada infantil en español: Max, Luna, Lio y Tini viven pequeñas aventuras llenas de valores. Nuevos capítulos cada semana.',
   icons: { icon: '/icon.svg' },
 };
 
