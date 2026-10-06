@@ -11,4 +11,6 @@
 1 La torta sorpresa · 2 La pelota de todos · 3 Un día de lluvia · 4 ¡No me gusta el brócoli! ·
 5 ¡No quiero ir al dentista! · 6 Mi primera pijamada · 7 ¡A ordenar mi cuarto! · 8 El primer día de escuela ·
 9 ¡Fue sin querer! · 10 Hermanos al rescate · 11 ¡No quiero dormir! · 12 Mi amigo Tomi ·
-13 ¡Quiero ganar siempre! · 14 La abuela viene de visita · 15 Los papás de Benja · 16 ¡Sin rueditas!
+13 ¡Quiero ganar siempre! · 14 La abuela viene de visita · 15 Los papás de Benja · 16 ¡Sin rueditas! ·
+17 ¡Halloween sin miedo! (publicar antes del 31/10) · 18 ¡Quiero la tablet! · 19 ¿Qué estoy sintiendo? ·
+20 No me gusta que se burlen de mí · 21 La carta a Papá Noel (publicar a fines de noviembre)

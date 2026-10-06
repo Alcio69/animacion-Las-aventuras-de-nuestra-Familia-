@@ -86,7 +86,7 @@ export const Scene3DView: React.FC<{ cs: CompiledScene; audio: boolean }> = ({ c
   const irisR = Math.max(0, ease(Math.max(0, iris))) * 120;
   const line = cs.events.find((e): e is LineEv => e.kind === 'line' && e.t0 <= t && t < e.t1);
   const title = cs.events.find((e) => e.kind === 'title' && e.t0 <= t && t < e.t1);
-  const night = sc.bg === 'bedroom' && sc.variant !== 'day';
+  const night = (sc.bg === 'bedroom' && sc.variant !== 'day') || sc.variant === 'night' || sc.variant === 'halloween';
   // lightning: a quick double flash when a thunder sfx plays
   const flash = cs.events.reduce((m, e) => {
     if (e.kind !== 'sfx' || e.sfx !== 'thunder') return m;
@@ -156,7 +156,8 @@ const Family3D: React.FC<{
   spacing?: number;
   ids?: CharId[];
   vehicles?: Partial<Record<CharId, number>>;
-}> = ({ t, frame, pop, exprs, spacing = 3.3, ids = FAMILY, vehicles }) => {
+  costumes?: Partial<Record<CharId, string>>;
+}> = ({ t, frame, pop, exprs, spacing = 3.3, ids = FAMILY, vehicles, costumes }) => {
   const mid = (ids.length - 1) / 2;
   const { fps } = useVideoConfig();
   return (
@@ -167,6 +168,7 @@ const Family3D: React.FC<{
         p.armR = { up: 122, bend: 28 + Math.sin(t * 11 + i) * 26 };
         p.yaw = (i - mid) * -0.12;
         p.vehicle = vehicles?.[id] ?? 0;
+        p.costume = ['ghost', 'witch', 'pumpkin', 'santa'].indexOf(costumes?.[id] ?? '') + 1;
         if (p.vehicle) p.armR = { up: 122, bend: 20 };
         p.wag = 1.2;
         p.bob = Math.sin(t * 4 + i) * 3;
@@ -274,14 +276,14 @@ export const Thumbnail3D: React.FC<{ episode: Episode }> = ({ episode }) => {
     <AbsoluteFill style={{ background: '#FCE9D2' }}>
       <Canvas3D>
         <CameraRig x={0} dist={12.5} y={4.2} lookY={3.4} />
-        <Lights3D target={[0, 2.5, 0]} dim={th.variant === 'rain' ? 0.6 : 0} />
+        <Lights3D target={[0, 2.5, 0]} dim={th.variant === 'rain' ? 0.6 : 0} night={th.variant === 'night' || th.variant === 'halloween'} />
         <Set3D bg={bg} variant={th.variant} t={0.7} />
         {th.prop && (
           <group position={bg === 'kitchen' ? [0, COUNTER_TOP, COUNTER_Z] : [0, 0, -1]} scale={1.2}>
             <Prop3D kind={th.prop} t={0} />
           </group>
         )}
-        <Family3D t={0.4} frame={100} exprs={th.exprs} ids={th.cast} vehicles={thumbVehicles(episode, th.cast)} spacing={th.cast && th.cast.length > 4 ? 2.3 : 3.1} />
+        <Family3D t={0.4} frame={100} exprs={th.exprs} ids={th.cast} vehicles={thumbVehicles(episode, th.cast)} costumes={th.costumes} spacing={th.cast && th.cast.length > 4 ? 2.3 : 3.1} />
       </Canvas3D>
       <AbsoluteFill>
         <svg viewBox="0 0 1920 1080" width="100%" height="100%">

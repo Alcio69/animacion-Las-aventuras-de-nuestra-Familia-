@@ -109,8 +109,9 @@ export const Character3D: React.FC<{ id: CharId; pose: Pose; position: V3; scale
           </group>
           {([-1, 1] as const).map((side) => (
             // armR = the arm towards facing (the 2D style mirrors; here we swap when turned left)
-            <Arm3D key={side} d={d} m={m} side={side} arm={side * lookSide < 0 ? pose.armL : pose.armR} swing={side * lookSide < 0 ? pose.swingL : pose.swingR} shoulderY={shoulderY} tw={tw} />
+            <Arm3D key={side} d={d} m={pose.costume === 1 ? ghostArms(m) : m} side={side} arm={side * lookSide < 0 ? pose.armL : pose.armR} swing={side * lookSide < 0 ? pose.swingL : pose.swingR} shoulderY={shoulderY} tw={tw} />
           ))}
+          {pose.costume > 0 && <BodyCostume3D kind={pose.costume} d={d} hipY={hipY} shoulderY={shoulderY} headY={headY} R={R} tw={tw} bw={bw} depth={depth} t={pose.t} />}
         </group>
       </group>
       </group>
@@ -120,6 +121,151 @@ export const Character3D: React.FC<{ id: CharId; pose: Pose; position: V3; scale
 };
 
 type M = ReturnType<typeof makeMats>;
+
+// ---------- costumes (Halloween / Christmas) ----------
+const CM = {
+  sheet: physical('#F8F9FA', { roughness: 0.85, sheen: 0.7, sheenColor: new THREE.Color('#ffffff'), side: THREE.DoubleSide }),
+  hole: physical('#1A1A1F', { roughness: 0.9 }),
+  witch: fabric('#5F3DC4'),
+  witchDark: physical('#3B2283', { roughness: 0.85, side: THREE.DoubleSide }),
+  band: physical('#FCC419', { roughness: 0.4 }),
+  pumpkin: physical('#FF8C1A', { roughness: 0.55, clearcoat: 0.3 }),
+  pumpkinDark: physical('#E8590C', { roughness: 0.6 }),
+  leaf: physical('#2F9E44', { roughness: 0.6 }),
+  face: physical('#2B1A0E', { roughness: 0.8 }),
+  red: fabric('#E03131'),
+  white: fabric('#FFFFFF'),
+};
+
+const ghostArmCache = new WeakMap<object, M>();
+/** Under a ghost sheet the arms are white sheet too. */
+const ghostArms = (m: M): M => {
+  let g = ghostArmCache.get(m);
+  if (!g) ghostArmCache.set(m, (g = { ...m, top: CM.sheet, topDark: CM.sheet, inner: CM.sheet, fur: CM.sheet }));
+  return g;
+};
+
+/** Ghost sheet / witch cape / pumpkin suit, worn over the body (does not turn with the head). */
+const BodyCostume3D: React.FC<{ kind: number; d: Design; hipY: number; shoulderY: number; headY: number; R: number; tw: number; bw: number; depth: number; t: number }> = ({
+  kind,
+  d,
+  hipY,
+  shoulderY,
+  headY,
+  R,
+  tw,
+  bw,
+  depth,
+  t,
+}) => {
+  const cat = d.species !== 'dog';
+  const sheet = useMemo(() => {
+    if (kind !== 1) return null;
+    const top = headY + R * (cat ? 1.32 : 1.12);
+    const pts = [
+      [0.001, top],
+      [R * 0.62, top - R * 0.1],
+      [R * 1.02, headY + R * 0.55],
+      [R * 1.18, headY],
+      [R * 1.05, headY - R * 0.62],
+      [tw * 0.68, shoulderY - 0.08],
+      [bw * 0.82, hipY + 0.1],
+      [bw * 1.02, hipY * 0.32],
+    ].map(([x, y]) => new THREE.Vector2(x, y));
+    return new THREE.LatheGeometry(pts, 40);
+  }, [kind, headY, R, cat, tw, bw, shoulderY, hipY]);
+  if (kind === 1 && sheet) {
+    const z = R * 1.12;
+    return (
+      <group>
+        <mesh geometry={sheet} material={CM.sheet} castShadow receiveShadow />
+        {/* wavy hem */}
+        {Array.from({ length: 12 }, (_, i) => {
+          const a = (i / 12) * Math.PI * 2 + Math.sin(t * 2) * 0.05;
+          return <Ball key={i} p={[Math.sin(a) * bw * 0.98, hipY * 0.3 + Math.sin(t * 3 + i) * 0.02, Math.cos(a) * bw * 0.98]} s={[bw * 0.16, 0.07, bw * 0.16]} m={CM.sheet} />;
+        })}
+        {[-1, 1].map((sd) => (
+          <Ball key={sd} p={[sd * R * 0.34, headY + R * 0.12, z * 0.93]} s={[R * 0.13, R * 0.2, R * 0.06]} m={CM.hole} shadow={false} />
+        ))}
+        <Ball p={[0, headY - R * 0.38, z * 0.9]} s={[R * 0.12, R * 0.15, R * 0.06]} m={CM.hole} shadow={false} />
+      </group>
+    );
+  }
+  if (kind === 2) {
+    // witch cape: half cylinder behind the body
+    const h = shoulderY - hipY * 0.35;
+    return (
+      <group>
+        <mesh position={[0, hipY * 0.35 + h / 2, -depth * 0.12]} material={CM.witchDark} castShadow>
+          <cylinderGeometry args={[tw * 0.6, bw * 0.95, h, 28, 1, true, Math.PI / 2 + 0.25, Math.PI - 0.5]} />
+        </mesh>
+        <mesh position={[0, shoulderY + 0.02, 0]} rotation={[Math.PI / 2, 0, 0]} material={CM.witch} castShadow>
+          <torusGeometry args={[tw * 0.36, 0.07, 10, 28]} />
+        </mesh>
+      </group>
+    );
+  }
+  if (kind === 3) {
+    // pumpkin suit around the torso
+    const cy = hipY + (shoulderY - hipY) * 0.48;
+    const rx = Math.max(tw, bw) * 0.7;
+    const ry = (shoulderY - hipY) * 0.62;
+    return (
+      <group position={[0, cy, 0]}>
+        {Array.from({ length: 6 }, (_, i) => (
+          <Ball key={i} r={[0, (i / 6) * Math.PI, 0]} s={[rx * 0.55, ry, rx]} m={i % 2 ? CM.pumpkinDark : CM.pumpkin} />
+        ))}
+        {/* jack-o-lantern face on the belly */}
+        {[-1, 1].map((sd) => (
+          <mesh key={sd} position={[sd * rx * 0.32, ry * 0.25, rx * 0.97]} rotation={[0, sd * 0.3, Math.PI]} material={CM.face}>
+            <coneGeometry args={[rx * 0.13, rx * 0.16, 3]} />
+          </mesh>
+        ))}
+        <mesh position={[0, -ry * 0.3, rx * 0.95]} scale={[1, 0.45, 0.3]} material={CM.face}>
+          <sphereGeometry args={[rx * 0.32, 20, 12, 0, Math.PI * 2, Math.PI / 2, Math.PI / 2]} />
+        </mesh>
+        <mesh position={[0, ry * 0.95, 0]} rotation={[Math.PI / 2, 0, 0]} material={CM.leaf} castShadow>
+          <torusGeometry args={[tw * 0.3, 0.08, 10, 24]} />
+        </mesh>
+      </group>
+    );
+  }
+  return null;
+};
+
+/** Witch hat (2) or Santa hat (4), sitting on the head. */
+const Hat3D: React.FC<{ kind: number; R: number; cat: boolean }> = ({ kind, R, cat }) => {
+  const y = R * (cat ? 0.78 : 0.72);
+  if (kind === 2) {
+    return (
+      <group position={[0, y, -R * 0.05]} rotation={[-0.12, 0, 0.12]}>
+        <mesh material={CM.witch} castShadow>
+          <cylinderGeometry args={[R * 1.08, R * 1.08, R * 0.07, 40]} />
+        </mesh>
+        <mesh position={[0, R * 0.12, 0]} material={CM.band}>
+          <cylinderGeometry args={[R * 0.58, R * 0.6, R * 0.16, 32]} />
+        </mesh>
+        <mesh position={[0, R * 0.7, 0]} material={CM.witch} castShadow>
+          <coneGeometry args={[R * 0.56, R * 1.3, 32]} />
+        </mesh>
+        <mesh position={[R * 0.12, R * 1.38, 0]} rotation={[0, 0, -0.9]} material={CM.witch} castShadow>
+          <coneGeometry args={[R * 0.14, R * 0.36, 16]} />
+        </mesh>
+      </group>
+    );
+  }
+  return (
+    <group position={[0, y, -R * 0.05]} rotation={[-0.1, 0, -0.18]}>
+      <mesh position={[0, R * 0.05, 0]} rotation={[Math.PI / 2, 0, 0]} material={CM.white} castShadow>
+        <torusGeometry args={[R * 0.7, R * 0.16, 14, 36]} />
+      </mesh>
+      <mesh position={[0, R * 0.5, 0]} material={CM.red} castShadow>
+        <coneGeometry args={[R * 0.7, R * 0.95, 32]} />
+      </mesh>
+      <Ball p={[0, R * 1.0, 0]} s={R * 0.18} m={CM.white} />
+    </group>
+  );
+};
 
 /** Wheelchair sized to the rider; forward is +z. `roll` (px travelled) turns the wheels. */
 const Wheelchair3D: React.FC<{ d: Design; roll: number }> = ({ d, roll }) => {
@@ -496,7 +642,7 @@ const Head3D: React.FC<{ d: Design; m: M; pose: Pose; R: number }> = ({ d, m, po
           {[-1, 1].map((sd) => (
             <group key={sd}>
               <Ball p={[sd * R * 0.78, -R * 0.32, R * 0.22]} s={[R * 0.32, R * 0.24, R * 0.3]} r={[0, 0, sd * 0.5]} m={m.fur} />
-              {bunny ? (
+              {pose.costume === 1 ? null : bunny ? (
                 // long bunny ears; the left one flops a little and both sway
                 <group position={[sd * R * 0.32, R * 0.72, -R * 0.05]} rotation={[0, 0, -sd * (0.12 + (sd < 0 ? 0.25 : 0)) + Math.sin(pose.t * 2 + sd) * 0.05]}>
                   <Ball p={[0, R * 0.62, 0]} s={[R * 0.2, R * 0.66, R * 0.12]} m={m.fur} />
@@ -536,8 +682,8 @@ const Head3D: React.FC<{ d: Design; m: M; pose: Pose; R: number }> = ({ d, m, po
         </>
       ) : (
         <>
-          {/* floppy ears hinge at the top of the head */}
-          {[-1, 1].map((sd) => (
+          {/* floppy ears hinge at the top of the head (tucked away under a ghost sheet) */}
+          {pose.costume !== 1 && [-1, 1].map((sd) => (
             <group key={sd} position={[sd * R * 0.7, R * 0.52, -R * 0.02]} rotation={[0, 0, sd * (0.32 + flop)]}>
               <Ball p={[sd * R * 0.12, -R * 0.55, 0]} s={[R * 0.3, R * 0.62, R * 0.15]} r={[0, 0, sd * -0.12]} m={m.ear} />
             </group>
@@ -615,6 +761,7 @@ const Head3D: React.FC<{ d: Design; m: M; pose: Pose; R: number }> = ({ d, m, po
           <Ball s={R * 0.08} m={m.bow} />
         </group>
       )}
+      {(pose.costume === 2 || pose.costume === 4) && <Hat3D kind={pose.costume} R={R} cat={cat} />}
     </group>
   );
 };

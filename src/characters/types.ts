@@ -1,4 +1,4 @@
-export type CharId = 'papa' | 'mama' | 'hijo' | 'hija' | 'dentista' | 'lola' | 'tomi' | 'benja' | 'benjaPapa' | 'benjaMama' | 'abuela';
+export type CharId = 'papa' | 'mama' | 'hijo' | 'hija' | 'dentista' | 'lola' | 'tomi' | 'benja' | 'benjaPapa' | 'benjaMama' | 'abuela' | 'nico' | 'mati' | 'maestra';
 
 /** The four main characters (intro, outro, thumbnails, website). Guests like `dentista` only appear when cast. */
 export const FAMILY: CharId[] = ['papa', 'mama', 'hijo', 'hija'];
@@ -73,6 +73,8 @@ export type Pose = {
   roll: number;
   /** Whole-body tip over to the side, degrees (falling). */
   tip: number;
+  /** Costume: 0 none, 1 ghost sheet, 2 witch hat + cape, 3 pumpkin suit, 4 santa hat. */
+  costume: number;
 };
 
 export const restPose = (t = 0): Pose => ({
@@ -105,4 +107,5 @@ export const restPose = (t = 0): Pose => ({
   vehicle: 0,
   roll: 0,
   tip: 0,
+  costume: 0,
 });

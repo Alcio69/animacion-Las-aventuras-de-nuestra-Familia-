@@ -2,6 +2,7 @@ import { RoundedBox } from '@react-three/drei';
 import React, { useMemo } from 'react';
 import * as THREE from 'three';
 import type { Background } from '../engine/script';
+import { Pumpkin3D, XmasTree3D } from './Props3D';
 
 /** Backgrounds in 3D. Characters stand on z≈0, the back wall is at z=WALL. */
 export const WALL = -4.6;
@@ -134,14 +135,19 @@ const Cloud3D: React.FC<{ p: V3; s?: number; c?: string }> = ({ p, s = 1, c = '#
   </group>
 );
 
-export type Weather = 'rain' | 'rainbow' | undefined;
+export type Weather = 'rain' | 'rainbow' | 'snow' | undefined;
 const RAINBOW = ['#FF6B6B', '#FFA94D', '#FFD43B', '#69DB7C', '#4DABF7', '#9775FA'];
 
 const Window3D: React.FC<{ p: V3; w: number; h: number; t: number; night?: boolean; curtain?: string; weather?: Weather }> = ({ p, w, h, t, night, curtain, weather }) => {
   const rain = weather === 'rain';
   const skyT = useMemo(
-    () => (rain ? sky('#6E7C96', '#AEB9CB', 'skyR') : sky(night ? '#1B2550' : '#6CBDF2', night ? '#3B3F7A' : '#D3EEFF', night ? 'skyN' : 'skyD')),
-    [night, rain],
+    () =>
+      rain
+        ? sky('#6E7C96', '#AEB9CB', 'skyR')
+        : weather === 'snow'
+          ? sky('#3D5A9E', '#9DB4E0', 'skySnow')
+          : sky(night ? '#1B2550' : '#6CBDF2', night ? '#3B3F7A' : '#D3EEFF', night ? 'skyN' : 'skyD'),
+    [night, rain, weather],
   );
   return (
     <group position={p}>
@@ -166,6 +172,17 @@ const Window3D: React.FC<{ p: V3; w: number; h: number; t: number; night?: boole
           <mesh position={[0, -h * 0.42, -0.04]} scale={[w * 0.7, h * 0.2, 0.05]}>
             <sphereGeometry args={[1, 24, 12]} />
             <meshBasicMaterial color="#6E9A5C" />
+          </mesh>
+        </>
+      ) : weather === 'snow' ? (
+        <>
+          {Array.from({ length: 40 }).map((_, i) => {
+            const fall = (t * (0.35 + rnd(i) * 0.3) + rnd(i + 7) * h) % h;
+            return <Sph key={i} p={[(rnd(i + 2) - 0.5) * w * 0.95 + Math.sin(t + i) * 0.08, h / 2 - fall, -0.025]} s={0.035 + rnd(i + 4) * 0.03} c="#FFFFFF" e={0.6} />;
+          })}
+          <mesh position={[0, -h * 0.42, -0.04]} scale={[w * 0.7, h * 0.2, 0.05]}>
+            <sphereGeometry args={[1, 24, 12]} />
+            <meshBasicMaterial color="#F1F3F5" />
           </mesh>
         </>
       ) : night ? (
@@ -254,7 +271,51 @@ const Room: React.FC<{ wall: THREE.Texture; floor: THREE.Texture; wallTint?: str
   </>
 );
 
-const Living3D: React.FC<{ t: number; weather?: Weather }> = ({ t, weather }) => {
+/** Bunting across the wall (triangle flags). */
+const Bunting3D: React.FC<{ y: number; colors: string[]; t: number }> = ({ y, colors, t }) => (
+  <group position={[0, y, WALL + 0.25]}>
+    {Array.from({ length: 21 }, (_, i) => {
+      const x = (i - 10) * 0.95;
+      const sag = Math.cos((x / 10) * Math.PI) * 0.35;
+      return (
+        <mesh key={i} position={[x, -sag, 0]} rotation={[0, 0, Math.PI + Math.sin(t * 1.5 + i) * 0.06]}>
+          <coneGeometry args={[0.32, 0.6, 3]} />
+          {std(colors[i % colors.length])}
+        </mesh>
+      );
+    })}
+  </group>
+);
+
+const Bat3D: React.FC<{ p: V3; t: number; s?: number }> = ({ p, t, s = 1 }) => (
+  <group position={p} scale={s} rotation={[0, 0, Math.sin(t * 2 + p[0]) * 0.15]}>
+    <Sph p={[0, 0, 0]} s={[0.16, 0.2, 0.08]} c="#2B2A33" />
+    {[-1, 1].map((sd) => (
+      <mesh key={sd} position={[sd * 0.32, 0.05, 0]} rotation={[0, 0, sd * (0.3 + Math.sin(t * 6) * 0.25)]} scale={[1, 0.45, 0.1]}>
+        <coneGeometry args={[0.3, 0.6, 3]} />
+        {std('#2B2A33')}
+      </mesh>
+    ))}
+  </group>
+);
+
+/** String of small glowing bulbs along the top of the wall. */
+const Lights3DString: React.FC<{ y: number; t: number; colors: string[] }> = ({ y, t, colors }) => (
+  <group position={[0, y, WALL + 0.3]}>
+    {Array.from({ length: 34 }, (_, i) => {
+      const x = (i - 16.5) * 0.6;
+      const on = Math.sin(t * 3 + i * 1.3) > -0.3;
+      return (
+        <mesh key={i} position={[x, -Math.cos((x / 10) * Math.PI) * 0.25, 0]}>
+          <sphereGeometry args={[0.08, 10, 8]} />
+          <meshBasicMaterial color={on ? colors[i % colors.length] : '#666'} toneMapped={false} />
+        </mesh>
+      );
+    })}
+  </group>
+);
+
+const Living3D: React.FC<{ t: number; weather?: Weather; deco?: 'halloween' | 'christmas' }> = ({ t, weather, deco }) => {
   const wall = useMemo(() => dotsWall('#FFEBD4', '#F3C9A0'), []);
   const floor = useMemo(() => wood('#DDA16B', '#CF915C'), []);
   return (
@@ -264,7 +325,34 @@ const Living3D: React.FC<{ t: number; weather?: Weather }> = ({ t, weather }) =>
       <Box a={[44, 2.2, 0.15]} p={[0, 1.1, WALL + 0.08]} c="#F3CDA3" r={0.02} />
       <Box a={[44, 0.14, 0.25]} p={[0, 2.22, WALL + 0.12]} c="#E9BC8E" r={0.02} />
       <Box a={[44, 0.25, 0.2]} p={[0, 0.12, WALL + 0.14]} c="#E2B386" r={0.02} />
-      <Window3D p={[-6.2, 5.1, WALL + 0.1]} w={3.6} h={3.3} t={t} curtain="#C9A7E8" weather={weather} />
+      <Window3D p={[-6.2, 5.1, WALL + 0.1]} w={3.6} h={3.3} t={t} curtain="#C9A7E8" weather={weather} night={deco === 'halloween'} />
+      {deco === 'halloween' && (
+        <group>
+          <Bunting3D y={8.2} colors={['#FD7E14', '#7048E8', '#2B2A33']} t={t} />
+          <Bat3D p={[-3.0, 7.3, WALL + 0.2]} t={t} />
+          <Bat3D p={[3.6, 7.1, WALL + 0.2]} t={t} s={0.8} />
+          <Bat3D p={[4.6, 7.6, WALL + 0.2]} t={t} s={0.6} />
+          <group position={[-8.6, 0, WALL + 1.4]}>
+            <Pumpkin3D t={t} s={1.1} />
+          </group>
+          <group position={[-7.5, 0, WALL + 1.9]}>
+            <Pumpkin3D t={t + 1} s={0.7} />
+          </group>
+          <group position={[10.2, 0, WALL + 3.4]}>
+            <Pumpkin3D t={t + 2} s={0.9} />
+          </group>
+          <pointLight position={[-8, 1.5, WALL + 3]} intensity={5} distance={6} color="#FF922B" />
+        </group>
+      )}
+      {deco === 'christmas' && (
+        <group>
+          <Lights3DString y={8.3} t={t} colors={['#FFD43B', '#FF6B6B', '#69DB7C', '#4DABF7']} />
+          <group position={[-9.3, 0, WALL + 1.8]}>
+            <XmasTree3D t={t} s={1.15} />
+          </group>
+          <pointLight position={[-9, 3, WALL + 3.5]} intensity={4} distance={7} color="#FFE8A3" />
+        </group>
+      )}
       <Frame3D p={[-1.6, 6.1, WALL + 0.1]} w={1.5} h={1.2} c="#BDE0FE">
         <Sph p={[0, 0, 0]} s={[0.32, 0.32, 0.05]} c="#FFD166" />
       </Frame3D>
@@ -307,7 +395,7 @@ const Living3D: React.FC<{ t: number; weather?: Weather }> = ({ t, weather }) =>
         <Cyl p={[0, 4.75, 0]} r={0.45} r2={0.75} h={0.9} c="#FFE8A3" e={0.6} />
         <pointLight position={[0, 4.3, 0.6]} intensity={6} distance={7} color="#FFD98A" />
       </group>
-      <Plant3D p={[-3.3, 0, WALL + 0.9]} s={1.1} t={t} />
+      {deco !== 'christmas' && <Plant3D p={[-3.3, 0, WALL + 0.9]} s={1.1} t={t} />}
       {/* rug */}
       <mesh position={[0, 0.02, 0.4]} scale={[7.2, 1, 2.3]} receiveShadow>
         <cylinderGeometry args={[1, 1, 0.04, 64]} />
@@ -386,7 +474,11 @@ const Tree3D: React.FC<{ p: V3; s?: number; c?: string; t: number }> = ({ p, s =
 
 const Park3D: React.FC<{ t: number; variant?: string }> = ({ t, variant }) => {
   const sunset = variant === 'sunset';
-  const skyT = useMemo(() => sky(sunset ? '#FF9E7A' : '#5DB8F2', sunset ? '#FFE3A3' : '#DDF2FF', sunset ? 'skyS' : 'skyP'), [sunset]);
+  const night = variant === 'night';
+  const skyT = useMemo(
+    () => (night ? sky('#141A45', '#4B3E8C', 'skyPN') : sky(sunset ? '#FF9E7A' : '#5DB8F2', sunset ? '#FFE3A3' : '#DDF2FF', sunset ? 'skyS' : 'skyP')),
+    [sunset, night],
+  );
   const g = useMemo(() => grass(), []);
   return (
     <group>
@@ -394,8 +486,20 @@ const Park3D: React.FC<{ t: number; variant?: string }> = ({ t, variant }) => {
         <planeGeometry args={[120, 50]} />
         <meshBasicMaterial map={skyT} />
       </mesh>
-      <Sph p={[14, 16, -28]} s={2.2} c={sunset ? '#FFB347' : '#FFE066'} e={1.2} />
-      {[0, 1, 2].map((i) => (
+      <Sph p={[14, 16, -28]} s={2.2} c={night ? '#FFF4C2' : sunset ? '#FFB347' : '#FFE066'} e={1.2} />
+      {night &&
+        Array.from({ length: 40 }).map((_, i) => (
+          <Sph key={i} p={[(rnd(i) - 0.5) * 70, 9 + rnd(i + 3) * 20, -29]} s={0.08 + 0.06 * Math.sin(t * 2 + i) ** 2} c="#FFFFFF" e={2} />
+        ))}
+      {night &&
+        [-6, 6].map((x) => (
+          <group key={x} position={[x, 0, -3.5]}>
+            <Cyl p={[0, 2.2, 0]} r={0.09} h={4.4} c="#343A40" />
+            <Sph p={[0, 4.6, 0]} s={0.38} c="#FFE8A3" e={2} />
+            <pointLight position={[0, 4.4, 0.5]} intensity={10} distance={9} color="#FFD98A" />
+          </group>
+        ))}
+      {!night && [0, 1, 2].map((i) => (
         <Cloud3D key={i} p={[(((t * (0.25 + i * 0.07) + i * 9) % 60) - 30), 13 + i * 2.5, -26]} s={1.8 + i * 0.4} />
       ))}
       <mesh position={[-10, -6, -22]} scale={[22, 10, 6]}>
@@ -594,6 +698,12 @@ export const Set3D: React.FC<{ bg: Background; variant?: string; t: number }> = 
     case 'bedroom':
       return <Bedroom3D t={t} day={variant === 'day'} />;
     default:
-      return <Living3D t={t} weather={variant === 'rain' || variant === 'rainbow' ? variant : undefined} />;
+      return (
+        <Living3D
+          t={t}
+          weather={variant === 'rain' || variant === 'rainbow' ? variant : variant === 'christmas' ? 'snow' : undefined}
+          deco={variant === 'halloween' || variant === 'christmas' ? variant : undefined}
+        />
+      );
   }
 };

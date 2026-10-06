@@ -70,6 +70,8 @@ const xAt = (cs: CompiledScene, id: CharId, t: number): number | null => {
   return x;
 };
 
+const COSTUMES = ['ghost', 'witch', 'pumpkin', 'santa'];
+
 /** Where the character wants to be at time t (before smoothing). */
 export const targetPose = (cs: CompiledScene, id: CharId, t: number): Raw | null => {
   const cast = cs.scene.cast[id];
@@ -81,12 +83,14 @@ export const targetPose = (cs: CompiledScene, id: CharId, t: number): Raw | null
   const y = cast.y ?? 930;
   let facing: 1 | -1 = cast.facing ?? 1;
   let mood: Expression = cast.mood ?? 'happy';
+  let costume: string = cast.costume ?? 'none';
   let look: number | null = null;
   let visible = cast.hidden ? 0 : 1;
 
   const acts: ActEv[] = [];
   for (const e of cs.events) {
     if (e.kind === 'mood' && e.who === id && e.t0 <= t) mood = e.mood;
+    if (e.kind === 'costume' && e.who === id && e.t0 <= t) costume = e.costume;
     if (e.kind !== 'act' || e.who !== id || e.t0 > t) continue;
     const k = clamp((t - e.t0) / (e.t1 - e.t0));
     if ((e.action === 'walk' || e.action === 'run') && e.to !== undefined) {
@@ -101,6 +105,7 @@ export const targetPose = (cs: CompiledScene, id: CharId, t: number): Raw | null
     if (t < e.t1) acts.push(e);
   }
   pose.expr = mood;
+  pose.costume = COSTUMES.indexOf(costume) + 1;
 
   // ---- idle life: breathing, weight shifts, micro head motion, eye darts ----
   pose.breath = (Math.sin(t * 1.9 + sd) + 1) / 2;

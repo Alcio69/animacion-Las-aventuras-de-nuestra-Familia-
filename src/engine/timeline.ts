@@ -1,7 +1,7 @@
 import type { CharId, Expression } from '../characters/types';
 import voices from '../voices.json';
 import { voiceKey } from './hash';
-import type { Action, Episode, Fx, PropKind, Scene, Sfx, Speaker } from './script';
+import type { Action, Costume, Episode, Fx, PropKind, Scene, Sfx, Speaker } from './script';
 
 export const FPS = 30;
 export const INTRO_SEC = 3.6;
@@ -18,6 +18,7 @@ export const voiceInfo = (speaker: Speaker, text: string): (VoiceInfo & { key: s
 
 export type ActEv = { kind: 'act'; who: CharId; action: Action; t0: number; t1: number; to?: number; look?: number; expr?: Expression };
 export type MoodEv = { kind: 'mood'; who: CharId; t0: number; mood: Expression };
+export type CostumeEv = { kind: 'costume'; who: CharId; t0: number; costume: Costume | 'none' };
 export type LineEv = { kind: 'line'; who: Speaker; text: string; t0: number; t1: number; voiceEnd: number; expr?: Expression; key: string; hasVoice: boolean };
 export type PropMove = { t0: number; t1: number; x: number; y: number; arc: number; bounces: number };
 export type PropEv = { kind: 'prop'; prop: PropKind; id: string; x: number; y: number; scale: number; t0: number; t1: number; moves: PropMove[] };
@@ -50,7 +51,7 @@ export const propAt = (e: PropEv, t: number) => {
 export type FxEv = { kind: 'fx'; fx: Fx; x: number; y: number; t0: number; t1: number };
 export type SfxEv = { kind: 'sfx'; sfx: Sfx; t0: number };
 export type TitleEv = { kind: 'title'; text: string; t0: number; t1: number };
-export type Ev = ActEv | MoodEv | LineEv | PropEv | FxEv | SfxEv | TitleEv;
+export type Ev = ActEv | MoodEv | CostumeEv | LineEv | PropEv | FxEv | SfxEv | TitleEv;
 
 export type CompiledScene = { scene: Scene; index: number; start: number; dur: number; events: Ev[] };
 export type CompiledEpisode = { ep: Episode; scenes: CompiledScene[]; totalSec: number; totalFrames: number };
@@ -125,6 +126,8 @@ export const compileScene = (scene: Scene, index: number, start: number): Compil
       }
     } else if ('mood' in step) {
       for (const who of asList(step.who)) events.push({ kind: 'mood', who, t0, mood: step.mood });
+    } else if ('costume' in step) {
+      for (const who of asList(step.who)) events.push({ kind: 'costume', who, t0, costume: step.costume });
     } else if ('prop' in step) {
       const id = step.id ?? `p${propN++}`;
       const ev: PropEv = { kind: 'prop', prop: step.prop, id, x: step.x, y: step.y, scale: step.scale ?? 1, t0, t1: Infinity, moves: [] };

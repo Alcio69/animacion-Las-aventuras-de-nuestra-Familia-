@@ -36,9 +36,12 @@ export type Action =
   | 'fall'; // tip over (e.g. off a bike) and get back up
 
 export type PropKind = 'table' | 'cake' | 'bowl' | 'flour' | 'ball' | 'balloon' | 'gift' | 'book' | 'star' | 'heart' | 'cookie' | 'plant' | 'plate' | 'broccoli' | 'teddy' | 'flashlight' | 'toothbrush'
-  | 'toybox' | 'block' | 'car' | 'vase' | 'vaseBroken' | 'vaseFixed' | 'drawing' | 'tree' | 'glass';
+  | 'toybox' | 'block' | 'car' | 'vase' | 'vaseBroken' | 'vaseFixed' | 'drawing' | 'tree' | 'glass'
+  | 'pumpkin' | 'candy' | 'tablet' | 'timer' | 'xmasTree' | 'letter';
 export type Fx = 'hearts' | 'stars' | 'confetti' | 'flour' | 'sparkle' | 'zzz' | 'question' | 'exclaim' | 'sweat';
 export type Sfx = 'pop' | 'boing' | 'whoosh' | 'ding' | 'sparkle' | 'poof' | 'tada' | 'drum' | 'doorbell' | 'giggle' | 'thunder' | 'crash';
+
+export type Costume = 'ghost' | 'witch' | 'pumpkin' | 'santa';
 
 export type Step =
   | {
@@ -67,6 +70,8 @@ export type Step =
       delay?: number;
     }
   | { mood: Expression; who: CharId | CharId[]; with?: boolean; delay?: number }
+  /** Put on / take off a costume (instant: pair it with fx 'sparkle' + sfx 'poof'). */
+  | { costume: Costume | 'none'; who: CharId | CharId[]; with?: boolean; delay?: number }
   | { wait: number }
   | { prop: PropKind; id?: string; x: number; y: number; scale?: number; with?: boolean; delay?: number }
   | { removeProp: string; with?: boolean; delay?: number }
@@ -86,6 +91,8 @@ export type CastEntry = {
   hidden?: boolean;
   /** Character rides/sits in something for the whole scene. */
   vehicle?: 'wheelchair' | 'bike';
+  /** Costume worn from the start of the scene. */
+  costume?: Costume;
 };
 
 export type Scene = {
@@ -114,7 +121,7 @@ export type Episode = {
   music?: 'happy' | 'calm' | 'adventure';
   /** YouTube thumbnail (1280x720). Big short text sells clicks: 2-4 words. */
   /** `cast` = who appears (default: the 4 family members), e.g. ['hijo', 'abuela', 'hija']. */
-  thumb?: { bg?: Background; variant?: string; text?: string; prop?: PropKind; exprs?: Partial<Record<CharId, Expression>>; cast?: CharId[] };
+  thumb?: { bg?: Background; variant?: string; text?: string; prop?: PropKind; exprs?: Partial<Record<CharId, Expression>>; cast?: CharId[]; costumes?: Partial<Record<CharId, Costume>> };
   youtube: {
     title: string;
     description: string;

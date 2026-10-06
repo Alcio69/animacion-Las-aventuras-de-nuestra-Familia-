@@ -36,6 +36,9 @@ VOICES = {
     "benjaMama": {"engine": "kokoro", "sid": 28, "speed": 0.95, "pitch": -1.5, "formant": "preserved"},
     "abuela": {"engine": "kokoro", "sid": 28, "speed": 0.86, "pitch": -2.5, "formant": "preserved"},
     "dentista": {"engine": "kokoro", "sid": 53, "speed": 1.0, "pitch": 2.0, "formant": "preserved"},
+    "nico": {"engine": "kokoro", "sid": 29, "speed": 1.04, "pitch": 7.0, "formant": "shifted"},
+    "mati": {"engine": "kokoro", "sid": 53, "speed": 1.04, "pitch": 6.5, "formant": "shifted"},
+    "maestra": {"engine": "kokoro", "sid": 28, "speed": 0.95, "pitch": 1.0, "formant": "preserved"},
 }
 KOKORO = "kokoro-multi-lang-v1_0"
 
@@ -93,9 +96,19 @@ def engine(model):
     return _engines[model]
 
 
+# Foreign words the Spanish voice mispronounces: written phonetically for the voice only (subtitles keep the real word).
+SAY = {"Halloween": "Jálouin"}
+
+
+def spoken(text):
+    for word, sound in SAY.items():
+        text = re.sub(word, sound, text, flags=re.IGNORECASE)
+    return text
+
+
 def tts_text(text):
     # ALL-CAPS words would be spelled letter by letter: lowercase them for the voice only.
-    return re.sub(r"\b([A-ZÁÉÍÓÚÑ]{2,})\b", lambda m: m.group(1).lower(), text)
+    return re.sub(r"\b([A-ZÁÉÍÓÚÑ]{2,})\b", lambda m: m.group(1).lower(), spoken(text))
 
 
 def synth(speaker, text, dest):
@@ -146,6 +159,8 @@ def main():
         if key in used:
             continue
         cast = json.dumps(VOICES[ln["speaker"]], sort_keys=True)
+        if spoken(ln["text"]) != ln["text"]:
+            cast += "|" + spoken(ln["text"])  # re-synthesize when the pronunciation map changes
         if force or key not in manifest or not os.path.exists(dest) or manifest[key].get("v") != cast:
             print(f"  [{ln['speaker']}] {ln['text']}")
             used[key] = {**synth(ln["speaker"], ln["text"], dest), "v": cast}

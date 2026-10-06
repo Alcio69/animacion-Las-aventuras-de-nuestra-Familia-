@@ -37,6 +37,64 @@ const star = (() => {
   return new THREE.ExtrudeGeometry(sh, { depth: 0.25, bevelEnabled: true, bevelSize: 0.08, bevelThickness: 0.08, bevelSegments: 2 });
 })();
 
+
+/** Jack-o'-lantern with a glowing face (also used as set dressing). */
+export const Pumpkin3D: React.FC<{ t: number; s?: number }> = ({ t, s = 1 }) => {
+  const glow = 0.9 + Math.sin(t * 7) * 0.12 + Math.sin(t * 13) * 0.06;
+  return (
+    <group scale={s}>
+      {Array.from({ length: 6 }, (_, i) => (
+        <mesh key={i} position={[0, 0.5, 0]} rotation={[0, (i / 6) * Math.PI, 0]} scale={[0.36, 0.48, 0.62]} castShadow receiveShadow>
+          <sphereGeometry args={[1, 24, 16]} />
+          <M c={i % 2 ? '#F76707' : '#FD7E14'} r={0.5} />
+        </mesh>
+      ))}
+      <Cyl p={[0, 1.02, 0]} r={0.07} r2={0.1} h={0.25} c="#5C940D" />
+      {/* face */}
+      {[-1, 1].map((sd) => (
+        <mesh key={sd} position={[sd * 0.22, 0.62, 0.6]} rotation={[0, sd * 0.35, Math.PI]}>
+          <coneGeometry args={[0.1, 0.14, 3]} />
+          <meshBasicMaterial color="#FFD43B" toneMapped={false} opacity={glow} transparent />
+        </mesh>
+      ))}
+      <mesh position={[0, 0.36, 0.58]} rotation={[-0.25, 0, 0]} scale={[1, 0.45, 0.3]}>
+        <sphereGeometry args={[0.26, 20, 10, 0, Math.PI * 2, Math.PI / 2, Math.PI / 2]} />
+        <meshBasicMaterial color="#FFC300" toneMapped={false} opacity={glow} transparent />
+      </mesh>
+    </group>
+  );
+};
+
+/** Christmas tree with twinkling lights and a star. */
+export const XmasTree3D: React.FC<{ t: number; s?: number }> = ({ t, s = 1 }) => (
+  <group scale={s}>
+    <Cyl p={[0, 0.3, 0]} r={0.45} r2={0.38} h={0.6} c="#C92A2A" />
+    <Cyl p={[0, 0.75, 0]} r={0.14} h={0.5} c="#8B5E3C" />
+    {[0, 1, 2, 3].map((i) => (
+      <mesh key={i} position={[0, 1.4 + i * 0.75, 0]} castShadow receiveShadow>
+        <coneGeometry args={[1.45 - i * 0.3, 1.3, 28]} />
+        <M c={i % 2 ? '#2F9E44' : '#37B24D'} r={0.75} />
+      </mesh>
+    ))}
+    {Array.from({ length: 22 }, (_, i) => {
+      const y = 1.0 + (i / 22) * 2.9;
+      const r = (1.5 - (y - 0.8) * 0.38) * 0.92;
+      const a = i * 2.4;
+      const on = Math.sin(t * 4 + i * 1.7) > -0.2;
+      const c = ['#FFD43B', '#FF6B6B', '#4DABF7', '#F783AC', '#FFFFFF'][i % 5];
+      return (
+        <mesh key={i} position={[Math.sin(a) * r, y, Math.cos(a) * r]}>
+          <sphereGeometry args={[0.075, 10, 8]} />
+          <meshBasicMaterial color={on ? c : '#555'} toneMapped={false} />
+        </mesh>
+      );
+    })}
+    <mesh geometry={star} position={[0, 4.55, 0]} rotation={[0, t * 0.8, 0]} scale={0.38}>
+      <M c="#FFD43B" e={1} />
+    </mesh>
+  </group>
+);
+
 /** A child's crayon drawing (sun, house, family) as a canvas texture. */
 let drawingCache: THREE.Texture | null = null;
 const drawingTex = () => {
@@ -404,6 +462,85 @@ export const Prop3D: React.FC<{ kind: PropKind; t: number; spin?: number }> = ({
             <cylinderGeometry args={[0.185, 0.165, 0.42, 32]} />
             <meshPhysicalMaterial color="#74C0FC" transparent opacity={0.75} roughness={0.05} />
           </mesh>
+        </group>
+      );
+    case 'pumpkin':
+      return <Pumpkin3D t={t} s={0.75} />;
+    case 'candy':
+      // trick-or-treat bucket full of sweets
+      return (
+        <group scale={0.7}>
+          <Cyl p={[0, 0.38, 0]} r={0.5} r2={0.4} h={0.76} c="#FD7E14" />
+          {[-1, 1].map((sd) => (
+            <mesh key={sd} position={[sd * 0.16, 0.45, 0.47]} rotation={[0, 0, Math.PI]}>
+              <coneGeometry args={[0.07, 0.11, 3]} />
+              <M c="#2B1A0E" />
+            </mesh>
+          ))}
+          <mesh position={[0, 0.8, 0]} rotation={[0, 0, 0]}>
+            <torusGeometry args={[0.5, 0.03, 8, 32, Math.PI]} />
+            <M c="#343A40" />
+          </mesh>
+          {Array.from({ length: 7 }, (_, i) => (
+            <Sph key={i} p={[Math.sin(i * 2.1) * 0.25, 0.8 + (i % 3) * 0.05, Math.cos(i * 2.1) * 0.25]} s={[0.13, 0.09, 0.09]} c={['#FF6B6B', '#FFD43B', '#9775FA', '#51CF66'][i % 4]} />
+          ))}
+        </group>
+      );
+    case 'tablet': {
+      const glow = 0.8 + Math.sin(t * 3) * 0.1;
+      return (
+        <group position={[0, 0.5, 0]} rotation={[-0.35, 0, 0]}>
+          <RoundedBox args={[1.05, 0.75, 0.07]} radius={0.05} castShadow>
+            <M c="#343A40" r={0.3} />
+          </RoundedBox>
+          <mesh position={[0, 0, 0.04]}>
+            <planeGeometry args={[0.92, 0.62]} />
+            <meshBasicMaterial color="#4DABF7" toneMapped={false} opacity={glow} transparent />
+          </mesh>
+          {[[-0.2, 0.1, '#FFD43B'], [0.15, -0.08, '#FF6B6B'], [0.28, 0.14, '#69DB7C']].map(([x, y, c], i) => (
+            <mesh key={i} position={[x as number, y as number, 0.05]}>
+              <circleGeometry args={[0.09, 16]} />
+              <meshBasicMaterial color={c as string} toneMapped={false} />
+            </mesh>
+          ))}
+        </group>
+      );
+    }
+    case 'timer':
+      // sand timer (hourglass); sand flows over ~10 s
+      return (
+        <group scale={0.8}>
+          <Cyl p={[0, 0.05, 0]} r={0.36} h={0.1} c="#8B5E3C" />
+          <Cyl p={[0, 1.15, 0]} r={0.36} h={0.1} c="#8B5E3C" />
+          {[-1, 1].map((sd) => (
+            <Cyl key={sd} p={[sd * 0.3, 0.6, 0]} r={0.035} h={1.0} c="#8B5E3C" />
+          ))}
+          <mesh position={[0, 0.6, 0]}>
+            <latheGeometry args={[[0.02, 0.28, 0.06, 0.3, 0.02].map((r, i) => new THREE.Vector2(r + 0.02, i * 0.25 - 0.5))]} />
+            <meshPhysicalMaterial color="#E7F5FF" transparent opacity={0.4} roughness={0.05} side={THREE.DoubleSide} />
+          </mesh>
+          <mesh position={[0, 0.3, 0]} scale={[1, 0.3 + 0.7 * ((t / 10) % 1), 1]}>
+            <coneGeometry args={[0.22, 0.4, 20]} />
+            <M c="#FAB005" />
+          </mesh>
+        </group>
+      );
+    case 'xmasTree':
+      return <XmasTree3D t={t} s={0.8} />;
+    case 'letter':
+      // a letter to Santa, lying on the table
+      return (
+        <group position={[0, 0.03, 0]} rotation={[-Math.PI / 2, 0, 0.15]}>
+          <mesh receiveShadow castShadow>
+            <boxGeometry args={[0.75, 0.95, 0.02]} />
+            <M c="#FFF9DB" r={0.9} />
+          </mesh>
+          {Array.from({ length: 6 }, (_, i) => (
+            <mesh key={i} position={[-0.05 + (i % 2) * 0.04, 0.32 - i * 0.12, 0.012]}>
+              <planeGeometry args={[0.5 - (i % 3) * 0.08, 0.025]} />
+              <meshBasicMaterial color={i ? '#4C6EF5' : '#E03131'} />
+            </mesh>
+          ))}
         </group>
       );
     case 'cookie':
