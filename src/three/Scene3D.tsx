@@ -220,7 +220,8 @@ export const Intro3D: React.FC<{ episode: Episode; audio: boolean }> = ({ episod
           </g>
           <g transform={`translate(960 505) scale(${titleIn})`} fontFamily={FONT} fontWeight={700} textAnchor="middle">
             <rect x={-560} y={-62} width={1120} height={110} rx={55} fill="#7048E8" />
-            <text y={18} fontSize={58} fill="#FFF">
+            {/* long titles shrink to fit the pill */}
+            <text y={18} fontSize={Math.min(58, 1060 / (`Capítulo ${episode.number}: ${episode.title}`.length * 0.52))} fill="#FFF">
               {`Capítulo ${episode.number}: ${episode.title}`}
             </text>
           </g>
