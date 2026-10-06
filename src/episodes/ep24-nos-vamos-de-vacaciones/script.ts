@@ -40,7 +40,7 @@ const episode: Episode = {
         papa: { x: 1500, mood: 'happy', facing: -1 },
       },
       steps: [
-        { prop: 'umbrella', id: 'sombrilla', x: 1500, y: 870 },
+        { prop: 'umbrella', id: 'sombrilla', x: 330, y: 900 },
         { prop: 'sandcastle', id: 'castillo', x: 880, y: 900, with: true },
         { title: 'En la playa...', dur: 1.6 },
         { say: 'hija', text: '¡Nuestro castillo de arena es el más lindo de toda la playa!', expr: 'laugh', act: 'clap' },

@@ -55,6 +55,8 @@ const episode: Episode = {
       bg: 'bedroom',
       variant: 'day',
       flashback: true,
+      zoom: [1.12, 1.18],
+      focus: [980, 940],
       cast: {
         hijo: { x: 520, mood: 'sad', scale: SMALL },
         mama: { x: 1240, mood: 'love', facing: -1 },
