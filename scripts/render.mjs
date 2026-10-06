@@ -5,7 +5,7 @@
 import { bundle } from '@remotion/bundler';
 import { renderMedia, renderStill, selectComposition } from '@remotion/renderer';
 import { execFileSync } from 'node:child_process';
-import { existsSync, mkdirSync, readdirSync, renameSync, statSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readdirSync, renameSync, rmSync, statSync, writeFileSync } from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 
@@ -26,6 +26,8 @@ const browserExecutable = (() => {
 const ids = readdirSync('src/episodes').filter((d) => d.startsWith('ep') && (!only || d === only));
 if (!ids.length) throw new Error(`No chapter found: ${only}`);
 const serveUrl = await bundle({ entryPoint: path.resolve('remotion/index.ts') });
+// the bundle copies all of public/ (every video) into /tmp: remove it on exit or the disk fills up
+process.on('exit', () => rmSync(serveUrl, { recursive: true, force: true }));
 
 const chromiumOptions = { gl: 'angle' };
 for (const base of ids)

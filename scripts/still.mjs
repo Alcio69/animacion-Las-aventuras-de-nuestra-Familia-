@@ -3,7 +3,7 @@
 //        auto:N = N frames evenly spread between the intro and the outro + a contact sheet (sheet.png)
 import { bundle } from '@remotion/bundler';
 import { renderStill, selectComposition } from '@remotion/renderer';
-import { mkdirSync, readdirSync } from 'node:fs';
+import { mkdirSync, readdirSync, rmSync } from 'node:fs';
 import path from 'node:path';
 
 const [id = 'personajes', frames = '0', outDir = 'out/stills'] = process.argv.slice(2);
@@ -17,6 +17,8 @@ const browserExecutable = (() => {
   }
 })();
 const serveUrl = await bundle({ entryPoint: path.resolve('remotion/index.ts') });
+// the bundle copies all of public/ (every video) into /tmp: remove it on exit or the disk fills up
+process.on('exit', () => rmSync(serveUrl, { recursive: true, force: true }));
 const composition = await selectComposition({ serveUrl, id, browserExecutable, chromiumOptions: { gl: process.env.GL || 'angle' } });
 console.log(`${id}: ${composition.durationInFrames} frames (${(composition.durationInFrames / composition.fps).toFixed(1)}s)`);
 const N = composition.durationInFrames;
