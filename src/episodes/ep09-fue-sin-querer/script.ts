@@ -98,21 +98,21 @@ const episode: Episode = {
     },
   ],
   youtube: {
-    title: '¡Fue Sin Querer! 💙 Decir la Verdad | Las Aventuras de Nuestra Familia | Cuentos para Niños',
-    description: `Lio juega a la pelota adentro de casa y… ¡CRASH! 💥 Rompe el florero favorito de Luna. ¿Lo va a esconder o va a decir la verdad? 😟💙 Un cuento infantil sobre la honestidad, pedir perdón y reparar los errores juntos.
+    title: '¡Fue Sin Querer! 💙 Decir la Verdad | Dibujos Animados para Niños en Español',
+    description: `Lio juega a la pelota adentro de casa y… ¡CRASH! 💥 Rompe el florero favorito de Luna. Podría esconderlo y nadie se enteraría… ¿o mejor decir la verdad? 😟💙 Un cuento infantil corto sobre la honestidad, pedir perdón y reparar los errores juntos.
 
-🐶🐱 En "Las Aventuras de Nuestra Familia" acompañamos a Max, el papá (un labrador juguetón), Luna, la mamá (una gatita negra muy inteligente), Lio (un perrito aventurero) y Martina, "Tini" (una gatita naranja súper divertida) en historias cortas con valores para toda la familia.
+🐶🐱 Las Aventuras de Nuestra Familia: dibujos animados 3D en español para niños de 2 a 8 años. Max (el papá labrador), Luna (la mamá gatita), Lio (10 años) y Tini (7 años) viven historias cortas con valores para ver en familia.
 
 ✨ En este capítulo aprendemos:
 • Que decir la verdad es ser valiente
 • A pedir perdón cuando nos equivocamos
 • Que los errores se pueden arreglar juntos
 
-👶 Ideal para niños de 2 a 8 años. Dibujos animados 3D en español, cuentos sobre la honestidad, valores y educación emocional para niños.
+👨‍👩‍👧 Para papás y maestras: después del video, pregúntenles a los chicos "¿Alguna vez rompiste algo sin querer? ¿Qué hiciste?" y recuérdenles que decir la verdad siempre es lo mejor.
 
-🔔 ¡Suscríbete y activa la campanita para ver un nuevo capítulo cada semana!
+📺 Más capítulos de Las Aventuras de Nuestra Familia, ¡uno nuevo cada semana! Suscríbete para no perderte ninguno.
 
-#decirlaverdad #honestidad #pedirperdon #cuentosinfantiles #dibujosanimados #cuentosparaniños #valores #animacion3d #videosparaniños #español`,
+#decirlaverdad #dibujosanimados #cuentosinfantiles`,
     tags: [
       'decir la verdad',
       'honestidad para niños',

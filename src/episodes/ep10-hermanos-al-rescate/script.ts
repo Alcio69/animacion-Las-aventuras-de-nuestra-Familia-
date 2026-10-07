@@ -94,21 +94,21 @@ const episode: Episode = {
     },
   ],
   youtube: {
-    title: 'Hermanos al Rescate 🌳 Celos entre Hermanos | Las Aventuras de Nuestra Familia | Cuentos para Niños',
-    description: `Tini se pone celosa porque Max felicita el dibujo de su hermano… ¡y terminan peleando! 😤 Pero en el parque, la pelota queda atrapada en un árbol y solo trabajando juntos la pueden rescatar. 🌳⚽ Un cuento infantil sobre los celos entre hermanos y el trabajo en equipo.
+    title: 'Hermanos al Rescate 🌳 Celos entre Hermanos | Dibujos Animados para Niños en Español',
+    description: `Max felicita el dibujo de Lio… ¡y Tini se pone celosa! 😤 Los hermanos terminan peleando, pero en el parque la pelota queda atrapada en un árbol y solo trabajando juntos la pueden rescatar. 🌳⚽ Un cuento infantil corto sobre los celos entre hermanos y el trabajo en equipo.
 
-🐶🐱 En "Las Aventuras de Nuestra Familia" acompañamos a Max, el papá (un labrador juguetón), Luna, la mamá (una gatita negra muy inteligente), Lio (un perrito aventurero) y Martina, "Tini" (una gatita naranja súper divertida) en historias cortas con valores para toda la familia.
+🐶🐱 Las Aventuras de Nuestra Familia: dibujos animados 3D en español para niños de 2 a 8 años. Max (el papá labrador), Luna (la mamá gatita), Lio (10 años) y Tini (7 años) viven historias cortas con valores para ver en familia.
 
 ✨ En este capítulo aprendemos:
 • Que los celos se pasan cuando hablamos y nos perdonamos
 • Que juntos somos más fuertes
 • A ayudarnos entre hermanos
 
-👶 Ideal para niños de 2 a 8 años. Dibujos animados 3D en español, peleas y celos entre hermanos, trabajo en equipo y educación emocional para niños.
+👨‍👩‍👧 Para papás y maestras: después del video, pregúntenles a los chicos "¿En qué te ayudó tu hermano o un amigo esta semana? ¿Y tú en qué lo ayudaste?"
 
-🔔 ¡Suscríbete y activa la campanita para ver un nuevo capítulo cada semana!
+📺 Más capítulos de Las Aventuras de Nuestra Familia, ¡uno nuevo cada semana! Suscríbete para no perderte ninguno.
 
-#hermanos #celosentrehermanos #trabajoenequipo #cuentosinfantiles #dibujosanimados #cuentosparaniños #valores #animacion3d #videosparaniños #español`,
+#hermanos #dibujosanimados #cuentosinfantiles`,
     tags: [
       'celos entre hermanos',
       'peleas entre hermanos',
