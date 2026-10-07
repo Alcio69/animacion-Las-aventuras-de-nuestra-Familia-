@@ -1,17 +1,17 @@
 import { useThree } from '@react-three/fiber';
 import { ThreeCanvas } from '@remotion/three';
 import React, { useLayoutEffect } from 'react';
-import { AbsoluteFill, Html5Audio, interpolate, spring, staticFile, useCurrentFrame, useVideoConfig } from 'remotion';
+import { AbsoluteFill, Html5Audio, Sequence, interpolate, spring, staticFile, useCurrentFrame, useVideoConfig } from 'remotion';
 import * as THREE from 'three';
 import { DESIGNS } from '../characters/design';
 import type { CharId } from '../characters/types';
 import { restPose } from '../characters/types';
 import { solveCharacter } from '../engine/animate';
-import { FONT } from '../engine/fonts';
+import { FONT, ensureFonts } from '../engine/fonts';
 import { Logo } from '../engine/Logo';
-import { SceneAudio, Subtitle, TitleCard } from '../engine/Overlays';
+import { OLD_NAMES, SceneAudio, Subtitle, TitleCard } from '../engine/Overlays';
 import type { Background, Episode } from '../engine/script';
-import { FPS, INTRO_SEC, propAt, type CompiledScene, type LineEv } from '../engine/timeline';
+import { FPS, INTRO_SEC, compileEpisode, propAt, type CompiledScene, type LineEv } from '../engine/timeline';
 import { FxView } from '../props/Props';
 import { Character3D } from './Character3D';
 import { Lights3D } from './Lights3D';
@@ -384,6 +384,39 @@ export const Cover3D: React.FC<{ layout?: 'cover' | 'banner' | 'avatar' }> = ({ 
           })}
         </svg>
       </AbsoluteFill>
+    </AbsoluteFill>
+  );
+};
+
+/**
+ * Subtitle patch: only the subtitle boxes (with the current names) on a transparent background, with the same
+ * scene clipping as the 3D episode. Composited over an already-rendered video to update the name tags without a
+ * full 3D re-render. Each tag is at least as wide as the old name so it covers the old box completely.
+ */
+export const SubtitlePatch: React.FC<{ episode: Episode }> = ({ episode }) => {
+  ensureFonts();
+  const compiled = compileEpisode(episode);
+  return (
+    <AbsoluteFill style={{ fontFamily: FONT }}>
+      {compiled.scenes.map((cs) => (
+        <Sequence key={cs.index} from={Math.round(cs.start * FPS)} durationInFrames={Math.round(cs.dur * FPS)}>
+          <PatchScene cs={cs} />
+        </Sequence>
+      ))}
+    </AbsoluteFill>
+  );
+};
+
+const PatchScene: React.FC<{ cs: CompiledScene }> = ({ cs }) => {
+  const t = useCurrentFrame() / FPS;
+  const ease = (x: number) => x * x * (3 - 2 * x);
+  const iris = Math.min(1, t / 0.45, (cs.dur - t) / 0.35);
+  const irisR = Math.max(0, ease(Math.max(0, iris))) * 120;
+  const line = cs.events.find((e): e is LineEv => e.kind === 'line' && e.t0 <= t && t < e.t1);
+  if (!line) return null;
+  return (
+    <AbsoluteFill style={{ clipPath: `circle(${irisR}% at 50% 50%)`, filter: cs.scene.flashback ? 'sepia(0.5) saturate(0.9) brightness(1.04)' : undefined }}>
+      <Subtitle line={line} t={t} padTo={line.who === 'narrador' ? undefined : OLD_NAMES[line.who as CharId]} />
     </AbsoluteFill>
   );
 };

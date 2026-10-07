@@ -27,7 +27,10 @@ export const SceneAudio: React.FC<{ cs: CompiledScene }> = ({ cs }) => (
   </>
 );
 
-export const Subtitle: React.FC<{ line: LineEv; t: number }> = ({ line, t }) => {
+/** Names used before the family got their real names (only to size name tags in subtitle patches). */
+export const OLD_NAMES: Partial<Record<CharId, string>> = { papa: 'Papá', mama: 'Mamá', hijo: 'Hijo', hija: 'Hija' };
+
+export const Subtitle: React.FC<{ line: LineEv; t: number; padTo?: string }> = ({ line, t, padTo }) => {
   const appear = Math.min(1, (t - line.t0) / 0.15, (line.t1 - t) / 0.15);
   const isNarr = line.who === 'narrador';
   const color = isNarr ? '#5F3DC4' : DESIGNS[line.who as CharId].accent;
@@ -47,7 +50,11 @@ export const Subtitle: React.FC<{ line: LineEv; t: number }> = ({ line, t }) => 
           border: `5px solid ${color}`,
         }}
       >
-        <span style={{ background: color, color: '#fff', borderRadius: 18, padding: '4px 16px', fontSize: 30, fontWeight: 700, whiteSpace: 'nowrap' }}>{name}</span>
+        <span style={{ background: color, color: '#fff', borderRadius: 18, padding: '4px 16px', fontSize: 30, fontWeight: 700, whiteSpace: 'nowrap', display: 'inline-grid', justifyItems: 'center' }}>
+          <span style={{ gridArea: '1 / 1' }}>{name}</span>
+          {/* padTo: keep the tag at least as wide as an older name, so a patch fully covers the old subtitle box */}
+          {padTo && <span style={{ gridArea: '1 / 1', visibility: 'hidden' }}>{padTo}</span>}
+        </span>
         <span style={{ color: '#2B2140', fontSize: 42, fontWeight: 600, lineHeight: 1.15, fontStyle: isNarr ? 'italic' : 'normal' }}>{line.text}</span>
       </div>
     </div>
