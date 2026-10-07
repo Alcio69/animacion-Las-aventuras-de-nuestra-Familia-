@@ -91,34 +91,35 @@ const episode: Episode = {
     },
   ],
   youtube: {
-    title: '¡No Quiero Compartir! ⚽ La Pelota de Todos | Las Aventuras de Nuestra Familia | Cuentos para Niños',
-    description: `Lio estrena una pelota nueva y no quiere prestársela a su hermanita. 😢 ¿Qué pasará cuando Luna le enseñe que jugar juntos es el doble de divertido? ⚽💛 Un cuento infantil sobre aprender a compartir.
+    title: 'La Pelota de Todos ⚽ Aprender a Compartir | Dibujos Animados para Niños en Español',
+    description: `Lio estrena una pelota nueva y no se la quiere prestar a su hermanita Tini. 😢 Pero Luna le enseña un secreto: ¡jugar juntos es el doble de divertido! ⚽💛 Un cuento infantil corto sobre aprender a compartir.
 
-🐶🐱 En "Las Aventuras de Nuestra Familia" acompañamos a Max, el papá (un labrador juguetón), Luna, la mamá (una gatita negra muy inteligente), Lio (un perrito aventurero) y Martina, "Tini" (una gatita naranja súper divertida) en historias cortas con valores para toda la familia.
+🐶🐱 Las Aventuras de Nuestra Familia: dibujos animados 3D en español para niños de 2 a 8 años. Max (el papá labrador), Luna (la mamá gatita), Lio (10 años) y Tini (7 años) viven historias cortas con valores para ver en familia.
 
 ✨ En este capítulo aprendemos:
 • Que compartir multiplica la alegría
 • A pedir perdón cuando lastimamos a alguien
 • Que jugar juntos es más divertido que jugar solos
 
-👶 Ideal para niños de 2 a 8 años. Dibujos animados 3D en español, cuentos cortos con valores, historias para aprender a compartir y videos educativos para niños.
+👨‍👩‍👧 Para papás y maestras: después del video, pregúntenles a los chicos "¿Qué juguete te gusta compartir? ¿Y cuál te cuesta más prestar?"
 
-🔔 ¡Suscríbete y activa la campanita para ver un nuevo capítulo cada semana!
+📺 Más capítulos de Las Aventuras de Nuestra Familia, ¡uno nuevo cada semana! Suscríbete para no perderte ninguno.
 
-#aprenderacompartir #cuentosinfantiles #dibujosanimados #cuentosparaniños #valores #compartir #hermanos #animacion3d #videosparaniños #español`,
+#dibujosanimados #cuentosinfantiles #compartir`,
     tags: [
-      'aprender a compartir',
-      'cuento sobre compartir',
-      'cuentos para niños',
-      'cuentos infantiles',
+      'dibujos animados para niños',
       'dibujos animados en español',
-      'cuentos con valores',
-      'compartir es bonito',
+      'cuentos infantiles',
+      'cuentos para niños',
+      'aprender a compartir',
+      'compartir para niños',
+      'cuento sobre compartir',
       'hermanos',
+      'celos entre hermanos',
       'videos para niños',
+      'cuentos con valores',
       'animación 3d infantil',
-      'perros y gatos animados',
-      'educación emocional para niños',
+      'caricaturas en español',
       'las aventuras de nuestra familia',
     ],
   },

@@ -91,7 +91,7 @@ const episode: Episode = {
     },
   ],
   youtube: {
-    title: 'La Torta Sorpresa 🎂 Cumpleaños de Mamá | Dibujos Animados para Niños en Español | Las Aventuras de Nuestra Familia',
+    title: 'La Torta Sorpresa 🎂 Cumpleaños de Mamá | Dibujos Animados para Niños en Español',
     description: `¡Hoy es el cumpleaños de mamá! 🎂 Max, Lio y Tini le preparan a Luna una torta sorpresa… ¡pero la harina vuela por toda la cocina! 😂 Un cuento infantil corto sobre la familia, el trabajo en equipo y demostrar amor.
 
 🐶🐱 Las Aventuras de Nuestra Familia: dibujos animados 3D en español para niños de 2 a 8 años. Max (el papá labrador), Luna (la mamá gatita), Lio (10 años) y Tini (7 años) viven historias cortas con valores para ver en familia.

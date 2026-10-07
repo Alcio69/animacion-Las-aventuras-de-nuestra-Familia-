@@ -97,33 +97,35 @@ const episode: Episode = {
     },
   ],
   youtube: {
-    title: '¡Halloween Sin Miedo! 🎃 Cuento de Halloween para Niños | Las Aventuras de Nuestra Familia',
-    description: `¡Es noche de Halloween! 🎃👻 Lio está disfrazado de calabaza y Luna de bruja, pero a Tini los disfraces le dan mucho miedo… Cuando aparece un fantasma en el parque, descubre un secreto: ¡debajo de cada disfraz hay alguien conocido! Un cuento de Halloween para niños, divertido y nada aterrador, sobre cómo enfrentar los miedos.
+    title: '¡Halloween Sin Miedo! 🎃 Especial de Halloween | Dibujos Animados para Niños en Español',
+    description: `¡Es noche de Halloween! 🎃👻 Lio se disfraza de calabaza y Luna de bruja, pero a Tini los disfraces le dan mucho miedo… Cuando aparece un fantasma en el parque, descubre un secreto: ¡debajo de cada disfraz hay alguien conocido! Un especial de Halloween para niños, divertido y nada aterrador.
 
-🐶🐱 En "Las Aventuras de Nuestra Familia" acompañamos a Max, el papá (un labrador juguetón), Luna, la mamá (una gatita negra muy inteligente), Lio (un perrito aventurero) y Martina, "Tini" (una gatita naranja súper divertida) en historias cortas con valores para toda la familia.
+🐶🐱 Las Aventuras de Nuestra Familia: dibujos animados 3D en español para niños de 2 a 8 años. Max (el papá labrador), Luna (la mamá gatita), Lio (10 años) y Tini (7 años) viven historias cortas con valores para ver en familia.
 
 ✨ En este capítulo aprendemos:
 • Que sentir miedo está bien
 • A mirar de cerca lo que nos asusta
 • Que Halloween es para divertirse en familia
 
-👶 Ideal para niños de 2 a 8 años. Dibujos animados 3D en español, Halloween para niños, disfraces, calabazas y fantasmas que no dan miedo.
+👨‍👩‍👧 Para papás y maestras: después del video, pregúntenles a los chicos "¿De qué te vas a disfrazar en Halloween? ¿Hay algo que te dé un poquito de miedo?"
 
-🔔 ¡Suscríbete y activa la campanita para ver un nuevo capítulo cada semana!
+📺 Más capítulos de Las Aventuras de Nuestra Familia, ¡uno nuevo cada semana! Suscríbete para no perderte ninguno.
 
-#halloween #halloweenparaniños #cuentodehalloween #miedo #cuentosinfantiles #dibujosanimados #cuentosparaniños #animacion3d #videosparaniños #español`,
+#halloween #dibujosanimados #cuentosinfantiles`,
     tags: [
       'halloween para niños',
+      'especial de halloween',
       'cuento de halloween',
-      'halloween infantil',
       'halloween sin miedo',
-      'fantasma para niños',
+      'dibujos animados de halloween',
       'disfraces de halloween',
+      'fantasma para niños',
       'miedo en niños',
-      'cuentos para niños',
       'dibujos animados en español',
+      'cuentos para niños',
       'videos para niños',
       'animación 3d infantil',
+      'caricaturas en español',
       'las aventuras de nuestra familia',
     ],
   },

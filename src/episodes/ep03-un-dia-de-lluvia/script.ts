@@ -98,34 +98,35 @@ const episode: Episode = {
     },
   ],
   youtube: {
-    title: '¡Me Aburro! ☔ Un Día de Lluvia | Las Aventuras de Nuestra Familia | Cuentos para Niños',
-    description: `Llueve y no se puede salir a jugar… 🌧️ Lio y Tini están súper aburridos, ¡y encima un trueno los asusta! Pero Max y Luna tienen ideas geniales para convertir el día de lluvia en una aventura. 🎈🏴‍☠️🌈 Un cuento infantil sobre la imaginación y cómo jugar en casa.
+    title: 'Un Día de Lluvia 🌧️ ¡Me Aburro! Juegos en Casa | Dibujos Animados para Niños en Español',
+    description: `Llueve y no se puede salir a jugar… 🌧️ Lio y Tini están súper aburridos, ¡y encima un trueno los asusta! Pero Max y Luna convierten el día de lluvia en una aventura de piratas, globos y arcoíris. 🎈🌈 Un cuento infantil corto sobre la imaginación y cómo jugar en casa.
 
-🐶🐱 En "Las Aventuras de Nuestra Familia" acompañamos a Max, el papá (un labrador juguetón), Luna, la mamá (una gatita negra muy inteligente), Lio (un perrito aventurero) y Martina, "Tini" (una gatita naranja súper divertida) en historias cortas con valores para toda la familia.
+🐶🐱 Las Aventuras de Nuestra Familia: dibujos animados 3D en español para niños de 2 a 8 años. Max (el papá labrador), Luna (la mamá gatita), Lio (10 años) y Tini (7 años) viven historias cortas con valores para ver en familia.
 
 ✨ En este capítulo aprendemos:
 • Qué hacer cuando nos aburrimos
 • Que la imaginación convierte cualquier día en una aventura
-• Juegos para hacer en casa en familia (¡el globo que no toca el piso!)
+• Juegos para hacer en casa (¡el globo que no toca el piso!)
 
-👶 Ideal para niños de 2 a 8 años. Dibujos animados 3D en español, cuentos cortos con valores, ideas para días de lluvia y videos educativos para niños.
+👨‍👩‍👧 Para papás y maestras: después del video, pregúntenles a los chicos "¿A qué te gusta jugar en casa cuando llueve? ¡Prueben juntos el juego del globo!"
 
-🔔 ¡Suscríbete y activa la campanita para ver un nuevo capítulo cada semana!
+📺 Más capítulos de Las Aventuras de Nuestra Familia, ¡uno nuevo cada semana! Suscríbete para no perderte ninguno.
 
-#diadelluvia #meaburro #cuentosinfantiles #dibujosanimados #cuentosparaniños #juegosencasa #imaginacion #animacion3d #videosparaniños #español`,
+#dibujosanimados #cuentosinfantiles #juegosencasa`,
     tags: [
+      'dibujos animados para niños',
+      'dibujos animados en español',
+      'cuentos infantiles',
+      'cuentos para niños',
       'día de lluvia',
       'me aburro',
-      'qué hacer cuando llueve',
+      'aburrimiento en niños',
       'juegos en casa para niños',
-      'cuentos para niños',
-      'cuentos infantiles',
-      'dibujos animados en español',
-      'cuentos con valores',
       'imaginación',
-      'arcoíris',
       'videos para niños',
+      'cuentos con valores',
       'animación 3d infantil',
+      'caricaturas en español',
       'las aventuras de nuestra familia',
     ],
   },

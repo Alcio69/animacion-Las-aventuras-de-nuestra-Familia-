@@ -104,34 +104,35 @@ const episode: Episode = {
     },
   ],
   youtube: {
-    title: '¡No Me Gusta el Brócoli! 🥦 Las Aventuras de Nuestra Familia | Cuentos para Niños que No Quieren Comer',
-    description: `¡Tini no quiere ni probar el brócoli! 🥦😖 "Tiene cara de feo", dice… Pero Max tiene una idea genial: ¿y si en realidad son árboles mágicos que comen los dinosaurios? 🦖 Un cuento infantil para niños que no quieren comer verduras y para animarse a probar cosas nuevas.
+    title: '¡No Me Gusta el Brócoli! 🥦 Comer Verduras | Dibujos Animados para Niños en Español',
+    description: `¡Tini no quiere ni probar el brócoli! 🥦😖 "Tiene cara de feo", dice… Pero Max tiene una idea genial: ¿y si en realidad son árboles mágicos que comen los dinosaurios? 🦖 Un cuento infantil corto para niños que no quieren comer verduras.
 
-🐶🐱 En "Las Aventuras de Nuestra Familia" acompañamos a Max, el papá (un labrador juguetón), Luna, la mamá (una gatita negra muy inteligente), Lio (un perrito aventurero) y Martina, "Tini" (una gatita naranja súper divertida) en historias cortas con valores para toda la familia.
+🐶🐱 Las Aventuras de Nuestra Familia: dibujos animados 3D en español para niños de 2 a 8 años. Max (el papá labrador), Luna (la mamá gatita), Lio (10 años) y Tini (7 años) viven historias cortas con valores para ver en familia.
 
 ✨ En este capítulo aprendemos:
 • Que no hay que decir "no me gusta" sin probar
 • A animarnos a probar comidas nuevas
 • Que las verduras pueden ser divertidas (¡y muy ricas!)
 
-👶 Ideal para niños de 2 a 8 años. Dibujos animados 3D en español, cuentos cortos con valores, alimentación saludable para niños y videos educativos.
+👨‍👩‍👧 Para papás y maestras: después del video, pregúntenles a los chicos "¿Qué comida nueva te animarías a probar esta semana? ¡Pueden inventarle un nombre divertido juntos!"
 
-🔔 ¡Suscríbete y activa la campanita para ver un nuevo capítulo cada semana!
+📺 Más capítulos de Las Aventuras de Nuestra Familia, ¡uno nuevo cada semana! Suscríbete para no perderte ninguno.
 
-#nomegusta #brocoli #verdurasparaniños #cuentosinfantiles #dibujosanimados #cuentosparaniños #comersano #animacion3d #videosparaniños #español`,
+#dibujosanimados #cuentosinfantiles #comersano`,
     tags: [
-      'no me gusta el brócoli',
-      'niños que no quieren comer',
-      'verduras para niños',
-      'probar comidas nuevas',
-      'alimentación saludable para niños',
-      'cuentos para niños',
-      'cuentos infantiles',
+      'dibujos animados para niños',
       'dibujos animados en español',
-      'cuentos con valores',
+      'cuentos infantiles',
+      'cuentos para niños',
+      'no me gusta el brócoli',
+      'comer verduras',
+      'niños que no comen verduras',
+      'alimentación saludable para niños',
+      'probar comidas nuevas',
       'videos para niños',
+      'cuentos con valores',
       'animación 3d infantil',
-      'hora de comer',
+      'caricaturas en español',
       'las aventuras de nuestra familia',
     ],
   },
