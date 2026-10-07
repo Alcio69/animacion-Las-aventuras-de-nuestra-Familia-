@@ -32,6 +32,33 @@ export type Design = {
 };
 
 export const DESIGNS: Record<CharId, Design> = {
+  // Guest: Sofía, a friendly supermarket employee (bunny, green work vest).
+  sofia: {
+    id: 'sofia',
+    name: 'Sofía',
+    species: 'bunny',
+    age: 30,
+    headR: 88,
+    eyeScale: 1.0,
+    torsoH: 166,
+    torsoTop: 104,
+    torsoBottom: 102,
+    legH: 162,
+    legW: 41,
+    armLen: 156,
+    armW: 33,
+    fur: { base: '#B98A6A', light: '#D8B394', dark: '#8A5F43', muzzle: '#F3E3D3', ear: '#F2A7B5' },
+    iris: '#3B7A57',
+    irisDark: '#1D3F2C',
+    lashes: true,
+    outfit: 'jacket',
+    top: { base: '#2F9E44', dark: '#237032', light: '#51CF66' },
+    inner: '#FFFFFF',
+    bottom: { base: '#343A40', dark: '#212529', kind: 'jeans' },
+    shoes: { base: '#212529', dark: '#000000', sole: '#F1F3F5' },
+    accent: '#2F9E44',
+    extras: [],
+  },
   // Guests: Nico and Mati, Hija's classmates (they tease her, then apologize).
   nico: {
     id: 'nico',

@@ -656,6 +656,177 @@ export const Prop3D: React.FC<{ kind: PropKind; t: number; spin?: number }> = ({
           </mesh>
         </group>
       );
+    case 'pot':
+    case 'sprout':
+    case 'flowerPot': {
+      // flower pot: empty soil → little sprout → blooming flower (three stages of the same plant)
+      const sway = Math.sin(t * 1.6) * 0.06;
+      return (
+        <group>
+          <Cyl p={[0, 0.3, 0]} r={0.42} r2={0.32} h={0.6} c="#D9733B" />
+          <Cyl p={[0, 0.62, 0]} r={0.46} h={0.1} c="#C4612B" />
+          <Cyl p={[0, 0.6, 0]} r={0.38} h={0.06} c="#5C3A1E" />
+          {kind !== 'pot' && (
+            <group position={[0, 0.62, 0]} rotation={[0, 0, sway]}>
+              <Cyl p={[0, kind === 'sprout' ? 0.15 : 0.45, 0]} r={0.03} h={kind === 'sprout' ? 0.3 : 0.9} c="#4CAF50" />
+              {[-1, 1].map((sd) => (
+                <mesh key={sd} position={[sd * 0.12, kind === 'sprout' ? 0.28 : 0.45, 0]} rotation={[0, 0, -sd * 0.8]} scale={[0.14, 0.06, 0.07]}>
+                  <sphereGeometry args={[1, 12, 8]} />
+                  <M c="#5CBF4A" />
+                </mesh>
+              ))}
+              {kind === 'flowerPot' && (
+                <group position={[0, 0.95, 0.02]}>
+                  {Array.from({ length: 6 }, (_, i) => {
+                    const a = (i / 6) * Math.PI * 2;
+                    return <Sph key={i} p={[Math.cos(a) * 0.15, Math.sin(a) * 0.15, 0]} s={[0.12, 0.12, 0.05]} c="#FF6B9A" />;
+                  })}
+                  <Sph p={[0, 0, 0.03]} s={0.09} c="#FFD43B" />
+                </group>
+              )}
+            </group>
+          )}
+        </group>
+      );
+    }
+    case 'wateringCan':
+      return (
+        <group rotation={[0, 0, 0.1]}>
+          <Cyl p={[0, 0.3, 0]} r={0.3} h={0.6} c="#4DABF7" />
+          <mesh position={[0.42, 0.42, 0]} rotation={[0, 0, -0.9]}>
+            <cylinderGeometry args={[0.04, 0.07, 0.6, 12]} />
+            <M c="#339AF0" />
+          </mesh>
+          <mesh position={[0, 0.7, 0]} rotation={[0, Math.PI / 2, 0]}>
+            <torusGeometry args={[0.2, 0.035, 8, 20, Math.PI]} />
+            <M c="#339AF0" />
+          </mesh>
+        </group>
+      );
+    case 'fishbowl': {
+      // round fish bowl with an orange fish swimming around
+      const a = t * 1.2;
+      return (
+        <group>
+          <mesh position={[0, 0.5, 0]}>
+            <sphereGeometry args={[0.5, 32, 24]} />
+            <meshPhysicalMaterial color="#D0EBFF" transparent opacity={0.3} roughness={0.05} />
+          </mesh>
+          <mesh position={[0, 0.42, 0]}>
+            <sphereGeometry args={[0.46, 28, 20, 0, Math.PI * 2, Math.PI * 0.32, Math.PI * 0.68]} />
+            <meshPhysicalMaterial color="#74C0FC" transparent opacity={0.45} roughness={0.05} />
+          </mesh>
+          <Cyl p={[0, 0.06, 0]} r={0.3} h={0.06} c="#F1F3F5" />
+          <group position={[Math.cos(a) * 0.2, 0.45 + Math.sin(t * 2.3) * 0.05, Math.sin(a) * 0.15]} rotation={[0, -a - Math.PI / 2, 0]}>
+            <Sph p={[0, 0, 0]} s={[0.13, 0.09, 0.06]} c="#FF922B" />
+            <mesh position={[-0.15, 0, 0]} rotation={[0, 0, Math.PI / 2 + Math.sin(t * 9) * 0.3]}>
+              <coneGeometry args={[0.07, 0.1, 3]} />
+              <M c="#FD7E14" />
+            </mesh>
+            <Sph p={[0.08, 0.03, 0.05]} s={0.015} c="#1A1A1F" />
+          </group>
+          {[0, 1].map((i) => (
+            <mesh key={i} position={[0.15 - i * 0.3, 0.12, -0.1]} scale={[0.04, 0.2 + i * 0.05, 0.04]}>
+              <sphereGeometry args={[1, 8, 8]} />
+              <M c="#51CF66" />
+            </mesh>
+          ))}
+        </group>
+      );
+    }
+    case 'fishFood':
+      return (
+        <group>
+          <Cyl p={[0, 0.15, 0]} r={0.1} h={0.3} c="#FFD43B" />
+          <Cyl p={[0, 0.32, 0]} r={0.11} h={0.05} c="#E8590C" />
+        </group>
+      );
+    case 'teacup':
+      return (
+        <group>
+          <Cyl p={[0, 0.02, 0]} r={0.26} h={0.04} c="#FFFFFF" />
+          <Cyl p={[0, 0.17, 0]} r={0.16} r2={0.12} h={0.26} c="#F783AC" />
+          <Cyl p={[0, 0.29, 0]} r={0.145} h={0.02} c="#C68A4B" />
+          <mesh position={[0.18, 0.18, 0]} rotation={[Math.PI / 2, 0, 0]}>
+            <torusGeometry args={[0.06, 0.02, 8, 16]} />
+            <M c="#F783AC" />
+          </mesh>
+          {[0, 1, 2].map((i) => {
+            const k = ((t * 0.5 + i / 3) % 1);
+            return (
+              <mesh key={i} position={[Math.sin(k * 6 + i) * 0.04, 0.35 + k * 0.4, 0]}>
+                <sphereGeometry args={[0.04 + k * 0.05, 10, 8]} />
+                <meshBasicMaterial color="#FFFFFF" transparent opacity={0.45 * (1 - k)} />
+              </mesh>
+            );
+          })}
+        </group>
+      );
+    case 'thermometer':
+      return (
+        <group rotation={[0, 0, 0.5]}>
+          <Cyl p={[0, 0.3, 0]} r={0.04} h={0.6} c="#F8F9FA" />
+          <Sph p={[0, 0, 0]} s={0.06} c="#FA5252" />
+          <Cyl p={[0, 0.2, 0.02]} r={0.015} h={0.35} c="#FA5252" />
+        </group>
+      );
+    case 'recycleBins':
+      // three recycling bins: plastic (yellow), paper (blue), glass (green)
+      return (
+        <group>
+          {[
+            ['#FCC419', -0.85],
+            ['#4DABF7', 0],
+            ['#51CF66', 0.85],
+          ].map(([c, x]) => (
+            <group key={x as number} position={[x as number, 0, 0]}>
+              <RoundedBox args={[0.75, 1.1, 0.7]} radius={0.06} position={[0, 0.55, 0]} castShadow>
+                <M c={c as string} />
+              </RoundedBox>
+              <RoundedBox args={[0.82, 0.1, 0.77]} radius={0.04} position={[0, 1.13, 0]}>
+                <M c={c as string} r={0.4} />
+              </RoundedBox>
+              <mesh position={[0, 0.65, 0.36]}>
+                <ringGeometry args={[0.1, 0.16, 3]} />
+                <meshBasicMaterial color="#FFFFFF" />
+              </mesh>
+            </group>
+          ))}
+        </group>
+      );
+    case 'trash':
+      // litter: a plastic bottle, a crumpled bag and a paper ball
+      return (
+        <group>
+          <mesh position={[0, 0.08, 0]} rotation={[0, 0.6, Math.PI / 2]}>
+            <cylinderGeometry args={[0.08, 0.08, 0.36, 14]} />
+            <meshPhysicalMaterial color="#A5D8FF" transparent opacity={0.7} roughness={0.1} />
+          </mesh>
+          <Sph p={[0.32, 0.1, 0.1]} s={[0.17, 0.11, 0.14]} c="#F1F3F5" />
+          <Sph p={[-0.3, 0.07, 0.12]} s={0.08} c="#FFF3BF" />
+        </group>
+      );
+    case 'cart':
+      // shopping cart with a few groceries
+      return (
+        <group>
+          <RoundedBox args={[1.1, 0.6, 0.7]} radius={0.04} position={[0, 0.85, 0]}>
+            <meshPhysicalMaterial color="#ADB5BD" metalness={0.6} roughness={0.3} transparent opacity={0.85} />
+          </RoundedBox>
+          <Cyl p={[-0.65, 1.15, 0]} r={0.03} h={0.75} c="#E03131" />
+          {[-0.4, 0.4].map((x) =>
+            [-0.28, 0.28].map((z) => <Sph key={`${x}${z}`} p={[x, 0.1, z]} s={0.09} c="#343A40" />),
+          )}
+          {[-0.4, 0.4].map((x) => (
+            <Cyl key={x} p={[x, 0.35, 0]} r={0.025} h={0.6} c="#868E96" />
+          ))}
+          <RoundedBox args={[0.3, 0.35, 0.2]} radius={0.03} position={[-0.2, 1.25, 0]}>
+            <M c="#FF922B" />
+          </RoundedBox>
+          <Sph p={[0.2, 1.22, 0.05]} s={0.14} c="#FF6B6B" />
+          <Sph p={[0.32, 1.2, -0.1]} s={[0.22, 0.08, 0.08]} c="#FFD43B" />
+        </group>
+      );
     case 'cookie':
       return <Cyl p={[0, 0.06, 0]} r={0.32} h={0.1} c="#E8B26A" />;
     case 'star':

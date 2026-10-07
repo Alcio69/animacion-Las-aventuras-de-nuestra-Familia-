@@ -70,7 +70,7 @@ const xAt = (cs: CompiledScene, id: CharId, t: number): number | null => {
   return x;
 };
 
-const COSTUMES = ['ghost', 'witch', 'pumpkin', 'santa'];
+const COSTUMES = ['ghost', 'witch', 'pumpkin', 'santa', 'blanket'];
 
 /** Where the character wants to be at time t (before smoothing). */
 export const targetPose = (cs: CompiledScene, id: CharId, t: number): Raw | null => {

@@ -771,6 +771,68 @@ const Beach3D: React.FC<{ t: number; variant?: string }> = ({ t, variant }) => {
   );
 };
 
+const signTex = () =>
+  canvasTex('smsign', 1024, 192, (c) => {
+    c.fillStyle = '#E03131';
+    c.fillRect(0, 0, 1024, 192);
+    c.fillStyle = '#FFFFFF';
+    c.font = 'bold 110px sans-serif';
+    c.textAlign = 'center';
+    c.textBaseline = 'middle';
+    c.fillText('SUPERMERCADO', 512, 100);
+  });
+
+/** Supermarket: long shelves full of colourful products, a checkout on the right. */
+const Supermarket3D: React.FC = () => {
+  const wall = useMemo(() => tiles('#F8F9FA', '#EEF1F4', 'smwall', [12, 4]), []);
+  const floor = useMemo(() => tiles('#F1F3F5', '#DEE2E6', 'smfloor', [14, 5]), []);
+  const sign = useMemo(() => signTex(), []);
+  const COLORS = ['#FF6B6B', '#FFD43B', '#69DB7C', '#4DABF7', '#F783AC', '#FF922B', '#B197FC', '#FFFFFF'];
+  return (
+    <group>
+      <Room wall={wall} floor={floor} />
+      <mesh position={[0, 8.6, WALL + 0.12]}>
+        <planeGeometry args={[7, 1.3]} />
+        <meshBasicMaterial map={sign} />
+      </mesh>
+      {/* shelves along the back wall */}
+      {[-6.5, 0, 6.5].map((sx) => (
+        <group key={sx} position={[sx, 0, WALL + 0.9]}>
+          <Box a={[5.6, 5.2, 1.2]} p={[0, 2.6, -0.2]} c="#DEE2E6" r={0.04} />
+          {[0.6, 1.9, 3.2, 4.5].map((y, row) => (
+            <group key={y}>
+              <Box a={[5.6, 0.1, 1.3]} p={[0, y - 0.35, 0.05]} c="#ADB5BD" r={0.02} />
+              {Array.from({ length: 9 }, (_, i) => {
+                const k = i + row * 9 + Math.round(sx);
+                const tall = 0.45 + rnd(k + 5) * 0.4;
+                return k % 3 === 0 ? (
+                  <Cyl key={i} p={[-2.5 + i * 0.62, y - 0.3 + tall / 2, 0.25]} r={0.2} h={tall} c={COLORS[Math.abs(k) % COLORS.length]} seg={14} />
+                ) : (
+                  <Box key={i} a={[0.5, tall, 0.4]} p={[-2.5 + i * 0.62, y - 0.3 + tall / 2, 0.25]} c={COLORS[Math.abs(k + 3) % COLORS.length]} r={0.03} />
+                );
+              })}
+            </group>
+          ))}
+        </group>
+      ))}
+      {/* fruit stand on the left */}
+      <group position={[-9.6, 0, -1.5]}>
+        <Box a={[2.6, 1.3, 1.6]} p={[0, 0.65, 0]} c="#B08968" r={0.08} />
+        {Array.from({ length: 14 }, (_, i) => (
+          <Sph key={i} p={[-1 + (i % 7) * 0.33, 1.42 + Math.floor(i / 7) * 0.12, -0.3 + Math.floor(i / 7) * 0.45]} s={0.17} c={i < 7 ? '#FF6B6B' : '#FCC419'} />
+        ))}
+      </group>
+      {/* checkout on the right */}
+      <group position={[10.2, 0, -1.2]}>
+        <Box a={[3.2, 1.6, 1.4]} p={[0, 0.8, 0]} c="#495057" r={0.1} />
+        <Box a={[3.0, 0.08, 1.2]} p={[0, 1.64, 0]} c="#212529" r={0.02} />
+        <Box a={[0.8, 0.7, 0.6]} p={[0.9, 2.0, 0]} c="#E9ECEF" r={0.08} />
+        <Box a={[0.6, 0.35, 0.05]} p={[0.9, 2.2, 0.31]} c="#69DB7C" r={0.02} e={0.4} />
+      </group>
+    </group>
+  );
+};
+
 export const Set3D: React.FC<{ bg: Background; variant?: string; t: number }> = ({ bg, variant, t }) => {
   switch (bg) {
     case 'dentist':
@@ -783,6 +845,8 @@ export const Set3D: React.FC<{ bg: Background; variant?: string; t: number }> = 
       return <Park3D t={t} variant={variant} />;
     case 'beach':
       return <Beach3D t={t} variant={variant} />;
+    case 'supermarket':
+      return <Supermarket3D />;
     case 'bedroom':
       return <Bedroom3D t={t} day={variant === 'day'} />;
     default:

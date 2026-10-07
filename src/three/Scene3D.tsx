@@ -170,7 +170,7 @@ const Family3D: React.FC<{
         p.armR = { up: 122, bend: 28 + Math.sin(t * 11 + i) * 26 };
         p.yaw = (i - mid) * -0.12;
         p.vehicle = vehicles?.[id] ?? 0;
-        p.costume = ['ghost', 'witch', 'pumpkin', 'santa'].indexOf(costumes?.[id] ?? '') + 1;
+        p.costume = ['ghost', 'witch', 'pumpkin', 'santa', 'blanket'].indexOf(costumes?.[id] ?? '') + 1;
         if (p.vehicle) p.armR = { up: 122, bend: 20 };
         p.wag = 1.2;
         p.bob = Math.sin(t * 4 + i) * 3;
