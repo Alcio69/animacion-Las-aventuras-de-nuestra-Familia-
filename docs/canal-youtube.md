@@ -34,3 +34,15 @@ dibujos animados para niños, cuentos para niños, cuentos infantiles, cuentos c
 - **Valores y convivencia:** La pelota de todos, ¡Fue sin querer!, ¡No me hables así!, No me gusta que se burlen de mí, Mi amigo Tomi, Nuestra primera mascota
 - **Hábitos y rutinas:** ¡No me gusta el brócoli!, ¡A ordenar mi cuarto!, ¡No quiero dormir!, ¡Quiero la tablet!, ¡Cuidemos el planeta!, Me perdí en el supermercado
 - **Fechas especiales:** ¡Halloween sin miedo!, La carta a Papá Noel, ¡Nos vamos de vacaciones!, La torta sorpresa
+
+## Monetización — checklist (verificar requisitos vigentes en YouTube Studio → Ingresos)
+1. **Verificar el canal con teléfono** (youtube.com/verify): habilita miniaturas personalizadas y videos de más de 15 min.
+2. **Verificación en 2 pasos** en la cuenta de Google (obligatoria para el Programa de Socios).
+3. **País del canal** correcto (Configuración → Canal → Información básica): define si se puede monetizar.
+4. **Valores de subida predeterminados** (Configuración → Valores de subida predeterminados): "Creado para niños", idioma Español, categoría "Educación", plantilla de descripción y etiquetas.
+5. **Requisitos del Programa de Socios (YPP):** 1.000 suscriptores + 4.000 horas de visualización públicas en 12 meses (los Shorts no suman horas, cuentan por otra vía).
+6. **AdSense** vinculado desde YouTube Studio + **datos fiscales** (formulario W-8BEN para residentes fuera de EE. UU.).
+7. **Contenido "creado para niños":** solo anuncios no personalizados (menor ingreso por vista). Se desactivan comentarios, campanita de notificaciones, tarjetas, pantallas finales, membresías, Super Chat y tienda. Los ingresos dependen del volumen de vistas.
+8. **Política de "contenido repetitivo / producido en masa":** es el principal riesgo para un canal hecho con código y voces sintéticas. Mantener historias distintas, aporte creativo propio y variedad de escenarios; no subir versiones casi iguales del mismo video.
+9. **Derechos:** música y efectos generados por nosotros; voces Kokoro (licencia Apache 2.0, uso comercial permitido); tipografía Fredoka (licencia OFL). No usar música ni imágenes de terceros.
+10. **Contenido sintético:** la etiqueta de "contenido alterado o sintético" es para contenido realista; los dibujos animados no la requieren.
