@@ -91,35 +91,35 @@ const episode: Episode = {
     },
   ],
   youtube: {
-    title: 'La Torta Sorpresa 🎂 Las Aventuras de Nuestra Familia | Cuentos para Niños en Español',
-    description: `¡Hoy es el cumpleaños de Luna! 🎉 Max, Lio y Tini preparan una torta sorpresa... pero la harina tiene otros planes. 😂 Un cuento infantil sobre la familia, el trabajo en equipo y el amor.
+    title: 'La Torta Sorpresa 🎂 Cumpleaños de Mamá | Dibujos Animados para Niños en Español | Las Aventuras de Nuestra Familia',
+    description: `¡Hoy es el cumpleaños de mamá! 🎂 Max, Lio y Tini le preparan a Luna una torta sorpresa… ¡pero la harina vuela por toda la cocina! 😂 Un cuento infantil corto sobre la familia, el trabajo en equipo y demostrar amor.
 
-🐶🐱 En "Las Aventuras de Nuestra Familia" acompañamos a Max, el papá (un labrador juguetón), Luna, la mamá (una gatita negra muy inteligente), Lio (un perrito aventurero) y Martina, "Tini" (una gatita naranja súper divertida) en historias cortas con valores para toda la familia.
+🐶🐱 Las Aventuras de Nuestra Familia: dibujos animados 3D en español para niños de 2 a 8 años. Max (el papá labrador), Luna (la mamá gatita), Lio (10 años) y Tini (7 años) viven historias cortas con valores para ver en familia.
 
 ✨ En este capítulo aprendemos:
 • Que lo importante es hacer las cosas juntos
-• Que equivocarse también es parte de la diversión
+• Que equivocarse también puede ser divertido
 • A demostrar amor con pequeños detalles
 
-👶 Ideal para niños de 2 a 8 años. Dibujos animados en español, cuentos cortos para dormir, historias con valores y videos educativos para niños.
+👨‍👩‍👧 Para papás y maestras: después del video, pregúntenles a los chicos "¿Qué sorpresa le harías tú a alguien que quieres?"
 
-🔔 ¡Suscríbete y activa la campanita para ver un nuevo capítulo cada semana!
+📺 Más capítulos de Las Aventuras de Nuestra Familia, ¡uno nuevo cada semana! Suscríbete para no perderte ninguno.
 
-#dibujosanimados #cuentosinfantiles #cuentosparaniños #historiasparaniños #valores #familia #cumpleaños #animacion #videosparaniños #español`,
+#dibujosanimados #cuentosinfantiles #cumpleaños`,
     tags: [
-      'cuentos para niños',
-      'cuentos infantiles',
+      'dibujos animados para niños',
       'dibujos animados en español',
-      'historias para niños',
-      'cuentos con valores',
-      'videos para niños',
-      'cuento de cumpleaños',
-      'torta sorpresa',
+      'cuentos infantiles',
+      'cuentos para niños',
       'cumpleaños de mamá',
-      'familia animada',
-      'perros y gatos animados',
-      'animación infantil',
-      'cuentos cortos para dormir',
+      'feliz cumpleaños mamá',
+      'torta sorpresa',
+      'cuento de cumpleaños',
+      'videos para niños',
+      'cuentos con valores',
+      'historias para niños',
+      'animación 3d infantil',
+      'caricaturas en español',
       'las aventuras de nuestra familia',
     ],
   },

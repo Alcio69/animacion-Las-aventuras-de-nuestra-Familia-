@@ -1,0 +1,51 @@
+1
+00:00:05,750 --> 00:00:08,120
+Luna: ¡Hija, hoy es tu primer día de escuela!
+
+2
+00:00:08,120 --> 00:00:11,496
+Tini: No quiero ir. ¿Y si nadie quiere ser mi amigo?
+
+3
+00:00:11,496 --> 00:00:16,170
+Lio: Yo también tenía miedo el primer día. ¡Y ahora tengo un montón de amigos!
+
+4
+00:00:16,170 --> 00:00:20,214
+Luna: Vas a ver que te va a encantar. Y a la salida, yo te espero.
+
+5
+00:00:22,164 --> 00:00:24,418
+Luna: Que tengas un lindo día, mi amor.
+
+6
+00:00:30,301 --> 00:00:33,788
+Lola: ¡Hola! Me llamo Lola. ¿Quieres ser mi amiga?
+
+7
+00:00:33,788 --> 00:00:35,687
+Tini: ¡Sí! ¡Me encantaría!
+
+8
+00:00:35,987 --> 00:00:38,780
+Lola: ¿Te gusta dibujar? ¡Dibujemos juntas!
+
+9
+00:00:46,430 --> 00:00:47,909
+Luna: ¿Cómo te fue, hija?
+
+10
+00:00:47,909 --> 00:00:50,942
+Tini: ¡Súper bien! ¡Ella es Lola, mi nueva amiga!
+
+11
+00:00:50,942 --> 00:00:52,486
+Lola: ¡Hasta mañana, amiga!
+
+12
+00:00:52,486 --> 00:00:55,022
+Tini: ¡Mamá, mañana quiero volver a la escuela!
+
+13
+00:00:55,622 --> 00:01:00,337
+Lo nuevo puede dar miedo al principio, pero también puede ser maravilloso.

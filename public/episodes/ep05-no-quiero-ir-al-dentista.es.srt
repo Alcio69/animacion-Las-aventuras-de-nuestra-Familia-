@@ -1,0 +1,59 @@
+1
+00:00:03,950 --> 00:00:07,203
+Luna: Hijo, prepárate. Hoy vamos al dentista.
+
+2
+00:00:07,203 --> 00:00:10,742
+Lio: ¿Al dentista? ¡No quiero ir! ¿Y si me duele?
+
+3
+00:00:10,742 --> 00:00:13,829
+Tini: Yo fui el mes pasado, ¡y me regalaron una estrella!
+
+4
+00:00:13,829 --> 00:00:16,848
+Luna: El dentista es un amigo que cuida tu sonrisa.
+
+5
+00:00:16,848 --> 00:00:19,342
+Lio: Bueno. Pero tú me acompañas, ¿sí?
+
+6
+00:00:21,292 --> 00:00:25,847
+Dentista: ¡Hola, Lio! Bienvenido. Hoy solo vamos a contar tus dientes.
+
+7
+00:00:25,847 --> 00:00:28,555
+Lio: ¿Solo contarlos? ¿No me va a doler?
+
+8
+00:00:28,555 --> 00:00:31,922
+Dentista: Para nada. Abre la boca bien grande, como un león.
+
+9
+00:00:32,522 --> 00:00:35,457
+Dentista: Uno, dos, tres, cuatro... ¡Qué dientes tan limpios!
+
+10
+00:00:35,757 --> 00:00:38,216
+Dentista: ¡Te ganaste la estrella de los valientes!
+
+11
+00:00:38,216 --> 00:00:41,060
+Lio: ¡Gracias, doctor! ¡No me dolió nada!
+
+12
+00:00:42,210 --> 00:00:45,207
+Lio: ¡Papá! ¡Fui al dentista y fui muy valiente!
+
+13
+00:00:45,207 --> 00:00:50,612
+Max: ¡Muy bien, campeón! Para tener dientes fuertes, hay que cepillarlos todos los días.
+
+14
+00:00:50,912 --> 00:00:52,945
+Tini: ¡Vamos a cepillarnos juntos!
+
+15
+00:00:53,745 --> 00:00:57,836
+Visitar al dentista es una forma de cuidar nuestra sonrisa.

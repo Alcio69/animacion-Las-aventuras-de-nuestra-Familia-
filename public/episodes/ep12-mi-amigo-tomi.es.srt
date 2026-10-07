@@ -1,0 +1,55 @@
+1
+00:00:03,950 --> 00:00:07,393
+Lio: ¡Vengan a ver! Llegó un compañero nuevo a la escuela.
+
+2
+00:00:10,171 --> 00:00:13,916
+Tomi: ¡Hola! Me llamo Tomi. Me mudé hace poquito.
+
+3
+00:00:13,916 --> 00:00:17,881
+Benja: Lio, Tomi usa silla de ruedas. ¿Cómo va a jugar con nosotros?
+
+4
+00:00:17,881 --> 00:00:21,101
+Lio: No sé. A lo mejor no puede jugar a la pelota.
+
+5
+00:00:21,701 --> 00:00:26,458
+Tomi: Yo puedo jugar a muchísimas cosas. ¡Solo que a veces las juego distinto!
+
+6
+00:00:26,458 --> 00:00:30,301
+Tomi: En el recreo les enseño mi juego favorito. ¿Vamos?
+
+7
+00:00:33,351 --> 00:00:36,375
+Tomi: ¡Juguemos a pasarnos la pelota bien rápido!
+
+8
+00:00:39,175 --> 00:00:41,813
+Lio: ¡Tomi, eres súper rápido con tu silla!
+
+9
+00:00:41,813 --> 00:00:44,387
+Benja: ¡Y lanzas la pelota mejor que nadie!
+
+10
+00:00:44,387 --> 00:00:47,796
+Lio: Perdón, Tomi. Pensé que no ibas a poder jugar.
+
+11
+00:00:47,796 --> 00:00:52,011
+Tomi: No pasa nada. Todos somos diferentes, ¡y eso es lo divertido!
+
+12
+00:00:53,161 --> 00:00:55,513
+Lio: ¿Mañana jugamos otra vez, amigo?
+
+13
+00:00:55,513 --> 00:00:58,459
+Tomi: ¡Claro que sí! ¡Ahora somos un equipo!
+
+14
+00:00:59,259 --> 00:01:03,914
+Ser diferentes nos hace especiales. ¡Y todos podemos jugar juntos!
