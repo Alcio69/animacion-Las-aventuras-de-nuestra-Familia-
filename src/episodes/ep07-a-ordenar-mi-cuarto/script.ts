@@ -94,21 +94,21 @@ const episode: Episode = {
     },
   ],
   youtube: {
-    title: '¡A Ordenar mi Cuarto! 🧸 Las Aventuras de Nuestra Familia | Cuentos para Niños sobre el Orden',
-    description: `El cuarto de Lio parece que lo atravesó un huracán… 🌪️ ¡y su estrella de los valientes desapareció! Max tiene una idea genial: convertir el orden en una carrera divertida. 🏁🧸 Un cuento infantil para enseñar a los niños a ordenar sus juguetes jugando.
+    title: '¡A Ordenar mi Cuarto! 🧸 Ordenar Jugando | Dibujos Animados para Niños en Español',
+    description: `El cuarto de Lio parece que lo atravesó un huracán… 🌪️ ¡y su estrella de los valientes desapareció! Max tiene una idea genial: convertir el orden en una carrera contra la música. 🏁🧸 ¿Encontrará Lio su estrella? Un cuento infantil corto para aprender a ordenar los juguetes jugando.
 
-🐶🐱 En "Las Aventuras de Nuestra Familia" acompañamos a Max, el papá (un labrador juguetón), Luna, la mamá (una gatita negra muy inteligente), Lio (un perrito aventurero) y Martina, "Tini" (una gatita naranja súper divertida) en historias cortas con valores para toda la familia.
+🐶🐱 Las Aventuras de Nuestra Familia: dibujos animados 3D en español para niños de 2 a 8 años. Max (el papá labrador), Luna (la mamá gatita), Lio (10 años) y Tini (7 años) viven historias cortas con valores para ver en familia.
 
 ✨ En este capítulo aprendemos:
 • Que ordenar puede ser un juego
 • Que cuando todo está en su lugar es más fácil encontrar las cosas
-• A ser responsables con nuestros juguetes
+• A cuidar y guardar nuestros juguetes
 
-👶 Ideal para niños de 2 a 8 años. Dibujos animados 3D en español, hábitos y rutinas para niños, cuentos con valores y videos educativos.
+👨‍👩‍👧 Para papás y maestras: después del video, pregúntenles a los chicos "¿Cuántos juguetes puedes guardar antes de que termine una canción? ¡Hagan la carrera juntos!"
 
-🔔 ¡Suscríbete y activa la campanita para ver un nuevo capítulo cada semana!
+📺 Más capítulos de Las Aventuras de Nuestra Familia, ¡uno nuevo cada semana! Suscríbete para no perderte ninguno.
 
-#ordenar #ordenarjuguetes #habitosparaniños #cuentosinfantiles #dibujosanimados #cuentosparaniños #responsabilidad #animacion3d #videosparaniños #español`,
+#ordenarjuguetes #dibujosanimados #cuentosinfantiles`,
     tags: [
       'ordenar el cuarto',
       'ordenar juguetes',

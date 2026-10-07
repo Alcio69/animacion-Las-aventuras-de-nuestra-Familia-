@@ -86,21 +86,21 @@ const episode: Episode = {
     },
   ],
   youtube: {
-    title: 'Mi Primera Pijamada 🌙 ¡Tengo Miedo! | Las Aventuras de Nuestra Familia | Cuentos para Dormir',
-    description: `¡Tini está invitada a su primera pijamada! 🎉 Pero… ¿y si le da miedo dormir lejos de casa? 😟🌙 Max tiene una gran idea: ¡una pijamada de práctica en casa, con linterna y osito incluidos! 🧸🔦 Un cuento infantil para perderle el miedo a la oscuridad y a dormir fuera de casa.
+    title: 'Mi Primera Pijamada 🌙 ¡Tengo Miedo! | Dibujos Animados para Niños en Español',
+    description: `¡Tini está invitada a su primera pijamada! 🎉 Pero… ¿y si le da miedo dormir lejos de casa? 😟🌙 Max tiene una gran idea: ¡una pijamada de práctica en casa, con linterna y osito incluidos! 🧸🔦 Un cuento infantil corto para perderle el miedo a la oscuridad y a dormir fuera de casa.
 
-🐶🐱 En "Las Aventuras de Nuestra Familia" acompañamos a Max, el papá (un labrador juguetón), Luna, la mamá (una gatita negra muy inteligente), Lio (un perrito aventurero) y Martina, "Tini" (una gatita naranja súper divertida) en historias cortas con valores para toda la familia.
+🐶🐱 Las Aventuras de Nuestra Familia: dibujos animados 3D en español para niños de 2 a 8 años. Max (el papá labrador), Luna (la mamá gatita), Lio (10 años) y Tini (7 años) viven historias cortas con valores para ver en familia.
 
 ✨ En este capítulo aprendemos:
 • Que está bien sentir miedo ante algo nuevo
 • Un truco para calmarnos: abrazar al osito y respirar despacio
 • Que practicar hace que los miedos se hagan chiquitos
 
-👶 Ideal para niños de 2 a 8 años. Dibujos animados 3D en español, cuentos para dormir, miedo a la oscuridad y educación emocional para niños.
+👨‍👩‍👧 Para papás y maestras: después del video, pregúntenles a los chicos "¿Qué te ayuda a ti a sentirte tranquilo cuando tienes miedo? ¡Prueben juntos respirar despacio como Tini!"
 
-🔔 ¡Suscríbete y activa la campanita para ver un nuevo capítulo cada semana!
+📺 Más capítulos de Las Aventuras de Nuestra Familia, ¡uno nuevo cada semana! Suscríbete para no perderte ninguno.
 
-#pijamada #miedoaladormir #cuentosparadormir #cuentosinfantiles #dibujosanimados #cuentosparaniños #educacionemocional #animacion3d #videosparaniños #español`,
+#pijamada #dibujosanimados #cuentosparadormir`,
     tags: [
       'primera pijamada',
       'pijamada',

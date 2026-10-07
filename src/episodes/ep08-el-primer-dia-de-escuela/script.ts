@@ -81,21 +81,21 @@ const episode: Episode = {
     },
   ],
   youtube: {
-    title: 'Mi Primer Día de Escuela 🎒 ¡No Quiero Ir! | Las Aventuras de Nuestra Familia | Cuentos para Niños',
-    description: `¡Hoy es el primer día de escuela de Tini! 🎒 Pero tiene miedo: "¿Y si nadie quiere ser mi amigo?" 😟 Así fue como conoció a Lola, ¡su mejor amiga! 💛 Un cuento infantil para acompañar a los niños en el comienzo de clases y en la adaptación escolar.
+    title: 'El Primer Día de Escuela 🎒 ¡No Quiero Ir! | Dibujos Animados para Niños en Español',
+    description: `¡Hoy es el primer día de escuela de Tini! 🎒 Pero tiene miedo: "¿Y si nadie quiere ser mi amigo?" 😟 Lio le cuenta que a él también le pasó, Luna le promete esperarla a la salida… y en el aula la espera una sorpresa: ¡Lola, su nueva mejor amiga! 💛 Un cuento infantil corto para el comienzo de clases.
 
-🐶🐱 En "Las Aventuras de Nuestra Familia" acompañamos a Max, el papá (un labrador juguetón), Luna, la mamá (una gatita negra muy inteligente), Lio (un perrito aventurero) y Martina, "Tini" (una gatita naranja súper divertida) en historias cortas con valores para toda la familia.
+🐶🐱 Las Aventuras de Nuestra Familia: dibujos animados 3D en español para niños de 2 a 8 años. Max (el papá labrador), Luna (la mamá gatita), Lio (10 años) y Tini (7 años) viven historias cortas con valores para ver en familia.
 
 ✨ En este capítulo aprendemos:
-• Que está bien sentir miedo en el primer día de clases
-• Cómo hacer nuevos amigos
+• Que está bien sentir miedo el primer día de clases
+• Que un "¡Hola! ¿Quieres ser mi amiga?" puede empezar una gran amistad
 • Que mamá y papá siempre vuelven a buscarnos
 
-👶 Ideal para niños de 2 a 8 años. Dibujos animados 3D en español, adaptación escolar, primer día de jardín o escuela y educación emocional para niños.
+👨‍👩‍👧 Para papás y maestras: después del video, pregúntenles a los chicos "¿Qué le dirías a un compañero nuevo para que se sienta bienvenido?"
 
-🔔 ¡Suscríbete y activa la campanita para ver un nuevo capítulo cada semana!
+📺 Más capítulos de Las Aventuras de Nuestra Familia, ¡uno nuevo cada semana! Suscríbete para no perderte ninguno.
 
-#primerdiadeescuela #vueltaaclases #adaptacionescolar #cuentosinfantiles #dibujosanimados #cuentosparaniños #amistad #animacion3d #videosparaniños #español`,
+#primerdiadeescuela #dibujosanimados #cuentosinfantiles`,
     tags: [
       'primer día de escuela',
       'primer día de clases',
