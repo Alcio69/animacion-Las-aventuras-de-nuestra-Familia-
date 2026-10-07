@@ -88,21 +88,21 @@ const episode: Episode = {
     },
   ],
   youtube: {
-    title: '¡No Quiero Dormir! 🌙 La Rutina Mágica | Las Aventuras de Nuestra Familia | Cuentos para Dormir',
-    description: `¡Tini no quiere ir a la cama! 😆🌙 Que tiene sed, que otro cuento, que hay un monstruo en el armario… Pero Luna le enseña la rutina mágica para dormir: pijama, dientes, cuento y un abrazo bien grande. 🧸💤 Un cuento para dormir que ayuda a los niños con la rutina de la noche.
+    title: '¡No Quiero Dormir! 🌙 La Rutina Mágica | Dibujos Animados para Niños en Español',
+    description: `Tini no tiene nada de sueño… 🌙 Primero quiere jugar, después tiene sed, después quiere otro cuento… ¡y hasta cree que hay un monstruo en el armario! 😱 Pero Luna tiene un secreto: la rutina mágica para dormir. 🧸💤 Un cuento infantil corto para la hora de dormir.
 
-🐶🐱 En "Las Aventuras de Nuestra Familia" acompañamos a Max, el papá (un labrador juguetón), Luna, la mamá (una gatita negra muy inteligente), Lio (un perrito aventurero) y Martina, "Tini" (una gatita naranja súper divertida) en historias cortas con valores para toda la familia.
+🐶🐱 Las Aventuras de Nuestra Familia: dibujos animados 3D en español para niños de 2 a 8 años. Max (el papá labrador), Luna (la mamá gatita), Lio (10 años) y Tini (7 años) viven historias cortas con valores para ver en familia.
 
 ✨ En este capítulo aprendemos:
-• Una rutina sencilla para irse a dormir
-• Que los "monstruos" del armario no existen
-• Que dormir bien nos ayuda a crecer felices
+• Una rutina para dormir: pijama, dientes, cuento y abrazo
+• Que los monstruos del armario no son reales
+• Que descansar nos ayuda a crecer sanos
 
-👶 Ideal para niños de 2 a 8 años. Dibujos animados 3D en español, cuentos para dormir, rutina de sueño y videos tranquilos para niños.
+👨‍👩‍👧 Para papás y maestras: después del video, pregúntenles a los chicos "¿Cuál es tu rutina mágica para dormir? ¡Armen juntos la suya esta noche!"
 
-🔔 ¡Suscríbete y activa la campanita para ver un nuevo capítulo cada semana!
+📺 Más capítulos de Las Aventuras de Nuestra Familia, ¡uno nuevo cada semana! Suscríbete para no perderte ninguno.
 
-#cuentosparadormir #noquierodormir #rutinadesueño #cuentosinfantiles #dibujosanimados #cuentosparaniños #horadedormir #animacion3d #videosparaniños #español`,
+#cuentosparadormir #dibujosanimados #cuentosinfantiles`,
     tags: [
       'cuentos para dormir',
       'no quiero dormir',

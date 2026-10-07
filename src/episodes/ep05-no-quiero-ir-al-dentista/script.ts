@@ -83,21 +83,21 @@ const episode: Episode = {
     },
   ],
   youtube: {
-    title: '¡No Quiero Ir al Dentista! 🦷 Las Aventuras de Nuestra Familia | Cuentos para Niños',
-    description: `Lio tiene que ir al dentista y está muy asustado: "¿Y si me duele?" 😟🦷 Pero el dentista resulta ser súper amable… ¡y hasta le regala la estrella de los valientes! ⭐ Un cuento infantil para perderle el miedo al dentista y aprender a cuidar los dientes.
+    title: '¡No Quiero Ir al Dentista! 🦷 Miedo al Dentista | Dibujos Animados para Niños en Español',
+    description: `Lio tiene que ir al dentista y está muy asustado: "¿Y si me duele?" 😟🦷 Tini le cuenta que a ella le regalaron una estrella, Luna lo acompaña… y el dentista resulta ser súper amable: ¡solo va a contar sus dientes! ⭐ Un cuento infantil corto para perderle el miedo al dentista.
 
-🐶🐱 En "Las Aventuras de Nuestra Familia" acompañamos a Max, el papá (un labrador juguetón), Luna, la mamá (una gatita negra muy inteligente), Lio (un perrito aventurero) y Martina, "Tini" (una gatita naranja súper divertida) en historias cortas con valores para toda la familia.
+🐶🐱 Las Aventuras de Nuestra Familia: dibujos animados 3D en español para niños de 2 a 8 años. Max (el papá labrador), Luna (la mamá gatita), Lio (10 años) y Tini (7 años) viven historias cortas con valores para ver en familia.
 
 ✨ En este capítulo aprendemos:
-• Que el dentista es nuestro amigo
-• A ser valientes aunque tengamos miedo
-• Que hay que cepillarse los dientes todos los días
+• Que ir al dentista no duele y nos ayuda a cuidar la sonrisa
+• Que está bien tener miedo y pedir que nos acompañen
+• A cepillarnos los dientes todos los días
 
-👶 Ideal para niños de 2 a 8 años. Dibujos animados 3D en español, primera visita al dentista, hábitos saludables y videos educativos para niños.
+👨‍👩‍👧 Para papás y maestras: después del video, pregúntenles a los chicos "¿Cuántos dientes tienes? ¡Cuéntenlos juntos frente al espejo, como el dentista!"
 
-🔔 ¡Suscríbete y activa la campanita para ver un nuevo capítulo cada semana!
+📺 Más capítulos de Las Aventuras de Nuestra Familia, ¡uno nuevo cada semana! Suscríbete para no perderte ninguno.
 
-#dentista #miedoaldentista #cepillarselosdientes #cuentosinfantiles #dibujosanimados #cuentosparaniños #habitossaludables #animacion3d #videosparaniños #español`,
+#dentista #dibujosanimados #cuentosinfantiles`,
     tags: [
       'ir al dentista',
       'miedo al dentista',

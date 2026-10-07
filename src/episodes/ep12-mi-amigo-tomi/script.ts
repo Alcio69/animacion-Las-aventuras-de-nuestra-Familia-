@@ -81,21 +81,21 @@ const episode: Episode = {
     },
   ],
   youtube: {
-    title: 'Mi Amigo Tomi 🐰 Un Amigo Diferente | Las Aventuras de Nuestra Familia | Cuentos sobre Inclusión',
-    description: `A la escuela de Lio llega Tomi, un compañero nuevo que usa silla de ruedas. 🐰♿ Al principio los chicos piensan que no va a poder jugar con ellos… ¡pero Tomi les demuestra que es el más rápido del recreo! ⚽ Un cuento infantil sobre la inclusión, la diversidad y la amistad.
+    title: 'Mi Amigo Tomi 🦽 Todos Podemos Jugar | Dibujos Animados para Niños en Español',
+    description: `Llega un compañero nuevo a la escuela de Lio: Tomi, un conejito que usa silla de ruedas. 🐰 Lio y Benja creen que no va a poder jugar con ellos… ¡pero en el recreo Tomi les enseña su juego favorito y es súper rápido! ⚽💛 Un cuento infantil corto sobre la inclusión y la amistad.
 
-🐶🐱 En "Las Aventuras de Nuestra Familia" acompañamos a Max, el papá (un labrador juguetón), Luna, la mamá (una gatita negra muy inteligente), Lio (un perrito aventurero) y Martina, "Tini" (una gatita naranja súper divertida) en historias cortas con valores para toda la familia.
+🐶🐱 Las Aventuras de Nuestra Familia: dibujos animados 3D en español para niños de 2 a 8 años. Max (el papá labrador), Luna (la mamá gatita), Lio (10 años) y Tini (7 años) viven historias cortas con valores para ver en familia.
 
 ✨ En este capítulo aprendemos:
-• Que todos somos diferentes, y eso es lo lindo
-• A no juzgar sin conocer
-• Que todos podemos jugar juntos
+• Que todos somos diferentes, y eso es lo divertido
+• A incluir a todos en nuestros juegos
+• A pedir perdón cuando nos equivocamos con alguien
 
-👶 Ideal para niños de 2 a 8 años. Dibujos animados 3D en español, cuentos sobre inclusión, diversidad, discapacidad y amistad para niños.
+👨‍👩‍👧 Para papás y maestras: después del video, pregúntenles a los chicos "¿Cómo podemos hacer para que todos puedan jugar en el recreo?"
 
-🔔 ¡Suscríbete y activa la campanita para ver un nuevo capítulo cada semana!
+📺 Más capítulos de Las Aventuras de Nuestra Familia, ¡uno nuevo cada semana! Suscríbete para no perderte ninguno.
 
-#inclusion #diversidad #amistad #cuentosinfantiles #dibujosanimados #cuentosparaniños #valores #animacion3d #videosparaniños #español`,
+#inclusion #dibujosanimados #cuentosinfantiles`,
     tags: [
       'inclusión para niños',
       'cuento sobre inclusión',
