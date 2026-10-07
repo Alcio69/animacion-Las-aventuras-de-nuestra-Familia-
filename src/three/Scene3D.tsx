@@ -305,8 +305,15 @@ export const Thumbnail3D: React.FC<{ episode: Episode }> = ({ episode }) => {
 };
 
 /** Series key art (cover): the family in the park with the logo and their names. */
-export const Cover3D: React.FC = () => {
+/**
+ * layout 'cover' = key art (logo on top, family with name tags);
+ * 'banner' = YouTube channel art: everything inside the centre band that every device shows (1546x423 of 2560x1440);
+ * 'avatar' = square profile picture, the four faces close-up (safe for a circular crop).
+ */
+export const Cover3D: React.FC<{ layout?: 'cover' | 'banner' | 'avatar' }> = ({ layout = 'cover' }) => {
   const { width, height } = useVideoConfig();
+  const banner = layout === 'banner';
+  const avatar = layout === 'avatar';
   const ids: CharId[] = ['papa', 'mama', 'hijo', 'hija'];
   const poses = ids.map((id, i) => {
     const p = restPose(0.4);
@@ -328,29 +335,41 @@ export const Cover3D: React.FC = () => {
     }
     return p;
   });
-  const X = [-4.6, -1.55, 1.55, 4.5];
+  const X = banner ? [1.6, 3.6, 5.6, 7.4] : avatar ? [-2.25, -0.78, 0.78, 2.2] : [-4.6, -1.55, 1.55, 4.5];
   return (
     <AbsoluteFill style={{ background: '#CDEBFF' }}>
       <Canvas3D>
-        <CameraRig x={0} dist={18} y={3.6} lookY={4.0} />
+        {banner ? (
+          <CameraRig x={0.4} dist={27} y={2.6} lookY={2.15} />
+        ) : avatar ? (
+          <CameraRig x={0} dist={13.5} y={4.0} lookY={3.0} />
+        ) : (
+          <CameraRig x={0} dist={18} y={3.6} lookY={4.0} />
+        )}
         <Lights3D target={[0, 2.5, 0]} />
         <Set3D bg="park" t={2.2} />
         {ids.map((id, i) => (
           <Character3D key={id} id={id} pose={poses[i]} position={[X[i], 0, i % 2 ? 0.3 : 0]} />
         ))}
-        <group position={[0.05, 0, 1.2]} scale={0.8}>
-          <Prop3D kind="ball" t={0} />
-        </group>
-        <group position={[-7.2, 0, -0.5]}>
-          <Prop3D kind="balloon" t={0.5} />
-        </group>
+        {layout === 'cover' && (
+          <>
+            <group position={[0.05, 0, 1.2]} scale={0.8}>
+              <Prop3D kind="ball" t={0} />
+            </group>
+            <group position={[-7.2, 0, -0.5]}>
+              <Prop3D kind="balloon" t={0.5} />
+            </group>
+          </>
+        )}
       </Canvas3D>
       <AbsoluteFill>
         <svg viewBox={`0 0 ${width} ${height}`} width="100%" height="100%">
-          <g transform={`translate(${width / 2} ${height * 0.205}) scale(${width / 1920 * 1.05})`}>
-            <Logo t={0.2} />
-          </g>
-          {ids.map((id, i) => {
+          {!avatar && (
+            <g transform={banner ? `translate(${width * 0.33} ${height * 0.5}) scale(0.9)` : `translate(${width / 2} ${height * 0.205}) scale(${(width / 1920) * 1.05})`}>
+              <Logo t={0.2} />
+            </g>
+          )}
+          {layout === 'cover' && ids.map((id, i) => {
             const cx = width / 2 + (X[i] / 4.6) * width * 0.272;
             const name = DESIGNS[id].name;
             const w = 34 + name.length * 26;
