@@ -46,3 +46,11 @@ dibujos animados para niños, cuentos para niños, cuentos infantiles, cuentos c
 8. **Política de "contenido repetitivo / producido en masa":** es el principal riesgo para un canal hecho con código y voces sintéticas. Mantener historias distintas, aporte creativo propio y variedad de escenarios; no subir versiones casi iguales del mismo video.
 9. **Derechos:** música y efectos generados por nosotros; voces Kokoro (licencia Apache 2.0, uso comercial permitido); tipografía Fredoka (licencia OFL). No usar música ni imágenes de terceros.
 10. **Contenido sintético:** la etiqueta de "contenido alterado o sintético" es para contenido realista; los dibujos animados no la requieren.
+
+## Plan de lanzamiento (desde cero)
+- **Día 1:** 8 videos = 6 capítulos sueltos (1, 2, 4, 5, 8 y 17 Halloween) + 2 compilados de 3 (1-2-4 y 5-8-17).
+- **Semanas siguientes:** 3 capítulos nuevos por semana (mismos días y horario: tarde/noche y fin de semana) + 1 compilado de 3 por semana.
+- **Compilado de 10:** cuando haya 10 capítulos publicados; después uno cada 3–4 semanas. Más adelante, un compilado de 30+ min (muy visto en TV).
+- **Regla:** cada compilado usa solo capítulos ya publicados sueltos, y siempre hay más capítulos originales que compilados (para no caer en "contenido repetitivo").
+- **Fechas:** Halloween (cap. 17) ya; Navidad (cap. 21) desde fines de noviembre; compilado navideño en diciembre.
+- Agregar cada video a su lista de reproducción el mismo día que se publica.
