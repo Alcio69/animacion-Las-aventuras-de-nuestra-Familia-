@@ -303,3 +303,68 @@ export const Thumbnail3D: React.FC<{ episode: Episode }> = ({ episode }) => {
     </AbsoluteFill>
   );
 };
+
+/** Series key art (cover): the family in the park with the logo and their names. */
+export const Cover3D: React.FC = () => {
+  const { width, height } = useVideoConfig();
+  const ids: CharId[] = ['papa', 'mama', 'hijo', 'hija'];
+  const poses = ids.map((id, i) => {
+    const p = restPose(0.4);
+    p.expr = (['laugh', 'love', 'excited', 'laugh'] as const)[i];
+    p.yaw = (i - 1.5) * -0.14;
+    p.wag = 1.2;
+    if (id === 'papa') p.armR = { up: 125, bend: 30 };
+    if (id === 'mama') {
+      p.armL = { up: 60, bend: 40 };
+      p.armR = { up: 60, bend: 40 };
+    }
+    if (id === 'hijo') {
+      p.armL = { up: 150, bend: 15 };
+      p.armR = { up: 150, bend: 15 };
+    }
+    if (id === 'hija') {
+      p.armR = { up: 135, bend: 25 };
+      p.lift = 22;
+    }
+    return p;
+  });
+  const X = [-4.6, -1.55, 1.55, 4.5];
+  return (
+    <AbsoluteFill style={{ background: '#CDEBFF' }}>
+      <Canvas3D>
+        <CameraRig x={0} dist={18} y={3.6} lookY={4.0} />
+        <Lights3D target={[0, 2.5, 0]} />
+        <Set3D bg="park" t={2.2} />
+        {ids.map((id, i) => (
+          <Character3D key={id} id={id} pose={poses[i]} position={[X[i], 0, i % 2 ? 0.3 : 0]} />
+        ))}
+        <group position={[0.05, 0, 1.2]} scale={0.8}>
+          <Prop3D kind="ball" t={0} />
+        </group>
+        <group position={[-7.2, 0, -0.5]}>
+          <Prop3D kind="balloon" t={0.5} />
+        </group>
+      </Canvas3D>
+      <AbsoluteFill>
+        <svg viewBox={`0 0 ${width} ${height}`} width="100%" height="100%">
+          <g transform={`translate(${width / 2} ${height * 0.205}) scale(${width / 1920 * 1.05})`}>
+            <Logo t={0.2} />
+          </g>
+          {ids.map((id, i) => {
+            const cx = width / 2 + (X[i] / 4.6) * width * 0.272;
+            const name = DESIGNS[id].name;
+            const w = 34 + name.length * 26;
+            return (
+              <g key={id} transform={`translate(${cx} ${height * 0.93}) scale(${width / 1920})`} fontFamily={FONT} fontWeight={700} textAnchor="middle">
+                <rect x={-w / 2} y={-34} width={w} height={60} rx={30} fill={DESIGNS[id].accent} stroke="#FFF" strokeWidth={5} />
+                <text y={10} fontSize={40} fill="#FFF">
+                  {name}
+                </text>
+              </g>
+            );
+          })}
+        </svg>
+      </AbsoluteFill>
+    </AbsoluteFill>
+  );
+};

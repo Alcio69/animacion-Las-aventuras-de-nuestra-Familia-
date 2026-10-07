@@ -5,7 +5,7 @@ import { Guests3D } from '../src/three/Guests3D';
 import { CharacterSheet } from '../src/engine/CharacterSheet';
 import { EpisodeVideo } from '../src/engine/Episode';
 import { Thumbnail } from '../src/engine/Thumbnail';
-import { Thumbnail3D } from '../src/three/Scene3D';
+import { Cover3D, Thumbnail3D } from '../src/three/Scene3D';
 import { FPS, compileEpisode } from '../src/engine/timeline';
 import { EPISODES } from '../src/episodes';
 
@@ -35,6 +35,8 @@ export const RemotionRoot: React.FC = () => (
         <Composition id={`${ep.id}-3d-thumb`} component={Thumbnail3D} durationInFrames={1} fps={FPS} width={1280} height={720} defaultProps={{ episode: ep }} />
       </React.Fragment>
     ))}
+    <Composition id="portada" component={Cover3D} durationInFrames={1} fps={FPS} width={1920} height={1080} />
+    <Composition id="portada-banner" component={Cover3D} durationInFrames={1} fps={FPS} width={2560} height={1440} />
     <Composition id="personajes-3d" component={Test3D} durationInFrames={90} fps={FPS} width={1920} height={1080} />
     <Composition id="invitados-3d" component={Guests3D} durationInFrames={90} fps={FPS} width={1920} height={1080} />
     <Composition id="personajes" component={CharacterSheet} durationInFrames={90} fps={FPS} width={1920} height={1080} />
