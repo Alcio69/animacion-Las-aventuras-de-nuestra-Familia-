@@ -1,6 +1,7 @@
 // Update the subtitle name tags of already-rendered 3D chapters without re-rendering the 3D:
 // renders only the subtitles (transparent ProRes 4444) and composites them over public/episodes/<id>-3d.mp4.
-// Only valid when the chapter's timing did not change (same lines/voices) — checked against the video length.
+// Only valid when no spoken line changed since the video was rendered: the patch replaces the picture, not the voices.
+// Chapters whose lines changed (e.g. ep05, ep12, ep20 after the name change) need a full render. The video length is checked too.
 // Usage: node scripts/patch-subs.mjs ep02-xxx ep03-yyy ...
 import { bundle } from '@remotion/bundler';
 import { renderMedia, selectComposition } from '@remotion/renderer';
