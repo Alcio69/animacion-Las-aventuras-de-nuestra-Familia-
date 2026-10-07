@@ -26,7 +26,7 @@ const episode: Episode = {
       steps: [
         { prop: 'table', id: 'mesa', x: TABLE.x, y: TABLE.y },
         { say: 'papa', text: '¡Sorpresa, familia! Les traemos un nuevo integrante.', expr: 'excited', act: 'cheer' },
-        { prop: 'fishbowl', id: 'pecera', x: TABLE.x, y: ON_TABLE },
+        { prop: 'fishbowl', id: 'pecera', x: TABLE.x, y: ON_TABLE, scale: 1.7 },
         { fx: 'sparkle', x: TABLE.x, y: 600, with: true },
         { sfx: 'tada', with: true },
         { mood: 'excited', who: 'hija' },
@@ -44,7 +44,7 @@ const episode: Episode = {
       },
       steps: [
         { prop: 'table', id: 'mesa', x: TABLE.x, y: TABLE.y },
-        { prop: 'fishbowl', id: 'pecera', x: TABLE.x, y: ON_TABLE, with: true },
+        { prop: 'fishbowl', id: 'pecera', x: TABLE.x, y: ON_TABLE, scale: 1.7, with: true },
         { prop: 'ball', id: 'pelota', x: 600, y: 960, with: true },
         { title: 'Tres días después...', dur: 1.6 },
         { say: 'hijo', text: '¿Hoy le diste de comer a Burbuja, Tini? Está nadando muy despacito.', expr: 'worried', act: 'point' },
@@ -66,7 +66,7 @@ const episode: Episode = {
       },
       steps: [
         { prop: 'table', id: 'mesa', x: TABLE.x, y: TABLE.y },
-        { prop: 'fishbowl', id: 'pecera', x: TABLE.x, y: ON_TABLE, with: true },
+        { prop: 'fishbowl', id: 'pecera', x: TABLE.x, y: ON_TABLE, scale: 1.7, with: true },
         { say: 'hija', text: '¡Ya sé! Voy a hacer un cartel para acordarme todas las mañanas.', expr: 'excited', act: 'point' },
         { prop: 'drawing', id: 'cartel', x: 1080, y: ON_TABLE },
         { sfx: 'pop', with: true },

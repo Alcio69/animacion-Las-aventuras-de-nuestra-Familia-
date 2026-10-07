@@ -50,7 +50,7 @@ const episode: Episode = {
         papa: { x: 1400, mood: 'happy', facing: -1 },
       },
       steps: [
-        { prop: 'recycleBins', id: 'tachos', x: 1060, y: 900 },
+        { prop: 'recycleBins', id: 'tachos', x: 1060, y: 900, scale: 1.5 },
         { say: 'papa', text: 'Ahora la separamos: el plástico va al amarillo, el papel al azul y el vidrio al verde.', expr: 'happy', act: 'point' },
         { say: 'hijo', text: '¡La botella de plástico va al amarillo!', expr: 'excited', act: 'point' },
         { sfx: 'pop', with: true, delay: 1.2 },

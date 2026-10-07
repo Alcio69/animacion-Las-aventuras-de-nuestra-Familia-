@@ -206,24 +206,22 @@ const BodyCostume3D: React.FC<{ kind: number; d: Design; hipY: number; shoulderY
     );
   }
   if (kind === 5) {
-    // cozy blanket wrapped around the shoulders (feeling sick)
-    const top = shoulderY + 0.06;
-    const bottom = hipY * 0.45;
+    // soft blanket worn like a poncho over the shoulders (feeling sick)
+    const top = shoulderY + 0.08;
+    const bottom = hipY + (shoulderY - hipY) * 0.12;
     return (
       <group>
         <mesh position={[0, (top + bottom) / 2, 0]} castShadow>
-          <cylinderGeometry args={[tw * 0.66, bw * 0.98, top - bottom, 32, 1, true]} />
-          <meshPhysicalMaterial color="#7FB3E8" roughness={0.95} sheen={1} sheenColor={new THREE.Color('#FFFFFF')} side={THREE.DoubleSide} />
+          <cylinderGeometry args={[tw * 0.5, Math.max(tw, bw) * 0.86, top - bottom, 36, 1, true]} />
+          <meshPhysicalMaterial color="#F4A6C0" roughness={0.95} sheen={1} sheenColor={new THREE.Color('#FFFFFF')} side={THREE.DoubleSide} />
         </mesh>
-        {[0.25, 0.5, 0.75].map((k) => (
-          <mesh key={k} position={[0, bottom + (top - bottom) * k, 0]} rotation={[Math.PI / 2, 0, 0]}>
-            <torusGeometry args={[tw * 0.66 + (bw * 0.98 - tw * 0.66) * (1 - k) + 0.01, 0.035, 8, 40]} />
-            <meshStandardMaterial color="#FFFFFF" roughness={0.9} />
-          </mesh>
-        ))}
+        <mesh position={[0, bottom, 0]} rotation={[Math.PI / 2, 0, 0]}>
+          <torusGeometry args={[Math.max(tw, bw) * 0.86, 0.06, 10, 40]} />
+          <meshPhysicalMaterial color="#E57BA0" roughness={0.95} sheen={1} />
+        </mesh>
         <mesh position={[0, top, 0]} rotation={[Math.PI / 2, 0, 0]} castShadow>
-          <torusGeometry args={[tw * 0.42, 0.13, 12, 32]} />
-          <meshPhysicalMaterial color="#5C9BD9" roughness={0.95} sheen={1} />
+          <torusGeometry args={[tw * 0.42, 0.15, 12, 32]} />
+          <meshPhysicalMaterial color="#F4A6C0" roughness={0.95} sheen={1} />
         </mesh>
       </group>
     );
