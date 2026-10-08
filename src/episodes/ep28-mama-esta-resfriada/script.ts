@@ -85,21 +85,21 @@ const episode: Episode = {
     },
   ],
   youtube: {
-    title: 'Mamá Está Resfriada 🤒 Empatía y Ayudar en Casa | Las Aventuras de Nuestra Familia | Cuentos para Niños',
-    description: `Luna se despierta resfriada y tiene que quedarse en la cama. 🤒 Lio y Tini, que siempre son cuidados por su mamá, deciden que hoy les toca a ellos: le preparan un té calentito, le hacen un dibujo y ordenan sin que nadie se lo pida. 💛 Un cuento infantil sobre la empatía, ayudar en casa y cuidar a quien nos cuida.
+    title: 'Mamá Está Resfriada 🤒 Cuidar a los que Queremos | Dibujos Animados para Niños en Español',
+    description: `Luna amanece resfriada y tiene que quedarse en la cama 🤒 Esta vez, ¡Lio y Tini son los que cuidan! Con la ayuda de Max le preparan un té calentito con miel, le hacen un dibujo y ordenan la casa sin que nadie se lo pida. 🍵💛 Un cuento infantil corto sobre la empatía y ayudar en casa.
 
-🐶🐱 En "Las Aventuras de Nuestra Familia" acompañamos a Max, el papá (un labrador juguetón), Luna, la mamá (una gatita negra muy inteligente), Lio (un perrito aventurero) y Martina, "Tini" (una gatita naranja súper divertida) en historias cortas con valores para toda la familia.
+🐶🐱 Las Aventuras de Nuestra Familia: dibujos animados 3D en español para niños de 2 a 8 años. Max (el papá labrador), Luna (la mamá gatita), Lio (10 años) y Tini (7 años) viven historias cortas con valores para ver en familia.
 
 ✨ En este capítulo aprendemos:
-• A ponernos en el lugar del otro
-• A ayudar en casa cuando alguien lo necesita
-• Que el cariño también cura
+• A cuidar a los que nos cuidan
+• Que un poco de cariño es el mejor remedio
+• Que ayudar en casa es trabajo en equipo
 
-👶 Ideal para niños de 2 a 8 años. Dibujos animados 3D en español, empatía para niños, ayudar en casa, cuidar a mamá, cuando alguien está enfermo.
+👨‍👩‍👧 Para papás y maestras: después del video, pregúntenles a los chicos "¿Qué podrías hacer tú para que alguien de tu familia se sienta mejor cuando está enfermo?"
 
-🔔 ¡Suscríbete y activa la campanita para ver un nuevo capítulo cada semana!
+📺 Más capítulos de Las Aventuras de Nuestra Familia, ¡uno nuevo cada semana! Suscríbete para no perderte ninguno.
 
-#empatia #ayudarencasa #mama #cuidar #cuentosinfantiles #dibujosanimados #cuentosparaniños #valores #animacion3d #español`,
+#empatia #dibujosanimados #cuentosinfantiles`,
     tags: [
       'empatía para niños',
       'ayudar en casa',

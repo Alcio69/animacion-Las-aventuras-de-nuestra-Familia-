@@ -83,21 +83,21 @@ const episode: Episode = {
     },
   ],
   youtube: {
-    title: 'Nuestra Primera Mascota 🐠 La Responsabilidad | Las Aventuras de Nuestra Familia | Cuentos para Niños',
-    description: `¡Llegó Burbuja, el pececito de la familia! 🐠 Tini promete cuidarlo y darle de comer todos los días… pero se olvida. 😢 Con ayuda de su mamá Luna, aprende que una mascota depende de nosotros y encuentra un truco para no olvidarse más. Un cuento infantil sobre la responsabilidad y el cuidado de las mascotas.
+    title: 'Nuestra Primera Mascota 🐠 La Responsabilidad | Dibujos Animados para Niños en Español',
+    description: `¡Sorpresa! Max y Luna traen un nuevo integrante a la familia: un pececito llamado Burbuja. 🐠 Tini promete cuidarlo… pero se olvida de darle de comer, ¡dos días seguidos! 😟 Con la ayuda de un cartel, aprende a ser una gran cuidadora. 💛 Un cuento infantil corto sobre la responsabilidad y el cuidado de las mascotas.
 
-🐶🐱 En "Las Aventuras de Nuestra Familia" acompañamos a Max, el papá (un labrador juguetón), Luna, la mamá (una gatita negra muy inteligente), Lio (un perrito aventurero) y Martina, "Tini" (una gatita naranja súper divertida) en historias cortas con valores para toda la familia.
+🐶🐱 Las Aventuras de Nuestra Familia: dibujos animados 3D en español para niños de 2 a 8 años. Max (el papá labrador), Luna (la mamá gatita), Lio (10 años) y Tini (7 años) viven historias cortas con valores para ver en familia.
 
 ✨ En este capítulo aprendemos:
-• Que tener una mascota es una gran responsabilidad
+• Que una mascota depende de nosotros todos los días
 • A cumplir lo que prometemos
-• A buscar ideas para no olvidarnos de nuestras tareas
+• Trucos para acordarnos de nuestras tareas
 
-👶 Ideal para niños de 2 a 8 años. Dibujos animados 3D en español, cuidar una mascota, la responsabilidad en niños, mi primer pez.
+👨‍👩‍👧 Para papás y maestras: después del video, pregúntenles a los chicos "¿Qué tarea podrías hacer tú todos los días en casa? ¡Hagan juntos un cartel para acordarse, como Tini!"
 
-🔔 ¡Suscríbete y activa la campanita para ver un nuevo capítulo cada semana!
+📺 Más capítulos de Las Aventuras de Nuestra Familia, ¡uno nuevo cada semana! Suscríbete para no perderte ninguno.
 
-#mascotas #responsabilidad #pez #cuidaranimales #cuentosinfantiles #dibujosanimados #cuentosparaniños #valores #animacion3d #español`,
+#mascotas #dibujosanimados #cuentosinfantiles`,
     tags: [
       'responsabilidad para niños',
       'cuidar una mascota',

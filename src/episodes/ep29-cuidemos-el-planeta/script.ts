@@ -80,21 +80,21 @@ const episode: Episode = {
     },
   ],
   youtube: {
-    title: '¡Cuidemos el Planeta! ♻️ Reciclar para Niños | Las Aventuras de Nuestra Familia | Cuentos para Niños',
-    description: `En el parque, Lio y Tini encuentran botellas y bolsas tiradas en el pasto. 😟 Con su papá Max juntan la basura, aprenden a separarla para reciclar ♻️ y en casa descubren cómo cuidar el agua y la energía. 🌍 Un cuento infantil sobre ecología, reciclaje y el cuidado del medio ambiente.
+    title: '¡Cuidemos el Planeta! 🌍 Reciclar para Niños | Dibujos Animados para Niños en Español',
+    description: `En el parque, Lio y Tini encuentran botellas y bolsas tiradas en el pasto 😟 ¡Los pajaritos se pueden lastimar! Junto con Max se convierten en los guardianes del parque: juntan la basura y aprenden a reciclar en los tachos de colores. ♻️ En casa siguen cuidando el agua y la luz. 🌍 Un cuento infantil corto sobre el cuidado del medio ambiente.
 
-🐶🐱 En "Las Aventuras de Nuestra Familia" acompañamos a Max, el papá (un labrador juguetón), Luna, la mamá (una gatita negra muy inteligente), Lio (un perrito aventurero) y Martina, "Tini" (una gatita naranja súper divertida) en historias cortas con valores para toda la familia.
+🐶🐱 Las Aventuras de Nuestra Familia: dibujos animados 3D en español para niños de 2 a 8 años. Max (el papá labrador), Luna (la mamá gatita), Lio (10 años) y Tini (7 años) viven historias cortas con valores para ver en familia.
 
 ✨ En este capítulo aprendemos:
-• A no tirar basura y a juntarla
-• A separar los residuos para reciclar
-• A cuidar el agua y la energía en casa
+• A no tirar basura y a reciclar
+• Qué va en cada tacho: amarillo, azul y verde
+• A cuidar el agua y la luz en casa
 
-👶 Ideal para niños de 2 a 8 años y para usar en el aula. Dibujos animados 3D en español, reciclaje para niños, cuidado del medio ambiente, ecología, día de la Tierra.
+👨‍👩‍👧 Para papás y maestras: después del video, pregúntenles a los chicos "¿Qué podemos hacer en casa para cuidar el planeta? ¡Elijan juntos una acción para esta semana!"
 
-🔔 ¡Suscríbete y activa la campanita para ver un nuevo capítulo cada semana!
+📺 Más capítulos de Las Aventuras de Nuestra Familia, ¡uno nuevo cada semana! Suscríbete para no perderte ninguno.
 
-#reciclaje #medioambiente #ecologia #cuidarelplaneta #cuentosinfantiles #dibujosanimados #cuentosparaniños #valores #animacion3d #español`,
+#reciclaje #dibujosanimados #cuentosinfantiles`,
     tags: [
       'reciclaje para niños',
       'cuidar el planeta',
