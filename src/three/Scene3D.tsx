@@ -388,6 +388,144 @@ export const Cover3D: React.FC<{ layout?: 'cover' | 'banner' | 'avatar' }> = ({ 
   );
 };
 
+const STORY_VALUES: { label: string; color: string }[] = [
+  { label: 'Compartir', color: '#FF922B' },
+  { label: 'Empatía', color: '#F06595' },
+  { label: 'Respeto', color: '#7048E8' },
+  { label: 'Decir la verdad', color: '#20C997' },
+  { label: 'Valentía', color: '#4DABF7' },
+  { label: 'Inclusión', color: '#FF6B6B' },
+];
+
+const Heart: React.FC<{ c: string }> = ({ c }) => (
+  <path d="M0 10 C-18 -4 -14 -20 -6 -20 C-2 -20 0 -16 0 -14 C0 -16 2 -20 6 -20 C14 -20 18 -4 0 10 Z" fill={c} transform="scale(1.35) translate(0 5)" />
+);
+
+/**
+ * Instagram story (1080x1920): logo, the family with name tags and the values the series teaches.
+ * Text stays out of the top/bottom ~250 px that Instagram covers with its own UI.
+ */
+export const Story3D: React.FC = () => {
+  ensureFonts();
+  const { width, height } = useVideoConfig();
+  const ids: CharId[] = ['papa', 'mama', 'hijo', 'hija'];
+  const poses = ids.map((id, i) => {
+    const p = restPose(0.4);
+    p.expr = (['laugh', 'love', 'excited', 'laugh'] as const)[i];
+    p.yaw = (i - 1.5) * -0.14;
+    p.wag = 1.2;
+    if (id === 'papa') p.armR = { up: 125, bend: 30 };
+    if (id === 'mama') {
+      p.armL = { up: 60, bend: 40 };
+      p.armR = { up: 60, bend: 40 };
+    }
+    if (id === 'hijo') {
+      p.armL = { up: 150, bend: 15 };
+      p.armR = { up: 150, bend: 15 };
+    }
+    if (id === 'hija') {
+      p.armR = { up: 135, bend: 25 };
+      p.lift = 22;
+    }
+    return p;
+  });
+  const X = [-3.4, -1.15, 1.15, 3.35];
+  const TAG_X = [0.185, 0.393, 0.607, 0.81];
+  const s = width / 1080;
+  const rowH = 100;
+  const cardY = 1175;
+  return (
+    <AbsoluteFill style={{ background: '#CDEBFF' }}>
+      <Canvas3D>
+        <CameraRig x={0} dist={36} y={3.4} lookY={1.05} />
+        <Lights3D target={[0, 2.5, 0]} />
+        <Set3D bg="park" t={2.2} />
+        {ids.map((id, i) => (
+          <Character3D key={id} id={id} pose={poses[i]} position={[X[i], 0, i % 2 ? 0.3 : 0]} />
+        ))}
+        <group position={[0, 0, 1.4]} scale={0.7}>
+          <Prop3D kind="ball" t={0} />
+        </group>
+      </Canvas3D>
+      <AbsoluteFill>
+        <svg viewBox={`0 0 ${width} ${height}`} width="100%" height="100%">
+          <defs>
+            <linearGradient id="storyBand" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stopColor="#FFE066" />
+              <stop offset="1" stopColor="#FFA94D" />
+            </linearGradient>
+          </defs>
+          <g transform={`scale(${s})`}>
+            <path d="M0 1150 C 180 1105 360 1105 540 1140 C 720 1175 900 1175 1080 1130 L1080 1920 L0 1920 Z" fill="url(#storyBand)" />
+            <path d="M0 1150 C 180 1105 360 1105 540 1140 C 720 1175 900 1175 1080 1130" fill="none" stroke="#FFF" strokeWidth={10} />
+            {[
+              [70, 560, 26, '#FCC419'],
+              [970, 600, 22, '#F06595'],
+              [70, 860, 16, '#4DABF7'],
+              [1010, 820, 18, '#20C997'],
+              [180, 1840, 20, '#FFF'],
+              [900, 1850, 24, '#FFF'],
+            ].map(([x, y, r, c], i) => (
+              <path
+                key={i}
+                transform={`translate(${x} ${y}) scale(${(r as number) / 10})`}
+                d="M0 -10 L2.9 -3.1 L10 -3.1 L4.3 1.6 L6.5 9 L0 4.6 L-6.5 9 L-4.3 1.6 L-10 -3.1 L-2.9 -3.1 Z"
+                fill={c as string}
+                stroke="#FFF"
+                strokeWidth={0.6}
+              />
+            ))}
+            <g transform="translate(540 395) scale(1)">
+              <Logo t={0.2} />
+            </g>
+            {ids.map((id, i) => {
+              const name = DESIGNS[id].name;
+              const w = 30 + name.length * 22;
+              return (
+                <g key={id} transform={`translate(${1080 * TAG_X[i]} 1110)`} fontFamily={FONT} fontWeight={700} textAnchor="middle">
+                  <rect x={-w / 2} y={-30} width={w} height={54} rx={27} fill={DESIGNS[id].accent} stroke="#FFF" strokeWidth={5} />
+                  <text y={9} fontSize={34} fill="#FFF">
+                    {name}
+                  </text>
+                </g>
+              );
+            })}
+            <g fontFamily={FONT} fontWeight={700}>
+              <rect x={50} y={cardY} width={980} height={95 + rowH * 3} rx={44} fill="#FFFFFF" fillOpacity={0.93} stroke="#5F3DC4" strokeWidth={8} />
+              <text x={540} y={cardY + 66} fontSize={46} fill="#5F3DC4" textAnchor="middle">
+                Con cada capítulo aprendemos:
+              </text>
+              {STORY_VALUES.map((v, i) => {
+                const cx = i % 2 ? 785 : 295;
+                const cy = cardY + 140 + Math.floor(i / 2) * rowH;
+                return (
+                  <g key={v.label} transform={`translate(${cx} ${cy})`}>
+                    <rect x={-225} y={-39} width={450} height={78} rx={39} fill={v.color} />
+                    <circle cx={-180} cy={0} r={27} fill="#FFF" />
+                    <g transform="translate(-180 2)">
+                      <Heart c={v.color} />
+                    </g>
+                    <text x={22} y={13} fontSize={v.label.length > 10 ? 36 : 42} fill="#FFF" textAnchor="middle">
+                      {v.label}
+                    </text>
+                  </g>
+                );
+              })}
+            </g>
+            <g transform="translate(540 1640)" fontFamily={FONT} fontWeight={700} textAnchor="middle">
+              <rect x={-420} y={-48} width={840} height={92} rx={46} fill="#FF0000" stroke="#FFF" strokeWidth={6} />
+              <path d="M-370 -20 L-370 20 L-335 0 Z" fill="#FFF" />
+              <text x={25} y={14} fontSize={40} fill="#FFF">
+                Nuevos capítulos en YouTube
+              </text>
+            </g>
+          </g>
+        </svg>
+      </AbsoluteFill>
+    </AbsoluteFill>
+  );
+};
+
 /**
  * Subtitle patch: only the subtitle boxes (with the current names) on a transparent background, with the same
  * scene clipping as the 3D episode. Composited over an already-rendered video to update the name tags without a

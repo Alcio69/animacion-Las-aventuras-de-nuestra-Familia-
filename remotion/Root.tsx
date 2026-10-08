@@ -5,7 +5,7 @@ import { Guests3D } from '../src/three/Guests3D';
 import { CharacterSheet } from '../src/engine/CharacterSheet';
 import { EpisodeVideo } from '../src/engine/Episode';
 import { Thumbnail } from '../src/engine/Thumbnail';
-import { Cover3D, SubtitlePatch, Thumbnail3D } from '../src/three/Scene3D';
+import { Cover3D, Story3D, SubtitlePatch, Thumbnail3D } from '../src/three/Scene3D';
 import { FPS, compileEpisode } from '../src/engine/timeline';
 import { EPISODES } from '../src/episodes';
 
@@ -48,6 +48,7 @@ export const RemotionRoot: React.FC = () => (
     <Composition id="portada-hd" component={Cover3D} durationInFrames={1} fps={FPS} width={2560} height={1440} />
     <Composition id="banner-youtube" component={Cover3D} durationInFrames={1} fps={FPS} width={2560} height={1440} defaultProps={{ layout: 'banner' as const }} />
     <Composition id="avatar" component={Cover3D} durationInFrames={1} fps={FPS} width={1080} height={1080} defaultProps={{ layout: 'avatar' as const }} />
+    <Composition id="historia-instagram" component={Story3D} durationInFrames={1} fps={FPS} width={1080} height={1920} />
     <Composition id="personajes-3d" component={Test3D} durationInFrames={90} fps={FPS} width={1920} height={1080} />
     <Composition id="invitados-3d" component={Guests3D} durationInFrames={90} fps={FPS} width={1920} height={1080} />
     <Composition id="personajes" component={CharacterSheet} durationInFrames={90} fps={FPS} width={1920} height={1080} />

@@ -24,6 +24,9 @@ Solo se anota lo que el usuario confirma que ya está en el canal. Los compilado
 | 17 | ¡Halloween sin miedo! | ✅ Publicado |
 | 18 | ¡Quiero la tablet! | ✅ Publicado |
 | 19 | ¿Qué estoy sintiendo? | ✅ Publicado |
+| 20 | No me gusta que se burlen de mí | ✅ Publicado |
+| 22 | ¡Voy a tener una hermanita! | ✅ Publicado |
+| 23 | ¡No me hables así! | ✅ Publicado |
 
 ## Compilados
 | Compilado | Capítulos | Estado |
@@ -31,8 +34,8 @@ Solo se anota lo que el usuario confirma que ya está en el canal. Los compilado
 | ¡Maratón! 3 capítulos seguidos | 1, 2, 3 | ✅ Publicado |
 
 ## Listos para subir (con nombres nuevos)
-20, 21 (Navidad: desde fines de noviembre), 22, 23, 24, 25, 26, 27, 28, 29, 30.
-Compilados posibles: 4-6-8, 7-9-10, 5-11-12, 13-14-15, 16-18-19 (o un compilado de 10: caps. 1–10).
+21 (Navidad: desde fines de noviembre), 24, 25, 26, 27, 28, 29, 30.
+Compilados posibles: 4-6-8, 7-9-10, 5-11-12, 13-14-15, 16-18-19, 20-22-23 (o un compilado de 10: caps. 1–10).
 
 ## En proceso
 Nada: los 30 capítulos están renderizados con los nombres nuevos.
