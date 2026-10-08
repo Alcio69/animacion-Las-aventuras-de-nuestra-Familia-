@@ -97,21 +97,21 @@ const episode: Episode = {
     },
   ],
   youtube: {
-    title: '¡Voy a Tener una Hermanita! 👶 Celos del Hermano Mayor | Las Aventuras de Nuestra Familia | Cuentos para Niños',
-    description: `Tini le pregunta a su hermano: "¿Te pusiste contento cuando yo iba a nacer?" 👶 Y Lio recuerda cuando era chiquito y se enteró de que iba a tener una hermanita… ¡y tuvo un poquito de celos! 💛 Un cuento infantil para preparar a los niños para la llegada de un hermanito o hermanita, y hablar de los celos entre hermanos.
+    title: '¡Voy a Tener una Hermanita! 👶 Celos del Bebé | Dibujos Animados para Niños en Español',
+    description: `Tini le pregunta a Lio si se puso contento cuando supo que iba a tener una hermanita… y él le cuenta la verdad: ¡al principio no tanto! 😅 Un viaje a los recuerdos de hace siete años, cuando Max y Luna le dieron la noticia y Lio tuvo miedo de que lo quisieran menos. 👶💛 Un cuento infantil corto para acompañar la llegada de un hermanito.
 
-🐶🐱 En "Las Aventuras de Nuestra Familia" acompañamos a Max, el papá (un labrador juguetón), Luna, la mamá (una gatita negra muy inteligente), Lio (un perrito aventurero) y Martina, "Tini" (una gatita naranja súper divertida) en historias cortas con valores para toda la familia.
+🐶🐱 Las Aventuras de Nuestra Familia: dibujos animados 3D en español para niños de 2 a 8 años. Max (el papá labrador), Luna (la mamá gatita), Lio (10 años) y Tini (7 años) viven historias cortas con valores para ver en familia.
 
 ✨ En este capítulo aprendemos:
-• Que sentir celos es normal
 • Que el amor de mamá y papá no se reparte: se multiplica
-• Lo especial que es ser hermano mayor
+• Que está bien sentir celos cuando llega un bebé
+• Que los hermanos mayores son muy importantes
 
-👶 Ideal para niños de 2 a 8 años. Dibujos animados 3D en español, llegada de un hermanito, celos entre hermanos, hermano mayor, nuevo bebé en la familia.
+👨‍👩‍👧 Para papás y maestras: después del video, pregúntenles a los chicos "¿Cómo te sentiste cuando llegó tu hermanito? Y si no tienes, ¿cómo te imaginas que sería?"
 
-🔔 ¡Suscríbete y activa la campanita para ver un nuevo capítulo cada semana!
+📺 Más capítulos de Las Aventuras de Nuestra Familia, ¡uno nuevo cada semana! Suscríbete para no perderte ninguno.
 
-#celos #hermanito #nuevobebe #hermanomayor #celosentrehermanos #cuentosinfantiles #dibujosanimados #cuentosparaniños #animacion3d #español`,
+#hermanos #dibujosanimados #cuentosinfantiles`,
     tags: [
       'celos entre hermanos',
       'llegada de un hermanito',

@@ -88,21 +88,21 @@ const episode: Episode = {
     },
   ],
   youtube: {
-    title: '¡No Me Hables Así! 🙊 Respeto a los Papás | Las Aventuras de Nuestra Familia | Cuentos con Valores',
-    description: `Luna pide ayuda para poner la mesa y Lio y Tini le contestan mal: "¡Hazlo tú!" 😠 Luna se pone muy triste… Con la ayuda de Max, los chicos entienden que se puede estar enojado y aun así hablar con respeto. 💛 Un cuento infantil sobre cómo hablarles a los papás, el respeto en la familia y pedir perdón.
+    title: '¡No Me Hables Así! 🙊 Respeto a los Papás | Dibujos Animados para Niños en Español',
+    description: `Luna les pide ayuda a Lio y a Tini para poner la mesa… y ellos le contestan mal 😤 "¡Hazlo tú, que estamos jugando!" Luna se pone muy triste. Max les ayuda a pensar cómo se sentirían ellos, y los chicos preparan una sorpresa para pedir perdón. 🍽️💛 Un cuento infantil corto sobre el respeto y las palabras amables.
 
-🐶🐱 En "Las Aventuras de Nuestra Familia" acompañamos a Max, el papá (un labrador juguetón), Luna, la mamá (una gatita negra muy inteligente), Lio (un perrito aventurero) y Martina, "Tini" (una gatita naranja súper divertida) en historias cortas con valores para toda la familia.
+🐶🐱 Las Aventuras de Nuestra Familia: dibujos animados 3D en español para niños de 2 a 8 años. Max (el papá labrador), Luna (la mamá gatita), Lio (10 años) y Tini (7 años) viven historias cortas con valores para ver en familia.
 
 ✨ En este capítulo aprendemos:
-• Que las palabras pueden lastimar
-• A hablar con respeto aunque estemos enojados
+• Que aunque estemos enojados podemos hablar con respeto
+• A pensar cómo se sienten los demás
 • A pedir perdón y ayudar en casa
 
-👶 Ideal para niños de 3 a 8 años. Dibujos animados 3D en español, niños que contestan mal, respeto a los padres, buenos modales, educación emocional.
+👨‍👩‍👧 Para papás y maestras: después del video, pregúntenles a los chicos "¿Cómo te sientes cuando alguien te habla mal? ¿Qué palabras amables podemos usar en casa?"
 
-🔔 ¡Suscríbete y activa la campanita para ver un nuevo capítulo cada semana!
+📺 Más capítulos de Las Aventuras de Nuestra Familia, ¡uno nuevo cada semana! Suscríbete para no perderte ninguno.
 
-#respeto #contestarmal #buenosmodales #educacionemocional #cuentosinfantiles #dibujosanimados #cuentosparaniños #valores #animacion3d #español`,
+#respeto #dibujosanimados #cuentosinfantiles`,
     tags: [
       'niños que contestan mal',
       'respeto a los papás',

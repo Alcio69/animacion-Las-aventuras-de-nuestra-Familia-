@@ -87,22 +87,21 @@ const episode: Episode = {
     },
   ],
   youtube: {
-    title: 'No Me Gusta que se Burlen de Mí 🛑 Bullying para Niños | Las Aventuras de Nuestra Familia | Cuentos con Valores',
-    description: `En la escuela, dos compañeros se burlan del moño nuevo de Tini: "¡Moño de mariposa!" 😢 Su amiga Lola la defiende y juntas le cuentan a la maestra. 🛑💛 Un cuento infantil sobre el bullying y las burlas en la escuela: qué hacer si se burlan de ti, cómo defender a un amigo y por qué una "broma" que lastima no es una broma.
+    title: 'No Me Gusta que se Burlen de Mí 🛑 Bullying | Dibujos Animados para Niños en Español',
+    description: `Tini estrena un moño que le regaló su abuela 🎀 pero dos compañeros, Nico y Mati, se burlan de ella: "¡Moño de mariposa!" 😢 Su amiga Lola la defiende y juntas se lo cuentan a la maestra. 🛑💛 Un cuento infantil corto sobre el bullying, la empatía y pedir ayuda.
 
-🐶🐱 En "Las Aventuras de Nuestra Familia" acompañamos a Max, el papá (un labrador juguetón), Luna, la mamá (una gatita negra muy inteligente), Lio (un perrito aventurero) y Martina, "Tini" (una gatita naranja súper divertida) en historias cortas con valores para toda la familia.
+🐶🐱 Las Aventuras de Nuestra Familia: dibujos animados 3D en español para niños de 2 a 8 años. Max (el papá labrador), Luna (la mamá gatita), Lio (10 años) y Tini (7 años) viven historias cortas con valores para ver en familia.
 
 ✨ En este capítulo aprendemos:
-• Que burlarse de alguien lastima
-• A pedir ayuda a un adulto
-• A defender a un amigo
-• A pedir perdón
+• Que una broma no es broma si al otro no le gusta
+• A contarle a un adulto cuando alguien se burla de nosotros
+• A defender a un amigo y a pedir perdón
 
-👶 Ideal para niños de 3 a 8 años y para usar en el aula. Dibujos animados 3D en español, bullying para niños, acoso escolar, burlas en la escuela, empatía y respeto.
+👨‍👩‍👧 Para papás y maestras: después del video, pregúntenles a los chicos "¿Qué harías si ves que se burlan de un compañero? ¿A quién le pedirías ayuda?"
 
-🔔 ¡Suscríbete y activa la campanita para ver un nuevo capítulo cada semana!
+📺 Más capítulos de Las Aventuras de Nuestra Familia, ¡uno nuevo cada semana! Suscríbete para no perderte ninguno.
 
-#bullying #bullyingparaniños #acosoescolar #empatia #respeto #cuentosinfantiles #dibujosanimados #cuentosparaniños #animacion3d #español`,
+#bullying #dibujosanimados #cuentosinfantiles`,
     tags: [
       'bullying para niños',
       'bullying',

@@ -20,7 +20,10 @@ Solo se anota lo que el usuario confirma que ya está en el canal. Los compilado
 | 13 | ¡Quiero ganar siempre! | ✅ Publicado |
 | 14 | La abuela viene de visita | ✅ Publicado |
 | 15 | Los papás de Benja | ✅ Publicado |
+| 16 | ¡Sin rueditas! | ✅ Publicado |
 | 17 | ¡Halloween sin miedo! | ✅ Publicado |
+| 18 | ¡Quiero la tablet! | ✅ Publicado |
+| 19 | ¿Qué estoy sintiendo? | ✅ Publicado |
 
 ## Compilados
 | Compilado | Capítulos | Estado |
@@ -28,8 +31,8 @@ Solo se anota lo que el usuario confirma que ya está en el canal. Los compilado
 | ¡Maratón! 3 capítulos seguidos | 1, 2, 3 | ✅ Publicado |
 
 ## Listos para subir (con nombres nuevos)
-16, 18, 19, 20, 21 (Navidad: desde fines de noviembre), 22, 23, 24, 25, 26, 27, 28, 29, 30.
-Compilados posibles: 4-6-8, 7-9-10, 5-11-12, 13-14-15 (o un compilado de 10: caps. 1–10).
+20, 21 (Navidad: desde fines de noviembre), 22, 23, 24, 25, 26, 27, 28, 29, 30.
+Compilados posibles: 4-6-8, 7-9-10, 5-11-12, 13-14-15, 16-18-19 (o un compilado de 10: caps. 1–10).
 
 ## En proceso
 Nada: los 30 capítulos están renderizados con los nombres nuevos.
