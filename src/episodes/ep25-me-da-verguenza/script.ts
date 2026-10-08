@@ -88,21 +88,21 @@ const episode: Episode = {
     },
   ],
   youtube: {
-    title: '¡Me Da Vergüenza! 🙈 La Timidez en Niños | Las Aventuras de Nuestra Familia | Cuentos para Niños',
-    description: `La maestra invita a Tini a cantar en el acto de la escuela… ¡pero a ella le da muchísima vergüenza! 🙈 Luna le enseña un truco: practicar con un público de ositos. 🧸🎤 Un cuento infantil sobre la timidez, la vergüenza y cómo animarse de a poquito.
+    title: '¡Me Da Vergüenza! 🙈 La Timidez en Niños | Dibujos Animados para Niños en Español',
+    description: `La maestra invita a Tini a cantar en el acto de la escuela… ¡pero a ella le da muchísima vergüenza! 🙈 Luna le cuenta que a ella también le pasaba y le enseña un truco: practicar con un público de ositos. 🧸🎤 ¿Se animará Tini a cantar delante de todos? Un cuento infantil corto sobre la timidez y la valentía.
 
-🐶🐱 En "Las Aventuras de Nuestra Familia" acompañamos a Max, el papá (un labrador juguetón), Luna, la mamá (una gatita negra muy inteligente), Lio (un perrito aventurero) y Martina, "Tini" (una gatita naranja súper divertida) en historias cortas con valores para toda la familia.
+🐶🐱 Las Aventuras de Nuestra Familia: dibujos animados 3D en español para niños de 2 a 8 años. Max (el papá labrador), Luna (la mamá gatita), Lio (10 años) y Tini (7 años) viven historias cortas con valores para ver en familia.
 
 ✨ En este capítulo aprendemos:
-• Que ser tímido no tiene nada de malo
-• A practicar para sentirnos más seguros
-• Que la valentía es animarse aunque tengamos un poquito de miedo
+• Que ser tímido está bien
+• Que practicar nos ayuda a sentirnos más seguros
+• Que ser valiente es animarse aunque tengamos un poquito de miedo
 
-👶 Ideal para niños de 3 a 8 años. Dibujos animados 3D en español, la timidez en niños, vergüenza, hablar en público, autoestima y educación emocional.
+👨‍👩‍👧 Para papás y maestras: después del video, pregúntenles a los chicos "¿Qué cosa te da vergüenza hacer? ¡Practiquen juntos con un público de muñecos como Tini!"
 
-🔔 ¡Suscríbete y activa la campanita para ver un nuevo capítulo cada semana!
+📺 Más capítulos de Las Aventuras de Nuestra Familia, ¡uno nuevo cada semana! Suscríbete para no perderte ninguno.
 
-#timidez #vergüenza #niñostimidos #autoestima #educacionemocional #cuentosinfantiles #dibujosanimados #cuentosparaniños #animacion3d #español`,
+#timidez #dibujosanimados #cuentosinfantiles`,
     tags: [
       'timidez en niños',
       'niños tímidos',

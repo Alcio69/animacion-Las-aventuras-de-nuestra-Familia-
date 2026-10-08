@@ -86,21 +86,21 @@ const episode: Episode = {
     },
   ],
   youtube: {
-    title: '¡Lo Quiero Ya! 🌱 La Paciencia para Niños | Las Aventuras de Nuestra Familia | Cuentos para Niños',
-    description: `Lio planta una semilla de girasol con su papá Max… ¡y quiere ver la flor enseguida! 🌱 Como no crece, la riega de más, se frustra y aprende que las cosas lindas llevan su tiempo. 🌻 Un cuento infantil sobre la paciencia, la espera y cuidar una planta.
+    title: '¡Lo Quiero Ya! 🌱 La Paciencia | Dibujos Animados para Niños en Español',
+    description: `Lio planta una semilla de girasol con Max… ¡y quiere ver la flor enseguida! 🌱 Como no crece, la riega muchísimo y Tini tiene que avisarle: "¡La vas a ahogar!" 😅 Día a día, con un poquito de agua y mucha paciencia, llega la sorpresa. 🌻 Un cuento infantil corto para aprender a esperar.
 
-🐶🐱 En "Las Aventuras de Nuestra Familia" acompañamos a Max, el papá (un labrador juguetón), Luna, la mamá (una gatita negra muy inteligente), Lio (un perrito aventurero) y Martina, "Tini" (una gatita naranja súper divertida) en historias cortas con valores para toda la familia.
+🐶🐱 Las Aventuras de Nuestra Familia: dibujos animados 3D en español para niños de 2 a 8 años. Max (el papá labrador), Luna (la mamá gatita), Lio (10 años) y Tini (7 años) viven historias cortas con valores para ver en familia.
 
 ✨ En este capítulo aprendemos:
-• Que esperar también es parte de las cosas lindas
-• A cuidar una planta todos los días
-• A manejar la impaciencia y la frustración
+• Que las cosas lindas necesitan tiempo
+• A esperar haciendo otras cosas divertidas
+• Que cuidar una planta un poquito cada día da frutos
 
-👶 Ideal para niños de 2 a 8 años. Dibujos animados 3D en español, la paciencia para niños, plantar una semilla, cómo crece una planta, educación emocional.
+👨‍👩‍👧 Para papás y maestras: después del video, pregúntenles a los chicos "¿Qué es lo que más te cuesta esperar? ¡Planten juntos una semilla y miren cómo crece!"
 
-🔔 ¡Suscríbete y activa la campanita para ver un nuevo capítulo cada semana!
+📺 Más capítulos de Las Aventuras de Nuestra Familia, ¡uno nuevo cada semana! Suscríbete para no perderte ninguno.
 
-#paciencia #plantas #semilla #educacionemocional #cuentosinfantiles #dibujosanimados #cuentosparaniños #valores #animacion3d #español`,
+#paciencia #dibujosanimados #cuentosinfantiles`,
     tags: [
       'paciencia para niños',
       'cuento sobre la paciencia',

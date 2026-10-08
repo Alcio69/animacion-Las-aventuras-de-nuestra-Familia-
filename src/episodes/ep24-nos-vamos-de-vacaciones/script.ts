@@ -80,21 +80,21 @@ const episode: Episode = {
     },
   ],
   youtube: {
-    title: '¡Nos Vamos de Vacaciones! 🏖️ Un Día en la Playa | Las Aventuras de Nuestra Familia | Cuentos para Niños',
-    description: `¡Llegaron las vacaciones! 🏖️☀️ La familia se va a la playa y Lio y Tini construyen el castillo de arena más lindo… ¡hasta que una ola se lo lleva! 🌊 Con la ayuda de Max descubren que lo mejor es volver a intentarlo todos juntos. Un cuento infantil sobre las vacaciones en familia y cómo manejar la frustración cuando algo sale distinto.
+    title: '¡Nos Vamos de Vacaciones! 🏖️ Un Día en la Playa | Dibujos Animados para Niños en Español',
+    description: `¡Llegaron las vacaciones! 🏖️☀️ La familia se va a la playa y Lio y Tini construyen el castillo de arena más lindo… ¡hasta que una ola se lo lleva! 🌊😢 Max tiene una idea: hacer uno nuevo, más grande y más lejos del agua, ¡todos juntos! 🏰 Un cuento infantil corto sobre la frustración y el trabajo en equipo.
 
-🐶🐱 En "Las Aventuras de Nuestra Familia" acompañamos a Max, el papá (un labrador juguetón), Luna, la mamá (una gatita negra muy inteligente), Lio (un perrito aventurero) y Martina, "Tini" (una gatita naranja súper divertida) en historias cortas con valores para toda la familia.
+🐶🐱 Las Aventuras de Nuestra Familia: dibujos animados 3D en español para niños de 2 a 8 años. Max (el papá labrador), Luna (la mamá gatita), Lio (10 años) y Tini (7 años) viven historias cortas con valores para ver en familia.
 
 ✨ En este capítulo aprendemos:
-• A disfrutar el tiempo en familia
-• Que cuando algo sale mal, podemos intentarlo de nuevo
-• Que juntos todo sale mejor
+• A no rendirnos cuando algo sale mal
+• Que juntos podemos hacer cosas más grandes
+• Que las mejores vacaciones son las que compartimos en familia
 
-👶 Ideal para niños de 2 a 8 años. Dibujos animados 3D en español, vacaciones en la playa, castillos de arena, verano en familia.
+👨‍👩‍👧 Para papás y maestras: después del video, pregúntenles a los chicos "¿Qué es lo que más te gusta hacer en vacaciones? ¿Qué harías si una ola se lleva tu castillo?"
 
-🔔 ¡Suscríbete y activa la campanita para ver un nuevo capítulo cada semana!
+📺 Más capítulos de Las Aventuras de Nuestra Familia, ¡uno nuevo cada semana! Suscríbete para no perderte ninguno.
 
-#vacaciones #playa #verano #castillodearena #familia #cuentosinfantiles #dibujosanimados #cuentosparaniños #animacion3d #español`,
+#vacaciones #dibujosanimados #cuentosinfantiles`,
     tags: [
       'vacaciones para niños',
       'vacaciones en la playa',
