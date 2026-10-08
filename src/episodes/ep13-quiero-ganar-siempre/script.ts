@@ -79,21 +79,21 @@ const episode: Episode = {
     },
   ],
   youtube: {
-    title: '¡Quiero Ganar Siempre! 🏆 Saber Perder | Las Aventuras de Nuestra Familia | Cuentos para Niños',
-    description: `Tini pierde una carrera contra su hermano y se enoja muchísimo: "¡No vale! ¡No juego más!" 😤🏃 Pero Max le cuenta un secreto de cuando era chiquito… Un cuento infantil sobre aprender a perder, la frustración y la deportividad.
+    title: '¡Quiero Ganar Siempre! 🏆 Aprender a Perder | Dibujos Animados para Niños en Español',
+    description: `Tini y Lio hacen una carrera hasta el árbol… ¡y gana Lio! 🏃 Tini se enoja muchísimo: "¡No vale! ¡No juego más!" 😤 Pero Max le cuenta un secreto de cuando él era chiquito. 🏆💛 Un cuento infantil corto para aprender a perder y a divertirse jugando.
 
-🐶🐱 En "Las Aventuras de Nuestra Familia" acompañamos a Max, el papá (un labrador juguetón), Luna, la mamá (una gatita negra muy inteligente), Lio (un perrito aventurero) y Martina, "Tini" (una gatita naranja súper divertida) en historias cortas con valores para toda la familia.
+🐶🐱 Las Aventuras de Nuestra Familia: dibujos animados 3D en español para niños de 2 a 8 años. Max (el papá labrador), Luna (la mamá gatita), Lio (10 años) y Tini (7 años) viven historias cortas con valores para ver en familia.
 
 ✨ En este capítulo aprendemos:
-• Que perder también es parte del juego
-• A manejar la frustración y el enojo
-• A felicitar a los demás cuando ganan
+• Que está bien enojarse, pero no hay que dejar de jugar
+• A felicitar al que gana
+• Que lo más lindo no es ganar, es divertirse juntos
 
-👶 Ideal para niños de 2 a 8 años. Dibujos animados 3D en español, cuentos sobre la frustración, saber perder y educación emocional para niños.
+👨‍👩‍👧 Para papás y maestras: después del video, pregúntenles a los chicos "¿Cómo te sientes cuando pierdes un juego? ¿Qué podrías decirle al que ganó?"
 
-🔔 ¡Suscríbete y activa la campanita para ver un nuevo capítulo cada semana!
+📺 Más capítulos de Las Aventuras de Nuestra Familia, ¡uno nuevo cada semana! Suscríbete para no perderte ninguno.
 
-#saberperder #frustracion #educacionemocional #cuentosinfantiles #dibujosanimados #cuentosparaniños #valores #animacion3d #videosparaniños #español`,
+#saberperder #dibujosanimados #cuentosinfantiles`,
     tags: [
       'saber perder',
       'niños que no saben perder',

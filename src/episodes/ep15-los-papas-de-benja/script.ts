@@ -79,23 +79,21 @@ const episode: Episode = {
     },
   ],
   youtube: {
-    title: 'Los Papás de Benja 💙 Cuando Papá y Mamá se Separan | Las Aventuras de Nuestra Familia | Cuentos para Niños',
-    description: `Benja, el compañero de Lio, está muy triste: sus papás van a dejar de vivir juntos. 💙 Tiene miedo de que sea su culpa y de que ya no lo quieran… Con ayuda de Max y Luna, Lio aprende algo muy importante para contarle a su amigo: el amor de los papás por sus hijos nunca se separa. 🏠❤️🏠
+    title: 'Los Papás de Benja 🏠 Papás Separados | Dibujos Animados para Niños en Español',
+    description: `Benja, el mejor amigo de Lio, está muy callado: sus papás van a vivir en casas separadas 😢 y él tiene miedo de que sea su culpa. Max y Luna le explican a Lio algo muy importante: el amor por un hijo nunca se muda. 🏠💛🏠 Un cuento infantil corto y tierno para hablar de la separación de los padres con los niños.
 
-Un cuento infantil, cálido y tranquilizador, para acompañar a los niños cuando sus papás se separan o se divorcian.
-
-🐶🐱 En "Las Aventuras de Nuestra Familia" acompañamos a Max, el papá (un labrador juguetón), Luna, la mamá (una gatita negra muy inteligente), Lio (un perrito aventurero) y Martina, "Tini" (una gatita naranja súper divertida) en historias cortas con valores para toda la familia.
+🐶🐱 Las Aventuras de Nuestra Familia: dibujos animados 3D en español para niños de 2 a 8 años. Max (el papá labrador), Luna (la mamá gatita), Lio (10 años) y Tini (7 años) viven historias cortas con valores para ver en familia.
 
 ✨ En este capítulo aprendemos:
 • Que la separación de los papás nunca es culpa de los hijos
-• Que mamá y papá los siguen queriendo siempre, aunque vivan en casas distintas
-• A acompañar a un amigo que está triste
+• Que mamá y papá nos siguen queriendo siempre, aunque vivan en casas distintas
+• A acompañar a un amigo cuando está triste
 
-👶 Ideal para niños de 3 a 8 años. Dibujos animados 3D en español, separación y divorcio explicado a niños, dos casas, educación emocional.
+👨‍👩‍👧 Para papás y maestras: después del video, pregúntenles a los chicos "¿Qué podemos hacer cuando un amigo está triste?"
 
-🔔 ¡Suscríbete y activa la campanita para ver un nuevo capítulo cada semana!
+📺 Más capítulos de Las Aventuras de Nuestra Familia, ¡uno nuevo cada semana! Suscríbete para no perderte ninguno.
 
-#separacion #divorcio #doscasas #educacionemocional #cuentosinfantiles #dibujosanimados #cuentosparaniños #familia #animacion3d #español`,
+#emociones #dibujosanimados #cuentosinfantiles`,
     tags: [
       'separación de padres explicada a niños',
       'divorcio para niños',

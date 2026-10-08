@@ -89,21 +89,21 @@ const episode: Episode = {
     },
   ],
   youtube: {
-    title: 'La Abuela Viene de Visita 👵 Paciencia y Amor | Las Aventuras de Nuestra Familia | Cuentos para Niños',
-    description: `¡Llegó la abuela! 👵💜 Camina despacito y cuenta las mismas historias… y al principio Lio y Tini se aburren un poco. Pero la abuela tiene una receta secreta de galletitas 🍪 y fotos de Max cuando era bebé. 📸😂 Un cuento infantil sobre el amor a los abuelos y la paciencia.
+    title: 'La Abuela Viene de Visita 👵 Abuelos y Nietos | Dibujos Animados para Niños en Español',
+    description: `¡La abuela vino de visita! 👵💛 Pero camina despacito y cuenta las mismas historias una y otra vez… ¿Lio y Tini se van a aburrir? Hasta que la abuela les enseña su receta secreta de galletitas 🍪 ¡y una foto de Max cuando era bebé! 😂 Un cuento infantil corto sobre la paciencia y el amor de los abuelos.
 
-🐶🐱 En "Las Aventuras de Nuestra Familia" acompañamos a Max, el papá (un labrador juguetón), Luna, la mamá (una gatita negra muy inteligente), Lio (un perrito aventurero) y Martina, "Tini" (una gatita naranja súper divertida) en historias cortas con valores para toda la familia.
+🐶🐱 Las Aventuras de Nuestra Familia: dibujos animados 3D en español para niños de 2 a 8 años. Max (el papá labrador), Luna (la mamá gatita), Lio (10 años) y Tini (7 años) viven historias cortas con valores para ver en familia.
 
 ✨ En este capítulo aprendemos:
-• A tener paciencia con nuestros mayores
+• A tener paciencia con los abuelos
 • Que los abuelos tienen mucho para enseñarnos
-• A valorar las historias de la familia
+• Que sus historias son tesoros de la familia
 
-👶 Ideal para niños de 2 a 8 años. Dibujos animados 3D en español, cuentos sobre abuelos, familia, respeto y valores para niños.
+👨‍👩‍👧 Para papás y maestras: después del video, pregúntenles a los chicos "¿Qué es lo que más te gusta hacer con tus abuelos? ¡Pídanles que les cuenten una historia de cuando papá o mamá eran chiquitos!"
 
-🔔 ¡Suscríbete y activa la campanita para ver un nuevo capítulo cada semana!
+📺 Más capítulos de Las Aventuras de Nuestra Familia, ¡uno nuevo cada semana! Suscríbete para no perderte ninguno.
 
-#abuela #abuelos #familia #cuentosinfantiles #dibujosanimados #cuentosparaniños #valores #animacion3d #videosparaniños #español`,
+#abuelos #dibujosanimados #cuentosinfantiles`,
     tags: [
       'abuela',
       'abuelos y nietos',
