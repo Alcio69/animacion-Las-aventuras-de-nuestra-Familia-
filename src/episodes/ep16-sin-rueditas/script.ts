@@ -79,21 +79,21 @@ const episode: Episode = {
     },
   ],
   youtube: {
-    title: '¡Sin Rueditas! 🚲 Aprender a Andar en Bici | Las Aventuras de Nuestra Familia | Cuentos para Niños',
-    description: `¡Tini quiere andar en bici sin rueditas! 🚲 Pero se cae una vez… y otra vez… 😢 Con la ayuda de Max y el aliento de su hermano, aprende que el secreto es no rendirse. 💪🌅 Un cuento infantil sobre la perseverancia y aprender cosas nuevas.
+    title: '¡Sin Rueditas! 🚲 No Rendirse Nunca | Dibujos Animados para Niños en Español',
+    description: `¡Hoy Tini quiere andar en bici sin rueditas! 🚲 Pero se cae una vez… y otra vez… 😢 "No puedo, es muy difícil". Con la ayuda de Max y el aliento de su hermano Lio, Tini descubre que cada caída le enseña algo nuevo. 💪 Un cuento infantil corto sobre la perseverancia.
 
-🐶🐱 En "Las Aventuras de Nuestra Familia" acompañamos a Max, el papá (un labrador juguetón), Luna, la mamá (una gatita negra muy inteligente), Lio (un perrito aventurero) y Martina, "Tini" (una gatita naranja súper divertida) en historias cortas con valores para toda la familia.
+🐶🐱 Las Aventuras de Nuestra Familia: dibujos animados 3D en español para niños de 2 a 8 años. Max (el papá labrador), Luna (la mamá gatita), Lio (10 años) y Tini (7 años) viven historias cortas con valores para ver en familia.
 
 ✨ En este capítulo aprendemos:
-• Que equivocarse es parte de aprender
-• A no rendirnos cuando algo es difícil
-• Que con práctica y esfuerzo, ¡todo se logra!
+• Que todos nos caemos cuando aprendemos algo nuevo
+• A levantarnos y volver a intentarlo
+• Que los hermanos se dan ánimo
 
-👶 Ideal para niños de 2 a 8 años. Dibujos animados 3D en español, aprender a andar en bicicleta, perseverancia y educación emocional para niños.
+👨‍👩‍👧 Para papás y maestras: después del video, pregúntenles a los chicos "¿Qué cosa te costó mucho aprender? ¿Qué te ayudó a no rendirte?"
 
-🔔 ¡Suscríbete y activa la campanita para ver un nuevo capítulo cada semana!
+📺 Más capítulos de Las Aventuras de Nuestra Familia, ¡uno nuevo cada semana! Suscríbete para no perderte ninguno.
 
-#bicicleta #sinrueditas #perseverancia #cuentosinfantiles #dibujosanimados #cuentosparaniños #valores #animacion3d #videosparaniños #español`,
+#bicicleta #dibujosanimados #cuentosinfantiles`,
     tags: [
       'andar en bici sin rueditas',
       'aprender a andar en bicicleta',

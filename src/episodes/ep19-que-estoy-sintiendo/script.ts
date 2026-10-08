@@ -91,22 +91,21 @@ const episode: Episode = {
     },
   ],
   youtube: {
-    title: 'Las Emociones para Niños 🌈 ¿Qué Estoy Sintiendo? | Las Aventuras de Nuestra Familia | Educación Emocional',
-    description: `A Tini se le rompe su dibujo y de repente siente muchas cosas a la vez: enojo, tristeza, ganas de gritar y de llorar… 😠😢 Luna le enseña a ponerle nombre a cada emoción y a calmarse respirando. 🌈🌸 Un cuento infantil para aprender las emociones: enojo, tristeza, miedo y alegría.
+    title: '¿Qué Estoy Sintiendo? 💛 Las Emociones | Dibujos Animados para Niños en Español',
+    description: `El dibujo de Tini se cae y se rompe… 😢 ¡y siente ganas de gritar y de llorar al mismo tiempo! Luna la ayuda a ponerle nombre a lo que siente: enojo, tristeza, miedo… y alegría. 💛 Un cuento infantil corto para aprender a reconocer las emociones y a calmarnos.
 
-🐶🐱 En "Las Aventuras de Nuestra Familia" acompañamos a Max, el papá (un labrador juguetón), Luna, la mamá (una gatita negra muy inteligente), Lio (un perrito aventurero) y Martina, "Tini" (una gatita naranja súper divertida) en historias cortas con valores para toda la familia.
+🐶🐱 Las Aventuras de Nuestra Familia: dibujos animados 3D en español para niños de 2 a 8 años. Max (el papá labrador), Luna (la mamá gatita), Lio (10 años) y Tini (7 años) viven historias cortas con valores para ver en familia.
 
 ✨ En este capítulo aprendemos:
-• A reconocer y nombrar las emociones
+• A ponerle nombre a lo que sentimos
 • Que todas las emociones están bien
-• A respirar para calmarnos
-• A contar cómo nos sentimos
+• A respirar despacio y contar cómo nos sentimos
 
-👶 Ideal para niños de 2 a 8 años y para usar en el aula. Dibujos animados 3D en español, las emociones para niños, educación emocional, el enojo, la tristeza, el miedo y la alegría.
+👨‍👩‍👧 Para papás y maestras: después del video, pregúntenles a los chicos "¿Cómo se siente tu cuerpo cuando estás enojado? ¿Y cuando estás contento?"
 
-🔔 ¡Suscríbete y activa la campanita para ver un nuevo capítulo cada semana!
+📺 Más capítulos de Las Aventuras de Nuestra Familia, ¡uno nuevo cada semana! Suscríbete para no perderte ninguno.
 
-#emociones #lasemociones #educacionemocional #emocionesparaniños #cuentosinfantiles #dibujosanimados #cuentosparaniños #animacion3d #videosparaniños #español`,
+#emociones #dibujosanimados #cuentosinfantiles`,
     tags: [
       'las emociones para niños',
       'emociones para niños',

@@ -95,21 +95,21 @@ const episode: Episode = {
     },
   ],
   youtube: {
-    title: '¡Quiero la Tablet! 📱 Berrinches y Pantallas | Las Aventuras de Nuestra Familia | Cuentos para Niños',
-    description: `Lio pasó toda la tarde con la tablet y cuando Luna le pide apagarla… ¡se arma un berrinche! 📱😤 Con calma, respirando juntos y un reloj de arena, la familia encuentra algo mucho más divertido que la pantalla: ¡construir el castillo más alto del mundo! 🏰 Un cuento infantil sobre berrinches, límites y el uso de pantallas en niños.
+    title: '¡Quiero la Tablet! 📱 Berrinches y Pantallas | Dibujos Animados para Niños en Español',
+    description: `Lio pasó toda la tarde con la tablet 📱 y cuando Luna le pide que la apague… ¡se arma un berrinche! 😤 Luna lo ayuda a calmarse respirando, le propone un trato con un reloj de arena ⏳ y Max tiene una idea: ¡construir el castillo más alto del mundo! 🏰 Un cuento infantil corto sobre los berrinches y el tiempo de pantalla.
 
-🐶🐱 En "Las Aventuras de Nuestra Familia" acompañamos a Max, el papá (un labrador juguetón), Luna, la mamá (una gatita negra muy inteligente), Lio (un perrito aventurero) y Martina, "Tini" (una gatita naranja súper divertida) en historias cortas con valores para toda la familia.
+🐶🐱 Las Aventuras de Nuestra Familia: dibujos animados 3D en español para niños de 2 a 8 años. Max (el papá labrador), Luna (la mamá gatita), Lio (10 años) y Tini (7 años) viven historias cortas con valores para ver en familia.
 
 ✨ En este capítulo aprendemos:
-• A calmarnos cuando estamos enojados (¡respirar ayuda!)
-• Que las pantallas tienen un tiempo
-• Que jugar en familia es lo más divertido
+• A calmarnos respirando cuando estamos enojados
+• Que las pantallas están bien un ratito
+• Que jugar juntos es lo más divertido
 
-👶 Ideal para niños de 2 a 8 años. Dibujos animados 3D en español, berrinches, rabietas, niños y pantallas, tiempo de tablet y celular, educación emocional.
+👨‍👩‍👧 Para papás y maestras: después del video, pregúntenles a los chicos "¿Qué te gusta jugar sin pantallas? ¡Armen juntos su propio reloj de arena para la tablet!"
 
-🔔 ¡Suscríbete y activa la campanita para ver un nuevo capítulo cada semana!
+📺 Más capítulos de Las Aventuras de Nuestra Familia, ¡uno nuevo cada semana! Suscríbete para no perderte ninguno.
 
-#berrinches #pantallas #tablet #rabietas #educacionemocional #cuentosinfantiles #dibujosanimados #cuentosparaniños #animacion3d #español`,
+#berrinches #dibujosanimados #cuentosinfantiles`,
     tags: [
       'berrinches',
       'berrinches en niños',
