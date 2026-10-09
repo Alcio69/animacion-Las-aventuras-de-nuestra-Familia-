@@ -79,21 +79,21 @@ const episode: Episode = {
     },
   ],
   youtube: {
-    title: 'Me Perdí en el Supermercado 🛒 Qué Hacer si te Pierdes | Las Aventuras de Nuestra Familia | Cuentos para Niños',
-    description: `Tini se distrae mirando juguetes en el supermercado… ¡y pierde de vista a su mamá Luna! 😟🛒 Pero recuerda lo que le enseñaron: quedarse quieta, buscar a alguien que trabaje allí y decir su nombre y el de su mamá. 💛 Un cuento infantil para enseñar a los niños qué hacer si se pierden.
+    title: 'Me Perdí en el Supermercado 🛒 Qué Hacer si me Pierdo | Dibujos Animados para Niños en Español',
+    description: `Tini va al supermercado con Luna, pero se distrae mirando juguetes… ¡y pierde de vista a su mamá! 😟🛒 Entonces recuerda lo que le enseñaron: quedarse quieta, buscar a alguien que trabaje allí y decir su nombre y el de su mamá. 💛 Un cuento infantil corto con un mensaje importante sobre la seguridad de los niños.
 
-🐶🐱 En "Las Aventuras de Nuestra Familia" acompañamos a Max, el papá (un labrador juguetón), Luna, la mamá (una gatita negra muy inteligente), Lio (un perrito aventurero) y Martina, "Tini" (una gatita naranja súper divertida) en historias cortas con valores para toda la familia.
+🐶🐱 Las Aventuras de Nuestra Familia: dibujos animados 3D en español para niños de 2 a 8 años. Max (el papá labrador), Luna (la mamá gatita), Lio (10 años) y Tini (7 años) viven historias cortas con valores para ver en familia.
 
 ✨ En este capítulo aprendemos:
-• Qué hacer si nos perdemos: quedarnos quietos
-• A pedir ayuda a una persona que trabaja en el lugar
+• Qué hacer si nos perdemos: quedarnos quietos en un lugar
+• A pedir ayuda a alguien que trabaje allí
 • A saber nuestro nombre y el de nuestros papás
 
-👶 Ideal para niños de 3 a 8 años. Dibujos animados 3D en español, seguridad para niños, qué hacer si me pierdo, niño perdido en el supermercado.
+👨‍👩‍👧 Para papás y maestras: después del video, pregúntenles a los chicos "¿Qué harías si te pierdes en un lugar con mucha gente? ¡Practiquen juntos el nombre completo de mamá y papá!"
 
-🔔 ¡Suscríbete y activa la campanita para ver un nuevo capítulo cada semana!
+📺 Más capítulos de Las Aventuras de Nuestra Familia, ¡uno nuevo cada semana! Suscríbete para no perderte ninguno.
 
-#seguridad #niñoperdido #quehacersimepierdo #supermercado #cuentosinfantiles #dibujosanimados #cuentosparaniños #valores #animacion3d #español`,
+#seguridadinfantil #dibujosanimados #cuentosinfantiles`,
     tags: [
       'qué hacer si me pierdo',
       'seguridad para niños',

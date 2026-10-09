@@ -94,21 +94,21 @@ const episode: Episode = {
     },
   ],
   youtube: {
-    title: 'La Carta a Papá Noel 🎄 Cuento de Navidad para Niños | Las Aventuras de Nuestra Familia',
-    description: `¡Llegó la Navidad! 🎄🎅 Lio y Tini escriben su carta a Papá Noel con una lista de regalos larguísima… Pero Luna les propone algo especial: regalar juguetes a niños que no van a recibir ninguno. 🎁💛 Un cuento de Navidad para niños sobre la generosidad y el verdadero espíritu navideño.
+    title: 'La Carta a Papá Noel 🎅 Especial de Navidad | Dibujos Animados para Niños en Español',
+    description: `¡Llegó la Navidad! 🎄 Lio y Tini escriben su carta a Papá Noel con una lista de regalos larguísima: un robot, un tren, cien muñecas… ¡y un unicornio de verdad! 🦄😂 Pero Luna les propone algo especial: además de pedir, también regalar a otros niños. 🎁💛 Un cuento de Navidad corto sobre la generosidad y el verdadero espíritu navideño.
 
-🐶🐱 En "Las Aventuras de Nuestra Familia" acompañamos a Max, el papá (un labrador juguetón), Luna, la mamá (una gatita negra muy inteligente), Lio (un perrito aventurero) y Martina, "Tini" (una gatita naranja súper divertida) en historias cortas con valores para toda la familia.
+🐶🐱 Las Aventuras de Nuestra Familia: dibujos animados 3D en español para niños de 2 a 8 años. Max (el papá labrador), Luna (la mamá gatita), Lio (10 años) y Tini (7 años) viven historias cortas con valores para ver en familia.
 
 ✨ En este capítulo aprendemos:
-• Que dar hace tan feliz como recibir
-• A compartir lo que tenemos
+• Que regalar con amor nos hace felices por dentro
+• A compartir lo que tenemos con otros niños
 • El verdadero espíritu de la Navidad
 
-👶 Ideal para niños de 2 a 8 años. Dibujos animados 3D en español, cuento de Navidad, carta a Papá Noel, árbol de Navidad, valores navideños para niños.
+👨‍👩‍👧 Para papás y maestras: después del video, pregúntenles a los chicos "¿Qué le pedirías a Papá Noel? ¿Y qué podrías regalarle tú a otro niño esta Navidad?"
 
-🔔 ¡Suscríbete y activa la campanita para ver un nuevo capítulo cada semana!
+📺 Más capítulos de Las Aventuras de Nuestra Familia, ¡uno nuevo cada semana! Suscríbete para no perderte ninguno.
 
-#navidad #navidadparaniños #cuentodenavidad #papanoel #cartaapapanoel #cuentosinfantiles #dibujosanimados #cuentosparaniños #animacion3d #español`,
+#navidad #dibujosanimados #cuentosinfantiles`,
     tags: [
       'navidad para niños',
       'cuento de navidad',

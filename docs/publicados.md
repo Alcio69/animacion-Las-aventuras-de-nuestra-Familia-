@@ -30,6 +30,9 @@ Solo se anota lo que el usuario confirma que ya está en el canal. Los compilado
 | 24 | ¡Nos vamos de vacaciones! | ✅ Publicado |
 | 25 | ¡Me da vergüenza! | ✅ Publicado |
 | 26 | ¡Lo quiero ya! | ✅ Publicado |
+| 27 | Nuestra primera mascota | ✅ Publicado |
+| 28 | Mamá está resfriada | ✅ Publicado |
+| 29 | ¡Cuidemos el planeta! | ✅ Publicado |
 
 ## Compilados
 | Compilado | Capítulos | Estado |
@@ -37,8 +40,8 @@ Solo se anota lo que el usuario confirma que ya está en el canal. Los compilado
 | ¡Maratón! 3 capítulos seguidos | 1, 2, 3 | ✅ Publicado |
 
 ## Listos para subir (con nombres nuevos)
-21 (Navidad: desde fines de noviembre), 27, 28, 29, 30.
-Compilados posibles: 4-6-8, 7-9-10, 5-11-12, 13-14-15, 16-18-19, 20-22-23, 24-25-26 (o un compilado de 10: caps. 1–10).
+21 (Navidad: desde fines de noviembre), 30.
+Compilados posibles: 4-6-8, 7-9-10, 5-11-12, 13-14-15, 16-18-19, 20-22-23, 24-25-26, 27-28-29 (o un compilado de 10: caps. 1–10).
 
 ## En proceso
 Nada: los 30 capítulos están renderizados con los nombres nuevos.
