@@ -137,6 +137,8 @@ const CM = {
   white: fabric('#FFFFFF'),
 };
 
+const SICK_NOSE = physical('#F03E3E', { roughness: 0.35, clearcoat: 0.4 });
+
 const ghostArmCache = new WeakMap<object, M>();
 /** Under a ghost sheet the arms are white sheet too. */
 const ghostArms = (m: M): M => {
@@ -206,23 +208,31 @@ const BodyCostume3D: React.FC<{ kind: number; d: Design; hipY: number; shoulderY
     );
   }
   if (kind === 5) {
-    // soft blanket worn like a poncho over the shoulders (feeling sick)
-    const top = shoulderY + 0.08;
-    const bottom = hipY + (shoulderY - hipY) * 0.12;
+    // feeling sick: a warm knitted scarf around the neck, one end hanging in front
+    const y = shoulderY - 0.02;
     return (
       <group>
-        <mesh position={[0, (top + bottom) / 2, 0]} castShadow>
-          <cylinderGeometry args={[tw * 0.5, Math.max(tw, bw) * 0.86, top - bottom, 36, 1, true]} />
-          <meshPhysicalMaterial color="#F4A6C0" roughness={0.95} sheen={1} sheenColor={new THREE.Color('#FFFFFF')} side={THREE.DoubleSide} />
+        <mesh position={[0, y, 0]} rotation={[Math.PI / 2, 0, 0]} castShadow>
+          <torusGeometry args={[tw * 0.5, 0.19, 14, 32]} />
+          <meshPhysicalMaterial color="#E8590C" roughness={0.95} sheen={1} sheenColor={new THREE.Color('#FFD8A8')} />
         </mesh>
-        <mesh position={[0, bottom, 0]} rotation={[Math.PI / 2, 0, 0]}>
-          <torusGeometry args={[Math.max(tw, bw) * 0.86, 0.06, 10, 40]} />
-          <meshPhysicalMaterial color="#E57BA0" roughness={0.95} sheen={1} />
-        </mesh>
-        <mesh position={[0, top, 0]} rotation={[Math.PI / 2, 0, 0]} castShadow>
-          <torusGeometry args={[tw * 0.42, 0.15, 12, 32]} />
-          <meshPhysicalMaterial color="#F4A6C0" roughness={0.95} sheen={1} />
-        </mesh>
+        {[0, 1].map((i) => (
+          <mesh key={i} position={[0, y - 0.08 + i * 0.16, 0]} rotation={[Math.PI / 2, 0, 0]}>
+            <torusGeometry args={[tw * 0.5 + 0.03, 0.045, 8, 32]} />
+            <meshPhysicalMaterial color="#FFE8CC" roughness={0.95} />
+          </mesh>
+        ))}
+        <group position={[tw * 0.26, y - 0.08, depth * 0.5]} rotation={[0.15, 0, 0.1]}>
+          <RoundedBox args={[0.4, 0.85, 0.12]} radius={0.05} position={[0, -0.4, 0]} castShadow>
+            <meshPhysicalMaterial color="#E8590C" roughness={0.95} sheen={1} sheenColor={new THREE.Color('#FFD8A8')} />
+          </RoundedBox>
+          {[0, 1].map((i) => (
+            <mesh key={i} position={[0, -0.5 - i * 0.2, 0.065]}>
+              <boxGeometry args={[0.41, 0.07, 0.01]} />
+              <meshPhysicalMaterial color="#FFE8CC" roughness={0.95} />
+            </mesh>
+          ))}
+        </group>
       </group>
     );
   }
@@ -652,7 +662,8 @@ const Head3D: React.FC<{ d: Design; m: M; pose: Pose; R: number }> = ({ d, m, po
   const eyeY = cat ? R * 0.1 : R * 0.15;
   const eyeZ = R * 0.68;
   const flop = Math.sin(pose.t * 2.2) * 0.04 + Math.max(-0.35, Math.min(0.35, pose.vy * 0.0006)) - pose.bob * 0.004;
-  const blush = spec.blush || d.extras.includes('blush');
+  const sick = pose.costume === 5;
+  const blush = spec.blush || sick || d.extras.includes('blush');
   return (
     <group>
       {/* skull */}
@@ -718,9 +729,9 @@ const Head3D: React.FC<{ d: Design; m: M; pose: Pose; R: number }> = ({ d, m, po
 
       {blush &&
         [-1, 1].map((sd) => (
-          <mesh key={sd} position={[sd * R * 0.6, -R * 0.2, R * 0.72]} rotation={[0, sd * 0.7, 0]} scale={[1, 0.55, 1]}>
+          <mesh key={sd} position={[sd * R * 0.6, -R * 0.2, R * 0.72]} rotation={[0, sd * 0.7, 0]} scale={sick ? [1.5, 0.95, 1] : [1, 0.55, 1]}>
             <circleGeometry args={[R * 0.13, 24]} />
-            <meshBasicMaterial color="#FF6F8E" transparent opacity={spec.blush ? 0.55 : 0.3} depthWrite={false} />
+            <meshBasicMaterial color={sick ? '#FF6B6B' : '#FF6F8E'} transparent opacity={sick ? 0.85 : spec.blush ? 0.55 : 0.3} depthWrite={false} />
           </mesh>
         ))}
 
@@ -780,6 +791,23 @@ const Head3D: React.FC<{ d: Design; m: M; pose: Pose; R: number }> = ({ d, m, po
             <coneGeometry args={[R * 0.15, R * 0.3, 16]} />
           </mesh>
           <Ball s={R * 0.08} m={m.bow} />
+        </group>
+      )}
+      {sick && (
+        // damp cloth folded on the forehead + a red, stuffy nose
+        <group>
+          <group position={[0, R * (cat ? 0.6 : 0.64), R * 0.6]} rotation={[0.95, 0, 0]}>
+            <RoundedBox args={[R * 1.15, R * 0.12, R * 0.5]} radius={R * 0.05} castShadow>
+              <meshPhysicalMaterial color="#D0EBFF" roughness={0.7} sheen={0.8} sheenColor={new THREE.Color('#FFFFFF')} />
+            </RoundedBox>
+            {[-0.14, 0.14].map((z) => (
+              <mesh key={z} position={[0, R * 0.062, R * z]}>
+                <boxGeometry args={[R * 1.16, R * 0.005, R * 0.035]} />
+                <meshBasicMaterial color="#74C0FC" />
+              </mesh>
+            ))}
+          </group>
+          <Ball p={cat ? [0, -R * 0.17, R * 0.93] : [0, -R * 0.14, R * 1.03]} s={cat ? [R * 0.11, R * 0.08, R * 0.07] : [R * 0.2, R * 0.14, R * 0.13]} m={SICK_NOSE} />
         </group>
       )}
       {(pose.costume === 2 || pose.costume === 4) && <Hat3D kind={pose.costume} R={R} cat={cat} />}
