@@ -25,7 +25,7 @@ Solo se anota lo que el usuario confirma que ya está en el canal. Los compilado
 | 18 | ¡Quiero la tablet! | Berrinches y tiempo de pantalla | Hábitos y rutinas | ✅ Publicado |
 | 19 | ¿Qué estoy sintiendo? | Reconocer las emociones | Emociones y sentimientos | ✅ Publicado |
 | 20 | No me gusta que se burlen de mí | Bullying, empatía, pedir ayuda | Valores y convivencia | ✅ Publicado |
-| 21 | La carta a Papá Noel | Generosidad (especial Navidad) | Fechas especiales | ✅ Publicado (programado para fines de noviembre si se subió programado) |
+| 21 | La carta a Papá Noel | Generosidad (especial Navidad) | Fechas especiales | ✅ Publicado |
 | 22 | ¡Voy a tener una hermanita! | Celos por la llegada de un bebé | Familia y hermanos | ✅ Publicado |
 | 23 | ¡No me hables así! | Respeto a los papás, palabras amables | Valores y convivencia | ✅ Publicado |
 | 24 | ¡Nos vamos de vacaciones! | Frustración, trabajo en equipo | Fechas especiales | ✅ Publicado |
