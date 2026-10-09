@@ -278,6 +278,56 @@ export const Prop3D: React.FC<{ kind: PropKind; t: number; spin?: number }> = ({
           ))}
         </group>
       );
+    case 'cookiePlate':
+      // plate of chocolate-chip cookies (snack / breakfast)
+      return (
+        <group>
+          <Cyl p={[0, 0.04, 0]} r={0.95} r2={0.8} h={0.08} c="#FFFFFF" />
+          <mesh position={[0, 0.085, 0]} rotation={[-Math.PI / 2, 0, 0]}>
+            <ringGeometry args={[0.7, 0.88, 48]} />
+            <meshStandardMaterial color="#F783AC" />
+          </mesh>
+          {[
+            [-0.32, 0.14, 0.13, 0.25],
+            [0.3, 0.14, -0.05, -0.2],
+            [0.02, 0.14, 0.3, 0.1],
+            [-0.05, 0.25, -0.02, 0.35],
+            [0.0, 0.14, -0.33, 0],
+          ].map(([x, y, z, tilt], i) => (
+            <group key={i} position={[x, y, z]} rotation={[tilt, i, tilt * 0.5]}>
+              <Cyl p={[0, 0, 0]} r={0.3} h={0.09} c="#D9A05B" />
+              {[
+                [0.1, 0.08],
+                [-0.12, 0.02],
+                [0.02, -0.13],
+                [-0.05, 0.14],
+              ].map(([cx, cz], j) => (
+                <Sph key={j} p={[cx, 0.05, cz]} s={0.045} c="#5C3A21" />
+              ))}
+            </group>
+          ))}
+        </group>
+      );
+    case 'emptyPlate':
+      // the cookie plate after someone ate them all: just crumbs left
+      return (
+        <group>
+          <Cyl p={[0, 0.04, 0]} r={0.95} r2={0.8} h={0.08} c="#FFFFFF" />
+          <mesh position={[0, 0.085, 0]} rotation={[-Math.PI / 2, 0, 0]}>
+            <ringGeometry args={[0.7, 0.88, 48]} />
+            <meshStandardMaterial color="#F783AC" />
+          </mesh>
+          {[
+            [0.2, 0.1],
+            [-0.25, -0.05],
+            [0.05, -0.3],
+            [-0.1, 0.28],
+            [0.35, -0.2],
+          ].map(([x, z], i) => (
+            <Sph key={i} p={[x, 0.1, z]} s={0.05} c="#D9A05B" />
+          ))}
+        </group>
+      );
     case 'broccoli':
       return (
         <group scale={1.1}>

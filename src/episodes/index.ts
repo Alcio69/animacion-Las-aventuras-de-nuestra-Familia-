@@ -29,8 +29,11 @@ import ep27 from './ep27-nuestra-primera-mascota/script';
 import ep28 from './ep28-mama-esta-resfriada/script';
 import ep29 from './ep29-cuidemos-el-planeta/script';
 import ep30 from './ep30-me-perdi-en-el-supermercado/script';
+import ep31 from './ep31-yo-no-fui/script';
+import ep32 from './ep32-el-cumpleanos-de-tini/script';
+import ep33 from './ep33-cinco-minutitos-mas/script';
 
 /** Every chapter, in order. Add new ones here. */
-export const EPISODES: Episode[] = [ep01, ep02, ep03, ep04, ep05, ep06, ep07, ep08, ep09, ep10, ep11, ep12, ep13, ep14, ep15, ep16, ep17, ep18, ep19, ep20, ep21, ep22, ep23, ep24, ep25, ep26, ep27, ep28, ep29, ep30];
+export const EPISODES: Episode[] = [ep01, ep02, ep03, ep04, ep05, ep06, ep07, ep08, ep09, ep10, ep11, ep12, ep13, ep14, ep15, ep16, ep17, ep18, ep19, ep20, ep21, ep22, ep23, ep24, ep25, ep26, ep27, ep28, ep29, ep30, ep31, ep32, ep33];
 
 export const getEpisode = (id: string) => EPISODES.find((e) => e.id === id);
