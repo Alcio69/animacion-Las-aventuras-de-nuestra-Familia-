@@ -47,6 +47,7 @@ Solo se anota lo que el usuario confirma que ya está en el canal. Los compilado
 | ¡Maratón! 3 capítulos seguidos | 1, 2, 3 | ✅ Publicado |
 
 ## Pendientes
-Listos para subir: ninguno.
-En proceso: nada.
+Listos para subir: 36.
+En proceso: 37 y 38 (render 3D).
+
 Compilados posibles: 4-6-8, 7-9-10, 5-11-12, 13-14-15, 16-18-19, 20-22-23, 24-25-26, 27-28-29; compilados de 10 (1–10, 11–20, 21–30) o uno largo de 30+ min.
