@@ -1,0 +1,71 @@
+1
+00:00:07,428 --> 00:00:11,708
+Luna: ¡Buenos días! ¡Arriba, hijo! Es hora de ir a la escuela.
+
+2
+00:00:11,708 --> 00:00:15,416
+Lio: Cinco minutitos más, mamá. Tengo muchísimo sueño.
+
+3
+00:00:16,416 --> 00:00:20,326
+Luna: Ya pasaron los cinco minutos. ¡Vamos que llegamos tarde!
+
+4
+00:00:20,326 --> 00:00:22,839
+Lio: ¡No puede ser! ¡Ya es muy tarde!
+
+5
+00:00:27,191 --> 00:00:30,263
+Lio: ¡Me voy, me voy! ¡Llego tarde a la escuela!
+
+6
+00:00:30,263 --> 00:00:32,639
+Tini: ¡Hermano, te olvidaste de desayunar!
+
+7
+00:00:32,639 --> 00:00:36,060
+Max: ¿Y tu cuaderno de tarea? Quedó sobre la mesada.
+
+8
+00:00:36,060 --> 00:00:38,811
+Lio: ¡Por levantarme tarde me olvidé de todo!
+
+9
+00:00:41,364 --> 00:00:44,790
+Maestra: Llegaste tarde, Lio. La clase ya empezó.
+
+10
+00:00:44,790 --> 00:00:48,624
+Lio: Perdón, maestra. Me quedé dormido y me olvidé la tarea.
+
+11
+00:00:48,624 --> 00:00:52,063
+Benja: No te preocupes, Lio. Mañana va a salir mejor.
+
+12
+00:00:54,813 --> 00:01:00,206
+Max: ¿Sabes por qué te costó tanto levantarte? Anoche te dormiste muy tarde, hijo.
+
+13
+00:01:00,206 --> 00:01:05,375
+Lio: ¡Ya sé! Esta noche me voy a dormir temprano. ¡Y dejo el cuaderno listo!
+
+14
+00:01:05,675 --> 00:01:08,942
+Max: ¡Muy buena idea! Que descanses, campeón.
+
+15
+00:01:14,192 --> 00:01:17,958
+Lio: ¡Buenos días! ¡Me desperté solito y con mucha energía!
+
+16
+00:01:17,958 --> 00:01:21,032
+Luna: ¡Qué bien, hijo! Hoy vas a llegar a tiempo.
+
+17
+00:01:21,032 --> 00:01:23,401
+Tini: ¡Y hoy desayunamos juntos, hermano!
+
+18
+00:01:24,201 --> 00:01:30,074
+Dormir temprano y preparar todo la noche anterior hace que las mañanas sean más felices.
