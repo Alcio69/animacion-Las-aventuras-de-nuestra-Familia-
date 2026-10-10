@@ -1,0 +1,63 @@
+1
+00:00:04,250 --> 00:00:09,128
+Luna: Preparé galletitas para la merienda de todos. Hay que esperar hasta la tarde, ¿sí?
+
+2
+00:00:09,128 --> 00:00:12,370
+Lio: Está bien, mamá. Esperamos hasta la tarde.
+
+3
+00:00:15,231 --> 00:00:18,637
+Lio: Si me como una sola galletita, nadie se va a dar cuenta.
+
+4
+00:00:19,659 --> 00:00:23,612
+Lio: ¡Están riquísimas! Bueno... una más. Y otra más.
+
+5
+00:00:26,662 --> 00:00:30,233
+Luna: ¡A merendar! Pero... ¿quién se comió todas las galletitas?
+
+6
+00:00:30,233 --> 00:00:33,045
+Lio: ¡Yo no fui! Seguro fue mi hermanita.
+
+7
+00:00:33,045 --> 00:00:35,928
+Tini: ¡No es verdad! ¡Yo no me comí ninguna!
+
+8
+00:00:35,928 --> 00:00:38,786
+Luna: Si fuiste tú, hoy te quedas sin postre, hija.
+
+9
+00:00:39,986 --> 00:00:44,373
+Lio: Mi hermanita está triste por mi culpa. Siento un nudo en la panza.
+
+10
+00:00:47,268 --> 00:00:53,300
+Lio: Mamá, papá: tengo que decirles algo. Fui yo. Me comí las galletitas y dije una mentira.
+
+11
+00:00:53,550 --> 00:00:57,208
+Lio: Perdón, hermanita. No fue justo echarte la culpa.
+
+12
+00:00:57,208 --> 00:01:02,829
+Max: Gracias por decir la verdad, hijo. Cuando mentimos, otro puede pagar por algo que no hizo.
+
+13
+00:01:02,829 --> 00:01:07,393
+Luna: Hoy te quedas sin postre. Pero ahora te creemos, y eso vale muchísimo.
+
+14
+00:01:07,393 --> 00:01:11,787
+Tini: Ya te perdoné, hermano. ¿Mañana hacemos galletitas todos juntos?
+
+15
+00:01:11,787 --> 00:01:15,257
+Lio: ¡Claro que sí! Y esta vez esperamos hasta la merienda.
+
+16
+00:01:12,587 --> 00:01:17,385
+Decir la verdad da un poquito de miedo, pero siempre nos hace sentir mejor.
