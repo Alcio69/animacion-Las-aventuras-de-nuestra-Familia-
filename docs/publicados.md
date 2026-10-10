@@ -2,7 +2,7 @@
 
 Solo se anota lo que el usuario confirma que ya está en el canal. Los compilados usan únicamente capítulos de esta lista.
 
-## Capítulos sueltos (30 de 30 publicados)
+## Capítulos sueltos (35 de 35 publicados)
 | Cap. | Título | Tema | Lista | Estado |
 |---|---|---|---|---|
 | 1 | La torta sorpresa | Cumpleaños de mamá, trabajo en equipo | Fechas especiales | ✅ Publicado |
@@ -35,6 +35,11 @@ Solo se anota lo que el usuario confirma que ya está en el canal. Los compilado
 | 28 | Mamá está resfriada | Empatía, ayudar en casa | Familia y hermanos | ✅ Publicado |
 | 29 | ¡Cuidemos el planeta! | Reciclaje y medio ambiente | Hábitos y rutinas | ✅ Publicado |
 | 30 | Me perdí en el supermercado | Qué hacer si me pierdo, seguridad | Hábitos y rutinas | ✅ Publicado |
+| 31 | ¡Yo no fui! | Decir la verdad, no echar la culpa | Valores y convivencia | ✅ Publicado |
+| 32 | El cumpleaños de Tini | Cuando los planes cambian, gratitud | Fechas especiales | ✅ Publicado |
+| 33 | ¡Cinco minutitos más! | Rutina de la mañana, levantarse temprano | Hábitos y rutinas | ✅ Publicado |
+| 34 | ¡A lavarse las manos! | Higiene, gérmenes | Hábitos y rutinas | ✅ Publicado |
+| 35 | Las palabras mágicas | Por favor, gracias y perdón | Valores y convivencia | ✅ Publicado |
 
 ## Compilados
 | Compilado | Capítulos | Estado |
@@ -42,6 +47,6 @@ Solo se anota lo que el usuario confirma que ya está en el canal. Los compilado
 | ¡Maratón! 3 capítulos seguidos | 1, 2, 3 | ✅ Publicado |
 
 ## Pendientes
-Listos para subir: 31, 32, 33, 34, 35.
+Listos para subir: ninguno.
 En proceso: nada.
 Compilados posibles: 4-6-8, 7-9-10, 5-11-12, 13-14-15, 16-18-19, 20-22-23, 24-25-26, 27-28-29; compilados de 10 (1–10, 11–20, 21–30) o uno largo de 30+ min.
