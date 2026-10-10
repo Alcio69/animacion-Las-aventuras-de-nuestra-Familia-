@@ -82,6 +82,7 @@ const episode: Episode = {
         { say: 'hijo', text: '¡Claro que sí! Y esta vez esperamos hasta la merienda.', expr: 'laugh', act: 'cheer' },
         { fx: 'hearts', x: 830, y: 500, with: true },
         { sfx: 'sparkle', with: true },
+        { do: 'dance', who: ['hijo', 'hija', 'mama', 'papa'], dur: 3, expr: 'laugh' },
         { say: 'narrador', text: 'Decir la verdad da un poquito de miedo, pero siempre nos hace sentir mejor.', with: true, delay: 0.8 },
       ],
     },
