@@ -1,0 +1,55 @@
+1
+00:00:03,950 --> 00:00:07,456
+Tini: ¡Hoy es mi cumpleaños! ¡Ya tengo siete años!
+
+2
+00:00:08,736 --> 00:00:12,199
+Lio: ¡Feliz cumpleaños, hermanita! ¡Ya eres grande!
+
+3
+00:00:12,199 --> 00:00:16,482
+Tini: ¡Va a ser el mejor día del mundo! ¡Vamos a hacer la fiesta en el parque!
+
+4
+00:00:17,632 --> 00:00:21,397
+Tini: ¡Está lloviendo! ¡Ya no podemos hacer la fiesta en el parque!
+
+5
+00:00:21,397 --> 00:00:23,601
+Tini: Mi cumpleaños está arruinado.
+
+6
+00:00:23,601 --> 00:00:28,682
+Luna: La lluvia cambió los planes, mi amor. Pero la fiesta no se cancela: ¡la hacemos aquí!
+
+7
+00:00:28,682 --> 00:00:30,675
+Max: ¡Y tengo globos para todos!
+
+8
+00:00:30,975 --> 00:00:34,937
+Tini: ¿En serio? ¡Una fiesta en casa! ¡Vamos a decorar!
+
+9
+00:00:37,987 --> 00:00:42,304
+Lola: ¡Feliz cumpleaños, Tini! Te traje un regalo con un moño gigante.
+
+10
+00:00:42,604 --> 00:00:45,822
+Lio: Y yo te hice un dibujo de toda la familia, hermanita.
+
+11
+00:00:46,122 --> 00:00:48,699
+Tini: ¡Gracias! ¡Me encantan los dos!
+
+12
+00:00:48,999 --> 00:00:52,829
+Luna: ¡Llegó la torta! A pedir un deseo y a soplar las velitas.
+
+13
+00:00:54,429 --> 00:00:59,074
+Tini: No fue la fiesta que yo imaginé... ¡fue todavía mejor! Gracias a todos.
+
+14
+00:00:59,874 --> 00:01:04,047
+Lo más lindo de un cumpleaños es festejarlo con quienes nos quieren.
