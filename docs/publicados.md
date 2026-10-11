@@ -47,7 +47,7 @@ Solo se anota lo que el usuario confirma que ya está en el canal. Los compilado
 | ¡Maratón! 3 capítulos seguidos | 1, 2, 3 | ✅ Publicado |
 
 ## Pendientes
-Listos para subir: 36, 37.
-En proceso: 38 (render 3D).
+Listos para subir: 36, 37, 38.
+En proceso: nada. Próximo tema guardado: la mudanza (inspirado en "The Sign").
 
 Compilados posibles: 4-6-8, 7-9-10, 5-11-12, 13-14-15, 16-18-19, 20-22-23, 24-25-26, 27-28-29; compilados de 10 (1–10, 11–20, 21–30) o uno largo de 30+ min.
