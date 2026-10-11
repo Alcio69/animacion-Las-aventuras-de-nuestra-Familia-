@@ -46,6 +46,13 @@ Solo se anota lo que el usuario confirma que ya está en el canal. Los compilado
 |---|---|---|
 | ¡Maratón! 3 capítulos seguidos | 1, 2, 3 | ✅ Publicado |
 
+## Shorts
+Playlist propia: "Shorts · Las Aventuras de Nuestra Familia" (no mezclar con las de capítulos). Cada Short enlaza su capítulo como "Video relacionado".
+
+| Short | Capítulo | YouTube | TikTok | Reels |
+|---|---|---|---|---|
+| 01 ¿Cuál es la palabra mágica? | 35 | ⏳ | ⏳ | ⏳ |
+
 ## Pendientes
 Listos para subir: 36, 37, 38.
 En proceso: nada. Próximo tema guardado: la mudanza (inspirado en "The Sign").

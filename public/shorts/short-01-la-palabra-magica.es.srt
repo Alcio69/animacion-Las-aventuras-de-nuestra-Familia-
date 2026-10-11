@@ -1,0 +1,27 @@
+1
+00:00:00,650 --> 00:00:03,580
+Tini: ¡Quiero jugo, mamá! ¡Dámelo ya mismo!
+
+2
+00:00:03,580 --> 00:00:08,419
+Luna: Así no me gusta que me pidas las cosas, hija. ¿Cuál es la palabra mágica?
+
+3
+00:00:09,819 --> 00:00:12,412
+Tini: ¿La palabra mágica es abracadabra?
+
+4
+00:00:12,412 --> 00:00:15,445
+Luna: ¡Casi! La palabra mágica es por favor.
+
+5
+00:00:15,445 --> 00:00:18,172
+Tini: Mamá, ¿me das un poquito de jugo, por favor?
+
+6
+00:00:18,172 --> 00:00:22,131
+Luna: ¡Claro que sí, mi amor! Pedido con tanta dulzura, da gusto.
+
+7
+00:00:22,931 --> 00:00:26,614
+Tini: ¡Mira, mamá, funcionó! ¡Es una palabra mágica de verdad!
