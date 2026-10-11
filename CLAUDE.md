@@ -10,6 +10,10 @@ Invitados (solo aparecen si están en `cast`): `dentista` (schnauzer), `lola` (g
 Vehículos: `cast: { tomi: { x, vehicle: 'wheelchair' } }` o `'bike'` (walk/run = rodar/pedalear). Acción `fall` = caerse y levantarse.
 Disfraces: `cast: { papa: { x, costume: 'ghost' } }` (ghost witch pumpkin santa) o paso `{ costume: 'ghost' | 'none', who }` (instantáneo: sumar fx sparkle + sfx poof). Miniatura: `thumb.costumes`.
 
+## Shorts verticales (YouTube Shorts / TikTok / Reels)
+Datos en `src/shorts/index.ts` (`SHORTS`): un momento fuerte de un capítulo (~30 s), `hook` = texto grande arriba, `episode` = capítulo completo (placa final). Copiar las líneas TEXTUALES del capítulo (así reutiliza las voces) y acercar a los personajes (~400 px). Componente `src/three/Short3D.tsx` (1080x1920; texto entre y≈200 y y≈1500, lejos del borde derecho).
+Fotogramas: `node scripts/still.mjs short-NN-slug 20,300 out/stills/short`. Render: `node scripts/render-short.mjs short-NN-slug` → `public/shorts/short-NN-slug.{mp4,jpg}`; textos de publicación en `public/shorts/short-NN-slug.txt` (YouTube "para niños" + TikTok/Reels pensado para papás).
+
 ## Hacer un capítulo nuevo (flujo estándar)
 1. Copiar `src/episodes/ep01-la-torta-sorpresa/` → `src/episodes/epNN-slug/script.ts`. Editar SOLO datos (formato en `src/engine/script.ts`).
 2. Registrar en `src/episodes/index.ts`.

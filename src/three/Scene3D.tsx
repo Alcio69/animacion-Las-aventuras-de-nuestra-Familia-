@@ -24,7 +24,7 @@ const FAMILY: CharId[] = ['papa', 'mama', 'hijo', 'hija'];
 export const toX = (x: number) => (x - 960) / 100;
 export const toZ = (y: number) => (y - 930) / 60;
 const TABLE_TOP = 1.61;
-const propPos = (bg: Background, x: number, y: number): [number, number, number] => {
+export const propPos = (bg: Background, x: number, y: number): [number, number, number] => {
   // high up in the air (e.g. a ball stuck in a tree): real height, just in front of the characters' plane
   if (y < 520) return [toX(x), (930 - y) / 100, 0.3];
   if (y >= 880) return [toX(x), 0, toZ(y) - 0.5];
@@ -39,7 +39,7 @@ const propPos = (bg: Background, x: number, y: number): [number, number, number]
   return [toX(x), TABLE_TOP, -0.9];
 };
 
-const CameraRig: React.FC<{ x: number; dist: number; y?: number; lookY?: number }> = ({ x, dist, y = 4.1, lookY = 2.7 }) => {
+export const CameraRig: React.FC<{ x: number; dist: number; y?: number; lookY?: number }> = ({ x, dist, y = 4.1, lookY = 2.7 }) => {
   const { camera } = useThree();
   useLayoutEffect(() => {
     camera.position.set(x, y, dist);
@@ -150,7 +150,7 @@ export const Scene3DView: React.FC<{ cs: CompiledScene; audio: boolean }> = ({ c
 };
 
 /** Family line-up used by the 3D intro, outro and thumbnail. */
-const Family3D: React.FC<{
+export const Family3D: React.FC<{
   t: number;
   frame: number;
   pop?: boolean;
