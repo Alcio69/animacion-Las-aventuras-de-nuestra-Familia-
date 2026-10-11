@@ -214,6 +214,8 @@ const Hook: React.FC<{ text: string }> = ({ text }) => {
     <AbsoluteFill>
       <svg viewBox={`0 0 ${W} ${H}`} width="100%" height="100%">
         <g transform={`translate(${W / 2} ${250}) scale(${pop}) rotate(${-3 + wob})`} fontFamily={FONT} fontWeight={700} textAnchor="middle" strokeLinejoin="round">
+          {/* soft band behind the hook so it reads over any set (shelves, signs, windows) */}
+          <rect x={-510} y={-size * 0.95} width={1020} height={rows.length * size * 1.08 + size * 0.4} rx={44} fill="#7048E8" fillOpacity={0.82} stroke="#FFF" strokeWidth={6} />
           {rows.map((r, i) => (
             <g key={i} transform={`translate(0 ${i * size * 1.08})`}>
               <text fontSize={size} fill="#FFF" stroke="#5F3DC4" strokeWidth={size * 0.24} paintOrder="stroke">

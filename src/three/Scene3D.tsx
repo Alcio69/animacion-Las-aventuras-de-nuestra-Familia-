@@ -310,10 +310,12 @@ export const Thumbnail3D: React.FC<{ episode: Episode }> = ({ episode }) => {
  * 'banner' = YouTube channel art: everything inside the centre band that every device shows (1546x423 of 2560x1440);
  * 'avatar' = square profile picture, the four faces close-up (safe for a circular crop).
  */
-export const Cover3D: React.FC<{ layout?: 'cover' | 'banner' | 'avatar' }> = ({ layout = 'cover' }) => {
+export const Cover3D: React.FC<{ layout?: 'cover' | 'banner' | 'avatar' | 'tiktok' }> = ({ layout = 'cover' }) => {
   const { width, height } = useVideoConfig();
   const banner = layout === 'banner';
-  const avatar = layout === 'avatar';
+  // 'tiktok' = profile picture for a tiny circle: parents behind, kids in front, faces filling the frame on a bright background
+  const tiktok = layout === 'tiktok';
+  const avatar = layout === 'avatar' || tiktok;
   const ids: CharId[] = ['papa', 'mama', 'hijo', 'hija'];
   const poses = ids.map((id, i) => {
     const p = restPose(0.4);
@@ -335,11 +337,14 @@ export const Cover3D: React.FC<{ layout?: 'cover' | 'banner' | 'avatar' }> = ({ 
     }
     return p;
   });
-  const X = banner ? [1.6, 3.6, 5.6, 7.4] : avatar ? [-2.25, -0.78, 0.78, 2.2] : [-4.6, -1.55, 1.55, 4.5];
+  const X = tiktok ? [-1.75, 1.75, -0.62, 0.66] : banner ? [1.6, 3.6, 5.6, 7.4] : avatar ? [-2.25, -0.78, 0.78, 2.2] : [-4.6, -1.55, 1.55, 4.5];
+  const Z = tiktok ? [0, 0, 1.3, 1.3] : [0, 0.3, 0, 0.3];
   return (
-    <AbsoluteFill style={{ background: '#CDEBFF' }}>
+    <AbsoluteFill style={{ background: tiktok ? 'radial-gradient(circle at 50% 42%, #FFF3BF 0%, #FFD43B 38%, #FF922B 75%, #F06595 100%)' : '#CDEBFF' }}>
       <Canvas3D>
-        {banner ? (
+        {tiktok ? (
+          <CameraRig x={0} dist={11.6} y={3.6} lookY={3.15} />
+        ) : banner ? (
           <CameraRig x={0.4} dist={27} y={2.6} lookY={2.15} />
         ) : avatar ? (
           <CameraRig x={0} dist={13.5} y={4.0} lookY={3.0} />
@@ -347,9 +352,9 @@ export const Cover3D: React.FC<{ layout?: 'cover' | 'banner' | 'avatar' }> = ({ 
           <CameraRig x={0} dist={18} y={3.6} lookY={4.0} />
         )}
         <Lights3D target={[0, 2.5, 0]} />
-        <Set3D bg="park" t={2.2} />
+        {!tiktok && <Set3D bg="park" t={2.2} />}
         {ids.map((id, i) => (
-          <Character3D key={id} id={id} pose={poses[i]} position={[X[i], 0, i % 2 ? 0.3 : 0]} />
+          <Character3D key={id} id={id} pose={poses[i]} position={[X[i], 0, Z[i]]} />
         ))}
         {layout === 'cover' && (
           <>

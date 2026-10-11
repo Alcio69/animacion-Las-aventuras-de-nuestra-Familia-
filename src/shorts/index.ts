@@ -52,6 +52,123 @@ export const SHORTS: Short[] = [
       },
     ],
   },
+  {
+    id: 'short-02-yo-no-fui',
+    episode: 'ep31-yo-no-fui',
+    hook: '¿Quién se comió\nlas galletitas?',
+    scenes: [
+      {
+        bg: 'kitchen',
+        cast: { hijo: { x: 760, mood: 'wink' } },
+        steps: [
+          { prop: 'cookiePlate', id: 'galletas', x: 1080, y: COUNTER, scale: 1.3 },
+          { say: 'hijo', text: 'Si me como una sola galletita, nadie se va a dar cuenta.', expr: 'wink', act: 'look' },
+          { do: 'walk', who: 'hijo', to: 900 },
+          { removeProp: 'galletas' },
+          { prop: 'emptyPlate', id: 'plato', x: 1080, y: COUNTER, scale: 1.3, with: true },
+          { sfx: 'pop', with: true },
+          { say: 'hijo', text: '¡Están riquísimas! Bueno... una más. Y otra más.', expr: 'laugh' },
+          { sfx: 'pop', with: true, delay: 0.8 },
+          { sfx: 'pop', with: true, delay: 1.4 },
+        ],
+        tail: 0.4,
+      },
+      {
+        bg: 'kitchen',
+        cast: {
+          hijo: { x: 640, mood: 'neutral' },
+          hija: { x: 940, mood: 'happy' },
+          mama: { x: 1280, mood: 'happy', facing: -1 },
+        },
+        steps: [
+          { prop: 'emptyPlate', id: 'plato', x: 960, y: COUNTER, scale: 1.3 },
+          { say: 'mama', text: '¡A merendar! Pero... ¿quién se comió todas las galletitas?', expr: 'surprised', act: 'point' },
+          { mood: 'worried', who: 'hijo' },
+          { fx: 'sweat', x: 640, y: 500, with: true },
+          { say: 'hijo', text: '¡Yo no fui! Seguro fue mi hermanita.', expr: 'worried', act: 'shake' },
+          { mood: 'surprised', who: 'hija' },
+          { say: 'hija', text: '¡No es verdad! ¡Yo no me comí ninguna!', expr: 'sad', act: 'shake' },
+          { say: 'mama', text: 'Si fuiste tú, hoy te quedas sin postre, hija.', expr: 'neutral', act: 'hips' },
+          { mood: 'sad', who: 'hija' },
+          { do: 'tremble', who: 'hija', dur: 1.2 },
+          { say: 'hijo', text: 'Mi hermanita está triste por mi culpa. Siento un nudo en la panza.', expr: 'sad' },
+        ],
+        tail: 0.5,
+      },
+    ],
+  },
+  {
+    id: 'short-03-me-perdi',
+    episode: 'ep30-me-perdi-en-el-supermercado',
+    hook: '¿Qué hacer\nsi te pierdes?',
+    scenes: [
+      {
+        bg: 'supermarket',
+        cast: {
+          hija: { x: 800, mood: 'surprised' },
+          sofia: { x: 2250, mood: 'happy', facing: -1 },
+        },
+        steps: [
+          { say: 'hija', text: '¿Dónde estás, mamá? ¡No te puedo ver!', expr: 'worried', act: 'tremble' },
+          { fx: 'exclaim', x: 800, y: 480, with: true },
+          { say: 'hija', text: 'Mamá me enseñó qué hacer si me pierdo. Primero, quedarme quieta en un lugar.', expr: 'worried', act: 'think' },
+          { say: 'hija', text: 'Después, buscar a alguien que trabaje aquí. ¡Esa señora tiene el chaleco del supermercado!', expr: 'happy', act: 'point' },
+          { do: 'walk', who: 'sofia', to: 1180 },
+          { say: 'hija', text: 'Disculpe, señora. Me perdí. Me llamo Martina y mi mamá se llama Luna.', expr: 'worried' },
+          { say: 'sofia', text: 'Hiciste muy bien en quedarte quieta y pedir ayuda, Martina. Vamos a llamar a tu mamá.', expr: 'love', act: 'nod' },
+        ],
+        tail: 0.4,
+      },
+      {
+        bg: 'supermarket',
+        cast: {
+          mama: { x: -250, mood: 'worried' },
+          hija: { x: 960, mood: 'worried', facing: -1 },
+        },
+        steps: [
+          { do: 'run', who: 'mama', to: 620 },
+          { mood: 'love', who: ['mama', 'hija'] },
+          { say: 'mama', text: '¡Mi amor! ¡Aquí estás, Tini! ¡Qué susto me di!', expr: 'love', act: 'hug' },
+          { do: 'hug', who: 'hija', dur: 2, with: true },
+          { fx: 'hearts', x: 790, y: 450, dur: 2, with: true },
+        ],
+        tail: 0.5,
+      },
+    ],
+  },
+  {
+    id: 'short-04-quiero-la-tablet',
+    episode: 'ep18-quiero-la-tablet',
+    hook: '¡No quiero\napagar la tablet!',
+    scenes: [
+      {
+        bg: 'living',
+        cast: {
+          hijo: { x: 740, mood: 'happy' },
+          mama: { x: 1220, mood: 'happy', facing: -1 },
+        },
+        steps: [
+          { prop: 'table', id: 'mesa', x: 960, y: 900 },
+          { prop: 'tablet', id: 'tablet', x: 900, y: HAND, with: true },
+          { say: 'mama', text: 'Hijo, ya pasaste toda la tarde con la tablet. Es hora de apagarla.', expr: 'happy' },
+          { say: 'hijo', text: '¡No! ¡Cinco minutos más, por favor, por favor!', expr: 'worried', act: 'shake' },
+          { say: 'mama', text: 'Ya es hora, mi amor. Apágala, por favor.', expr: 'neutral', act: 'point' },
+          { mood: 'angry', who: 'hijo' },
+          { do: 'jump', who: 'hijo', dur: 0.8 },
+          { sfx: 'drum', with: true },
+          { fx: 'exclaim', x: 740, y: 480, with: true },
+          { say: 'hijo', text: '¡No es justo! ¡Nunca me dejas hacer nada!', expr: 'angry', act: 'tremble' },
+          { mood: 'love', who: 'mama' },
+          { do: 'walk', who: 'mama', to: 1120 },
+          { say: 'mama', text: 'Entiendo que estás enojado. Respira conmigo: aire adentro... y aire afuera.', expr: 'love', act: 'hug' },
+          { do: 'nod', who: 'hijo', dur: 1.2 },
+          { mood: 'sad', who: 'hijo', with: true },
+          { say: 'mama', text: 'Hagamos un trato: mañana usas la tablet hasta que este reloj de arena se termine.', expr: 'happy', act: 'point' },
+        ],
+        tail: 0.5,
+      },
+    ],
+  },
 ];
 
 export const episodeOf = (s: Short) => {

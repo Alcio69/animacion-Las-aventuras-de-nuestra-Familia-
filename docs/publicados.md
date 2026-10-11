@@ -52,6 +52,9 @@ Playlist propia: "Shorts · Las Aventuras de Nuestra Familia" (no mezclar con la
 | Short | Capítulo | YouTube | TikTok | Reels |
 |---|---|---|---|---|
 | 01 ¿Cuál es la palabra mágica? | 35 | ⏳ | ⏳ | ⏳ |
+| 02 ¿Quién se comió las galletitas? | 31 | ⏳ | ⏳ | ⏳ |
+| 03 ¿Qué hacer si te pierdes? | 30 | ⏳ | ⏳ | ⏳ |
+| 04 ¡No quiero apagar la tablet! | 18 | ⏳ | ⏳ | ⏳ |
 
 ## Pendientes
 Listos para subir: 36, 37, 38.
