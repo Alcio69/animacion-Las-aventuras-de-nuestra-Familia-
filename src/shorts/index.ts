@@ -164,6 +164,8 @@ export const SHORTS: Short[] = [
           { do: 'nod', who: 'hijo', dur: 1.2 },
           { mood: 'sad', who: 'hijo', with: true },
           { say: 'mama', text: 'Hagamos un trato: mañana usas la tablet hasta que este reloj de arena se termine.', expr: 'happy', act: 'point' },
+          { prop: 'timer', id: 'reloj', x: 1020, y: HAND, with: true, delay: 0.6 },
+          { sfx: 'ding', with: true, delay: 0.6 },
         ],
         tail: 0.5,
       },
