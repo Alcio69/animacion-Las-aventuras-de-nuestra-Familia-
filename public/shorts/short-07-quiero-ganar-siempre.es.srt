@@ -1,0 +1,31 @@
+1
+00:00:00,650 --> 00:00:03,001
+Tini: ¡Hagamos una carrera hasta el árbol!
+
+2
+00:00:03,001 --> 00:00:05,019
+Max: ¡En sus marcas, listos... ya!
+
+3
+00:00:05,419 --> 00:00:07,990
+Lio: ¡Llegué primero! ¡Gané la carrera!
+
+4
+00:00:07,990 --> 00:00:11,649
+Tini: ¡No vale! ¡Eso fue trampa! ¡No juego más!
+
+5
+00:00:12,399 --> 00:00:17,297
+Max: ¿Sabes un secreto? Cuando yo era chiquito, también me enojaba cuando perdía.
+
+6
+00:00:17,297 --> 00:00:19,818
+Tini: ¿En serio, papá? ¿Tú también?
+
+7
+00:00:19,818 --> 00:00:25,787
+Max: Así es. Pero aprendí algo muy importante: lo más lindo no es ganar, es divertirse jugando.
+
+8
+00:00:25,787 --> 00:00:28,761
+Tini: Tienes razón. ¡Voy a felicitar a mi hermano!

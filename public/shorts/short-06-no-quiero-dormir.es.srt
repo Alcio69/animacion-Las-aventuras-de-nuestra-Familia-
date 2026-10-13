@@ -1,0 +1,31 @@
+1
+00:00:00,350 --> 00:00:02,185
+Luna: Hija, ya es hora de dormir.
+
+2
+00:00:02,185 --> 00:00:06,198
+Tini: ¡Pero no tengo nada de sueño! ¡Quiero jugar un poquito más!
+
+3
+00:00:06,198 --> 00:00:08,417
+Luna: Bueno, pero solo cinco minutos.
+
+4
+00:00:08,417 --> 00:00:12,240
+Tini: Mamá, ¡tengo mucha sed! ¿Me traes un vaso de agua?
+
+5
+00:00:12,540 --> 00:00:15,963
+Tini: Mamá, ¡quiero otro cuento! ¡Uno más, por favor!
+
+6
+00:00:17,563 --> 00:00:20,181
+Tini: Mamá, ¡creo que hay un monstruo en el armario!
+
+7
+00:00:20,181 --> 00:00:22,639
+Luna: Vamos a mirar juntas con la linterna.
+
+8
+00:00:23,339 --> 00:00:27,075
+Luna: ¡Mira! No era un monstruo. ¡Era tu osito!

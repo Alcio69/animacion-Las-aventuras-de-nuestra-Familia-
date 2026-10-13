@@ -55,6 +55,9 @@ Playlist propia: "Shorts · Las Aventuras de Nuestra Familia" (no mezclar con la
 | 02 ¿Quién se comió las galletitas? | 31 | ⏳ | ⏳ | ⏳ |
 | 03 ¿Qué hacer si te pierdes? | 30 | ⏳ | ⏳ | ⏳ |
 | 04 ¡No quiero apagar la tablet! | 18 | ⏳ | ⏳ | ⏳ |
+| 05 ¡No me gusta el brócoli! | 4 | ⏳ | ⏳ | ⏳ |
+| 06 Mil excusas para no dormir | 11 | ⏳ | ⏳ | ⏳ |
+| 07 ¡Quiero ganar siempre! | 13 | ⏳ | ⏳ | ⏳ |
 
 ## Pendientes
 Listos para subir: 36, 37, 38.

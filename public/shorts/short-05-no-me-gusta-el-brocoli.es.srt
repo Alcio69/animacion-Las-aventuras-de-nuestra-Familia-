@@ -1,0 +1,31 @@
+1
+00:00:00,650 --> 00:00:03,173
+Luna: ¡A comer! Hoy preparé brócoli.
+
+2
+00:00:03,173 --> 00:00:05,660
+Tini: ¡No! ¡El brócoli no me gusta!
+
+3
+00:00:05,660 --> 00:00:07,496
+Luna: ¿Alguna vez lo probaste?
+
+4
+00:00:07,496 --> 00:00:09,969
+Tini: No. Pero tiene cara de feo.
+
+5
+00:00:11,369 --> 00:00:14,722
+Max: ¡Un momento! Estos no son brócolis comunes.
+
+6
+00:00:14,722 --> 00:00:20,002
+Max: ¡Son árboles mágicos! Los dinosaurios gigantes los comían para ser fuertes.
+
+7
+00:00:20,002 --> 00:00:22,603
+Tini: Bueno, voy a probar un pedacito chiquito.
+
+8
+00:00:25,403 --> 00:00:27,816
+Tini: ¡Está riquísimo! ¡Quiero más!
