@@ -13,7 +13,7 @@ const episode: Episode = {
   title: 'Mi propia camita',
   subtitle: 'Tini quiere dormir toda la noche en su cama nueva… pero en la mitad de la noche le da miedo',
   music: 'calm',
-  thumb: { bg: 'bedroom', text: '¡DUERMO SOLITA!', prop: 'teddy', exprs: { hija: 'proud', mama: 'love', papa: 'happy', hijo: 'laugh' } },
+  thumb: { bg: 'bedroom', text: '¿DORMIR SOLITA?', prop: 'teddy', hero: ['hija'], exprs: { hija: 'worried' } },
   scenes: [
     {
       bg: 'bedroom',

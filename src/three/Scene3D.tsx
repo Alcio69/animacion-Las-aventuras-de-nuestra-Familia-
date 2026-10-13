@@ -3,7 +3,7 @@ import { ThreeCanvas } from '@remotion/three';
 import React, { useLayoutEffect } from 'react';
 import { AbsoluteFill, Html5Audio, Sequence, interpolate, spring, staticFile, useCurrentFrame, useVideoConfig } from 'remotion';
 import * as THREE from 'three';
-import { DESIGNS } from '../characters/design';
+import { DESIGNS, heightOf } from '../characters/design';
 import type { CharId } from '../characters/types';
 import { restPose } from '../characters/types';
 import { solveCharacter } from '../engine/animate';
@@ -270,7 +270,111 @@ export const Outro3D: React.FC<{ audio: boolean }> = ({ audio }) => {
   );
 };
 
+/** Arms that sell the emotion in a still (thumbnails). */
+const emotivePose = (expr: import('../characters/types').Expression, t: number) => {
+  const p = restPose(t);
+  p.expr = expr;
+  p.wag = 1.2;
+  if (expr === 'worried' || expr === 'surprised' || expr === 'sad') {
+    p.armL = { up: 128, bend: 118 };
+    p.armR = { up: 128, bend: 118 };
+    p.headTilt = expr === 'sad' ? -8 : 6;
+  } else if (expr === 'angry') {
+    p.armL = { up: 35, bend: 95 };
+    p.armR = { up: 35, bend: 95 };
+    p.bodyTilt = -4;
+  } else if (expr === 'sleepy') {
+    p.armR = { up: 140, bend: 120 };
+    p.headTilt = 10;
+  } else if (expr === 'love') {
+    p.armL = { up: 70, bend: 60 };
+    p.armR = { up: 70, bend: 60 };
+  } else {
+    p.armL = { up: 150, bend: 15 };
+    p.armR = { up: 150, bend: 15 };
+    p.lift = 14;
+  }
+  return p;
+};
+
+/**
+ * Close-up thumbnail: 1-2 protagonists big (left), the key prop big (right), short text on top, bright contrast.
+ * Reads at the size of a suggested-video tile, and each chapter looks different from the rest of the grid.
+ */
+const HeroThumbnail3D: React.FC<{ episode: Episode }> = ({ episode }) => {
+  const th = episode.thumb ?? {};
+  const hero = (th.hero ?? []).slice(0, 2);
+  const text = th.text ?? episode.title.toUpperCase();
+  // long texts go in two lines (split at the space nearest the middle) so the letters stay huge
+  const words = text.split(' ');
+  let rows = [text];
+  if (words.length > 1 && text.length > 9) {
+    let best = 1;
+    for (let i = 1; i < words.length; i++)
+      if (Math.abs(words.slice(0, i).join(' ').length - text.length / 2) < Math.abs(words.slice(0, best).join(' ').length - text.length / 2)) best = i;
+    rows = [words.slice(0, best).join(' '), words.slice(best).join(' ')];
+  }
+  const longest = Math.max(...rows.map((r) => r.length));
+  const size = Math.min(175, (hero.length > 1 ? 860 : 1040) / (longest * 0.76));
+  const bg = th.bg ?? episode.scenes[0].bg;
+  const night = th.variant === 'night' || th.variant === 'halloween' || (bg === 'bedroom' && th.variant !== 'day');
+  const tall = Math.max(...hero.map((id) => heightOf(id))) / 100;
+  // frame from the waist up of the tallest hero: visible height ≈ 0.75 × its height
+  const vis = tall * 0.75;
+  const W = vis * (16 / 9);
+  const HZ = 1.2;
+  const dist = HZ + vis / (2 * Math.tan((15 * Math.PI) / 180));
+  const lookY = tall * 0.64;
+  const X = hero.length === 1 ? [-0.22 * W] : [-0.33 * W, -0.11 * W];
+  // flat props (books, papers, screens) stand up towards the camera
+  const flat = ['book', 'drawing', 'letter', 'tablet', 'plate', 'cookiePlate', 'emptyPlate'].includes(th.prop ?? '');
+  return (
+    <AbsoluteFill style={{ background: night ? '#2A2560' : '#FCE9D2' }}>
+      <Canvas3D>
+        <CameraRig x={0} dist={dist} y={lookY + 0.35} lookY={lookY} />
+        <Lights3D target={[-1, 2.5, 0]} night={night} dim={th.variant === 'rain' ? 0.6 : 0} />
+        <Set3D bg={bg} variant={th.variant} t={0.7} />
+        {hero.map((id, i) => {
+          const p = emotivePose(th.exprs?.[id] ?? 'surprised', 0.4 + i);
+          p.yaw = hero.length === 1 ? 0.18 : i ? -0.22 : 0.22;
+          return <Character3D key={id} id={id} pose={p} position={[X[i], 0, HZ - i * 0.3]} />;
+        })}
+        {th.prop && (
+          <group position={[0.27 * W, lookY - vis * (flat ? 0.22 : 0.3), HZ + 0.4]} scale={tall * (flat ? 0.26 : 0.4)} rotation={flat ? [1.25, -0.25, 0] : [0.1, -0.35, 0]}>
+            <Prop3D kind={th.prop} t={0} />
+          </group>
+        )}
+      </Canvas3D>
+      <AbsoluteFill>
+        <svg viewBox="0 0 1920 1080" width="100%" height="100%">
+          <defs>
+            <radialGradient id="heroGlow" cx="34%" cy="55%" r="55%">
+              <stop offset="0%" stopColor="#FFFFFF" stopOpacity={0} />
+              <stop offset="70%" stopColor="#2B1B4D" stopOpacity={0} />
+              <stop offset="100%" stopColor="#2B1B4D" stopOpacity={0.45} />
+            </radialGradient>
+          </defs>
+          <rect width={1920} height={1080} fill="url(#heroGlow)" />
+          <g transform={`translate(${hero.length > 1 ? 1420 : 1310} ${size + 60}) rotate(-4)`} fontFamily={FONT} fontWeight={700} textAnchor="middle" strokeLinejoin="round">
+            {rows.map((r, i) => (
+              <g key={i} transform={`translate(0 ${i * size * 1.05})`}>
+                <text fontSize={size} fill="#FFF" stroke="#5F3DC4" strokeWidth={size * 0.24} paintOrder="stroke">
+                  {r}
+                </text>
+                <text fontSize={size} fill="#FFD43B">
+                  {r}
+                </text>
+              </g>
+            ))}
+          </g>
+        </svg>
+      </AbsoluteFill>
+    </AbsoluteFill>
+  );
+};
+
 export const Thumbnail3D: React.FC<{ episode: Episode }> = ({ episode }) => {
+  if (episode.thumb?.hero?.length) return <HeroThumbnail3D episode={episode} />;
   const th = episode.thumb ?? {};
   const text = th.text ?? episode.title.toUpperCase();
   const size = Math.min(200, 1560 / (text.length * 0.62));

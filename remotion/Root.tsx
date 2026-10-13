@@ -9,6 +9,8 @@ import { Cover3D, Story3D, SubtitlePatch, Thumbnail3D } from '../src/three/Scene
 import { FPS, compileEpisode } from '../src/engine/timeline';
 import { EPISODES } from '../src/episodes';
 import { SHORTS } from '../src/shorts';
+import { COMPILATIONS } from '../src/compilations';
+import { CompilationThumb3D } from '../src/three/CompilationThumb3D';
 import { Short3D, compileShort } from '../src/three/Short3D';
 
 export const RemotionRoot: React.FC = () => (
@@ -45,6 +47,9 @@ export const RemotionRoot: React.FC = () => (
         />
         <Composition id={`${ep.id}-3d-thumb`} component={Thumbnail3D} durationInFrames={1} fps={FPS} width={1280} height={720} defaultProps={{ episode: ep }} />
       </React.Fragment>
+    ))}
+    {COMPILATIONS.map((c) => (
+      <Composition key={c.id} id={`${c.id}-thumb`} component={CompilationThumb3D} durationInFrames={1} fps={FPS} width={1280} height={720} defaultProps={{ comp: c }} />
     ))}
     {SHORTS.map((s) => (
       <Composition key={s.id} id={s.id} component={Short3D} durationInFrames={compileShort(s).totalFrames} fps={FPS} width={1080} height={1920} defaultProps={{ short: s, audio: true, video: true }} />

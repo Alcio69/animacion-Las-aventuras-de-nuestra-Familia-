@@ -126,7 +126,8 @@ export type Episode = {
   music?: 'happy' | 'calm' | 'adventure';
   /** YouTube thumbnail (1280x720). Big short text sells clicks: 2-4 words. */
   /** `cast` = who appears (default: the 4 family members), e.g. ['hijo', 'abuela', 'hija']. */
-  thumb?: { bg?: Background; variant?: string; text?: string; prop?: PropKind; exprs?: Partial<Record<CharId, Expression>>; cast?: CharId[]; costumes?: Partial<Record<CharId, Costume>> };
+  /** `hero` = close-up style (recommended): 1-2 protagonists big with the emotion of the conflict (`exprs`), the `prop` big, 2-3 word `text`. */
+  thumb?: { bg?: Background; variant?: string; text?: string; prop?: PropKind; exprs?: Partial<Record<CharId, Expression>>; cast?: CharId[]; costumes?: Partial<Record<CharId, Costume>>; hero?: CharId[] };
   youtube: {
     title: string;
     description: string;

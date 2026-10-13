@@ -13,7 +13,7 @@ const episode: Episode = {
   title: 'Un ratito para mamá y papá',
   subtitle: 'Max y Luna están muy cansados… y Lio y Tini les hacen un regalo especial',
   music: 'calm',
-  thumb: { bg: 'living', text: '¡A DESCANSAR!', prop: 'teacup', exprs: { papa: 'sleepy', mama: 'love', hijo: 'excited', hija: 'laugh' } },
+  thumb: { bg: 'living', text: '¡QUÉ CANSADOS!', prop: 'teacup', hero: ['papa', 'mama'], exprs: { papa: 'sleepy', mama: 'sleepy' } },
   scenes: [
     {
       bg: 'living',

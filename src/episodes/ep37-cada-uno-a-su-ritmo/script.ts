@@ -13,7 +13,7 @@ const episode: Episode = {
   title: 'Cada uno a su ritmo',
   subtitle: 'Lola ya lee cuentos enteros y Tini todavía no… ¿será la peor de la clase?',
   music: 'happy',
-  thumb: { bg: 'school', text: '¡YA SÉ LEER!', prop: 'book', exprs: { hija: 'proud', lola: 'excited', maestra: 'happy', hijo: 'laugh' }, cast: ['lola', 'hija', 'maestra', 'hijo'] },
+  thumb: { bg: 'school', text: '¡NO SÉ LEER!', prop: 'book', hero: ['hija'], exprs: { hija: 'sad' } },
   scenes: [
     {
       bg: 'school',

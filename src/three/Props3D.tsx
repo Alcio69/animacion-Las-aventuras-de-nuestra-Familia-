@@ -253,10 +253,26 @@ export const Prop3D: React.FC<{ kind: PropKind; t: number; spin?: number }> = ({
         </group>
       );
     case 'book':
+      // hard covers + white pages + a yellow sun on the cover, so it reads as a storybook
       return (
-        <RoundedBox args={[1.4, 0.25, 1.0]} radius={0.04} position={[0, 0.13, 0]} castShadow>
-          <M c="#74C0FC" />
-        </RoundedBox>
+        <group>
+          <RoundedBox args={[1.4, 0.05, 1.0]} radius={0.02} position={[0, 0.025, 0]} castShadow>
+            <M c="#4DABF7" />
+          </RoundedBox>
+          <RoundedBox args={[1.32, 0.17, 0.94]} radius={0.02} position={[0.03, 0.135, 0]}>
+            <M c="#FFF9EB" />
+          </RoundedBox>
+          <RoundedBox args={[1.4, 0.05, 1.0]} radius={0.02} position={[0, 0.245, 0]} castShadow>
+            <M c="#4DABF7" />
+          </RoundedBox>
+          <RoundedBox args={[0.08, 0.27, 1.0]} radius={0.03} position={[-0.68, 0.135, 0]}>
+            <M c="#1C7ED6" />
+          </RoundedBox>
+          <Cyl p={[0.1, 0.275, 0]} r={0.24} h={0.02} c="#FFD43B" />
+          <RoundedBox args={[0.9, 0.02, 0.08]} radius={0.01} position={[0.1, 0.275, 0.36]}>
+            <M c="#FFFFFF" />
+          </RoundedBox>
+        </group>
       );
     case 'plate':
       return (
