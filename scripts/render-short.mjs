@@ -58,5 +58,17 @@ for (const id of ids) {
   // cover: a frame of the first line, with the hook on screen
   await renderStill({ ...common, composition, frame: 45, output: path.join(OUT, `${id}.jpg`), imageFormat: 'jpeg', jpegQuality: 92 });
   console.log(`\n✓ ${out} (${(statSync(out).size / 1e6).toFixed(1)} MB, ${(N / composition.fps).toFixed(1)}s)`);
+  // TikTok / Reels version: the parents' hook (transparent overlay, no WebGL → fast) composited over the same video
+  if (composition.props.short?.hookParents) {
+    const hookComp = await selectComposition({ serveUrl, id: `${id}-hook-tiktok`, browserExecutable, chromiumOptions });
+    const overlay = path.join(dir, 'hook-tiktok.mov');
+    await renderMedia({ ...common, composition: hookComp, codec: 'prores', proResProfile: '4444', imageFormat: 'png', pixelFormat: 'yuva444p10le', muted: true, outputLocation: overlay });
+    const tt = path.join(OUT, `${id}-tiktok.mp4`);
+    execFileSync('ffmpeg', ['-loglevel', 'error', '-y', '-i', out, '-i', overlay, '-filter_complex', '[0:v][1:v]overlay=0:0:format=auto,format=yuv420p[v]',
+      '-map', '[v]', '-map', '0:a', '-c:v', 'libx264', '-crf', '20', '-preset', 'medium', '-c:a', 'copy', '-movflags', '+faststart', tt]);
+    execFileSync('ffmpeg', ['-loglevel', 'error', '-y', '-ss', '1.5', '-i', tt, '-frames:v', '1', '-q:v', '2', path.join(OUT, `${id}-tiktok.jpg`)]);
+    rmSync(overlay, { force: true });
+    console.log(`✓ ${tt} (TikTok / Reels)`);
+  }
   console.log(`DONE ${id}`);
 }

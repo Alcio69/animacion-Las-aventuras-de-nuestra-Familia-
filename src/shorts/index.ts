@@ -12,6 +12,12 @@ export type Short = {
   episode: string;
   /** Big text on top for the whole Short (the hook). Use \n for a line break. */
   hook: string;
+  /**
+   * TikTok / Reels version: hook addressed to PARENTS (their audience is adults; kid-looking hooks get the video
+   * treated as content for under-13s and it is not shown). Max 2 lines. Rendered as an overlay over the YouTube
+   * version → public/shorts/<id>-tiktok.mp4.
+   */
+  hookParents?: string;
   scenes: Scene[];
 };
 
@@ -263,6 +269,7 @@ export const SHORTS: Short[] = [
     id: 'short-07-quiero-ganar-siempre',
     episode: 'ep13-quiero-ganar-siempre',
     hook: '¡Quiero ganar\nsiempre!',
+    hookParents: '¿Tu hijo\nno sabe perder?',
     scenes: [
       {
         bg: 'park',

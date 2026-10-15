@@ -201,8 +201,24 @@ const ShortScene: React.FC<{ cs: CompiledScene; audio: boolean; first: boolean }
   );
 };
 
+/**
+ * TikTok / Reels overlay: only the parents' hook, on a transparent background, with an OPAQUE band of fixed size
+ * that covers any YouTube hook band below it (same position and wobble, frame by frame).
+ */
+export const ShortHookOverlay: React.FC<{ short: Short }> = ({ short }) => {
+  ensureFonts();
+  const compiled = useMemo(() => compileShort(short), [short]);
+  return (
+    <AbsoluteFill style={{ fontFamily: FONT }}>
+      <Sequence durationInFrames={Math.round(compiled.sceneSec * FPS)} name="Gancho papás">
+        <Hook text={short.hookParents ?? short.hook} solid />
+      </Sequence>
+    </AbsoluteFill>
+  );
+};
+
 /** Big two-line hook on top, like the chapter thumbnails (white outline, yellow fill). */
-const Hook: React.FC<{ text: string }> = ({ text }) => {
+const Hook: React.FC<{ text: string; solid?: boolean }> = ({ text, solid }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const pop = spring({ frame, fps, config: { damping: 9 } });
@@ -215,7 +231,12 @@ const Hook: React.FC<{ text: string }> = ({ text }) => {
       <svg viewBox={`0 0 ${W} ${H}`} width="100%" height="100%">
         <g transform={`translate(${W / 2} ${250}) scale(${pop}) rotate(${-3 + wob})`} fontFamily={FONT} fontWeight={700} textAnchor="middle" strokeLinejoin="round">
           {/* soft band behind the hook so it reads over any set (shelves, signs, windows) */}
-          <rect x={-510} y={-size * 0.95} width={1020} height={rows.length * size * 1.08 + size * 0.4} rx={44} fill="#7048E8" fillOpacity={0.82} stroke="#FFF" strokeWidth={6} />
+          {solid ? (
+            // fixed size = the largest possible YouTube band (2 rows at size 104) plus margin, so it always covers it
+            <rect x={-524} y={-108} width={1048} height={290} rx={46} fill="#5F3DC4" stroke="#FFF" strokeWidth={6} />
+          ) : (
+            <rect x={-510} y={-size * 0.95} width={1020} height={rows.length * size * 1.08 + size * 0.4} rx={44} fill="#7048E8" fillOpacity={0.82} stroke="#FFF" strokeWidth={6} />
+          )}
           {rows.map((r, i) => (
             <g key={i} transform={`translate(0 ${i * size * 1.08})`}>
               <text fontSize={size} fill="#FFF" stroke="#5F3DC4" strokeWidth={size * 0.24} paintOrder="stroke">

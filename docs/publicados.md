@@ -2,7 +2,7 @@
 
 Solo se anota lo que el usuario confirma que ya está en el canal. Los compilados usan únicamente capítulos de esta lista.
 
-## Capítulos sueltos (35 de 35 publicados)
+## Capítulos sueltos (38 de 38 publicados)
 | Cap. | Título | Tema | Lista | Estado |
 |---|---|---|---|---|
 | 1 | La torta sorpresa | Cumpleaños de mamá, trabajo en equipo | Fechas especiales | ✅ Publicado |
@@ -40,6 +40,9 @@ Solo se anota lo que el usuario confirma que ya está en el canal. Los compilado
 | 33 | ¡Cinco minutitos más! | Rutina de la mañana, levantarse temprano | Hábitos y rutinas | ✅ Publicado |
 | 34 | ¡A lavarse las manos! | Higiene, gérmenes | Hábitos y rutinas | ✅ Publicado |
 | 35 | Las palabras mágicas | Por favor, gracias y perdón | Valores y convivencia | ✅ Publicado |
+| 36 | Mi propia camita | Dormir solos, independencia | Hábitos y rutinas | ✅ Publicado |
+| 37 | Cada uno a su ritmo | No compararse, perseverancia | Emociones y sentimientos | ✅ Publicado |
+| 38 | Un ratito para mamá y papá | Los papás también descansan, empatía | Familia y hermanos | ✅ Publicado |
 
 ## Compilados
 | Compilado | Capítulos | Estado |
@@ -47,20 +50,20 @@ Solo se anota lo que el usuario confirma que ya está en el canal. Los compilado
 | ¡Maratón! 3 capítulos seguidos | 1, 2, 3 | ✅ Publicado |
 
 ## Shorts
-Playlist propia: "Shorts · Las Aventuras de Nuestra Familia" (no mezclar con las de capítulos). Cada Short enlaza su capítulo como "Video relacionado".
+Playlist propia: "Shorts · Las Aventuras de Nuestra Familia" (no mezclar con las de capítulos). (El "Video relacionado" no está disponible en contenido para niños: la placa final nombra el capítulo.) En TikTok/Reels se sube la versión `-tiktok` con gancho para papás.
 
-| Short | Capítulo | YouTube | TikTok | Reels |
-|---|---|---|---|---|
-| 01 ¿Cuál es la palabra mágica? | 35 | ⏳ | ⏳ | ⏳ |
-| 02 ¿Quién se comió las galletitas? | 31 | ⏳ | ⏳ | ⏳ |
-| 03 ¿Qué hacer si te pierdes? | 30 | ⏳ | ⏳ | ⏳ |
-| 04 ¡No quiero apagar la tablet! | 18 | ⏳ | ⏳ | ⏳ |
-| 05 ¡No me gusta el brócoli! | 4 | ⏳ | ⏳ | ⏳ |
-| 06 Mil excusas para no dormir | 11 | ⏳ | ⏳ | ⏳ |
-| 07 ¡Quiero ganar siempre! | 13 | ⏳ | ⏳ | ⏳ |
+| Short | Capítulo | Estado |
+|---|---|---|
+| 01 ¿Cuál es la palabra mágica? | 35 | ✅ Publicado |
+| 02 ¿Quién se comió las galletitas? | 31 | ✅ Publicado |
+| 03 ¿Qué hacer si te pierdes? | 30 | ✅ Publicado |
+| 04 ¡No quiero apagar la tablet! | 18 | ✅ Publicado |
+| 05 ¡No me gusta el brócoli! | 4 | ✅ Publicado |
+| 06 Mil excusas para no dormir | 11 | ✅ Publicado |
+| 07 ¡Quiero ganar siempre! | 13 | Listo (versión TikTok con gancho para papás) |
 
 ## Pendientes
-Listos para subir: 36, 37, 38.
+Listos para subir: Short 07.
 En proceso: nada. Próximo tema guardado: la mudanza (inspirado en "The Sign").
 
 Compilados posibles: 4-6-8, 7-9-10, 5-11-12, 13-14-15, 16-18-19, 20-22-23, 24-25-26, 27-28-29; compilados de 10 (1–10, 11–20, 21–30) o uno largo de 30+ min.
