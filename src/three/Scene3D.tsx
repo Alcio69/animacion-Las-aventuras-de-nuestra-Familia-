@@ -320,7 +320,10 @@ const HeroThumbnail3D: React.FC<{ episode: Episode }> = ({ episode }) => {
   const night = th.variant === 'night' || th.variant === 'halloween' || (bg === 'bedroom' && th.variant !== 'day');
   const tall = Math.max(...hero.map((id) => heightOf(id))) / 100;
   // frame from the waist up of the tallest hero: visible height ≈ 0.75 × its height
-  const vis = tall * 0.75;
+  // two heroes: open the frame just enough so their heads (≈2.2 head radii apart) don't overlap
+  const headR = Math.max(...hero.map((id) => DESIGNS[id].headR)) / 100;
+  const fit = hero.length > 1 ? Math.max(1, (2.2 * headR) / (0.21 * tall * 0.75 * (16 / 9))) : 1;
+  const vis = tall * 0.75 * fit;
   const W = vis * (16 / 9);
   const HZ = 1.2;
   const dist = HZ + vis / (2 * Math.tan((15 * Math.PI) / 180));

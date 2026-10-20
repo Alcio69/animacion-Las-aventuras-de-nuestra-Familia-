@@ -34,10 +34,36 @@ export type Design = {
 };
 
 export const DESIGNS: Record<CharId, Design> = {
-  // Guest: Renu, Tini's friend — a black-and-white ("tuxedo") kitten with a red bow.
+  // Guest: Renu, Tini's friend — a brown tabby kitten with green eyes.
   renu: {
     id: 'renu',
     name: 'Renu',
+    species: 'cat',
+    age: 6,
+    headR: 79,
+    eyeScale: 1.18,
+    torsoH: 90,
+    torsoTop: 82,
+    torsoBottom: 82,
+    legH: 80,
+    legW: 30,
+    armLen: 94,
+    armW: 26,
+    fur: { base: '#B08A62', light: '#CDAA82', dark: '#7D5D3D', muzzle: '#F6EBDD', ear: '#F2A7B5', stripe: '#5E4330' },
+    iris: '#40C057',
+    irisDark: '#1E6B2B',
+    lashes: true,
+    outfit: 'hoodie',
+    top: { base: '#FF8787', dark: '#F03E3E', light: '#FFA8A8' },
+    bottom: { base: '#4C6EF5', dark: '#364FC7', kind: 'jeans' },
+    shoes: { base: '#FFFFFF', dark: '#ADB5BD', sole: '#F1F3F5' },
+    accent: '#D6336C',
+    extras: ['blush'],
+  },
+  // Guest: Lari, Tini's friend — a black-and-white ("tuxedo") kitten with a red bow.
+  lari: {
+    id: 'lari',
+    name: 'Lari',
     species: 'cat',
     age: 7,
     headR: 80,
@@ -61,32 +87,7 @@ export const DESIGNS: Record<CharId, Design> = {
     extras: ['bow', 'blush'],
     bowColor: '#FA5252',
   },
-  // Guest: Lari, Tini's friend — a brown tabby kitten with green eyes.
-  lari: {
-    id: 'lari',
-    name: 'Lari',
-    species: 'cat',
-    age: 6,
-    headR: 79,
-    eyeScale: 1.18,
-    torsoH: 90,
-    torsoTop: 82,
-    torsoBottom: 82,
-    legH: 80,
-    legW: 30,
-    armLen: 94,
-    armW: 26,
-    fur: { base: '#B08A62', light: '#CDAA82', dark: '#7D5D3D', muzzle: '#F6EBDD', ear: '#F2A7B5', stripe: '#5E4330' },
-    iris: '#40C057',
-    irisDark: '#1E6B2B',
-    lashes: true,
-    outfit: 'hoodie',
-    top: { base: '#FF8787', dark: '#F03E3E', light: '#FFA8A8' },
-    bottom: { base: '#4C6EF5', dark: '#364FC7', kind: 'jeans' },
-    shoes: { base: '#FFFFFF', dark: '#ADB5BD', sole: '#F1F3F5' },
-    accent: '#D6336C',
-    extras: ['blush'],
-  },
+
   // Guest: Sofía, a friendly supermarket employee (bunny, green work vest).
   sofia: {
     id: 'sofia',
