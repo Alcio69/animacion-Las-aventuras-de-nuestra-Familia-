@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { AbsoluteFill, Html5Audio, Sequence, interpolate, spring, staticFile, useCurrentFrame, useVideoConfig } from 'remotion';
 import * as THREE from 'three';
-import { DESIGNS } from '../characters/design';
+import { DESIGNS, heightOf } from '../characters/design';
 import type { CharId } from '../characters/types';
 import { solveCharacter } from '../engine/animate';
 import { FONT, ensureFonts } from '../engine/fonts';
@@ -85,11 +85,15 @@ export const Short3D: React.FC<{ short: Short; audio?: boolean; video?: boolean 
 /** Camera framing: centred between the visible characters, leaning a little towards whoever is talking. */
 const frameAt = (cs: CompiledScene, t: number) => {
   const xs: number[] = [];
+  let tall = 0;
   for (const id of ORDER) {
     const s = solveCharacter(cs, id, t);
-    if (s && s.visible > 0.5 && s.x > 150 && s.x < 1770) xs.push(s.x);
+    if (s && s.visible > 0.5 && s.x > 150 && s.x < 1770) {
+      xs.push(s.x);
+      tall = Math.max(tall, heightOf(id) * s.scale);
+    }
   }
-  if (!xs.length) return { cx: 960, span: 0 };
+  if (!xs.length) return { cx: 960, span: 0, tall: 507 };
   const lo = Math.min(...xs);
   const hi = Math.max(...xs);
   let cx = (lo + hi) / 2;
@@ -98,7 +102,7 @@ const frameAt = (cs: CompiledScene, t: number) => {
     const s = solveCharacter(cs, line.who as CharId, t);
     if (s && s.visible > 0.5) cx += (s.x - cx) * 0.08;
   }
-  return { cx, span: hi - lo };
+  return { cx, span: hi - lo, tall };
 };
 
 const ShortScene: React.FC<{ cs: CompiledScene; audio: boolean; first: boolean }> = ({ cs, audio, first }) => {
@@ -111,14 +115,18 @@ const ShortScene: React.FC<{ cs: CompiledScene; audio: boolean; first: boolean }
   const N = 9;
   let cx = 0;
   let span = 0;
+  let tall = 0;
   for (let i = 0; i < N; i++) {
     const f = frameAt(cs, Math.max(0, Math.min(cs.dur, t + ((i / (N - 1)) * 2 - 1) * 0.6)));
     cx += f.cx / N;
     span += f.span / N;
+    tall += f.tall / N;
   }
   // visible width in world units: the cast plus margin; slow push-in over the scene
   const push = 1 - 0.06 * ease(Math.min(1, t / cs.dur));
-  const widthU = Math.max(7.6, span / 100 + 3.9) * push;
+  // kids-only scenes get a tighter frame (margins scale with the tallest visible character; adults ≈ 507 px)
+  const k = Math.max(0.7, Math.min(1, tall / 507));
+  const widthU = Math.max(7.6 * k, span / 100 + 3.9 * k) * push;
   const ppu = W / widthU; // screen px per world unit
   const dist = H / 2 / ppu / TAN;
   const camX = toX(cx) + Math.sin((cs.start + t) * 0.18) * 0.15;

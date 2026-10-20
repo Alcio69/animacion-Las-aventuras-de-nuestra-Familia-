@@ -37,7 +37,7 @@ const makeMats = (d: Design) => ({
   mouth: physical('#5A1622', { roughness: 0.5 }),
   tongue: physical('#F27F94', { roughness: 0.35 }),
   white: physical('#FAFAFA', { roughness: 0.5 }),
-  bow: physical('#F06CA0', { roughness: 0.4, clearcoat: 0.6 }),
+  bow: physical(d.bowColor ?? '#F06CA0', { roughness: 0.4, clearcoat: 0.6 }),
   gold: physical('#FFD43B', { roughness: 0.3, metalness: 0.3 }),
   bag: fabric('#3B4252'),
   heart: physical('#F0426B', { roughness: 0.3, clearcoat: 1 }),

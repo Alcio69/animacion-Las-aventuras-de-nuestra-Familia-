@@ -6,7 +6,7 @@ Dos estilos con el MISMO guion: **3D** (Three.js/@remotion/three, comp `epNN-slu
 **Publicados en YouTube:** registro en `docs/publicados.md` (actualizarlo cada vez que el usuario confirma una subida; los compilados solo usan capítulos de ahí).
 Personajes (id en código → nombre): `papa` = **Max** (labrador), `mama` = **Luna** (gata negra), `hijo` = **Lio** (labrador 10), `hija` = **Martina, "Tini"** (gata naranja 7). Idioma: español neutro (tú).
 **Nombres:** solo Papá y Mamá pueden decirles "hijo/hija"; los hermanos se dicen "hermano/hermanita" o el nombre; cualquier otro personaje (amigos, maestra, dentista, abuela…) los llama **Lio** y **Tini**. Las etiquetas de subtítulos usan `DESIGNS[id].name`. Descripciones de YouTube y `subtitle`: usar Max, Luna, Lio y Tini. Los nombres al inicio de una frase de voz infantil se entienden peor: ponerlos al final ("Ven conmigo, Tini.").
-Invitados (solo aparecen si están en `cast`): `dentista` (schnauzer), `lola` (gatita amiga de Hija), `tomi` (conejito, usa silla de ruedas), `benja` (beagle, compañero de Hijo) y sus papás `benjaPapa`/`benjaMama`, `abuela` (labradora mayor, mamá de Papá), `nico` (gato gris) y `mati` (perro marrón), compañeros de Hija, `maestra` (gata siamesa con anteojos). Para agregar otro invitado: `CharId` (types.ts), `DESIGNS` (design.ts; species dog|cat|bunny), `VOICES` (voices.py). ORDER y SEED se derivan solos; `BIO` en app/page.tsx es solo familia.
+Invitados (solo aparecen si están en `cast`): `dentista` (schnauzer), `lola` (gatita amiga de Hija), `tomi` (conejito, usa silla de ruedas), `benja` (beagle, compañero de Hijo) y sus papás `benjaPapa`/`benjaMama`, `abuela` (labradora mayor, mamá de Papá), `nico` (gato gris) y `mati` (perro marrón), compañeros de Hija, `maestra` (gata siamesa con anteojos), `renu` (gatita negra con blanco, moño rojo) y `lari` (gatita atigrada marrón), amigas de Tini. Para agregar otro invitado: `CharId` (types.ts), `DESIGNS` (design.ts; species dog|cat|bunny), `VOICES` (voices.py). ORDER y SEED se derivan solos; `BIO` en app/page.tsx es solo familia.
 Vehículos: `cast: { tomi: { x, vehicle: 'wheelchair' } }` o `'bike'` (walk/run = rodar/pedalear). Acción `fall` = caerse y levantarse.
 Disfraces: `cast: { papa: { x, costume: 'ghost' } }` (ghost witch pumpkin santa) o paso `{ costume: 'ghost' | 'none', who }` (instantáneo: sumar fx sparkle + sfx poof). Miniatura: `thumb.costumes`.
 
@@ -22,7 +22,7 @@ Fotogramas: `node scripts/still.mjs short-NN-slug 20,300 out/stills/short`. Rend
 
 ## Entregas al usuario
 Textos de publicación (títulos, descripciones, etiquetas, playlist, configuración, textos para TikTok y Reels) SIEMPRE escritos en el chat, listos para copiar; NO generar archivos .txt. Enviar solo video, miniatura y .es.srt.
-TikTok/Reels: público = papás; 4–5 hashtags de nicho (#crianza #maternidad #paternidad #crianzarespetuosa + tema), sin #parati; terminar con una pregunta a los papás; 1 video por día a la misma hora; nunca borrar y volver a subir el mismo video.
+TikTok/Reels: público = papás; palabras clave + hashtags en la PRIMERA línea del texto (en cuentas nuevas TikTok clasifica por el texto); 4–5 hashtags de nicho (#crianza #maternidad #paternidad #crianzarespetuosa + tema), sin #parati; terminar con una pregunta a los papás; 1 video por día a la misma hora; nunca borrar y volver a subir el mismo video.
 
 ## Hacer un capítulo nuevo (flujo estándar)
 1. Copiar `src/episodes/ep01-la-torta-sorpresa/` → `src/episodes/epNN-slug/script.ts`. Editar SOLO datos (formato en `src/engine/script.ts`).

@@ -29,9 +29,64 @@ export type Design = {
   shoes: { base: string; dark: string; sole: string };
   accent: string; // UI color for name tags / subtitles
   extras: Array<'backpack' | 'bow' | 'blush' | 'glasses' | 'bun'>;
+  /** Bow color (default pink, like Tini's). */
+  bowColor?: string;
 };
 
 export const DESIGNS: Record<CharId, Design> = {
+  // Guest: Renu, Tini's friend — a black-and-white ("tuxedo") kitten with a red bow.
+  renu: {
+    id: 'renu',
+    name: 'Renu',
+    species: 'cat',
+    age: 7,
+    headR: 80,
+    eyeScale: 1.15,
+    torsoH: 96,
+    torsoTop: 84,
+    torsoBottom: 84,
+    legH: 86,
+    legW: 31,
+    armLen: 97,
+    armW: 27,
+    fur: { base: '#2B2A31', light: '#4A4856', dark: '#17161B', muzzle: '#FFFFFF', ear: '#F7A9B8' },
+    iris: '#F2C14E',
+    irisDark: '#8A6410',
+    lashes: true,
+    outfit: 'sweater',
+    top: { base: '#74C0FC', dark: '#4DABF7', light: '#A5D8FF' },
+    bottom: { base: '#F783AC', dark: '#E64980', kind: 'shorts' },
+    shoes: { base: '#FA5252', dark: '#C92A2A', sole: '#FFFFFF' },
+    accent: '#1098AD',
+    extras: ['bow', 'blush'],
+    bowColor: '#FA5252',
+  },
+  // Guest: Lari, Tini's friend — a brown tabby kitten with green eyes.
+  lari: {
+    id: 'lari',
+    name: 'Lari',
+    species: 'cat',
+    age: 6,
+    headR: 79,
+    eyeScale: 1.18,
+    torsoH: 90,
+    torsoTop: 82,
+    torsoBottom: 82,
+    legH: 80,
+    legW: 30,
+    armLen: 94,
+    armW: 26,
+    fur: { base: '#B08A62', light: '#CDAA82', dark: '#7D5D3D', muzzle: '#F6EBDD', ear: '#F2A7B5', stripe: '#5E4330' },
+    iris: '#40C057',
+    irisDark: '#1E6B2B',
+    lashes: true,
+    outfit: 'hoodie',
+    top: { base: '#FF8787', dark: '#F03E3E', light: '#FFA8A8' },
+    bottom: { base: '#4C6EF5', dark: '#364FC7', kind: 'jeans' },
+    shoes: { base: '#FFFFFF', dark: '#ADB5BD', sole: '#F1F3F5' },
+    accent: '#D6336C',
+    extras: ['blush'],
+  },
   // Guest: Sofía, a friendly supermarket employee (bunny, green work vest).
   sofia: {
     id: 'sofia',

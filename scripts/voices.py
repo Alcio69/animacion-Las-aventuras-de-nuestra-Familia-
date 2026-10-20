@@ -40,6 +40,8 @@ VOICES = {
     "mati": {"engine": "kokoro", "sid": 53, "speed": 1.04, "pitch": 6.5, "formant": "shifted"},
     "maestra": {"engine": "kokoro", "sid": 28, "speed": 0.95, "pitch": 1.0, "formant": "preserved"},
     "sofia": {"engine": "kokoro", "sid": 28, "speed": 0.96, "pitch": -0.8, "formant": "preserved"},
+    "renu": {"engine": "kokoro", "sid": 28, "speed": 0.96, "pitch": 3.2, "formant": "shifted"},
+    "lari": {"engine": "kokoro", "sid": 28, "speed": 1.03, "pitch": 5.8, "formant": "shifted"},
 }
 KOKORO = "kokoro-multi-lang-v1_0"
 
@@ -98,7 +100,7 @@ def engine(model):
 
 
 # Foreign words the Spanish voice mispronounces: written phonetically for the voice only (subtitles keep the real word).
-SAY = {"Halloween": "Jálouin", "Lio": "Lío", "abracadabra": "ábracadábra"}
+SAY = {"Halloween": "Jálouin", "Lio": "Lío", "abracadabra": "ábracadábra", "Renu": "Rénu"}
 
 
 def spoken(text):
