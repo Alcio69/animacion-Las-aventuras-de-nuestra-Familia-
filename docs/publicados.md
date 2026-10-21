@@ -61,9 +61,11 @@ Playlist propia: "Shorts · Las Aventuras de Nuestra Familia" (no mezclar con la
 | 05 ¡No me gusta el brócoli! | 4 | ✅ Publicado |
 | 06 Mil excusas para no dormir | 11 | ✅ Publicado |
 | 07 ¡Quiero ganar siempre! | 13 | Listo (versión TikTok con gancho para papás) |
+| 08 ¡Ya no soy tu amiga! | 39 | Listo (YouTube + TikTok) |
+| 09 ¡Mamá, mamá, mamá! | 40 | Listo (YouTube + TikTok) |
 
 ## Pendientes
-Listos para subir: Short 07.
+Listos para subir: capítulos 39 y 40; Shorts 07, 08 y 09.
 En proceso: nada. Próximo tema guardado: la mudanza (inspirado en "The Sign").
 
 Compilados posibles: 4-6-8, 7-9-10, 5-11-12, 13-14-15, 16-18-19, 20-22-23, 24-25-26, 27-28-29; compilados de 10 (1–10, 11–20, 21–30) o uno largo de 30+ min.
