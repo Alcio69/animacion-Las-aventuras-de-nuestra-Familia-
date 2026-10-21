@@ -396,6 +396,47 @@ export const SHORTS: Short[] = [
       },
     ],
   },
+  {
+    id: 'short-10-no-me-invitaron',
+    episode: 'ep41-no-me-invitaron',
+    hook: '¡No me\ninvitaron!',
+    hookParents: '¿Y si a tu hijo\nno lo invitan?',
+    scenes: [
+      {
+        bg: 'living',
+        cast: {
+          hijo: { x: 620, mood: 'happy' },
+          hija: { x: 880, mood: 'worried' },
+          papa: { x: 1200, mood: 'sad', facing: -1 },
+        },
+        steps: [
+          { say: 'hija', text: '¿Estás bien, papá? Te veo muy callado.', expr: 'worried', act: 'point' },
+          { say: 'papa', text: 'Mi amigo Tito festejó su cumpleaños ayer, y no me invitó.', expr: 'sad', act: 'shrug' },
+          { mood: 'surprised', who: 'hijo' },
+          { say: 'hijo', text: '¿Los papás también se ponen tristes por eso?', expr: 'surprised', act: 'think' },
+          { say: 'papa', text: 'Claro que sí, campeón. A todos nos duele cuando nos dejan afuera.', expr: 'sad', act: 'nod' },
+          { mood: 'sad', who: 'hija' },
+          { say: 'hija', text: 'A mí me pasó con la fiesta de Nico. Me sentí muy triste.', expr: 'sad' },
+        ],
+        tail: 0.4,
+      },
+      {
+        bg: 'living',
+        cast: {
+          papa: { x: 780, mood: 'sad' },
+          mama: { x: 1160, mood: 'love', facing: -1 },
+        },
+        steps: [
+          { say: 'mama', text: 'Sentirse triste está bien. Pero que no te inviten no quiere decir que no te quieran.', expr: 'love', act: 'hug' },
+          { fx: 'hearts', x: 970, y: 420, with: true, delay: 1.5 },
+          { do: 'think', who: 'papa', dur: 1.2 },
+          { say: 'papa', text: 'Tienes razón. Quizás fue una fiesta chiquita, solo con su familia.', expr: 'neutral', act: 'nod' },
+          { mood: 'happy', who: 'papa' },
+        ],
+        tail: 0.5,
+      },
+    ],
+  },
 ];
 
 export const episodeOf = (s: Short) => {

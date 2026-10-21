@@ -343,7 +343,7 @@ const HeroThumbnail3D: React.FC<{ episode: Episode }> = ({ episode }) => {
           return <Character3D key={id} id={id} pose={p} position={[X[i], 0, HZ - i * 0.3]} />;
         })}
         {th.prop && (
-          <group position={[0.27 * W, lookY - vis * (flat ? 0.22 : 0.3), HZ + 0.4]} scale={tall * (flat ? 0.26 : th.prop === 'ball' ? 0.24 : 0.4)} rotation={flat ? [1.25, -0.25, 0] : [0.1, -0.35, 0]}>
+          <group position={[0.27 * W, lookY - vis * (flat ? 0.22 : 0.3), HZ + 0.4]} scale={tall * (flat ? 0.26 : th.prop === 'ball' ? 0.24 : th.prop === 'gift' ? 0.22 : 0.4)} rotation={flat ? [1.25, -0.25, 0] : [0.1, -0.35, 0]}>
             <Prop3D kind={th.prop} t={0} />
           </group>
         )}

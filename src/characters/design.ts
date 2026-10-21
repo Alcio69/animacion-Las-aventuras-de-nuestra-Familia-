@@ -34,6 +34,32 @@ export type Design = {
 };
 
 export const DESIGNS: Record<CharId, Design> = {
+  // Guest: Tito, Max's friend since school — a blue-grey dog with an orange shirt.
+  tito: {
+    id: 'tito',
+    name: 'Tito',
+    species: 'dog',
+    age: 37,
+    headR: 94,
+    eyeScale: 1,
+    torsoH: 170,
+    torsoTop: 130,
+    torsoBottom: 124,
+    legH: 146,
+    legW: 50,
+    armLen: 164,
+    armW: 40,
+    fur: { base: '#8E9AAB', light: '#B4BECB', dark: '#5F6B7C', muzzle: '#E3E8EE', ear: '#6A7587' },
+    iris: '#C9852B',
+    irisDark: '#6B3F0C',
+    lashes: false,
+    outfit: 'sweater',
+    top: { base: '#FF922B', dark: '#E8590C', light: '#FFA94D' },
+    bottom: { base: '#495057', dark: '#343A40', kind: 'jeans' },
+    shoes: { base: '#FFFFFF', dark: '#495057', sole: '#E9ECEF' },
+    accent: '#E8590C',
+    extras: [],
+  },
   // Guest: Renu, Tini's friend — a brown tabby kitten with green eyes.
   renu: {
     id: 'renu',

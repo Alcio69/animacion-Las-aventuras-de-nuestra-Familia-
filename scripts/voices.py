@@ -41,6 +41,7 @@ VOICES = {
     "maestra": {"engine": "kokoro", "sid": 28, "speed": 0.95, "pitch": 1.0, "formant": "preserved"},
     "sofia": {"engine": "kokoro", "sid": 28, "speed": 0.96, "pitch": -0.8, "formant": "preserved"},
     "renu": {"engine": "kokoro", "sid": 28, "speed": 0.96, "pitch": 3.2, "formant": "shifted"},
+    "tito": {"engine": "kokoro", "sid": 29, "speed": 1.03, "pitch": 1.8, "formant": "preserved"},
     "lari": {"engine": "kokoro", "sid": 28, "speed": 1.03, "pitch": 5.8, "formant": "shifted"},
 }
 KOKORO = "kokoro-multi-lang-v1_0"
