@@ -1,0 +1,27 @@
+1
+00:00:00,350 --> 00:00:04,331
+Abuela: ¡Mis nietos queridos! ¿Quién le da un besito a su abuela?
+
+2
+00:00:04,331 --> 00:00:06,923
+Tini: Es que ahora no tengo ganas de dar un beso.
+
+3
+00:00:06,923 --> 00:00:09,234
+Abuela: ¿No me quieres dar un beso, Tini?
+
+4
+00:00:09,234 --> 00:00:14,486
+Luna: Mira, abuela: Tini te quiere muchísimo. Pero cada uno puede elegir cómo saludar.
+
+5
+00:00:14,736 --> 00:00:19,799
+Luna: Tienes tres opciones: un abrazo, chocar los cinco, o decirle hola. ¿Cuál eliges?
+
+6
+00:00:19,799 --> 00:00:22,124
+Tini: ¡Quiero chocar los cinco con la abuela!
+
+7
+00:00:22,124 --> 00:00:26,242
+Abuela: ¡Choca esos cinco, mi amor! ¡Me encanta este saludo nuevo!
