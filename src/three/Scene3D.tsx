@@ -330,7 +330,9 @@ const HeroThumbnail3D: React.FC<{ episode: Episode }> = ({ episode }) => {
   const lookY = tall * 0.64;
   const X = hero.length === 1 ? [-0.22 * W] : [-0.3 * W, -0.09 * W];
   // flat props (books, papers, screens) stand up towards the camera
-  const flat = ['book', 'drawing', 'letter', 'tablet', 'plate', 'cookiePlate', 'emptyPlate'].includes(th.prop ?? '');
+  const flat = ['book', 'plate', 'cookiePlate', 'emptyPlate'].includes(th.prop ?? '');
+  // per-prop size in the close-up (relative to the hero's height)
+  const PROP_SCALE: Partial<Record<string, number>> = { heart: 0.28, ball: 0.24, gift: 0.22, jug: 0.2, drawing: 0.5, letter: 0.5, tablet: 0.45, suitcase: 0.3 };
   return (
     <AbsoluteFill style={{ background: night ? '#2A2560' : '#FCE9D2' }}>
       <Canvas3D>
@@ -343,7 +345,7 @@ const HeroThumbnail3D: React.FC<{ episode: Episode }> = ({ episode }) => {
           return <Character3D key={id} id={id} pose={p} position={[X[i], 0, HZ - i * 0.3]} />;
         })}
         {th.prop && (
-          <group position={[0.27 * W, lookY - vis * (flat ? 0.22 : 0.3), HZ + 0.4]} scale={tall * (flat ? 0.26 : th.prop === 'ball' ? 0.24 : th.prop === 'gift' ? 0.22 : 0.4)} rotation={flat ? [1.25, -0.25, 0] : [0.1, -0.35, 0]}>
+          <group position={[0.27 * W, lookY - vis * (flat ? 0.22 : 0.3), HZ + 0.4]} scale={tall * (flat ? 0.26 : PROP_SCALE[th.prop] ?? 0.4)} rotation={flat ? [1.25, -0.25, 0] : [0.1, -0.35, 0]}>
             <Prop3D kind={th.prop} t={0} />
           </group>
         )}

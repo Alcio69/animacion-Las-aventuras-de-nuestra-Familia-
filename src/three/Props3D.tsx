@@ -660,6 +660,86 @@ export const Prop3D: React.FC<{ kind: PropKind; t: number; spin?: number }> = ({
           </RoundedBox>
         </group>
       );
+    case 'jug':
+      // milk jug: white body, blue lid and handle
+      return (
+        <group>
+          <Cyl p={[0, 0.45, 0]} r={0.32} r2={0.36} h={0.9} c="#F8F9FA" />
+          <Cyl p={[0, 0.93, 0]} r={0.2} r2={0.3} h={0.1} c="#F8F9FA" />
+          <Cyl p={[0, 1.0, 0]} r={0.21} h={0.08} c="#4DABF7" />
+          <mesh position={[0.38, 0.5, 0]} rotation={[Math.PI / 2, 0, 0]}>
+            <torusGeometry args={[0.18, 0.05, 10, 24, Math.PI]} />
+            <meshStandardMaterial color="#4DABF7" />
+          </mesh>
+          <mesh position={[0, 0.45, 0.33]}>
+            <circleGeometry args={[0.13, 20]} />
+            <meshBasicMaterial color="#74C0FC" />
+          </mesh>
+        </group>
+      );
+    case 'milkSpill':
+      return (
+        <group>
+          {[[0, 0, 0.9, 0.55], [0.55, 0.15, 0.4, 0.3], [-0.5, -0.1, 0.35, 0.25]].map(([x, z, rx, rz], i) => (
+            <mesh key={i} position={[x, 0.012 + i * 0.002, z]} rotation={[-Math.PI / 2, 0, 0]} scale={[rx, rz, 1]}>
+              <circleGeometry args={[1, 28]} />
+              <meshPhysicalMaterial color="#FFFFFF" roughness={0.15} clearcoat={0.8} />
+            </mesh>
+          ))}
+        </group>
+      );
+    case 'tooth':
+      return (
+        <group position={[0, 0.25, 0]} scale={0.8}>
+          <Sph p={[0, 0.18, 0]} s={[0.26, 0.2, 0.2]} c="#FFFFFF" />
+          <Sph p={[-0.1, -0.04, 0]} s={[0.09, 0.16, 0.09]} c="#FFFFFF" />
+          <Sph p={[0.1, -0.04, 0]} s={[0.09, 0.16, 0.09]} c="#FFFFFF" />
+          <Sph p={[0, 0.34, 0.08]} s={[0.06, 0.03, 0.02]} c="#E7F5FF" e={0.2} />
+        </group>
+      );
+    case 'apple':
+      return (
+        <group position={[0, 0.32, 0]}>
+          <Sph p={[0, 0, 0]} s={[0.32, 0.3, 0.32]} c="#E03131" />
+          <Cyl p={[0, 0.33, 0]} r={0.025} h={0.14} c="#6B4423" />
+          <Sph p={[0.1, 0.36, 0]} s={[0.1, 0.03, 0.05]} c="#40C057" />
+        </group>
+      );
+    case 'coin':
+      return (
+        <group position={[0, 0.3, 0]} rotation={[Math.PI / 2 - 0.35, 0, 0]}>
+          <Cyl p={[0, 0, 0]} r={0.3} h={0.06} c="#FCC419" e={0.15} />
+          <Cyl p={[0, 0.035, 0]} r={0.22} h={0.01} c="#FAB005" />
+        </group>
+      );
+    case 'calendar': {
+      // a 3-day countdown sheet: big red crosses on the days already passed (drawn as a plane grid)
+      return (
+        <group position={[0, 0.9, 0]}>
+          <RoundedBox args={[1.2, 1.3, 0.05]} radius={0.03} castShadow>
+            <M c="#FFFFFF" />
+          </RoundedBox>
+          <mesh position={[0, 0.5, 0.03]}>
+            <planeGeometry args={[1.2, 0.3]} />
+            <meshBasicMaterial color="#FA5252" />
+          </mesh>
+          {[0, 1, 2].map((i) => (
+            <group key={i} position={[-0.38 + i * 0.38, -0.05, 0.03]}>
+              <mesh>
+                <planeGeometry args={[0.3, 0.42]} />
+                <meshBasicMaterial color={i === 2 ? '#FFF3BF' : '#E7F5FF'} />
+              </mesh>
+              {i === 2 && (
+                <mesh position={[0, 0, 0.01]}>
+                  <circleGeometry args={[0.1, 5]} />
+                  <meshBasicMaterial color="#FCC419" />
+                </mesh>
+              )}
+            </group>
+          ))}
+        </group>
+      );
+    }
     case 'suitcase':
       return (
         <group>

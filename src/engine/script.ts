@@ -40,7 +40,8 @@ export type PropKind = 'table' | 'cake' | 'bowl' | 'flour' | 'ball' | 'balloon' 
   | 'pumpkin' | 'candy' | 'tablet' | 'timer' | 'xmasTree' | 'letter'
   | 'baby' | 'crib' | 'suitcase' | 'sandcastle' | 'umbrella'
   | 'pot' | 'sprout' | 'flowerPot' | 'wateringCan' | 'fishbowl' | 'fishFood' | 'teacup' | 'thermometer'
-  | 'recycleBins' | 'trash' | 'cart' | 'cookiePlate' | 'emptyPlate';
+  | 'recycleBins' | 'trash' | 'cart' | 'cookiePlate' | 'emptyPlate'
+  | 'jug' | 'milkSpill' | 'tooth' | 'apple' | 'coin' | 'calendar';
 export type Fx = 'hearts' | 'stars' | 'confetti' | 'flour' | 'sparkle' | 'zzz' | 'question' | 'exclaim' | 'sweat';
 export type Sfx = 'pop' | 'boing' | 'whoosh' | 'ding' | 'sparkle' | 'poof' | 'tada' | 'drum' | 'doorbell' | 'giggle' | 'thunder' | 'crash';
 
