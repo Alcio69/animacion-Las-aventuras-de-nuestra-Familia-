@@ -2,7 +2,7 @@
 
 Solo se anota lo que el usuario confirma que ya está en el canal. Los compilados usan únicamente capítulos de esta lista.
 
-## Capítulos sueltos (38 de 38 publicados)
+## Capítulos sueltos (40 de 41 publicados)
 | Cap. | Título | Tema | Lista | Estado |
 |---|---|---|---|---|
 | 1 | La torta sorpresa | Cumpleaños de mamá, trabajo en equipo | Fechas especiales | ✅ Publicado |
@@ -43,6 +43,8 @@ Solo se anota lo que el usuario confirma que ya está en el canal. Los compilado
 | 36 | Mi propia camita | Dormir solos, independencia | Hábitos y rutinas | ✅ Publicado |
 | 37 | Cada uno a su ritmo | No compararse, perseverancia | Emociones y sentimientos | ✅ Publicado |
 | 38 | Un ratito para mamá y papá | Los papás también descansan, empatía | Familia y hermanos | ✅ Publicado |
+| 39 | ¡Ya no soy tu amiga! | Pensar distinto sin pelear, amistad | Valores y convivencia | ✅ Publicado |
+| 40 | ¡Mamá, mamá, mamá! | No interrumpir, la mano mágica | Valores y convivencia | ✅ Publicado |
 
 ## Compilados
 | Compilado | Capítulos | Estado |
@@ -66,7 +68,7 @@ Playlist propia: "Shorts · Las Aventuras de Nuestra Familia" (no mezclar con la
 | 10 ¡No me invitaron! | 41 | Listo (YouTube + TikTok) |
 
 ## Pendientes
-Listos para subir: capítulos 39, 40 y 41; Shorts 07, 08, 09 y 10.
+Listos para subir: capítulo 41; Shorts 07, 08, 09 y 10 (verificar cuáles se subieron).
 En proceso: nada. Próximo tema guardado: la mudanza (inspirado en "The Sign").
 
 Compilados posibles: 4-6-8, 7-9-10, 5-11-12, 13-14-15, 16-18-19, 20-22-23, 24-25-26, 27-28-29; compilados de 10 (1–10, 11–20, 21–30) o uno largo de 30+ min.
