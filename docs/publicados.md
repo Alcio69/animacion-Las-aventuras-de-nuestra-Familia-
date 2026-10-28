@@ -77,9 +77,10 @@ Playlist propia: "Shorts · Las Aventuras de Nuestra Familia" (no mezclar con la
 | 13 ¡No quiero dar un beso! | 44 | Listo (YouTube + TikTok) |
 | 14 ¡Me equivoqué! | 45 | Listo (YouTube + TikTok) |
 | 15 ¡Te extraño, papá! | 46 | Listo (YouTube + TikTok) |
+| 16 ¿Por qué me cuesta leer? | 47 | Listo (YouTube + TikTok) |
 
 ## Pendientes
-Listos para subir: ningún capítulo; Shorts 07 a 15 (verificar cuáles se subieron).
+Listos para subir: capítulo 47; Shorts 07 a 15 (verificar cuáles se subieron).
 En proceso: nada. Próximo tema guardado: la mudanza (inspirado en "The Sign").
 
 Compilados posibles: 4-6-8, 7-9-10, 5-11-12, 13-14-15, 16-18-19, 20-22-23, 24-25-26, 27-28-29; compilados de 10 (1–10, 11–20, 21–30) o uno largo de 30+ min.
