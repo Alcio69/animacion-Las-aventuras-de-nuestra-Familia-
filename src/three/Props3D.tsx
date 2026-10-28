@@ -132,6 +132,61 @@ const drawingTex = () => {
   return drawingCache;
 };
 
+let dinoCache: THREE.CanvasTexture | null = null;
+/** A child's drawing of a long-necked dinosaur (Benja's presentation). */
+const dinoTex = () => {
+  if (dinoCache) return dinoCache;
+  const cv = document.createElement('canvas');
+  cv.width = 300;
+  cv.height = 210;
+  const c = cv.getContext('2d')!;
+  c.fillStyle = '#FFFDF5';
+  c.fillRect(0, 0, 300, 210);
+  c.fillStyle = '#FFD43B';
+  c.beginPath();
+  c.arc(255, 40, 22, 0, Math.PI * 2);
+  c.fill();
+  c.fillStyle = '#69DB7C';
+  c.fillRect(0, 188, 300, 22);
+  c.fillStyle = '#40C057';
+  c.strokeStyle = '#2B8A3E';
+  c.lineWidth = 5;
+  c.lineJoin = 'round';
+  // body + tail + long neck + head
+  c.beginPath();
+  c.ellipse(150, 135, 62, 32, 0, 0, Math.PI * 2);
+  c.moveTo(95, 140);
+  c.quadraticCurveTo(45, 150, 18, 120);
+  c.quadraticCurveTo(50, 138, 92, 125);
+  c.moveTo(190, 120);
+  c.quadraticCurveTo(205, 60, 215, 35);
+  c.lineTo(232, 38);
+  c.quadraticCurveTo(222, 80, 208, 128);
+  c.fill();
+  c.stroke();
+  c.beginPath();
+  c.ellipse(232, 32, 20, 12, 0, 0, Math.PI * 2);
+  c.fill();
+  c.stroke();
+  [110, 140, 165, 190].forEach((x) => {
+    c.fillRect(x - 8, 155, 16, 32);
+    c.strokeRect(x - 8, 155, 16, 32);
+  });
+  c.fillStyle = '#212529';
+  c.beginPath();
+  c.arc(238, 28, 3.5, 0, Math.PI * 2);
+  c.fill();
+  c.fillStyle = '#FFA94D';
+  [125, 150, 175].forEach((x) => {
+    c.beginPath();
+    c.arc(x, 122, 7, 0, Math.PI * 2);
+    c.fill();
+  });
+  dinoCache = new THREE.CanvasTexture(cv);
+  dinoCache.colorSpace = THREE.SRGBColorSpace;
+  return dinoCache;
+};
+
 /** One broccoli "little tree": pale stem + bumpy green crown. */
 const Broccoli3D: React.FC = () => (
   <group>
@@ -483,6 +538,19 @@ export const Prop3D: React.FC<{ kind: PropKind; t: number; spin?: number }> = ({
               <Sph p={[0, 0.65, 0]} s={0.13} c={['#FF8787', '#FFD43B', '#DA77F2'][i]} />
             </group>
           ))}
+        </group>
+      );
+    case 'dinoDrawing':
+      return (
+        <group position={[0, 0.25, 0.2]} rotation={[0, 0, 0.06]} scale={1.25}>
+          <mesh castShadow>
+            <boxGeometry args={[1.1, 0.8, 0.02]} />
+            <meshStandardMaterial color="#FFFFFF" />
+          </mesh>
+          <mesh position={[0, 0, 0.012]}>
+            <planeGeometry args={[1.0, 0.7]} />
+            <meshBasicMaterial map={dinoTex()} toneMapped={false} />
+          </mesh>
         </group>
       );
     case 'drawing': {

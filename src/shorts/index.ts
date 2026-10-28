@@ -627,6 +627,46 @@ export const SHORTS: Short[] = [
       },
     ],
   },
+  {
+    id: 'short-16-las-letras-de-benja',
+    episode: 'ep47-las-letras-de-benja',
+    hook: '¿Por qué me\ncuesta leer?',
+    hookParents: '¿A tu hijo le cuesta\nmucho leer?',
+    scenes: [
+      {
+        bg: 'park',
+        cast: {
+          benja: { x: 760, mood: 'sad' },
+          hijo: { x: 1160, mood: 'worried', facing: -1 },
+        },
+        steps: [
+          { say: 'benja', text: 'Creo que soy tonto. Leo y leo, y no me sale.', expr: 'sad', act: 'shrug' },
+          { say: 'hijo', text: '¡No eres tonto! Eres el que mejor cuenta historias de toda la clase.', expr: 'love', act: 'point' },
+          { say: 'benja', text: 'Pero todos leen rápido, y yo no. Me da mucha vergüenza.', expr: 'sad' },
+        ],
+        tail: 0.4,
+      },
+      {
+        bg: 'living',
+        cast: {
+          hija: { x: 560, mood: 'happy' },
+          benja: { x: 810, mood: 'worried' },
+          mama: { x: 1070, mood: 'love', facing: -1 },
+          benjaMama: { x: 1330, mood: 'love', facing: -1 },
+        },
+        steps: [
+          { say: 'benjaMama', text: 'La especialista nos dijo que lo que tiene se llama dislexia.', expr: 'love', act: 'nod' },
+          { say: 'benja', text: 'Mi cabeza tarda más en convertir las letras en sonidos. Por eso leo más despacio.', expr: 'neutral', act: 'think' },
+          { mood: 'worried', who: 'hija' },
+          { say: 'hija', text: '¿Es como estar enfermo, mamá?', expr: 'worried', act: 'shrug' },
+          { say: 'mama', text: 'No es una enfermedad, hija. Es otra forma de aprender a leer, y no tiene nada que ver con ser inteligente.', expr: 'love', act: 'point' },
+          { mood: 'happy', who: 'benja' },
+          { fx: 'hearts', x: 810, y: 470, with: true, delay: 2 },
+        ],
+        tail: 0.5,
+      },
+    ],
+  },
 ];
 
 export const episodeOf = (s: Short) => {
