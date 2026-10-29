@@ -917,9 +917,11 @@ export const Prop3D: React.FC<{ kind: PropKind; t: number; spin?: number }> = ({
           </mesh>
         </group>
       );
+    case 'fishbowlStill':
     case 'fishbowl': {
-      // round fish bowl with an orange fish swimming around
-      const a = t * 1.2;
+      // round fish bowl with an orange fish swimming around ('fishbowlStill': the fish rests still near the bottom)
+      const still = kind === 'fishbowlStill';
+      const a = still ? 0.6 : t * 1.2;
       return (
         <group>
           <mesh position={[0, 0.5, 0]}>
@@ -931,9 +933,12 @@ export const Prop3D: React.FC<{ kind: PropKind; t: number; spin?: number }> = ({
             <meshPhysicalMaterial color="#74C0FC" transparent opacity={0.45} roughness={0.05} />
           </mesh>
           <Cyl p={[0, 0.06, 0]} r={0.3} h={0.06} c="#F1F3F5" />
-          <group position={[Math.cos(a) * 0.2, 0.45 + Math.sin(t * 2.3) * 0.05, Math.sin(a) * 0.15]} rotation={[0, -a - Math.PI / 2, 0]}>
+          <group
+            position={still ? [0.05, 0.2, 0.1] : [Math.cos(a) * 0.2, 0.45 + Math.sin(t * 2.3) * 0.05, Math.sin(a) * 0.15]}
+            rotation={still ? [0, 0.3, 0.35] : [0, -a - Math.PI / 2, 0]}
+          >
             <Sph p={[0, 0, 0]} s={[0.13, 0.09, 0.06]} c="#FF922B" />
-            <mesh position={[-0.15, 0, 0]} rotation={[0, 0, Math.PI / 2 + Math.sin(t * 9) * 0.3]}>
+            <mesh position={[-0.15, 0, 0]} rotation={[0, 0, Math.PI / 2 + (still ? 0 : Math.sin(t * 9) * 0.3)]}>
               <coneGeometry args={[0.07, 0.1, 3]} />
               <M c="#FD7E14" />
             </mesh>
@@ -948,6 +953,42 @@ export const Prop3D: React.FC<{ kind: PropKind; t: number; spin?: number }> = ({
         </group>
       );
     }
+    case 'bandaid':
+      return (
+        <group position={[0, 0.3, 0]} rotation={[-0.15, 0, 0.3]}>
+          <RoundedBox args={[0.7, 0.22, 0.03]} radius={0.01}>
+            <M c="#F4C7A1" />
+          </RoundedBox>
+          <RoundedBox args={[0.22, 0.16, 0.04]} radius={0.01}>
+            <M c="#FFE3E3" />
+          </RoundedBox>
+          <Sph p={[0, 0, 0.03]} s={[0.05, 0.05, 0.01]} c="#FA5252" />
+        </group>
+      );
+    case 'trainToy':
+      // small wooden steam train: red engine + chimney + 4 wheels, blue wagon
+      return (
+        <group>
+          <RoundedBox args={[0.55, 0.3, 0.3]} radius={0.05} position={[0.2, 0.25, 0]} castShadow>
+            <M c="#FA5252" />
+          </RoundedBox>
+          <RoundedBox args={[0.25, 0.25, 0.28]} radius={0.04} position={[0.05, 0.5, 0]}>
+            <M c="#E03131" />
+          </RoundedBox>
+          <Cyl p={[0.38, 0.5, 0]} r={0.06} r2={0.08} h={0.22} c="#343A40" />
+          <RoundedBox args={[0.4, 0.25, 0.28]} radius={0.04} position={[-0.32, 0.22, 0]} castShadow>
+            <M c="#4DABF7" />
+          </RoundedBox>
+          {[0.32, 0.08, -0.22, -0.42].map((x) =>
+            [-0.16, 0.16].map((z) => (
+              <mesh key={`${x}${z}`} position={[x, 0.08, z]} rotation={[Math.PI / 2, 0, 0]}>
+                <cylinderGeometry args={[0.08, 0.08, 0.04, 16]} />
+                <meshStandardMaterial color="#FCC419" />
+              </mesh>
+            )),
+          )}
+        </group>
+      );
     case 'fishFood':
       return (
         <group>

@@ -667,6 +667,165 @@ export const SHORTS: Short[] = [
       },
     ],
   },
+  {
+    id: 'short-17-adios-burbuja',
+    episode: 'ep48-adios-burbuja',
+    hook: 'Adiós,\nBurbuja',
+    hookParents: 'Cómo explicarle\nla muerte de su mascota',
+    scenes: [
+      {
+        bg: 'living',
+        cast: {
+          hija: { x: 720, mood: 'sad' },
+          mama: { x: 1160, mood: 'sad', facing: -1 },
+        },
+        steps: [
+          { prop: 'table', id: 'mesa', x: 940, y: 900 },
+          { prop: 'fishbowlStill', id: 'pecera', x: 940, y: 760, scale: 1.5, with: true },
+          { say: 'hija', text: '¿Se murió? ¿Pero se va a despertar?', expr: 'surprised', act: 'shrug' },
+          { say: 'mama', text: 'No, hija. Cuando un ser vivo se muere, su cuerpo deja de funcionar, y no vuelve.', expr: 'sad', act: 'nod' },
+          { say: 'mama', text: 'Burbuja ya no come, ya no nada, y no siente dolor.', expr: 'sad' },
+          { say: 'hija', text: '¿Fue mi culpa? Yo siempre le daba de comer.', expr: 'sad', act: 'shrug' },
+        ],
+        tail: 0.4,
+      },
+      {
+        bg: 'bedroom',
+        cast: {
+          hija: { x: 760, mood: 'sad' },
+          mama: { x: 1140, mood: 'sad', facing: -1 },
+        },
+        steps: [
+          { say: 'mama', text: 'Es normal, mi amor. La tristeza se va haciendo más chiquita con el tiempo.', expr: 'sad', act: 'hug' },
+          { say: 'mama', text: 'Y los recuerdos lindos de Burbuja se quedan con nosotros para siempre.', expr: 'sad', act: 'nod' },
+          { mood: 'sad', who: 'hija' },
+          { fx: 'hearts', x: 950, y: 440, with: true, delay: 1 },
+        ],
+        tail: 0.6,
+      },
+    ],
+  },
+  {
+    id: 'short-18-perdon-por-gritar',
+    episode: 'ep49-perdon-por-gritar',
+    hook: '¡Perdón\npor gritar!',
+    hookParents: '¿Le gritaste\na tu hijo?',
+    scenes: [
+      {
+        bg: 'living',
+        cast: {
+          hijo: { x: 640, mood: 'angry' },
+          hija: { x: 900, mood: 'angry', facing: -1 },
+          papa: { x: 1240, mood: 'sleepy', facing: -1 },
+        },
+        steps: [
+          { prop: 'ball', id: 'pelota', x: 770, y: 960 },
+          { say: 'hijo', text: '¡Dámela ahora mismo, es mía!', expr: 'angry', act: 'tremble' },
+          { say: 'hija', text: '¡Papá, mi hermano no me deja jugar!', expr: 'angry', act: 'hips' },
+          { mood: 'angry', who: 'papa' },
+          { sfx: 'drum' },
+          { say: 'papa', text: '¡BASTA YA, LOS DOS! ¡NO PUEDO MÁS!', expr: 'angry', act: 'tremble', with: true },
+          { mood: 'surprised', who: ['hijo', 'hija'] },
+          { mood: 'sad', who: ['hijo', 'hija'], delay: 0.5 },
+        ],
+        tail: 0.4,
+      },
+      {
+        bg: 'living',
+        cast: {
+          hijo: { x: 640, mood: 'sad' },
+          hija: { x: 880, mood: 'sad' },
+          papa: { x: 1180, mood: 'sad', facing: -1 },
+        },
+        steps: [
+          { say: 'papa', text: 'Chicos, perdón por gritarles. Estaba muy cansado, pero eso no es culpa de ustedes.', expr: 'sad', act: 'hug' },
+          { say: 'hija', text: 'Papá, nos asustamos muchísimo.', expr: 'sad' },
+          { say: 'papa', text: 'Tienen razón. Gritar no estuvo bien. Los papás también nos equivocamos.', expr: 'sad', act: 'nod' },
+          { mood: 'happy', who: ['hijo', 'hija'] },
+          { do: 'hug', who: ['hijo', 'hija', 'papa'], dur: 1.8 },
+          { fx: 'hearts', x: 900, y: 450, with: true },
+        ],
+        tail: 0.5,
+      },
+    ],
+  },
+  {
+    id: 'short-19-mi-companero-juanchi',
+    episode: 'ep50-mi-companero-juanchi',
+    hook: 'Mi compañero\nJuanchi',
+    hookParents: '¿Cómo explicarle\nqué es el autismo?',
+    scenes: [
+      {
+        bg: 'school',
+        cast: {
+          hija: { x: 540, mood: 'happy' },
+          mati: { x: 790, mood: 'surprised' },
+          juanchi: { x: 1040, mood: 'neutral' },
+          maestra: { x: 1330, mood: 'happy', facing: -1 },
+        },
+        steps: [
+          { say: 'mati', text: '¿Por qué no nos mira ni nos saluda? Es un poco raro.', expr: 'surprised' },
+          { sfx: 'ding' },
+          { sfx: 'ding', with: true, delay: 0.3 },
+          { mood: 'worried', who: 'juanchi' },
+          { do: 'tremble', who: 'juanchi', dur: 1.4 },
+          { say: 'juanchi', text: '¡Ese ruido es muy fuerte! ¡No me gusta!', expr: 'worried', act: 'shake' },
+          { mood: 'happy', who: 'maestra' },
+          { say: 'maestra', text: 'Juanchi tiene autismo. Su cerebro siente los ruidos, las luces y las cosas de otra manera.', expr: 'happy', act: 'nod' },
+          { say: 'hija', text: '¿Y quiere tener amigos, maestra?', expr: 'worried', act: 'think' },
+          { say: 'maestra', text: '¡Claro que sí! Quiere tener amigos, a su manera. Y no es raro: es distinto, como cada uno de nosotros.', expr: 'happy', act: 'hug' },
+        ],
+        tail: 0.4,
+      },
+      {
+        bg: 'park',
+        cast: {
+          juanchi: { x: 760, mood: 'happy' },
+          hija: { x: 1120, mood: 'happy', facing: -1 },
+        },
+        steps: [
+          { prop: 'trainToy', id: 'tren', x: 940, y: 960, scale: 1.3 },
+          { say: 'juanchi', text: 'Me gustan muchísimo los trenes. Este es un tren a vapor, y tiene ocho ruedas.', expr: 'happy', act: 'nod' },
+          { say: 'hija', text: '¡Sabes un montón! ¿Jugamos juntos con el tren?', expr: 'excited', act: 'clap' },
+          { moveProp: 'tren', x: 1000, y: 960, dur: 1.2 },
+          { fx: 'stars', x: 940, y: 520, with: true },
+        ],
+        tail: 0.5,
+      },
+    ],
+  },
+  {
+    id: 'short-20-me-da-miedo-la-vacuna',
+    episode: 'ep51-me-da-miedo-la-vacuna',
+    hook: '¡Me da miedo\nla vacuna!',
+    hookParents: '¿A tu hijo le da\nmiedo vacunarse?',
+    scenes: [
+      {
+        bg: 'dentist',
+        cast: {
+          hijo: { x: 660, mood: 'worried' },
+          mama: { x: 900, mood: 'love' },
+          pediatra: { x: 1220, mood: 'happy', facing: -1 },
+        },
+        steps: [
+          { say: 'hijo', text: '¿Una vacuna? ¡No quiero! ¿Me va a doler mucho?', expr: 'worried', act: 'tremble' },
+          { say: 'pediatra', text: 'Las vacunas son como un escudo: entrenan a tu cuerpo para defenderse de los gérmenes.', expr: 'happy', act: 'point' },
+          { fx: 'sparkle', x: 660, y: 520, with: true },
+          { say: 'pediatra', text: 'Te doy un truco: abraza a mamá, mira para otro lado, y contamos juntos hasta cinco.', expr: 'love', act: 'nod' },
+          { do: 'walk', who: 'mama', to: 820 },
+          { do: 'hug', who: ['hijo', 'mama'], dur: 4.6 },
+          { say: 'hijo', text: 'Uno, dos, tres, cuatro, cinco.', expr: 'worried' },
+          { sfx: 'pop', with: true, delay: 1.6 },
+          { prop: 'bandaid', id: 'curita', x: 1020, y: HAND, scale: 2.2 },
+          { mood: 'surprised', who: 'hijo' },
+          { say: 'hijo', text: '¿Eso fue todo? ¡Fue solo un pinchacito!', expr: 'surprised', act: 'jump' },
+          { sfx: 'tada', with: true },
+          { fx: 'stars', x: 660, y: 480, with: true },
+        ],
+        tail: 0.5,
+      },
+    ],
+  },
 ];
 
 export const episodeOf = (s: Short) => {

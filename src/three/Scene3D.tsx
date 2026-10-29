@@ -332,7 +332,7 @@ const HeroThumbnail3D: React.FC<{ episode: Episode }> = ({ episode }) => {
   // flat props (books, papers, screens) stand up towards the camera
   const flat = ['book', 'plate', 'cookiePlate', 'emptyPlate'].includes(th.prop ?? '');
   // per-prop size in the close-up (relative to the hero's height)
-  const PROP_SCALE: Partial<Record<string, number>> = { heart: 0.28, ball: 0.24, gift: 0.22, jug: 0.2, drawing: 0.5, letter: 0.5, tablet: 0.45, suitcase: 0.3 };
+  const PROP_SCALE: Partial<Record<string, number>> = { bandaid: 0.55, heart: 0.28, ball: 0.24, gift: 0.22, jug: 0.2, drawing: 0.5, letter: 0.5, tablet: 0.45, suitcase: 0.3 };
   return (
     <AbsoluteFill style={{ background: night ? '#2A2560' : '#FCE9D2' }}>
       <Canvas3D>
