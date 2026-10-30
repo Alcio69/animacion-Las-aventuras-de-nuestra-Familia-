@@ -1,0 +1,19 @@
+1
+00:00:00,350 --> 00:00:04,166
+Lio: ¿Una vacuna? ¡No quiero! ¿Me va a doler mucho?
+
+2
+00:00:04,166 --> 00:00:09,027
+Pediatra: Las vacunas son como un escudo: entrenan a tu cuerpo para defenderse de los gérmenes.
+
+3
+00:00:09,027 --> 00:00:14,084
+Pediatra: Te doy un truco: abraza a mamá, mira para otro lado, y contamos juntos hasta cinco.
+
+4
+00:00:19,284 --> 00:00:21,391
+Lio: Uno, dos, tres, cuatro, cinco.
+
+5
+00:00:21,691 --> 00:00:24,484
+Lio: ¿Eso fue todo? ¡Fue solo un pinchacito!
