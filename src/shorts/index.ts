@@ -804,14 +804,14 @@ export const SHORTS: Short[] = [
         bg: 'dentist',
         cast: {
           hijo: { x: 660, mood: 'worried' },
-          mama: { x: 900, mood: 'love' },
+          mama: { x: 900, mood: 'happy' },
           pediatra: { x: 1220, mood: 'happy', facing: -1 },
         },
         steps: [
           { say: 'hijo', text: '¿Una vacuna? ¡No quiero! ¿Me va a doler mucho?', expr: 'worried', act: 'tremble' },
           { say: 'pediatra', text: 'Las vacunas son como un escudo: entrenan a tu cuerpo para defenderse de los gérmenes.', expr: 'happy', act: 'point' },
           { fx: 'sparkle', x: 660, y: 520, with: true },
-          { say: 'pediatra', text: 'Te doy un truco: abraza a mamá, mira para otro lado, y contamos juntos hasta cinco.', expr: 'love', act: 'nod' },
+          { say: 'pediatra', text: 'Te doy un truco: abraza a mamá, mira para otro lado, y contamos juntos hasta cinco.', expr: 'happy', act: 'nod' },
           { do: 'walk', who: 'mama', to: 820 },
           { do: 'hug', who: ['hijo', 'mama'], dur: 4.6 },
           { say: 'hijo', text: 'Uno, dos, tres, cuatro, cinco.', expr: 'worried' },
