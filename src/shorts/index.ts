@@ -682,8 +682,8 @@ export const SHORTS: Short[] = [
         steps: [
           { prop: 'table', id: 'mesa', x: 940, y: 900 },
           { prop: 'fishbowlStill', id: 'pecera', x: 940, y: 760, scale: 1.5, with: true },
-          { say: 'hija', text: '¿Se murió? ¿Pero se va a despertar?', expr: 'surprised', act: 'shrug' },
-          { say: 'mama', text: 'No, hija. Cuando un ser vivo se muere, su cuerpo deja de funcionar, y no vuelve.', expr: 'sad', act: 'nod' },
+          { say: 'hija', text: '¿Y no se va a poner bien, papá? ¿No se va a mover nunca más?', expr: 'surprised', act: 'shrug' },
+          { say: 'mama', text: 'No, hija. Cuando un pececito llega al final de su vida, su cuerpito deja de funcionar, y ya no vuelve.', expr: 'sad', act: 'nod' },
           { say: 'mama', text: 'Burbuja ya no come, ya no nada, y no siente dolor.', expr: 'sad' },
           { say: 'hija', text: '¿Fue mi culpa? Yo siempre le daba de comer.', expr: 'sad', act: 'shrug' },
         ],

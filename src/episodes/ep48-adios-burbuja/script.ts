@@ -13,7 +13,7 @@ const episode: Episode = {
   id: 'ep48-adios-burbuja',
   number: 48,
   title: 'Adiós, Burbuja',
-  subtitle: 'El pececito de Tini se murió… ¿cómo se despide a alguien que queremos?',
+  subtitle: 'Burbuja, el pececito de Tini, llegó al final de su vida… ¿cómo se despide a alguien que queremos?',
   music: 'calm',
   thumb: { bg: 'living', text: '¡ADIÓS, BURBUJA!', prop: 'fishbowlStill', hero: ['hija'], exprs: { hija: 'sad' } },
   scenes: [
@@ -34,9 +34,9 @@ const episode: Episode = {
         { do: 'walk', who: 'papa', to: 1170 },
         { do: 'think', who: 'papa', dur: 1.2 },
         { mood: 'sad', who: 'papa' },
-        { say: 'papa', text: 'Mi amor, tengo que decirte algo triste. Burbuja se murió.', expr: 'sad', act: 'hug' },
+        { say: 'papa', text: 'Mi amor, tengo que contarte algo triste. Burbuja llegó al final de su vida.', expr: 'sad', act: 'hug' },
         { mood: 'surprised', who: 'hija' },
-        { say: 'hija', text: '¿Se murió? ¿Pero se va a despertar?', expr: 'surprised', act: 'shrug' },
+        { say: 'hija', text: '¿Y no se va a poner bien, papá? ¿No se va a mover nunca más?', expr: 'surprised', act: 'shrug' },
       ],
     },
     {
@@ -50,7 +50,7 @@ const episode: Episode = {
       steps: [
         { prop: 'table', id: 'mesa', x: TABLE.x, y: TABLE.y },
         { prop: 'fishbowlStill', id: 'pecera', x: TABLE.x, y: ON_TABLE, scale: 1.7, with: true },
-        { say: 'mama', text: 'No, hija. Cuando un ser vivo se muere, su cuerpo deja de funcionar, y no vuelve.', expr: 'sad', act: 'nod' },
+        { say: 'mama', text: 'No, hija. Cuando un pececito llega al final de su vida, su cuerpito deja de funcionar, y ya no vuelve.', expr: 'sad', act: 'nod' },
         { say: 'mama', text: 'Burbuja ya no come, ya no nada, y no siente dolor.', expr: 'sad' },
         { do: 'tremble', who: 'hija', dur: 1.4 },
         { say: 'hija', text: '¿Fue mi culpa? Yo siempre le daba de comer.', expr: 'sad', act: 'shrug' },
@@ -104,16 +104,16 @@ const episode: Episode = {
   ],
   youtube: {
     title: 'Adiós, Burbuja 🐠 Cómo Explicar la Muerte a los Niños | Dibujos Animados para Niños en Español',
-    description: `Una mañana, Tini va a darle de comer a su pececito Burbuja… pero Burbuja no se mueve. 🐠💔 "¿Se va a despertar?", pregunta. Max y Luna le explican con palabras simples y con mucho amor que Burbuja se murió: su cuerpo dejó de funcionar y no vuelve. Esa tarde, la familia le hace una despedida en el jardín, y cada uno cuenta su recuerdo favorito. 🌅 Un cuento infantil corto y tierno para acompañar a los chicos cuando pierden a alguien que quieren.
+    description: `Una mañana, Tini va a darle de comer a su pececito Burbuja… pero Burbuja no se mueve. 🐠💔 "¿No se va a poner bien?", pregunta. Max y Luna le explican con palabras suaves y con mucho amor que Burbuja llegó al final de su vida: su cuerpito dejó de funcionar y ya no vuelve. Esa tarde, la familia le hace una despedida en el jardín, y cada uno cuenta su recuerdo favorito. 🌅 Un cuento infantil corto y tierno para acompañar a los chicos cuando pierden a alguien que quieren.
 
 🐶🐱 Las Aventuras de Nuestra Familia: dibujos animados 3D en español para niños de 2 a 8 años. Max (el papá labrador), Luna (la mamá gatita), Lio (10 años) y Tini (7 años) viven historias cortas con valores para ver en familia.
 
 ✨ En este capítulo aprendemos:
-• Que está bien estar triste cuando alguien que queremos se muere
+• Que está bien estar triste cuando perdemos a alguien que queremos
 • Que no es culpa nuestra
 • Que el amor y los recuerdos lindos se quedan con nosotros
 
-👨‍👩‍👧 Para papás y maestras: a los chicos los ayuda que les hablemos con palabras simples y verdaderas ("se murió, su cuerpo dejó de funcionar"), en vez de "se durmió" o "se fue de viaje", que pueden confundirlos o asustarlos. Pregúntenles: "¿Qué recuerdo lindo tienes de alguien que extrañas?"
+👨‍👩‍👧 Para papás y maestras: a los chicos los ayuda que les hablemos con palabras suaves pero claras ("llegó al final de su vida, su cuerpito dejó de funcionar"), en vez de "se durmió" o "se fue de viaje", que pueden confundirlos o darles miedo a dormir. Pregúntenles: "¿Qué recuerdo lindo tienes de alguien que extrañas?"
 
 📺 Más capítulos de Las Aventuras de Nuestra Familia en el canal. ¡Suscríbete para no perderte ninguno!
 
