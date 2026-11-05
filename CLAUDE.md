@@ -22,7 +22,13 @@ Fotogramas: `node scripts/still.mjs short-NN-slug 20,300 out/stills/short`. Rend
 
 ## Entregas al usuario
 Textos de publicación (títulos, descripciones, etiquetas, playlist, configuración, textos para TikTok y Reels) SIEMPRE escritos en el chat, listos para copiar; NO generar archivos .txt. Enviar solo video, miniatura y .es.srt.
-TikTok/Reels: público = papás; palabras clave + hashtags en la PRIMERA línea del texto (en cuentas nuevas TikTok clasifica por el texto); 4–5 hashtags de nicho (#crianza #maternidad #paternidad #crianzarespetuosa + tema), sin #parati; terminar con una pregunta a los papás; 1 video por día a la misma hora; nunca borrar y volver a subir el mismo video.
+**Formato:** cada capítulo se entrega con su Short; los textos van agrupados por capítulo: primero el capítulo (YouTube) y JUSTO DEBAJO su Short (YouTube Short → TikTok → Reels), para encontrarlos debajo de cada video.
+**Etiquetas = las del tema + las más virales de cada plataforma** (nunca nombres de otras series: YouTube lo toma como metadatos engañosos):
+- YouTube capítulo (campo Etiquetas, máx. 500 caracteres): tema + dibujos animados, dibujos animados para niños, caricaturas, videos para niños, cuentos infantiles, cuentos para niños, historias para niños, videos educativos para niños, animación infantil, dibujos animados en español, las aventuras de nuestra familia. Hashtags al final de la descripción: tema + #dibujosanimados #cuentosinfantiles (los 3 primeros salen sobre el título).
+- YouTube Short: tema + #shorts #shortsvideo #dibujosanimados #viral; etiquetas: tema + shorts, shorts para niños, dibujos animados, videos para niños.
+- TikTok: primera línea = gancho + hashtags: 2 del tema + #crianza #maternidad #paternidad + virales #fyp #viral #parati (≈8 en total; nicho primero).
+- Reels: máx. 5 hashtags (Instagram limita la cantidad): tema + #crianza #maternidad + #reels #viral.
+TikTok/Reels: público = papás; palabras clave + hashtags en la PRIMERA línea del texto (en cuentas nuevas TikTok clasifica por el texto); terminar con una pregunta a los papás; 1 video por día a la misma hora; nunca borrar y volver a subir el mismo video.
 
 ## Hacer un capítulo nuevo (flujo estándar)
 1. Copiar `src/episodes/ep01-la-torta-sorpresa/` → `src/episodes/epNN-slug/script.ts`. Editar SOLO datos (formato en `src/engine/script.ts`).
