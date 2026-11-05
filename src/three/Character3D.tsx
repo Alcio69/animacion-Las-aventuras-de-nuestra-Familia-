@@ -4,6 +4,7 @@ import * as THREE from 'three';
 import { DESIGNS, type Design } from '../characters/design';
 import { FACES } from '../characters/Face';
 import type { CharId, Pose } from '../characters/types';
+import { reindeerTex } from './Props3D';
 
 /** 1 world unit = 100 px of the 2D design, so both styles share proportions and scripts. */
 export const S = 0.01;
@@ -96,7 +97,7 @@ export const Character3D: React.FC<{ id: CharId; pose: Pose; position: V3; scale
         <group position={[pose.hipX * S, -pose.bob * S, 0]} rotation={[0, 0, -pose.bodyTilt * DEG]}>
           {/* pelvis */}
           <Ball p={[0, hipY + 0.2, 0]} s={[bw * 0.47, 0.26, depth * 0.52]} m={m.bottom} />
-          <Torso3D d={d} m={m} hipY={hipY} tw={tw} bw={bw} depth={depth} breath={pose.breath} />
+          <Torso3D d={pose.costume === 6 ? sweaterDesign(d) : d} m={pose.costume === 6 ? sweaterMats(m) : m} hipY={hipY} tw={tw} bw={bw} depth={depth} breath={pose.breath} />
           {/* neck */}
           <mesh position={[0, shoulderY + 0.05, 0]} castShadow material={m.fur}>
             <cylinderGeometry args={[R * 0.25, R * 0.3, 0.4, 20]} />
@@ -109,7 +110,7 @@ export const Character3D: React.FC<{ id: CharId; pose: Pose; position: V3; scale
           </group>
           {([-1, 1] as const).map((side) => (
             // armR = the arm towards facing (the 2D style mirrors; here we swap when turned left)
-            <Arm3D key={side} d={d} m={pose.costume === 1 ? ghostArms(m) : m} side={side} arm={side * lookSide < 0 ? pose.armL : pose.armR} swing={side * lookSide < 0 ? pose.swingL : pose.swingR} shoulderY={shoulderY} tw={tw} />
+            <Arm3D key={side} d={pose.costume === 6 ? sweaterDesign(d) : d} m={pose.costume === 1 ? ghostArms(m) : pose.costume === 6 ? sweaterMats(m) : m} side={side} arm={side * lookSide < 0 ? pose.armL : pose.armR} swing={side * lookSide < 0 ? pose.swingL : pose.swingR} shoulderY={shoulderY} tw={tw} />
           ))}
           {pose.costume > 0 && <BodyCostume3D kind={pose.costume} d={d} hipY={hipY} shoulderY={shoulderY} headY={headY} R={R} tw={tw} bw={bw} depth={depth} t={pose.t} />}
         </group>
@@ -144,6 +145,21 @@ const ghostArmCache = new WeakMap<object, M>();
 const ghostArms = (m: M): M => {
   let g = ghostArmCache.get(m);
   if (!g) ghostArmCache.set(m, (g = { ...m, top: CM.sheet, topDark: CM.sheet, inner: CM.sheet, fur: CM.sheet }));
+  return g;
+};
+
+const KNIT = { red: physical('#C92A2A', { roughness: 0.95, sheen: 1, sheenColor: new THREE.Color('#FFC9C9') }), white: physical('#FFF5F5', { roughness: 0.95, sheen: 1 }) };
+const sweaterMatCache = new WeakMap<object, M>();
+/** Abuela's knitted sweater: red knit body and sleeves, white hem and cuffs. */
+const sweaterMats = (m: M): M => {
+  let g = sweaterMatCache.get(m);
+  if (!g) sweaterMatCache.set(m, (g = { ...m, top: KNIT.red, topDark: KNIT.white }));
+  return g;
+};
+const sweaterDesignCache = new WeakMap<Design, Design>();
+const sweaterDesign = (d: Design): Design => {
+  let g = sweaterDesignCache.get(d);
+  if (!g) sweaterDesignCache.set(d, (g = { ...d, outfit: 'sweater' }));
   return g;
 };
 
@@ -205,6 +221,17 @@ const BodyCostume3D: React.FC<{ kind: number; d: Design; hipY: number; shoulderY
           <torusGeometry args={[tw * 0.36, 0.07, 10, 28]} />
         </mesh>
       </group>
+    );
+  }
+  if (kind === 6) {
+    // knitted reindeer on the chest
+    const h = shoulderY - hipY;
+    const w = tw * 0.62;
+    return (
+      <mesh position={[0, hipY + h * 0.56, depth * 0.53]}>
+        <planeGeometry args={[w, w]} />
+        <meshBasicMaterial map={reindeerTex()} transparent toneMapped={false} />
+      </mesh>
     );
   }
   if (kind === 5) {

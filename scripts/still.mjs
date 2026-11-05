@@ -3,7 +3,7 @@
 //        auto:N = N frames evenly spread between the intro and the outro + a contact sheet (sheet.png)
 import { bundle } from '@remotion/bundler';
 import { renderStill, selectComposition } from '@remotion/renderer';
-import { mkdirSync, readdirSync, rmSync } from 'node:fs';
+import { mkdirSync, readdirSync, rmSync, existsSync } from 'node:fs';
 import path from 'node:path';
 
 const [id = 'personajes', frames = '0', outDir = 'out/stills'] = process.argv.slice(2);
@@ -11,7 +11,9 @@ mkdirSync(outDir, { recursive: true });
 const browserExecutable = (() => {
   try {
     const dir = readdirSync('/opt/pw-browsers').find((d) => d.startsWith('chromium_headless_shell'));
-    return dir ? `/opt/pw-browsers/${dir}/chrome-linux/headless_shell` : null;
+    if (!dir) return null;
+    // Playwright moved the binary between versions: chrome-linux/headless_shell → chrome-headless-shell-linux64/chrome-headless-shell
+    return [`chrome-linux/headless_shell`, `chrome-headless-shell-linux64/chrome-headless-shell`].map((f) => `/opt/pw-browsers/${dir}/${f}`).find((f) => existsSync(f)) ?? null;
   } catch {
     return null;
   }
@@ -19,7 +21,7 @@ const browserExecutable = (() => {
 const serveUrl = await bundle({ entryPoint: path.resolve('remotion/index.ts') });
 // the bundle copies all of public/ (every video) into /tmp: remove it on exit or the disk fills up
 process.on('exit', () => rmSync(serveUrl, { recursive: true, force: true }));
-const composition = await selectComposition({ serveUrl, id, browserExecutable, chromiumOptions: { gl: process.env.GL || 'angle' } });
+const composition = await selectComposition({ serveUrl, id, browserExecutable, chromiumOptions: { gl: process.env.GL || 'swangle' } });
 console.log(`${id}: ${composition.durationInFrames} frames (${(composition.durationInFrames / composition.fps).toFixed(1)}s)`);
 const N = composition.durationInFrames;
 const list = frames.startsWith('auto:')
@@ -28,7 +30,7 @@ const list = frames.startsWith('auto:')
 const outs = [];
 for (const f of list) {
   const output = path.join(outDir, `${id}-${f}.png`);
-  await renderStill({ serveUrl, composition, frame: Math.min(f, composition.durationInFrames - 1), output, browserExecutable, chromiumOptions: { gl: process.env.GL || 'angle' } });
+  await renderStill({ serveUrl, composition, frame: Math.min(f, composition.durationInFrames - 1), output, browserExecutable, chromiumOptions: { gl: process.env.GL || 'swangle' } });
   console.log('  ', output);
   outs.push(output);
 }

@@ -6,7 +6,7 @@
 import { bundle } from '@remotion/bundler';
 import { renderMedia, selectComposition } from '@remotion/renderer';
 import { execFileSync } from 'node:child_process';
-import { mkdirSync, readdirSync, renameSync, rmSync } from 'node:fs';
+import { mkdirSync, readdirSync, renameSync, rmSync, existsSync } from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 
@@ -14,7 +14,9 @@ const ids = process.argv.slice(2);
 const browserExecutable = (() => {
   try {
     const dir = readdirSync('/opt/pw-browsers').find((d) => d.startsWith('chromium_headless_shell'));
-    return dir ? `/opt/pw-browsers/${dir}/chrome-linux/headless_shell` : null;
+    if (!dir) return null;
+    // Playwright moved the binary between versions: chrome-linux/headless_shell → chrome-headless-shell-linux64/chrome-headless-shell
+    return [`chrome-linux/headless_shell`, `chrome-headless-shell-linux64/chrome-headless-shell`].map((f) => `/opt/pw-browsers/${dir}/${f}`).find((f) => existsSync(f)) ?? null;
   } catch {
     return null;
   }

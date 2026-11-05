@@ -187,6 +187,161 @@ const dinoTex = () => {
   return dinoCache;
 };
 
+let monsterCache: THREE.CanvasTexture | null = null;
+/** Tini's drawing of her nightmare monster, made funny: a round purple monster with a pink bow and clown shoes. */
+const monsterTex = () => {
+  if (monsterCache) return monsterCache;
+  const cv = document.createElement('canvas');
+  cv.width = 300;
+  cv.height = 210;
+  const c = cv.getContext('2d')!;
+  c.fillStyle = '#FFFDF5';
+  c.fillRect(0, 0, 300, 210);
+  c.lineWidth = 5;
+  c.lineJoin = 'round';
+  c.lineCap = 'round';
+  // horns
+  c.fillStyle = '#FFD43B';
+  c.strokeStyle = '#E67700';
+  [[-1, 118], [1, 182]].forEach(([sd, x]) => {
+    c.beginPath();
+    c.moveTo(x - 12, 58);
+    c.lineTo(x + sd * 14, 18);
+    c.lineTo(x + 12, 58);
+    c.closePath();
+    c.fill();
+    c.stroke();
+  });
+  // round furry body
+  c.fillStyle = '#9775FA';
+  c.strokeStyle = '#5F3DC4';
+  c.beginPath();
+  c.ellipse(150, 112, 70, 62, 0, 0, Math.PI * 2);
+  c.fill();
+  c.stroke();
+  // arms waving
+  c.lineWidth = 12;
+  c.beginPath();
+  c.moveTo(85, 110);
+  c.lineTo(48, 72);
+  c.moveTo(215, 110);
+  c.lineTo(252, 72);
+  c.stroke();
+  // big clown shoes
+  c.lineWidth = 5;
+  c.fillStyle = '#FA5252';
+  c.strokeStyle = '#C92A2A';
+  [112, 188].forEach((x) => {
+    c.beginPath();
+    c.ellipse(x, 182, 30, 13, 0, 0, Math.PI * 2);
+    c.fill();
+    c.stroke();
+  });
+  // eyes + big smile
+  c.fillStyle = '#FFFFFF';
+  c.strokeStyle = '#212529';
+  [125, 175].forEach((x) => {
+    c.beginPath();
+    c.arc(x, 95, 15, 0, Math.PI * 2);
+    c.fill();
+    c.stroke();
+    c.fillStyle = '#212529';
+    c.beginPath();
+    c.arc(x + 3, 98, 6, 0, Math.PI * 2);
+    c.fill();
+    c.fillStyle = '#FFFFFF';
+  });
+  c.beginPath();
+  c.arc(150, 122, 28, 0.15 * Math.PI, 0.85 * Math.PI);
+  c.stroke();
+  // pink bow on top
+  c.fillStyle = '#F06CA0';
+  c.strokeStyle = '#C2255C';
+  [-1, 1].forEach((sd) => {
+    c.beginPath();
+    c.moveTo(150, 52);
+    c.lineTo(150 + sd * 30, 36);
+    c.lineTo(150 + sd * 30, 68);
+    c.closePath();
+    c.fill();
+    c.stroke();
+  });
+  c.beginPath();
+  c.arc(150, 52, 8, 0, Math.PI * 2);
+  c.fill();
+  c.stroke();
+  // little stars
+  c.fillStyle = '#FCC419';
+  [[40, 30], [262, 28], [30, 160], [270, 150]].forEach(([x, y]) => {
+    c.beginPath();
+    c.arc(x, y, 6, 0, Math.PI * 2);
+    c.fill();
+  });
+  monsterCache = new THREE.CanvasTexture(cv);
+  monsterCache.colorSpace = THREE.SRGBColorSpace;
+  return monsterCache;
+};
+
+let reindeerCache: THREE.CanvasTexture | null = null;
+/** Knitted reindeer patch (abuela's Christmas sweater), transparent background. */
+export const reindeerTex = () => {
+  if (reindeerCache) return reindeerCache;
+  const cv = document.createElement('canvas');
+  cv.width = 256;
+  cv.height = 256;
+  const c = cv.getContext('2d')!;
+  c.lineCap = 'round';
+  c.lineJoin = 'round';
+  // antlers
+  c.strokeStyle = '#8B5E3C';
+  c.lineWidth = 12;
+  [-1, 1].forEach((sd) => {
+    c.beginPath();
+    c.moveTo(128 + sd * 34, 92);
+    c.lineTo(128 + sd * 62, 30);
+    c.moveTo(128 + sd * 50, 56);
+    c.lineTo(128 + sd * 88, 50);
+    c.moveTo(128 + sd * 58, 40);
+    c.lineTo(128 + sd * 40, 14);
+    c.stroke();
+  });
+  // head
+  c.fillStyle = '#A9754F';
+  c.beginPath();
+  c.ellipse(128, 140, 52, 62, 0, 0, Math.PI * 2);
+  c.fill();
+  // ears
+  [-1, 1].forEach((sd) => {
+    c.beginPath();
+    c.ellipse(128 + sd * 60, 100, 22, 11, sd * 0.5, 0, Math.PI * 2);
+    c.fill();
+  });
+  // muzzle
+  c.fillStyle = '#E9C9A6';
+  c.beginPath();
+  c.ellipse(128, 172, 34, 26, 0, 0, Math.PI * 2);
+  c.fill();
+  // eyes
+  c.fillStyle = '#212529';
+  [-1, 1].forEach((sd) => {
+    c.beginPath();
+    c.arc(128 + sd * 20, 124, 7, 0, Math.PI * 2);
+    c.fill();
+  });
+  // red nose
+  c.fillStyle = '#F03E3E';
+  c.beginPath();
+  c.arc(128, 160, 15, 0, Math.PI * 2);
+  c.fill();
+  c.fillStyle = '#FFC9C9';
+  c.beginPath();
+  c.arc(123, 155, 4, 0, Math.PI * 2);
+  c.fill();
+  reindeerCache = new THREE.CanvasTexture(cv);
+  reindeerCache.colorSpace = THREE.SRGBColorSpace;
+  return reindeerCache;
+};
+
 /** One broccoli "little tree": pale stem + bumpy green crown. */
 const Broccoli3D: React.FC = () => (
   <group>
@@ -963,6 +1118,73 @@ export const Prop3D: React.FC<{ kind: PropKind; t: number; spin?: number }> = ({
             <M c="#FFE3E3" />
           </RoundedBox>
           <Sph p={[0, 0, 0.03]} s={[0.05, 0.05, 0.01]} c="#FA5252" />
+        </group>
+      );
+    case 'monsterDrawing':
+      return (
+        <group position={[0, 0.25, 0.2]} rotation={[0, 0, -0.06]} scale={1.25}>
+          <mesh castShadow>
+            <boxGeometry args={[1.1, 0.8, 0.02]} />
+            <meshStandardMaterial color="#FFFFFF" />
+          </mesh>
+          <mesh position={[0, 0, 0.012]}>
+            <planeGeometry args={[1.0, 0.7]} />
+            <meshBasicMaterial map={monsterTex()} toneMapped={false} />
+          </mesh>
+        </group>
+      );
+    case 'remote':
+      // TV remote: dark rounded bar with colored buttons, held up a little
+      return (
+        <group position={[0, 0.25, 0]} rotation={[0.5, 0.3, 0.2]} scale={1.3}>
+          <RoundedBox args={[0.2, 0.62, 0.07]} radius={0.03} castShadow>
+            <M c="#343A40" />
+          </RoundedBox>
+          <Sph p={[0, 0.2, 0.04]} s={[0.045, 0.045, 0.02]} c="#FA5252" />
+          {[0, 1, 2].map((i) =>
+            [-1, 1].map((sd) => <Sph key={`${i}${sd}`} p={[sd * 0.045, 0.06 - i * 0.1, 0.04]} s={[0.03, 0.03, 0.015]} c={i === 0 ? '#4DABF7' : '#ADB5BD'} />),
+          )}
+        </group>
+      );
+    case 'trafficLight':
+      // the "calm traffic light" (red: stop and breathe, yellow: say what I feel, green: find a solution)
+      return (
+        <group>
+          <Cyl p={[0, 0.06, 0]} r={0.26} h={0.12} c="#495057" />
+          <Cyl p={[0, 0.35, 0]} r={0.05} h={0.5} c="#495057" />
+          <RoundedBox args={[0.42, 1.05, 0.3]} radius={0.08} position={[0, 1.08, 0]} castShadow>
+            <M c="#212529" />
+          </RoundedBox>
+          {['#FF3B3B', '#FFD43B', '#40E070'].map((col, i) => (
+            <mesh key={col} position={[0, 1.4 - i * 0.32, 0.16]}>
+              <sphereGeometry args={[0.12, 20, 14]} />
+              <meshStandardMaterial color={col} emissive={col} emissiveIntensity={0.55} />
+            </mesh>
+          ))}
+        </group>
+      );
+    case 'sweater':
+      // abuela's knitted red sweater with a reindeer, held up to show it
+      return (
+        <group position={[0, 0.45, 0.1]} scale={1.15}>
+          <RoundedBox args={[0.9, 0.8, 0.1]} radius={0.06} castShadow>
+            <meshPhysicalMaterial color="#C92A2A" roughness={0.95} sheen={1} sheenColor={new THREE.Color('#FFC9C9')} />
+          </RoundedBox>
+          {[-1, 1].map((sd) => (
+            <RoundedBox key={sd} args={[0.26, 0.62, 0.09]} radius={0.05} position={[sd * 0.55, 0.02, 0]} rotation={[0, 0, sd * 0.35]} castShadow>
+              <meshPhysicalMaterial color="#C92A2A" roughness={0.95} sheen={1} sheenColor={new THREE.Color('#FFC9C9')} />
+            </RoundedBox>
+          ))}
+          {[0.33, -0.33].map((y) => (
+            <mesh key={y} position={[0, y, 0.052]}>
+              <planeGeometry args={[0.86, 0.07]} />
+              <meshStandardMaterial color="#FFF5F5" />
+            </mesh>
+          ))}
+          <mesh position={[0, 0, 0.056]}>
+            <planeGeometry args={[0.5, 0.5]} />
+            <meshBasicMaterial map={reindeerTex()} transparent toneMapped={false} />
+          </mesh>
         </group>
       );
     case 'trainToy':

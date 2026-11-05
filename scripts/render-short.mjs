@@ -16,14 +16,16 @@ mkdirSync(OUT, { recursive: true });
 const browserExecutable = (() => {
   try {
     const dir = readdirSync('/opt/pw-browsers').find((d) => d.startsWith('chromium_headless_shell'));
-    return dir ? `/opt/pw-browsers/${dir}/chrome-linux/headless_shell` : null;
+    if (!dir) return null;
+    // Playwright moved the binary between versions: chrome-linux/headless_shell → chrome-headless-shell-linux64/chrome-headless-shell
+    return [`chrome-linux/headless_shell`, `chrome-headless-shell-linux64/chrome-headless-shell`].map((f) => `/opt/pw-browsers/${dir}/${f}`).find((f) => existsSync(f)) ?? null;
   } catch {
     return null;
   }
 })();
 const serveUrl = await bundle({ entryPoint: path.resolve('remotion/index.ts') });
 process.on('exit', () => rmSync(serveUrl, { recursive: true, force: true }));
-const chromiumOptions = { gl: 'angle' };
+const chromiumOptions = { gl: process.env.GL || 'swangle' };
 
 for (const id of ids) {
   const composition = await selectComposition({ serveUrl, id, browserExecutable, chromiumOptions });

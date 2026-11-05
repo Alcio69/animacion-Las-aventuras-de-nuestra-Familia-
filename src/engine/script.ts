@@ -42,11 +42,11 @@ export type PropKind = 'table' | 'cake' | 'bowl' | 'flour' | 'ball' | 'balloon' 
   | 'pot' | 'sprout' | 'flowerPot' | 'wateringCan' | 'fishbowl' | 'fishFood' | 'teacup' | 'thermometer'
   | 'recycleBins' | 'trash' | 'cart' | 'cookiePlate' | 'emptyPlate'
   | 'jug' | 'milkSpill' | 'tooth' | 'apple' | 'coin' | 'calendar' | 'dinoDrawing'
-  | 'fishbowlStill' | 'bandaid' | 'trainToy';
+  | 'fishbowlStill' | 'bandaid' | 'trainToy' | 'monsterDrawing' | 'remote' | 'trafficLight' | 'sweater';
 export type Fx = 'hearts' | 'stars' | 'confetti' | 'flour' | 'sparkle' | 'zzz' | 'question' | 'exclaim' | 'sweat';
 export type Sfx = 'pop' | 'boing' | 'whoosh' | 'ding' | 'sparkle' | 'poof' | 'tada' | 'drum' | 'doorbell' | 'giggle' | 'thunder' | 'crash';
 
-export type Costume = 'ghost' | 'witch' | 'pumpkin' | 'santa' | 'blanket';
+export type Costume = 'ghost' | 'witch' | 'pumpkin' | 'santa' | 'blanket' | 'sweater';
 
 export type Step =
   | {

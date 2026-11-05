@@ -73,7 +73,7 @@ export type Pose = {
   roll: number;
   /** Whole-body tip over to the side, degrees (falling). */
   tip: number;
-  /** Costume: 0 none, 1 ghost sheet, 2 witch hat + cape, 3 pumpkin suit, 4 santa hat, 5 blanket (sick). */
+  /** Costume: 0 none, 1 ghost sheet, 2 witch hat + cape, 3 pumpkin suit, 4 santa hat, 5 blanket (sick), 6 knitted reindeer sweater. */
   costume: number;
 };
 

@@ -36,7 +36,7 @@ TikTok/Reels: público = papás; palabras clave + hashtags en la PRIMERA línea 
 3. `pip install -r requirements.txt` (1ª vez por sesión) → `npm run voices` (TTS offline; solo líneas nuevas; actualiza `src/voices.json` + `public/voices/`).
 4. Revisar fotogramas: `node scripts/still.mjs epNN-slug-3d auto:12 out/stills/epNN` → 12 fotogramas + `sheet.png` (hoja de contacto).
 5. `npm run render -- epNN-slug` → `public/episodes/epNN-slug.mp4` / `epNN-slug-3d.mp4` + `.jpg` (miniaturas). `-- epNN-slug 3d` = solo 3D.
-   Fotogramas 3D: `node scripts/still.mjs epNN-slug-3d 100,400 out/stills` (usa WebGL `angle`).
+   Fotogramas 3D: `node scripts/still.mjs epNN-slug-3d 100,400 out/stills` (usa WebGL `swangle` por defecto; `GL=angle` para cambiarlo). Si falla el arranque tras un contenedor nuevo: `npm ci`, `pip install -r requirements.txt` (sherpa-onnx<2: la 2.x se saltea palabras en español).
 6. `npx tsc --noEmit && npx next build`, commit, push a la rama y a `main`.
 
 Duración: 30 s ≈ 6–8 líneas; 2 min ≈ 25–30 líneas. Intro 3.6 s + outro 5 s se agregan solos.
