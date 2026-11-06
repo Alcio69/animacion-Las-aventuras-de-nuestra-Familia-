@@ -1,0 +1,83 @@
+1
+00:00:03,950 --> 00:00:08,401
+Abuela: ¡Feliz Navidad, mis amores! Les traje un regalito a cada uno.
+
+2
+00:00:08,701 --> 00:00:12,443
+Tini: ¡Un libro de cuentos con dibujos! ¡Me encanta, abuela!
+
+3
+00:00:12,743 --> 00:00:16,726
+Lio: ¿Un suéter con un reno? ¡Qué feo! Yo quería un videojuego.
+
+4
+00:00:16,726 --> 00:00:20,503
+Abuela: Ah, perdón, Lio. No sabía que no te iba a gustar.
+
+5
+00:00:20,503 --> 00:00:23,773
+Luna: Mi amor, ven un momento conmigo a la cocina, por favor.
+
+6
+00:00:30,084 --> 00:00:33,733
+Luna: ¿Viste la carita de la abuela? Se puso muy triste.
+
+7
+00:00:33,733 --> 00:00:36,821
+Lio: Pero es que no me gustó, mamá. ¿Tengo que mentir?
+
+8
+00:00:36,821 --> 00:00:42,734
+Luna: No tienes que mentir. Pero un regalo es el cariño que alguien puso en pensarlo, y en hacerlo para ti.
+
+9
+00:00:42,734 --> 00:00:47,969
+Luna: ¿Sabes cuánto tardó la abuela en tejer ese suéter? Un mes entero, todas las tardes.
+
+10
+00:00:47,969 --> 00:00:52,366
+Lio: ¿Un mes entero? ¡No lo sabía! Me porté muy mal con ella.
+
+11
+00:00:52,366 --> 00:00:58,666
+Luna: Siempre podemos arreglarlo. Podemos dar las gracias por el cariño, aunque el regalo no sea lo que esperábamos.
+
+12
+00:01:05,244 --> 00:01:09,966
+Lio: Perdón, abuela. Fui muy maleducado. Gracias por tejerlo para mí.
+
+13
+00:01:09,966 --> 00:01:14,927
+Abuela: Gracias por decírmelo, mi amor. Lo hice pensando en ti, en cada puntada.
+
+14
+00:01:16,727 --> 00:01:19,022
+Lio: ¿Y por qué elegiste un reno, abuela?
+
+15
+00:01:19,022 --> 00:01:23,638
+Abuela: Porque cuando tu papá era chiquito, yo le tejí uno igualito, ¡y le encantaba!
+
+16
+00:01:23,638 --> 00:01:28,422
+Max: ¡Es verdad! Era mi suéter favorito. ¡Lo usaba todos los días!
+
+17
+00:01:28,422 --> 00:01:33,194
+Lio: ¡Entonces ahora es mi suéter favorito también! ¡Somos el equipo reno!
+
+18
+00:01:35,944 --> 00:01:38,474
+Tini: ¡Te queda muy lindo ese suéter, hermano!
+
+19
+00:01:38,474 --> 00:01:43,015
+Lio: Gracias, hermanita. Lo más lindo del regalo es el cariño de la abuela.
+
+20
+00:01:43,015 --> 00:01:47,397
+Abuela: Esta es la mejor Navidad de todas. ¡Los quiero muchísimo!
+
+21
+00:01:48,197 --> 00:01:54,528
+Un regalo es una muestra de cariño. Aunque no sea lo que esperábamos, siempre podemos decir gracias.
