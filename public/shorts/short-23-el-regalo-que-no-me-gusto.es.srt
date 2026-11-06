@@ -1,0 +1,27 @@
+1
+00:00:00,650 --> 00:00:04,633
+Lio: ¿Un suéter con un reno? ¡Qué feo! Yo quería un videojuego.
+
+2
+00:00:04,633 --> 00:00:08,410
+Abuela: Ah, perdón, Lio. No sabía que no te iba a gustar.
+
+3
+00:00:09,160 --> 00:00:12,248
+Lio: Pero es que no me gustó, mamá. ¿Tengo que mentir?
+
+4
+00:00:12,248 --> 00:00:18,161
+Luna: No tienes que mentir. Pero un regalo es el cariño que alguien puso en pensarlo, y en hacerlo para ti.
+
+5
+00:00:18,161 --> 00:00:23,396
+Luna: ¿Sabes cuánto tardó la abuela en tejer ese suéter? Un mes entero, todas las tardes.
+
+6
+00:00:25,746 --> 00:00:30,468
+Lio: Perdón, abuela. Fui muy maleducado. Gracias por tejerlo para mí.
+
+7
+00:00:30,468 --> 00:00:35,429
+Abuela: Gracias por decírmelo, mi amor. Lo hice pensando en ti, en cada puntada.
