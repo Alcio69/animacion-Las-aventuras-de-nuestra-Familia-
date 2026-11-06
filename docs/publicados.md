@@ -92,10 +92,10 @@ Playlist propia: "Shorts · Las Aventuras de Nuestra Familia" (no mezclar con la
 | 20 ¡Me da miedo la vacuna! | 51 | ✅ Publicado |
 | 21 ¡Hay un monstruo en mi cuarto! | 52 | ⏳ Listo |
 | 22 ¡Él empezó! | 53 | ⏳ Listo |
-| 23 El regalo que no me gustó | 54 | 🎬 Renderizando |
+| 23 El regalo que no me gustó | 54 | ⏳ Listo (subir después del 54) |
 
 ## Pendientes
-Listos para subir: capítulos 52, 53 y 54 (54 a fines de noviembre), Shorts 21 y 22 (Short 23 en render). Los Shorts se suben solo después de su capítulo.
-En proceso: render de 52–54 y Shorts 21–23. Próximo tema guardado: la mudanza (inspirado en "The Sign").
+Listos para subir: capítulos 52, 53 y 54 (54 a fines de noviembre), Shorts 21, 22 y 23. Los Shorts se suben solo después de su capítulo.
+En proceso: nada. Próximo tema guardado: la mudanza (inspirado en "The Sign").
 
 Compilados posibles: 4-6-8, 7-9-10, 5-11-12, 13-14-15, 16-18-19, 20-22-23, 24-25-26, 27-28-29; compilados de 10 (1–10, 11–20, 21–30) o uno largo de 30+ min.
