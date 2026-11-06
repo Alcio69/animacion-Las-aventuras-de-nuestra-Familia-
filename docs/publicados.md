@@ -58,7 +58,7 @@ Solo se anota lo que el usuario confirma que ya está en el canal. Los compilado
 | 51 | ¡Me da miedo la vacuna! | Miedo a la vacuna, pediatra | Miedos y cosas nuevas | ✅ Publicado |
 | 52 | ¡Hay un monstruo en mi cuarto! | Pesadillas, miedo a la oscuridad | Miedos y cosas nuevas | ⏳ Listo |
 | 53 | ¡Él empezó! | Peleas entre hermanos, semáforo de la calma | Familia y hermanos | ⏳ Listo |
-| 54 | El regalo que no me gustó | Navidad, gratitud, abuela | Navidad / Valores y convivencia | 🎬 Renderizando (subir fines de noviembre/principios de diciembre) |
+| 54 | El regalo que no me gustó | Navidad, gratitud, abuela | Navidad / Valores y convivencia | ⏳ Listo (subir fines de noviembre/principios de diciembre) |
 
 ## Compilados
 | Compilado | Capítulos | Estado |
@@ -95,7 +95,7 @@ Playlist propia: "Shorts · Las Aventuras de Nuestra Familia" (no mezclar con la
 | 23 El regalo que no me gustó | 54 | 🎬 Renderizando |
 
 ## Pendientes
-Listos para subir: capítulos 52 y 53, Shorts 21 y 22. Los Shorts se suben solo después de su capítulo.
+Listos para subir: capítulos 52, 53 y 54 (54 a fines de noviembre), Shorts 21 y 22 (Short 23 en render). Los Shorts se suben solo después de su capítulo.
 En proceso: render de 52–54 y Shorts 21–23. Próximo tema guardado: la mudanza (inspirado en "The Sign").
 
 Compilados posibles: 4-6-8, 7-9-10, 5-11-12, 13-14-15, 16-18-19, 20-22-23, 24-25-26, 27-28-29; compilados de 10 (1–10, 11–20, 21–30) o uno largo de 30+ min.
