@@ -7,101 +7,101 @@ Lio: ¡Dame el control remoto! ¡Ahora empieza mi programa!
 Tini: ¡No es justo! ¡Siempre eliges el programa, hermano!
 
 3
-00:00:11,499 --> 00:00:13,948
-Lio: ¡Pero ella me quitó el control primero!
+00:00:11,499 --> 00:00:14,648
+Lio: ¡Pero tú me quitaste el control primero, hermanita!
 
 4
-00:00:13,948 --> 00:00:16,250
-Tini: ¡No es verdad! ¡Él empezó!
+00:00:14,648 --> 00:00:17,915
+Tini: ¡No es verdad! ¡Tú empezaste primero, hermano!
 
 5
-00:00:19,028 --> 00:00:23,230
+00:00:20,693 --> 00:00:24,895
 Max: ¿Pero qué pasa aquí? Parece que hay dos chicos muy enojados.
 
 6
-00:00:23,230 --> 00:00:26,612
+00:00:24,895 --> 00:00:28,277
 Tini: ¡Papá, él empezó! ¡Me quiere quitar el control!
 
 7
-00:00:26,612 --> 00:00:29,278
+00:00:28,277 --> 00:00:30,943
 Lio: ¡No, papá! ¡Ella empezó primero!
 
 8
-00:00:29,278 --> 00:00:34,525
+00:00:30,943 --> 00:00:36,190
 Max: No voy a decidir quién empezó. Hoy les voy a enseñar a resolverlo ustedes solos.
 
 9
-00:00:37,575 --> 00:00:42,830
+00:00:39,240 --> 00:00:44,495
 Max: Este es el semáforo de la calma. Con el rojo, frenamos y respiramos profundo.
 
 10
-00:00:42,830 --> 00:00:47,021
+00:00:44,495 --> 00:00:48,686
 Max: Con el amarillo, cada uno dice qué siente y qué quiere, pero sin gritar.
 
 11
-00:00:47,021 --> 00:00:51,307
+00:00:48,686 --> 00:00:52,972
 Max: Y con el verde, buscamos juntos una solución que sea buena para los dos.
 
 12
-00:00:51,307 --> 00:00:54,597
+00:00:52,972 --> 00:00:56,262
 Tini: Primero, el rojo. Voy a respirar muy profundo.
 
 13
-00:00:56,397 --> 00:01:00,350
+00:00:58,062 --> 00:01:02,015
 Tini: Me siento triste, porque yo también quiero ver mi programa de animales.
 
 14
-00:01:00,350 --> 00:01:03,866
+00:01:02,015 --> 00:01:05,531
 Lio: Y yo me siento enojado, porque mi programa empieza ahora mismo.
 
 15
-00:01:03,866 --> 00:01:07,572
+00:01:05,531 --> 00:01:09,237
 Max: ¡Muy bien dicho, los dos! ¿Y ahora qué color sigue?
 
 16
-00:01:07,872 --> 00:01:11,709
+00:01:09,537 --> 00:01:13,374
 Tini: ¡El verde! ¿Y si usamos el reloj de arena para hacer turnos?
 
 17
-00:01:11,709 --> 00:01:16,000
+00:01:13,374 --> 00:01:17,665
 Lio: ¡Buena idea, hermanita! Primero mi programa, y después el tuyo.
 
 18
-00:01:16,000 --> 00:01:19,008
+00:01:17,665 --> 00:01:20,673
 Tini: Bueno, pero mañana me toca elegir a mí primero.
 
 19
-00:01:19,008 --> 00:01:22,123
+00:01:20,673 --> 00:01:23,788
 Lio: ¡Trato hecho, hermanita! Dame esa mano.
 
 20
-00:01:22,123 --> 00:01:26,451
+00:01:23,788 --> 00:01:28,116
 Max: ¡Lo resolvieron ustedes solos! Estoy muy orgulloso de los dos.
 
 21
-00:01:31,301 --> 00:01:33,498
+00:01:32,966 --> 00:01:35,163
 Tini: ¡Me toca a mí patear la pelota!
 
 22
-00:01:33,498 --> 00:01:38,294
+00:01:35,163 --> 00:01:39,959
 Lio: ¡No, me toca a mí! Bueno, espera, hermanita. ¡Usemos el semáforo!
 
 23
-00:01:39,894 --> 00:01:42,482
+00:01:41,559 --> 00:01:44,147
 Tini: Yo quiero patear porque nunca hago goles.
 
 24
-00:01:42,482 --> 00:01:45,932
+00:01:44,147 --> 00:01:47,597
 Lio: ¡Ya sé! Yo soy el arquero, y tú pateas cinco veces.
 
 25
-00:01:47,632 --> 00:01:50,435
+00:01:49,297 --> 00:01:52,100
 Tini: ¡Hice un gol, hermano! ¡Hice un gol!
 
 26
-00:01:50,435 --> 00:01:55,319
+00:01:52,100 --> 00:01:56,984
 Luna: ¡Qué lindo verlos así! Ya no necesitan que nadie los ayude a resolverlo.
 
 27
-00:01:56,119 --> 00:02:03,194
+00:01:57,784 --> 00:02:04,859
 Pelear a veces es normal. Lo importante es frenar, decir lo que sentimos, y buscar juntos una solución.
