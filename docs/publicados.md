@@ -96,6 +96,6 @@ Playlist propia: "Shorts · Las Aventuras de Nuestra Familia" (no mezclar con la
 
 ## Pendientes
 Listos para subir: nada (todo publicado hasta el capítulo 54 y el Short 23). Los Shorts se suben solo después de su capítulo.
-En proceso: nada. Próximo tema guardado: la mudanza (inspirado en "The Sign").
+En proceso: capítulos 55–57 y Shorts 24–26 (render). Próximo tema guardado: la mudanza (inspirado en "The Sign").
 
 Compilados posibles: 4-6-8, 7-9-10, 5-11-12, 13-14-15, 16-18-19, 20-22-23, 24-25-26, 27-28-29; compilados de 10 (1–10, 11–20, 21–30) o uno largo de 30+ min.

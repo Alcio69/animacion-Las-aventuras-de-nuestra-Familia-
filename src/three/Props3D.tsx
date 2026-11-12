@@ -935,6 +935,40 @@ export const Prop3D: React.FC<{ kind: PropKind; t: number; spin?: number }> = ({
           <Cyl p={[0, 0.035, 0]} r={0.22} h={0.01} c="#FAB005" />
         </group>
       );
+    case 'piggyBank':
+      // Tini's first piggy bank: pink pig with a coin slot on top, snout, ears, legs and a curly tail
+      return (
+        <group position={[0, 0.06, 0]} rotation={[0, Math.PI + 0.9, 0]}>
+          <Sph p={[0, 0.42, 0]} s={[0.5, 0.4, 0.4]} c="#F7A8C4" />
+          <mesh position={[0, 0.81, 0]}>
+            <boxGeometry args={[0.2, 0.03, 0.05]} />
+            <M c="#7A2E4A" />
+          </mesh>
+          <mesh position={[0.5, 0.44, 0]} rotation={[0, 0, Math.PI / 2]} castShadow>
+            <cylinderGeometry args={[0.12, 0.14, 0.12, 24]} />
+            <M c="#F783AC" />
+          </mesh>
+          {[-1, 1].map((sd) => (
+            <Sph key={`n${sd}`} p={[0.565, 0.44, sd * 0.045]} s={[0.012, 0.028, 0.02]} c="#7A2E4A" />
+          ))}
+          {[-1, 1].map((sd) => (
+            <Sph key={`e${sd}`} p={[0.36, 0.6, sd * 0.17]} s={0.045} c="#2B1A0E" />
+          ))}
+          {[-1, 1].map((sd) => (
+            <mesh key={`r${sd}`} position={[0.22, 0.8, sd * 0.2]} rotation={[sd * 0.4, 0, -0.3]} castShadow>
+              <coneGeometry args={[0.09, 0.18, 12]} />
+              <M c="#F783AC" />
+            </mesh>
+          ))}
+          {[-1, 1].map((sx) =>
+            [-1, 1].map((sz) => <Cyl key={`l${sx}${sz}`} p={[sx * 0.26, 0.07, sz * 0.2]} r={0.08} h={0.16} c="#F783AC" />),
+          )}
+          <mesh position={[-0.52, 0.5, 0]} rotation={[0, Math.PI / 2, 0]}>
+            <torusGeometry args={[0.06, 0.018, 8, 16, Math.PI * 1.6]} />
+            <M c="#F783AC" />
+          </mesh>
+        </group>
+      );
     case 'calendar': {
       // a 3-day countdown sheet: big red crosses on the days already passed (drawn as a plane grid)
       return (
