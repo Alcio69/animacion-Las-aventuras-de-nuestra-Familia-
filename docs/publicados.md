@@ -2,7 +2,7 @@
 
 Solo se anota lo que el usuario confirma que ya está en el canal. Los compilados usan únicamente capítulos de esta lista.
 
-## Capítulos sueltos (46 de 46 publicados)
+## Capítulos sueltos (54 de 54 publicados)
 | Cap. | Título | Tema | Lista | Estado |
 |---|---|---|---|---|
 | 1 | La torta sorpresa | Cumpleaños de mamá, trabajo en equipo | Fechas especiales | ✅ Publicado |
@@ -56,9 +56,9 @@ Solo se anota lo que el usuario confirma que ya está en el canal. Los compilado
 | 49 | ¡Perdón por gritar! | Pedir perdón (los papás también) | Familia y hermanos | ✅ Publicado |
 | 50 | Mi compañero Juanchi | Autismo, inclusión | Valores y convivencia | ✅ Publicado |
 | 51 | ¡Me da miedo la vacuna! | Miedo a la vacuna, pediatra | Miedos y cosas nuevas | ✅ Publicado |
-| 52 | ¡Hay un monstruo en mi cuarto! | Pesadillas, miedo a la oscuridad | Miedos y cosas nuevas | ⏳ Listo |
-| 53 | ¡Él empezó! | Peleas entre hermanos, semáforo de la calma | Familia y hermanos | ⏳ Listo |
-| 54 | El regalo que no me gustó | Navidad, gratitud, abuela | Navidad / Valores y convivencia | ⏳ Listo (subir fines de noviembre/principios de diciembre) |
+| 52 | ¡Hay un monstruo en mi cuarto! | Pesadillas, miedo a la oscuridad | Miedos y cosas nuevas | ✅ Publicado |
+| 53 | ¡Él empezó! | Peleas entre hermanos, semáforo de la calma | Familia y hermanos | ✅ Publicado |
+| 54 | El regalo que no me gustó | Navidad, gratitud, abuela | Navidad / Valores y convivencia | ✅ Publicado |
 
 ## Compilados
 | Compilado | Capítulos | Estado |
@@ -90,12 +90,12 @@ Playlist propia: "Shorts · Las Aventuras de Nuestra Familia" (no mezclar con la
 | 18 ¡Perdón por gritar! | 49 | ✅ Publicado |
 | 19 Mi compañero Juanchi | 50 | ✅ Publicado |
 | 20 ¡Me da miedo la vacuna! | 51 | ✅ Publicado |
-| 21 ¡Hay un monstruo en mi cuarto! | 52 | ⏳ Listo |
-| 22 ¡Él empezó! | 53 | ⏳ Listo |
-| 23 El regalo que no me gustó | 54 | ⏳ Listo (subir después del 54) |
+| 21 ¡Hay un monstruo en mi cuarto! | 52 | ✅ Publicado |
+| 22 ¡Él empezó! | 53 | ✅ Publicado |
+| 23 El regalo que no me gustó | 54 | ✅ Publicado |
 
 ## Pendientes
-Listos para subir: capítulos 52, 53 y 54 (54 a fines de noviembre), Shorts 21, 22 y 23. Los Shorts se suben solo después de su capítulo.
+Listos para subir: nada (todo publicado hasta el capítulo 54 y el Short 23). Los Shorts se suben solo después de su capítulo.
 En proceso: nada. Próximo tema guardado: la mudanza (inspirado en "The Sign").
 
 Compilados posibles: 4-6-8, 7-9-10, 5-11-12, 13-14-15, 16-18-19, 20-22-23, 24-25-26, 27-28-29; compilados de 10 (1–10, 11–20, 21–30) o uno largo de 30+ min.
