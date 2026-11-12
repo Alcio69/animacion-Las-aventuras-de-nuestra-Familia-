@@ -2,7 +2,7 @@
 
 Solo se anota lo que el usuario confirma que ya está en el canal. Los compilados usan únicamente capítulos de esta lista.
 
-## Capítulos sueltos (54 de 54 publicados)
+## Capítulos sueltos (54 de 57 publicados)
 | Cap. | Título | Tema | Lista | Estado |
 |---|---|---|---|---|
 | 1 | La torta sorpresa | Cumpleaños de mamá, trabajo en equipo | Fechas especiales | ✅ Publicado |
@@ -59,6 +59,9 @@ Solo se anota lo que el usuario confirma que ya está en el canal. Los compilado
 | 52 | ¡Hay un monstruo en mi cuarto! | Pesadillas, miedo a la oscuridad | Miedos y cosas nuevas | ✅ Publicado |
 | 53 | ¡Él empezó! | Peleas entre hermanos, semáforo de la calma | Familia y hermanos | ✅ Publicado |
 | 54 | El regalo que no me gustó | Navidad, gratitud, abuela | Navidad / Valores y convivencia | ✅ Publicado |
+| 55 | ¡Dijo una mala palabra! | Malas palabras, decir el enojo | Valores y convivencia | ⏳ Listo |
+| 56 | ¡No quiero hacer la tarea! | Tarea, no postergar, pedacitos | Hábitos y rutinas | ⏳ Listo |
+| 57 | Mi primera alcancía | Ahorrar, esperar, compartir | Valores y convivencia | ⏳ Listo |
 
 ## Compilados
 | Compilado | Capítulos | Estado |
@@ -93,9 +96,12 @@ Playlist propia: "Shorts · Las Aventuras de Nuestra Familia" (no mezclar con la
 | 21 ¡Hay un monstruo en mi cuarto! | 52 | ✅ Publicado |
 | 22 ¡Él empezó! | 53 | ✅ Publicado |
 | 23 El regalo que no me gustó | 54 | ✅ Publicado |
+| 24 ¡Dijo una mala palabra! | 55 | ⏳ Listo |
+| 25 ¡No quiero hacer la tarea! | 56 | ⏳ Listo |
+| 26 Mi primera alcancía | 57 | ⏳ Listo |
 
 ## Pendientes
-Listos para subir: nada (todo publicado hasta el capítulo 54 y el Short 23). Los Shorts se suben solo después de su capítulo.
-En proceso: capítulos 55–57 y Shorts 24–26 (render). Próximo tema guardado: la mudanza (inspirado en "The Sign").
+Listos para subir: capítulos 55, 56 y 57 con sus Shorts 24, 25 y 26. Los Shorts se suben solo después de su capítulo.
+En proceso: nada. Próximo tema guardado: la mudanza (inspirado en "The Sign").
 
 Compilados posibles: 4-6-8, 7-9-10, 5-11-12, 13-14-15, 16-18-19, 20-22-23, 24-25-26, 27-28-29; compilados de 10 (1–10, 11–20, 21–30) o uno largo de 30+ min.
