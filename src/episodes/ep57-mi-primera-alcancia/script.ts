@@ -96,12 +96,13 @@ const episode: Episode = {
     {
       bg: 'living',
       cast: {
-        hija: { x: 620, mood: 'happy' },
-        hijo: { x: 1000, mood: 'happy', facing: -1 },
-        mama: { x: 1350, mood: 'happy', facing: -1 },
+        hija: { x: 540, mood: 'happy' },
+        hijo: { x: 1080, mood: 'happy', facing: -1 },
+        mama: { x: 1420, mood: 'happy', facing: -1 },
       },
       steps: [
-        { prop: 'teddy', id: 'osito', x: 450, y: 960, scale: 1.8 },
+        { prop: 'teddy', id: 'osito', x: 410, y: 960, scale: 1.8 },
+        { prop: 'table', id: 'mesa', x: 810, y: 900, with: true },
         { say: 'hija', text: '¡Mi osito gigante! ¡Lo compré con mi propio dinero!', expr: 'excited', act: 'jump' },
         { sfx: 'sparkle', with: true },
         { prop: 'cookie', id: 'galleta', x: 810, y: 760, scale: 1.8 },
